@@ -1,0 +1,56 @@
+/* Footer */
+.custom-footer {
+    display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(-90deg, #3f9c96, #6d6be3);
+  color: #f5f5f5;
+  text-align: center;
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+}
+
+.custom-footer a {
+  color: #f5f5f5;
+  text-decoration: none;
+  margin-left: 0.3rem;
+}
+
+.custom-footer a:hover {
+  color: #ff4081; /* hồng tươi khi hover */
+}
+
+/* Dark mode (dùng selector theo theme) */
+[data-md-color-scheme="slate"] .custom-footer {
+  background: linear-gradient(90deg, #1e1e1e, #2b2b2b);
+  color: #ccc;
+}
+
+[data-md-color-scheme="slate"] .custom-footer a {
+  color: #ccc;
+}
+
+[data-md-color-scheme="slate"] .custom-footer a:hover {
+  color: #ff79c6; /* hồng neon để nổi bật hơn */
+}
+
+/* Header title/logo */
+.md-header__title {
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+/* Nav highlight */
+.md-nav__link--active {
+  color: #0091eb !important;
+  font-weight: 600;
+}
+
+.md-nav__link[for]:focus, .md-nav__link[for]:hover, .md-nav__link[href]:focus, .md-nav__link[href]:hover {
+  color: #0091eb !important;
+  cursor: pointer;
+}
+
+.md-typeset .headerlink:focus, .md-typeset .headerlink:hover, .md-typeset :target>.headerlink {
+  color: #0091eb !important;
+}
