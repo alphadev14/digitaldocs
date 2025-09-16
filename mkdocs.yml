@@ -1,5 +1,9 @@
-site_name: Developer Roadmap
-theme: material # hoặc bất kỳ theme bạn muốn
+site_name: Digital Docs
+site_url: https://alphadev14.github.io/digitaldocs/
+theme:
+  name: material
+  logo: assets/logo.png # logo góc trên bên trái
+  favicon: assets/logo.png # icon trên tab trình duyệt
 nav:
   - Home: index.md
   - Level 1: level1.md
