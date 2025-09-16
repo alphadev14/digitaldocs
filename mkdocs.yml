@@ -1,12 +1,59 @@
-site_name: Digital Docs
+site_name: P&T | Digital Docs
 site_url: https://alphadev14.github.io/digitaldocs/
 theme:
   name: material
-  logo: assets/logo.png # logo góc trên bên trái
-  favicon: assets/logo.png # icon trên tab trình duyệt
+  custom_dir: overrides
+  logo: assets/logo.png
+  favicon: assets/logo.png
+  features:
+    - navigation.footer
+  palette:
+    - scheme: default
+      primary: deep purple
+      accent: lime
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to light mode
+    - scheme: slate
+      primary: indigo
+      accent: pink
+      toggle:
+        icon: material/weather-night
+        name: Switch to dark mode
+
 nav:
   - Home: index.md
   - Level 1: level1.md
   - Level 2: level2.md
   - Level 3: level3.md
   - Technologies: stack.md
+
+plugins: []
+
+markdown_extensions:
+  - admonition
+  - codehilite:
+      guess_lang: false
+      linenums: true
+  - footnotes
+  - toc:
+      permalink: true
+  - pymdownx.highlight
+  - pymdownx.superfences
+  - pymdownx.details
+  - pymdownx.tabbed:
+      alternate_style: true
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/alphadev14
+    - icon: fontawesome/brands/linkedin
+      link: https://linkedin.com/in/your-profile
+    - icon: fontawesome/brands/youtube
+      link: https://youtube.com/@yourchannel
+  generator: false
+
+extra_css:
+  - extra.css
+  - stylesheets/extra.css

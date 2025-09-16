@@ -1,0 +1,20 @@
+/* Đổi font chữ hiện đại */
+body {
+  font-family: "Inter", "Roboto", sans-serif;
+}
+
+/* Footer bản quyền */
+.md-footer__inner {
+  justify-content: space-between;
+}
+.md-footer__inner::after {
+  content: "© 2025 P&T Digital Docs";
+  font-size: 0.8rem;
+  color: #aaa;
+}
+
+/* Table bo tròn */
+.md-typeset table {
+  border-radius: 8px;
+  overflow: hidden;
+}
