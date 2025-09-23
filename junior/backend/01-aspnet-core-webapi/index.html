@@ -1,0 +1,1360 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://alphadev14.github.io/digitaldocs/junior/backend/01-aspnet-core-webapi/">
+      
+      
+        <link rel="prev" href="../../..">
+      
+      
+        <link rel="next" href="../02-middleware-dependency-injection/">
+      
+      
+      <link rel="icon" href="../../../assets/logo.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.20">
+    
+    
+      
+        <title>ASP.NET Core WebAPI - P&T | Digital Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.e53b48f4.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../extra.css">
+    
+      <link rel="stylesheet" href="../../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="deep-purple" data-md-color-accent="lime">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#aspnet-core-web-api" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="P&amp;T | Digital Docs" class="md-header__button md-logo" aria-label="P&T | Digital Docs" data-md-component="logo">
+      
+  <img src="../../../assets/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            P&T | Digital Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              ASP.NET Core WebAPI
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="deep-purple" data-md-color-accent="lime"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="pink"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="P&amp;T | Digital Docs" class="md-nav__button md-logo" aria-label="P&T | Digital Docs" data-md-component="logo">
+      
+  <img src="../../../assets/logo.png" alt="logo">
+
+    </a>
+    P&T | Digital Docs
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Junior
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Junior
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Backend
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            Backend
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    ASP.NET Core WebAPI
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    ASP.NET Core WebAPI
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-gioi-thieu" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Giới thiệu
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-cau-truc-du-an" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Cấu trúc dự án
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-cac-buoc-tao-web-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Các bước tạo Web API
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-cac-thanh-phan-quan-trong" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Các thành phần quan trọng
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Các thành phần quan trọng">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a-routing-endpoints" class="md-nav__link">
+    <span class="md-ellipsis">
+      a. Routing &amp; Endpoints
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b-dependency-injection-di" class="md-nav__link">
+    <span class="md-ellipsis">
+      b. Dependency Injection (DI)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#c-middleware" class="md-nav__link">
+    <span class="md-ellipsis">
+      c. Middleware
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#d-swagger" class="md-nav__link">
+    <span class="md-ellipsis">
+      d. Swagger
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-xac-thuc-phan-quyen-authentication-authorization" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Xác thực &amp; Phân quyền (Authentication &amp; Authorization)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-best-practices-cho-junior-dev" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. Best Practices cho Junior Dev
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-tai-lieu-tham-khao" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. Tài liệu tham khảo
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02-middleware-dependency-injection/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Middleware & Dependency Injection
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03-entity-framework-core.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Entity Framework Core
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04-linq.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    LINQ
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05-authentication-jwt.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Authentication (JWT)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../06-clean-architecture-solid.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Clean Architecture & SOLID
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../07-async-await.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Async / Await
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Frontend
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            Frontend
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../frontend/01-react-hooks.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    React Hooks
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../frontend/02-context-api.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Context API
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../frontend/03-react-router.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    React Router
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../frontend/04-state-management.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    State Management
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../frontend/05-ui-anti-tailwind.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    UI (AntD + Tailwind)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../frontend/06-testing-react.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Testing React
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Database (PostgreSQL)
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            Database (PostgreSQL)
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../database/01-sql-basic.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    SQL Basic
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../database/02-transactions.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Transactions
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../database/03-isolation-levels.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Isolation Levels
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../database/04-index-partitioning.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Index & Partitioning
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../database/05-query-optimization.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Query Optimization
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../database/06-jsonb-postgresql.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    JSONB in PostgreSQL
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Testing & Deployment/index.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Testing & Deployment
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../mid-level/index.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Mid-Level
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../senior/index.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Senior
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-gioi-thieu" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Giới thiệu
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-cau-truc-du-an" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Cấu trúc dự án
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-cac-buoc-tao-web-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Các bước tạo Web API
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-cac-thanh-phan-quan-trong" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Các thành phần quan trọng
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Các thành phần quan trọng">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a-routing-endpoints" class="md-nav__link">
+    <span class="md-ellipsis">
+      a. Routing &amp; Endpoints
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b-dependency-injection-di" class="md-nav__link">
+    <span class="md-ellipsis">
+      b. Dependency Injection (DI)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#c-middleware" class="md-nav__link">
+    <span class="md-ellipsis">
+      c. Middleware
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#d-swagger" class="md-nav__link">
+    <span class="md-ellipsis">
+      d. Swagger
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-xac-thuc-phan-quyen-authentication-authorization" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Xác thực &amp; Phân quyền (Authentication &amp; Authorization)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-best-practices-cho-junior-dev" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. Best Practices cho Junior Dev
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-tai-lieu-tham-khao" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. Tài liệu tham khảo
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="aspnet-core-web-api">ASP.NET Core Web API<a class="headerlink" href="#aspnet-core-web-api" title="Permanent link">&para;</a></h1>
+<h2 id="1-gioi-thieu">1. Giới thiệu<a class="headerlink" href="#1-gioi-thieu" title="Permanent link">&para;</a></h2>
+<p>ASP.NET Core Web API là framework của Microsoft dùng để xây dựng các
+dịch vụ web theo kiến trúc RESTful, chạy cross-platform (Windows, Linux,
+macOS).</p>
+<hr />
+<h2 id="2-cau-truc-du-an">2. Cấu trúc dự án<a class="headerlink" href="#2-cau-truc-du-an" title="Permanent link">&para;</a></h2>
+<p>Một dự án Web API cơ bản gồm:</p>
+<ul>
+<li><strong>Controllers</strong>: Chứa các endpoint xử lý
+  request/response.</li>
+<li><strong>Models (BO/DTO)</strong>: Đại diện cho dữ liệu truyền
+  vào/ra.</li>
+<li><strong>Services (BLL)</strong>: Xử lý nghiệp vụ.</li>
+<li><strong>Data (DAO/Repository)</strong>: Kết nối, thao tác với database.</li>
+<li><strong>Program.cs/Startup.cs</strong>: Cấu hình middleware, DI, routing, authentication.</li>
+</ul>
+<hr />
+<h2 id="3-cac-buoc-tao-web-api">3. Các bước tạo Web API<a class="headerlink" href="#3-cac-buoc-tao-web-api" title="Permanent link">&para;</a></h2>
+<ol>
+<li>
+<p>Tạo dự án:</p>
+<div class="highlight"><pre><span></span><code>dotnet<span class="w"> </span>new<span class="w"> </span>webapi<span class="w"> </span>-n<span class="w"> </span>MyApi
+</code></pre></div>
+</li>
+<li>
+<p>Cấu hình routing trong <code>Program.cs</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="kt">var</span><span class="w"> </span><span class="n">builder</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">WebApplication</span><span class="p">.</span><span class="n">CreateBuilder</span><span class="p">(</span><span class="n">args</span><span class="p">);</span>
+<span class="kt">var</span><span class="w"> </span><span class="n">app</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">builder</span><span class="p">.</span><span class="n">Build</span><span class="p">();</span>
+<span class="n">app</span><span class="p">.</span><span class="n">MapControllers</span><span class="p">();</span>
+<span class="n">app</span><span class="p">.</span><span class="n">Run</span><span class="p">();</span>
+</code></pre></div>
+</li>
+<li>
+<p>Tạo Controller mẫu:</p>
+<div class="highlight"><pre><span></span><code><span class="na">[ApiController]</span>
+<span class="na">[Route(&quot;api/[controller]</span><span class="s">&quot;)]</span>
+<span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">UsersController</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">ControllerBase</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="na">[HttpGet]</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">IActionResult</span><span class="w"> </span><span class="nf">GetAll</span><span class="p">()</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="nf">Ok</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="p">[]</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="s">&quot;User1&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;User2&quot;</span><span class="w"> </span><span class="p">});</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+</li>
+</ol>
+<hr />
+<h2 id="4-cac-thanh-phan-quan-trong">4. Các thành phần quan trọng<a class="headerlink" href="#4-cac-thanh-phan-quan-trong" title="Permanent link">&para;</a></h2>
+<h3 id="a-routing-endpoints">a. Routing &amp; Endpoints<a class="headerlink" href="#a-routing-endpoints" title="Permanent link">&para;</a></h3>
+<ul>
+<li><code>[HttpGet]</code>, <code>[HttpPost]</code>, <code>[HttpPut]</code>, <code>[HttpDelete]</code></li>
+<li>Có thể truyền tham số qua <strong>query string</strong>, <strong>route</strong>, hoặc
+  <strong>body</strong>.</li>
+</ul>
+<h3 id="b-dependency-injection-di">b. Dependency Injection (DI)<a class="headerlink" href="#b-dependency-injection-di" title="Permanent link">&para;</a></h3>
+<p>ASP.NET Core hỗ trợ DI mặc định:</p>
+<div class="highlight"><pre><span></span><code><span class="n">builder</span><span class="p">.</span><span class="n">Services</span><span class="p">.</span><span class="n">AddScoped</span><span class="o">&lt;</span><span class="n">IUserService</span><span class="p">,</span><span class="w"> </span><span class="n">UserService</span><span class="o">&gt;</span><span class="p">();</span>
+</code></pre></div>
+<h3 id="c-middleware">c. Middleware<a class="headerlink" href="#c-middleware" title="Permanent link">&para;</a></h3>
+<p>Pipeline xử lý request/response: - <code>UseAuthentication()</code> -
+<code>UseAuthorization()</code> - <code>UseCors()</code> - <code>UseSwagger()</code></p>
+<p>👉 Middleware chạy theo pipeline: Request → Middleware → Controller → Response.</p>
+<h3 id="d-swagger">d. Swagger<a class="headerlink" href="#d-swagger" title="Permanent link">&para;</a></h3>
+<p>Dùng để tạo UI test API:</p>
+<div class="highlight"><pre><span></span><code><span class="n">builder</span><span class="p">.</span><span class="n">Services</span><span class="p">.</span><span class="n">AddEndpointsApiExplorer</span><span class="p">();</span>
+<span class="n">builder</span><span class="p">.</span><span class="n">Services</span><span class="p">.</span><span class="n">AddSwaggerGen</span><span class="p">();</span>
+
+<span class="n">app</span><span class="p">.</span><span class="n">UseSwagger</span><span class="p">();</span>
+<span class="n">app</span><span class="p">.</span><span class="n">UseSwaggerUI</span><span class="p">();</span>
+</code></pre></div>
+<hr />
+<h2 id="5-xac-thuc-phan-quyen-authentication-authorization">5. Xác thực &amp; Phân quyền (Authentication &amp; Authorization)<a class="headerlink" href="#5-xac-thuc-phan-quyen-authentication-authorization" title="Permanent link">&para;</a></h2>
+<ul>
+<li>JWT Bearer Token</li>
+<li>Attribute <code>[Authorize]</code>, <code>[AllowAnonymous]</code></li>
+</ul>
+<p>Ví dụ cấu hình JWT:</p>
+<div class="highlight"><pre><span></span><code><span class="n">builder</span><span class="p">.</span><span class="n">Services</span><span class="p">.</span><span class="n">AddAuthentication</span><span class="p">(</span><span class="n">JwtBearerDefaults</span><span class="p">.</span><span class="n">AuthenticationScheme</span><span class="p">)</span>
+<span class="w">    </span><span class="p">.</span><span class="n">AddJwtBearer</span><span class="p">(</span><span class="n">options</span><span class="w"> </span><span class="o">=&gt;</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">options</span><span class="p">.</span><span class="n">TokenValidationParameters</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">TokenValidationParameters</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="n">ValidateIssuer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">true</span><span class="p">,</span>
+<span class="w">            </span><span class="n">ValidateAudience</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">true</span><span class="p">,</span>
+<span class="w">            </span><span class="n">ValidateLifetime</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">true</span><span class="p">,</span>
+<span class="w">            </span><span class="n">ValidateIssuerSigningKey</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">true</span><span class="p">,</span>
+<span class="w">            </span><span class="n">ValidIssuer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">builder</span><span class="p">.</span><span class="n">Configuration</span><span class="p">[</span><span class="s">&quot;Jwt:Issuer&quot;</span><span class="p">],</span>
+<span class="w">            </span><span class="n">ValidAudience</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">builder</span><span class="p">.</span><span class="n">Configuration</span><span class="p">[</span><span class="s">&quot;Jwt:Audience&quot;</span><span class="p">],</span>
+<span class="w">            </span><span class="n">IssuerSigningKey</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">SymmetricSecurityKey</span><span class="p">(</span>
+<span class="w">                </span><span class="n">Encoding</span><span class="p">.</span><span class="n">UTF8</span><span class="p">.</span><span class="n">GetBytes</span><span class="p">(</span><span class="n">builder</span><span class="p">.</span><span class="n">Configuration</span><span class="p">[</span><span class="s">&quot;Jwt:Key&quot;</span><span class="p">]</span><span class="o">!</span><span class="p">))</span>
+<span class="w">        </span><span class="p">};</span>
+<span class="w">    </span><span class="p">});</span>
+</code></pre></div>
+<hr />
+<h2 id="6-best-practices-cho-junior-dev">6. Best Practices cho Junior Dev<a class="headerlink" href="#6-best-practices-cho-junior-dev" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Tách code theo 3 lớp: <strong>Controller → BLL → DAO</strong></li>
+<li>Dùng <strong>async/await</strong> khi thao tác DB/API.</li>
+<li>Trả về response chuẩn: <code>200 OK</code>, <code>400 BadRequest</code>,
+  <code>401 Unauthorized</code>, <code>404 NotFound</code>...</li>
+<li>Log lỗi bằng <code>ILogger&lt;T&gt;</code>.</li>
+<li>Viết unit test cho service.</li>
+</ul>
+<hr />
+<h2 id="7-tai-lieu-tham-khao">7. Tài liệu tham khảo<a class="headerlink" href="#7-tai-lieu-tham-khao" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="https://learn.microsoft.com/aspnet/core/web-api">Microsoft Docs - ASP.NET Core Web
+  API</a></li>
+<li><a href="https://learn.microsoft.com/aspnet/core/fundamentals/">ASP.NET Core
+  Fundamentals</a></li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        
+<div class="custom-footer">
+  <div class="footer-left">
+    Made with love ❤️ <span style="font-weight: bold;">P&T</span>
+  </div>
+  <div class="footer-right">
+    <a href="https://github.com/your-org" target="_blank"> <span class="twemoji">🐙</span> </a>
+    <a href="https://linkedin.com/company/your-org" target="_blank"> <span class="twemoji">💼</span> </a>
+    <a href="https://youtube.com/@your-org" target="_blank"> <span class="twemoji">▶️</span> </a>
+  </div>
+</div>
+
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.footer"], "search": "../../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      
+    
+  </body>
+</html>

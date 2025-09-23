@@ -2,22 +2,34 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://alphadev14.github.io/digitaldocs/</loc>
-         <lastmod>2025-09-16</lastmod>
+         <lastmod>2025-09-23</lastmod>
     </url>
     <url>
          <loc>https://alphadev14.github.io/digitaldocs/level1/</loc>
-         <lastmod>2025-09-16</lastmod>
+         <lastmod>2025-09-23</lastmod>
     </url>
     <url>
          <loc>https://alphadev14.github.io/digitaldocs/level2/</loc>
-         <lastmod>2025-09-16</lastmod>
+         <lastmod>2025-09-23</lastmod>
     </url>
     <url>
          <loc>https://alphadev14.github.io/digitaldocs/level3/</loc>
-         <lastmod>2025-09-16</lastmod>
+         <lastmod>2025-09-23</lastmod>
     </url>
     <url>
          <loc>https://alphadev14.github.io/digitaldocs/stack/</loc>
-         <lastmod>2025-09-16</lastmod>
+         <lastmod>2025-09-23</lastmod>
+    </url>
+    <url>
+         <loc>https://alphadev14.github.io/digitaldocs/junior/</loc>
+         <lastmod>2025-09-23</lastmod>
+    </url>
+    <url>
+         <loc>https://alphadev14.github.io/digitaldocs/junior/backend/01-aspnet-core-webapi/</loc>
+         <lastmod>2025-09-23</lastmod>
+    </url>
+    <url>
+         <loc>https://alphadev14.github.io/digitaldocs/junior/backend/02-middleware-dependency-injection/</loc>
+         <lastmod>2025-09-23</lastmod>
     </url>
 </urlset>
