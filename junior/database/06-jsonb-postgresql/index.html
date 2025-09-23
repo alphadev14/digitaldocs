@@ -8,24 +8,28 @@
       
       
       
-        <link rel="canonical" href="https://alphadev14.github.io/digitaldocs/level1/">
+        <link rel="canonical" href="https://alphadev14.github.io/digitaldocs/junior/database/06-jsonb-postgresql/">
       
       
+        <link rel="prev" href="../05-query-optimization/">
       
       
-      <link rel="icon" href="../assets/logo.png">
+        <link rel="next" href="../../../mid-level/">
+      
+      
+      <link rel="icon" href="../../../assets/logo.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.20">
     
     
       
-        <title>Level1 - P&T | Digital Docs</title>
+        <title>JSONB in PostgreSQL - P&T | Digital Docs</title>
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.e53b48f4.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.e53b48f4.min.css">
       
         
-        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -44,11 +48,11 @@
       
     
     
-      <link rel="stylesheet" href="../extra.css">
+      <link rel="stylesheet" href="../../../extra.css">
     
-      <link rel="stylesheet" href="../stylesheets/extra.css">
+      <link rel="stylesheet" href="../../../stylesheets/extra.css">
     
-    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -85,9 +89,9 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href=".." title="P&amp;T | Digital Docs" class="md-header__button md-logo" aria-label="P&T | Digital Docs" data-md-component="logo">
+    <a href="../../.." title="P&amp;T | Digital Docs" class="md-header__button md-logo" aria-label="P&T | Digital Docs" data-md-component="logo">
       
-  <img src="../assets/logo.png" alt="logo">
+  <img src="../../../assets/logo.png" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -104,7 +108,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Level1
+              JSONB in PostgreSQL
             
           </span>
         </div>
@@ -168,9 +172,9 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href=".." title="P&amp;T | Digital Docs" class="md-nav__button md-logo" aria-label="P&T | Digital Docs" data-md-component="logo">
+    <a href="../../.." title="P&amp;T | Digital Docs" class="md-nav__button md-logo" aria-label="P&T | Digital Docs" data-md-component="logo">
       
-  <img src="../assets/logo.png" alt="logo">
+  <img src="../../../assets/logo.png" alt="logo">
 
     </a>
     P&T | Digital Docs
@@ -185,7 +189,7 @@
   
   
     <li class="md-nav__item">
-      <a href=".." class="md-nav__link">
+      <a href="../../.." class="md-nav__link">
         
   
   
@@ -204,18 +208,20 @@
       
   
   
+    
   
   
+  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
         
           
           <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
@@ -231,7 +237,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             Junior
@@ -283,7 +289,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../junior/backend/01-aspnet-core-webapi/" class="md-nav__link">
+      <a href="../../backend/01-aspnet-core-webapi/" class="md-nav__link">
         
   
   
@@ -306,7 +312,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../junior/backend/02-middleware-dependency-injection/" class="md-nav__link">
+      <a href="../../backend/02-middleware-dependency-injection/" class="md-nav__link">
         
   
   
@@ -329,7 +335,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../junior/backend/03-entity-framework-core/" class="md-nav__link">
+      <a href="../../backend/03-entity-framework-core/" class="md-nav__link">
         
   
   
@@ -352,7 +358,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../junior/backend/04-linq/" class="md-nav__link">
+      <a href="../../backend/04-linq/" class="md-nav__link">
         
   
   
@@ -375,7 +381,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../junior/backend/05-authentication-jwt/" class="md-nav__link">
+      <a href="../../backend/05-authentication-jwt/" class="md-nav__link">
         
   
   
@@ -398,7 +404,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../junior/backend/06-clean-architecture-solid/" class="md-nav__link">
+      <a href="../../backend/06-clean-architecture-solid/" class="md-nav__link">
         
   
   
@@ -421,7 +427,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../junior/backend/07-async-await/" class="md-nav__link">
+      <a href="../../backend/07-async-await/" class="md-nav__link">
         
   
   
@@ -490,7 +496,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../junior/frontend/01-react-hooks/" class="md-nav__link">
+      <a href="../../frontend/01-react-hooks/" class="md-nav__link">
         
   
   
@@ -513,7 +519,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../junior/frontend/02-context-api/" class="md-nav__link">
+      <a href="../../frontend/02-context-api/" class="md-nav__link">
         
   
   
@@ -536,7 +542,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../junior/frontend/03-react-router/" class="md-nav__link">
+      <a href="../../frontend/03-react-router/" class="md-nav__link">
         
   
   
@@ -559,7 +565,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../junior/frontend/04-state-management/" class="md-nav__link">
+      <a href="../../frontend/04-state-management/" class="md-nav__link">
         
   
   
@@ -582,7 +588,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../junior/frontend/05-ui-anti-tailwind.md" class="md-nav__link">
+      <a href="../../frontend/05-ui-anti-tailwind.md" class="md-nav__link">
         
   
   
@@ -605,7 +611,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../junior/frontend/06-testing-react/" class="md-nav__link">
+      <a href="../../frontend/06-testing-react/" class="md-nav__link">
         
   
   
@@ -633,18 +639,20 @@
                 
   
   
+    
   
   
+  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" checked>
         
           
           <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
@@ -660,7 +668,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2_3">
             <span class="md-nav__icon md-icon"></span>
             Database (PostgreSQL)
@@ -674,7 +682,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../junior/database/01-sql-basic/" class="md-nav__link">
+      <a href="../01-sql-basic/" class="md-nav__link">
         
   
   
@@ -697,7 +705,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../junior/database/02-transactions/" class="md-nav__link">
+      <a href="../02-transactions/" class="md-nav__link">
         
   
   
@@ -720,7 +728,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../junior/database/03-isolation-levels/" class="md-nav__link">
+      <a href="../03-isolation-levels/" class="md-nav__link">
         
   
   
@@ -743,7 +751,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../junior/database/04-index-partitioning/" class="md-nav__link">
+      <a href="../04-index-partitioning/" class="md-nav__link">
         
   
   
@@ -766,7 +774,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../junior/database/05-query-optimization/" class="md-nav__link">
+      <a href="../05-query-optimization/" class="md-nav__link">
         
   
   
@@ -786,10 +794,17 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../junior/database/06-jsonb-postgresql/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -800,6 +815,7 @@
   
 
       </a>
+      
     </li>
   
 
@@ -820,7 +836,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Testing & Deployment/index.md" class="md-nav__link">
+      <a href="../../../Testing & Deployment/index.md" class="md-nav__link">
         
   
   
@@ -850,7 +866,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../mid-level/" class="md-nav__link">
+      <a href="../../../mid-level/" class="md-nav__link">
         
   
   
@@ -872,7 +888,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../senior/" class="md-nav__link">
+      <a href="../../../senior/" class="md-nav__link">
         
   
   
@@ -919,9 +935,9 @@
 
 
 
-  <h1>Level1</h1>
+  <h1>JSONB in PostgreSQL</h1>
 
-
+<p>Lưu data JSON, query JSONB</p>
 
 
 
@@ -965,10 +981,10 @@
     
     
       
-      <script id="__config" type="application/json">{"base": "..", "features": ["navigation.footer"], "search": "../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.footer"], "search": "../../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.f55a23d4.min.js"></script>
       
     
   </body>
