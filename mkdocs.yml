@@ -23,10 +23,32 @@ theme:
 
 nav:
   - Home: index.md
-  - Level 1: level1.md
-  - Level 2: level2.md
-  - Level 3: level3.md
-  - Technologies: stack.md
+  - Junior:
+      - Backend:
+          - ASP.NET Core WebAPI: junior/backend/01-aspnet-core-webapi.md
+          - Middleware & Dependency Injection: junior/backend/02-middleware-dependency-injection.md
+          - Entity Framework Core: junior/backend/03-entity-framework-core.md
+          - LINQ: junior/backend/04-linq.md
+          - Authentication (JWT): junior/backend/05-authentication-jwt.md
+          - Clean Architecture & SOLID: junior/backend/06-clean-architecture-solid.md
+          - Async / Await: junior/backend/07-async-await.md
+      - Frontend:
+          - React Hooks: junior/frontend/01-react-hooks.md
+          - Context API: junior/frontend/02-context-api.md
+          - React Router: junior/frontend/03-react-router.md
+          - State Management: junior/frontend/04-state-management.md
+          - UI (AntD + Tailwind): junior/frontend/05-ui-anti-tailwind.md
+          - Testing React: junior/frontend/06-testing-react.md
+      - Database (PostgreSQL):
+          - SQL Basic: junior/database/01-sql-basic.md
+          - Transactions: junior/database/02-transactions.md
+          - Isolation Levels: junior/database/03-isolation-levels.md
+          - Index & Partitioning: junior/database/04-index-partitioning.md
+          - Query Optimization: junior/database/05-query-optimization.md
+          - JSONB in PostgreSQL: junior/database/06-jsonb-postgresql.md
+      - Testing & Deployment: Testing & Deployment/index.md
+  - Mid-Level: mid-level/index.md
+  - Senior: senior/index.md
 
 plugins: []
 
