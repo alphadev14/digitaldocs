@@ -32,6 +32,7 @@ nav:
           - Authentication (JWT): junior/backend/05-authentication-jwt.md
           - Clean Architecture & SOLID: junior/backend/06-clean-architecture-solid.md
           - Async / Await: junior/backend/07-async-await.md
+          - Async / Await 2: junior/backend/08-async-await-2.md
       - Frontend:
           - React Hooks: junior/frontend/01-react-hooks.md
           - Context API: junior/frontend/02-context-api.md

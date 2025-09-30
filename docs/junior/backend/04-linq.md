@@ -129,7 +129,7 @@ Result: 3
 
 => predicate chỉ được gọi khi enumerate.
 
-## 5. Tóm tắt ngắn ngọn
+## 5. Tóm tắt
 
 - **Deferrend** = `Where`, `Select`, `OrderBy`, `Skip`, `Take`, `Join`...
 - **Immediate** = `ToList()`, `ToArray()`, `Count()`, `First()`, `Any()`, `Fisrt()`, `FirstOrDefault()`...
