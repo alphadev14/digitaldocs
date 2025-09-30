@@ -14,7 +14,7 @@
         <link rel="prev" href="../06-clean-architecture-solid/">
       
       
-        <link rel="next" href="../../frontend/01-react-hooks/">
+        <link rel="next" href="../08-async-await-2/">
       
       
       <link rel="icon" href="../../../assets/logo.png">
@@ -76,6 +76,11 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
+      
+        
+        <a href="#asyncawait-trong-c" class="md-skip">
+          Skip to content
+        </a>
       
     </div>
     <div data-md-component="announce">
@@ -435,6 +440,21 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Async / Await
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
         
@@ -448,6 +468,117 @@
 
       </a>
       
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-tong-quan" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Tổng quan
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-nguyen-ly-hoat-ong" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Nguyên lý hoạt động
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-task-taskt-va-valuetask" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Task, Task&lt;T&gt; và ValueTask
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-io-bound-vs-cpu-bound" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. I/O Bound vs CPU Bound
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. I/O Bound vs CPU Bound">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-io-bound-pho-bien-trong-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.1 I/O Bound (phổ biến trong API)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-cpu-bound" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.2 CPU Bound
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-tom-tat" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Tóm tắt
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../08-async-await-2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Async / Await 2
+    
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -1219,6 +1350,85 @@
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-tong-quan" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Tổng quan
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-nguyen-ly-hoat-ong" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Nguyên lý hoạt động
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-task-taskt-va-valuetask" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Task, Task&lt;T&gt; và ValueTask
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-io-bound-vs-cpu-bound" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. I/O Bound vs CPU Bound
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. I/O Bound vs CPU Bound">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-io-bound-pho-bien-trong-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.1 I/O Bound (phổ biến trong API)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-cpu-bound" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.2 CPU Bound
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-tom-tat" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Tóm tắt
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -1234,11 +1444,80 @@
 
 
 
-  <h1>Async / Await</h1>
-
-<p>Async/Await trong C#
-I/O Bound vs CPU Bound
-Best practices khi code API</p>
+<h1 id="asyncawait-trong-c">Async/Await trong <code>C#</code><a class="headerlink" href="#asyncawait-trong-c" title="Permanent link">&para;</a></h1>
+<h2 id="1-tong-quan">1. Tổng quan<a class="headerlink" href="#1-tong-quan" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Async/Await</strong> là cơ chế hỗ trợ lập trình <strong>bất đồng bộ</strong> trong C# (ra đời từ .NET 4.5)</li>
+<li>Giúp code bất đồng bộ dễ đọc như code đồng bộ, thay vì phải viết callback hoặc <code>ContinueWith</code>.</li>
+</ul>
+<p><strong>Từ khóa chính</strong></p>
+<ul>
+<li><code>async</code>: khai báo một phương thức bất đồng bộ -&gt; phương thức này trả về <code>Task</code>, <code>Task&lt;T&gt;</code> hoặc <code>ValueTask</code></li>
+<li><code>await</code>: "tạm dừng" thực thi tại đó, chờ <code>Task</code> hoàn tất, rồi chạy tiếp. Trong lúc chờ đợi, thread không bị block.</li>
+</ul>
+<hr />
+<h2 id="2-nguyen-ly-hoat-ong">2. Nguyên lý hoạt động<a class="headerlink" href="#2-nguyen-ly-hoat-ong" title="Permanent link">&para;</a></h2>
+<p>Giả sử:</p>
+<div class="highlight"><pre><span></span><code><span class="k">public</span><span class="w"> </span><span class="k">async</span><span class="w"> </span><span class="n">Task</span><span class="o">&lt;</span><span class="kt">string</span><span class="o">&gt;</span><span class="w"> </span><span class="n">GetDataAsync</span><span class="p">()</span>
+<span class="p">{</span>
+<span class="w">  </span><span class="kt">var</span><span class="w"> </span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="n">DownloadAsync</span><span class="p">();</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="n">data</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot; processed&quot;</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Diễn giải:</p>
+<ol>
+<li><code>await DownloadAsync()</code> -&gt; khi <code>DownLoadAsync()</code> chưa xong, <strong>trả quyền điều khiển về caller</strong>.</li>
+<li><code>Khi DownloadAsync()</code> xong -&gt; quay lại chạy <code>return data + " processed"</code>.</li>
+<li><code>GetDataAsync()</code>trả về một <code>Task&lt;string&gt;</code> ngay lập tức, caller có thể await hoặc tiếp tục làm việc khác.</li>
+</ol>
+<p>👉 Đây gọi là <strong>deferred continuation</strong>: không block thread, chỉ “hẹn” chạy tiếp khi có kết quả.</p>
+<hr />
+<h2 id="3-task-taskt-va-valuetask">3. <code>Task</code>, <code>Task&lt;T&gt;</code> và <code>ValueTask</code><a class="headerlink" href="#3-task-taskt-va-valuetask" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>Task</code>: đại diện cho một công việc async không có giá trị trả về.</li>
+<li><code>Task&lt;T&gt;</code>: có giá trị trả về.</li>
+<li><code>ValueTask</code> (C# 7+): tối ưu hiệu năng cho các method thường xuyên trả về kết quả đồng bộ (không cần Task allocation).</li>
+</ul>
+<p>Ví dụ</p>
+<div class="highlight"><pre><span></span><code><span class="k">public</span><span class="w"> </span><span class="k">async</span><span class="w"> </span><span class="n">Task</span><span class="w"> </span><span class="nf">DoSomeThingAsync</span><span class="p">()</span><span class="w"> </span><span class="p">{...}</span>
+<span class="k">public</span><span class="w"> </span><span class="k">async</span><span class="w"> </span><span class="n">Task</span><span class="o">&lt;</span><span class="n">List</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">GetNumbersAsync</span><span class="p">()</span><span class="w"> </span><span class="p">{...}</span>
+<span class="k">public</span><span class="w"> </span><span class="k">async</span><span class="w"> </span><span class="n">ValueTask</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">GetFastResultAsync</span><span class="p">()</span><span class="w"> </span><span class="p">{...}</span>
+</code></pre></div>
+<hr />
+<h2 id="4-io-bound-vs-cpu-bound">4. I/O Bound vs CPU Bound<a class="headerlink" href="#4-io-bound-vs-cpu-bound" title="Permanent link">&para;</a></h2>
+<h4 id="41-io-bound-pho-bien-trong-api">4.1 I/O Bound (phổ biến trong API)<a class="headerlink" href="#41-io-bound-pho-bien-trong-api" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Chờ resource bên ngoài (HTTP, DB, File, Redis).</li>
+<li><strong>Không tốn CPU</strong> khi chờ -&gt; <code>async/await</code> rất phù hợp.</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="k">public</span><span class="w"> </span><span class="k">async</span><span class="w"> </span><span class="n">Task</span><span class="o">&lt;</span><span class="n">User</span><span class="o">&gt;</span><span class="w"> </span><span class="n">GetUserAsync</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">id</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="n">_db</span><span class="p">.</span><span class="n">Users</span><span class="p">.</span><span class="n">FindAsync</span><span class="p">(</span><span class="n">id</span><span class="p">);</span><span class="w"> </span><span class="c1">// không block thread</span>
+<span class="p">}</span>
+</code></pre></div>
+<h4 id="42-cpu-bound">4.2 CPU Bound<a class="headerlink" href="#42-cpu-bound" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Tính toán nặng, <strong>tiêu tốn CPU</strong>.</li>
+<li><code>Async/await</code> không giúp được -&gt; cần Task.Run để chạy trên thread khác.</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="k">public</span><span class="w"> </span><span class="k">async</span><span class="w"> </span><span class="n">Task</span><span class="o">&lt;</span><span class="kt">long</span><span class="o">&gt;</span><span class="w"> </span><span class="n">SumAsync</span><span class="p">()</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="n">Task</span><span class="p">.</span><span class="n">Run</span><span class="p">(()</span><span class="w"> </span><span class="o">=&gt;</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="kt">long</span><span class="w"> </span><span class="n">sum</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">1</span><span class="n">_000_000_000</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="n">sum</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">i</span><span class="p">;</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">sum</span><span class="p">;</span>
+<span class="w">    </span><span class="p">});</span>
+<span class="p">}</span>
+</code></pre></div>
+<hr />
+<h2 id="5-tom-tat">5. Tóm tắt<a class="headerlink" href="#5-tom-tat" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Async/Await giúp viết code bất đồng bộ dễ đọc.</li>
+<li>I/O bound -&gt; dùng async/await.</li>
+<li>CPU bound -&gt; dùng Task.Run hoặc background service.</li>
+<li>...</li>
+</ul>
 
 
 

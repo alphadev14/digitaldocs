@@ -8,26 +8,28 @@
       
       
       
-        <link rel="canonical" href="https://alphadev14.github.io/digitaldocs/">
+        <link rel="canonical" href="https://alphadev14.github.io/digitaldocs/junior/backend/08-async-await-2/">
       
       
+        <link rel="prev" href="../07-async-await/">
       
-        <link rel="next" href="junior/backend/01-aspnet-core-webapi/">
+      
+        <link rel="next" href="../../frontend/01-react-hooks/">
       
       
-      <link rel="icon" href="assets/logo.png">
+      <link rel="icon" href="../../../assets/logo.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.20">
     
     
       
-        <title>P&T | Digital Docs</title>
+        <title>Async / Await 2 - P&T | Digital Docs</title>
       
     
     
-      <link rel="stylesheet" href="assets/stylesheets/main.e53b48f4.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.e53b48f4.min.css">
       
         
-        <link rel="stylesheet" href="assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -46,11 +48,11 @@
       
     
     
-      <link rel="stylesheet" href="extra.css">
+      <link rel="stylesheet" href="../../../extra.css">
     
-      <link rel="stylesheet" href="stylesheets/extra.css">
+      <link rel="stylesheet" href="../../../stylesheets/extra.css">
     
-    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -76,7 +78,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#pt-digital-docs" class="md-skip">
+        <a href="#asyncawait-phan-2" class="md-skip">
           Skip to content
         </a>
       
@@ -92,9 +94,9 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="." title="P&amp;T | Digital Docs" class="md-header__button md-logo" aria-label="P&T | Digital Docs" data-md-component="logo">
+    <a href="../../.." title="P&amp;T | Digital Docs" class="md-header__button md-logo" aria-label="P&T | Digital Docs" data-md-component="logo">
       
-  <img src="assets/logo.png" alt="logo">
+  <img src="../../../assets/logo.png" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -111,7 +113,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Home
+              Async / Await 2
             
           </span>
         </div>
@@ -175,9 +177,9 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="." title="P&amp;T | Digital Docs" class="md-nav__button md-logo" aria-label="P&T | Digital Docs" data-md-component="logo">
+    <a href="../../.." title="P&amp;T | Digital Docs" class="md-nav__button md-logo" aria-label="P&T | Digital Docs" data-md-component="logo">
       
-  <img src="assets/logo.png" alt="logo">
+  <img src="../../../assets/logo.png" alt="logo">
 
     </a>
     P&T | Digital Docs
@@ -189,32 +191,10 @@
       
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    Home
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="." class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
         
   
   
@@ -225,62 +205,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#about-me" class="md-nav__link">
-    <span class="md-ellipsis">
-      About Me
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#quick-links" class="md-nav__link">
-    <span class="md-ellipsis">
-      Quick Links
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#contact" class="md-nav__link">
-    <span class="md-ellipsis">
-      Contact
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#license" class="md-nav__link">
-    <span class="md-ellipsis">
-      License
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -289,18 +213,20 @@
       
   
   
+    
   
   
+  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
         
           
           <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
@@ -316,7 +242,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             Junior
@@ -327,18 +253,20 @@
                 
   
   
+    
   
   
+  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" checked>
         
           
           <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
@@ -354,7 +282,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2_1">
             <span class="md-nav__icon md-icon"></span>
             Backend
@@ -368,7 +296,7 @@
   
   
     <li class="md-nav__item">
-      <a href="junior/backend/01-aspnet-core-webapi/" class="md-nav__link">
+      <a href="../01-aspnet-core-webapi/" class="md-nav__link">
         
   
   
@@ -391,7 +319,7 @@
   
   
     <li class="md-nav__item">
-      <a href="junior/backend/02-middleware-dependency-injection/" class="md-nav__link">
+      <a href="../02-middleware-dependency-injection/" class="md-nav__link">
         
   
   
@@ -414,7 +342,7 @@
   
   
     <li class="md-nav__item">
-      <a href="junior/backend/03-entity-framework-core/" class="md-nav__link">
+      <a href="../03-entity-framework-core/" class="md-nav__link">
         
   
   
@@ -437,7 +365,7 @@
   
   
     <li class="md-nav__item">
-      <a href="junior/backend/04-linq/" class="md-nav__link">
+      <a href="../04-linq/" class="md-nav__link">
         
   
   
@@ -460,7 +388,7 @@
   
   
     <li class="md-nav__item">
-      <a href="junior/backend/05-authentication-jwt/" class="md-nav__link">
+      <a href="../05-authentication-jwt/" class="md-nav__link">
         
   
   
@@ -483,7 +411,7 @@
   
   
     <li class="md-nav__item">
-      <a href="junior/backend/06-clean-architecture-solid/" class="md-nav__link">
+      <a href="../06-clean-architecture-solid/" class="md-nav__link">
         
   
   
@@ -506,7 +434,7 @@
   
   
     <li class="md-nav__item">
-      <a href="junior/backend/07-async-await/" class="md-nav__link">
+      <a href="../07-async-await/" class="md-nav__link">
         
   
   
@@ -526,10 +454,32 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="junior/backend/08-async-await-2/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Async / Await 2
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -540,6 +490,95 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-y-nghia-cua-task-trong-c" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Ý nghĩa của Task trong C#
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-caller-la-gi" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Caller là gì?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-thread-la-gi" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Thread là gì?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-khi-nao-thi-ton-cpu" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Khi nào thì tốn CPU?
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Khi nào thì tốn CPU?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ton-cpu-khi-cong-viec-phai-tinh-toan-nang" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tốn CPU khi công việc phải tính toán nặng.
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#khong-ton-cpu-khi-chi-cho-io" class="md-nav__link">
+    <span class="md-ellipsis">
+      Không tốn CPU khi chỉ chờ I/O.
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-tom-tat" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Tóm tắt
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -598,7 +637,7 @@
   
   
     <li class="md-nav__item">
-      <a href="junior/frontend/01-react-hooks/" class="md-nav__link">
+      <a href="../../frontend/01-react-hooks/" class="md-nav__link">
         
   
   
@@ -621,7 +660,7 @@
   
   
     <li class="md-nav__item">
-      <a href="junior/frontend/02-context-api/" class="md-nav__link">
+      <a href="../../frontend/02-context-api/" class="md-nav__link">
         
   
   
@@ -644,7 +683,7 @@
   
   
     <li class="md-nav__item">
-      <a href="junior/frontend/03-react-router/" class="md-nav__link">
+      <a href="../../frontend/03-react-router/" class="md-nav__link">
         
   
   
@@ -667,7 +706,7 @@
   
   
     <li class="md-nav__item">
-      <a href="junior/frontend/04-state-management/" class="md-nav__link">
+      <a href="../../frontend/04-state-management/" class="md-nav__link">
         
   
   
@@ -690,7 +729,7 @@
   
   
     <li class="md-nav__item">
-      <a href="junior/frontend/05-ui-anti-tailwind.md" class="md-nav__link">
+      <a href="../../frontend/05-ui-anti-tailwind.md" class="md-nav__link">
         
   
   
@@ -713,7 +752,7 @@
   
   
     <li class="md-nav__item">
-      <a href="junior/frontend/06-testing-react/" class="md-nav__link">
+      <a href="../../frontend/06-testing-react/" class="md-nav__link">
         
   
   
@@ -805,7 +844,7 @@
   
   
     <li class="md-nav__item">
-      <a href="junior/database/02-transactions/" class="md-nav__link">
+      <a href="../../database/02-transactions/" class="md-nav__link">
         
   
   
@@ -828,7 +867,7 @@
   
   
     <li class="md-nav__item">
-      <a href="junior/database/03-isolation-levels/" class="md-nav__link">
+      <a href="../../database/03-isolation-levels/" class="md-nav__link">
         
   
   
@@ -851,7 +890,7 @@
   
   
     <li class="md-nav__item">
-      <a href="junior/database/04-index-partitioning/" class="md-nav__link">
+      <a href="../../database/04-index-partitioning/" class="md-nav__link">
         
   
   
@@ -874,7 +913,7 @@
   
   
     <li class="md-nav__item">
-      <a href="junior/database/05-query-optimization/" class="md-nav__link">
+      <a href="../../database/05-query-optimization/" class="md-nav__link">
         
   
   
@@ -897,7 +936,7 @@
   
   
     <li class="md-nav__item">
-      <a href="junior/database/06-jsonb-postgresql/" class="md-nav__link">
+      <a href="../../database/06-jsonb-postgresql/" class="md-nav__link">
         
   
   
@@ -928,7 +967,7 @@
   
   
     <li class="md-nav__item">
-      <a href="Testing & Deployment/index.md" class="md-nav__link">
+      <a href="../../../Testing & Deployment/index.md" class="md-nav__link">
         
   
   
@@ -1065,7 +1104,7 @@
   
   
     <li class="md-nav__item">
-      <a href="junior/project/todos/05-deploy-fe/" class="md-nav__link">
+      <a href="../../project/todos/05-deploy-fe/" class="md-nav__link">
         
   
   
@@ -1134,7 +1173,7 @@
   
   
     <li class="md-nav__item">
-      <a href="junior/project/todos/06-deploy-be/" class="md-nav__link">
+      <a href="../../project/todos/06-deploy-be/" class="md-nav__link">
         
   
   
@@ -1203,7 +1242,7 @@
   
   
     <li class="md-nav__item">
-      <a href="junior/project/todos/07-deploy-db/" class="md-nav__link">
+      <a href="../../project/todos/07-deploy-db/" class="md-nav__link">
         
   
   
@@ -1257,7 +1296,7 @@
   
   
     <li class="md-nav__item">
-      <a href="mid-level/" class="md-nav__link">
+      <a href="../../../mid-level/" class="md-nav__link">
         
   
   
@@ -1279,7 +1318,7 @@
   
   
     <li class="md-nav__item">
-      <a href="senior/" class="md-nav__link">
+      <a href="../../../senior/" class="md-nav__link">
         
   
   
@@ -1321,36 +1360,69 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#about-me" class="md-nav__link">
+  <a href="#1-y-nghia-cua-task-trong-c" class="md-nav__link">
     <span class="md-ellipsis">
-      About Me
+      1. Ý nghĩa của Task trong C#
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#quick-links" class="md-nav__link">
+  <a href="#2-caller-la-gi" class="md-nav__link">
     <span class="md-ellipsis">
-      Quick Links
+      2. Caller là gì?
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#contact" class="md-nav__link">
+  <a href="#3-thread-la-gi" class="md-nav__link">
     <span class="md-ellipsis">
-      Contact
+      3. Thread là gì?
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#license" class="md-nav__link">
+  <a href="#4-khi-nao-thi-ton-cpu" class="md-nav__link">
     <span class="md-ellipsis">
-      License
+      4. Khi nào thì tốn CPU?
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Khi nào thì tốn CPU?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ton-cpu-khi-cong-viec-phai-tinh-toan-nang" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tốn CPU khi công việc phải tính toán nặng.
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#khong-ton-cpu-khi-chi-cho-io" class="md-nav__link">
+    <span class="md-ellipsis">
+      Không tốn CPU khi chỉ chờ I/O.
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-tom-tat" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Tóm tắt
     </span>
   </a>
   
@@ -1372,40 +1444,93 @@
 
 
 
-<h1 id="pt-digital-docs">P&amp;T Digital Docs<a class="headerlink" href="#pt-digital-docs" title="Permanent link">&para;</a></h1>
-<p>Welcome to <strong>P&amp;T Digital Docs</strong> 👋<br />
-This is my personal documentation hub where I collect and organize:</p>
+<h1 id="asyncawait-phan-2">Async/Await phần 2<a class="headerlink" href="#asyncawait-phan-2" title="Permanent link">&para;</a></h1>
+<p>Trong bài trước, mình đã tìm hiểu về Async/Await trong C#. Bài này mình sẽ đi chi tiết hơn về các thuật ngữ đã nhắn đến trong bài trước.</p>
+<h2 id="1-y-nghia-cua-task-trong-c">1. Ý nghĩa của <strong>Task</strong> trong <strong>C#</strong><a class="headerlink" href="#1-y-nghia-cua-task-trong-c" title="Permanent link">&para;</a></h2>
 <ul>
-<li>📚 Learning notes &amp; references</li>
-<li>🏗️ Project structures and best practices</li>
-<li>🚀 Development roadmaps &amp; career growth</li>
+<li><code>Task</code> = đại diện cho môt <strong>công việc bất đồng bộ</strong> đang hoặc sẽ chạy.</li>
+<li>Có thể coi <code>Task</code> như một <strong>lời hứa (promise)</strong> rằng "công việc này sẽ được hoàn thành trong tương lai".</li>
 </ul>
-<p>The goal is to consolidate experience while sharing insights with other developers.</p>
+<p>👉 Ý nghĩa: thay vì phải chờ xong ngay, Task cho phép bạn để đó và làm việc khác.</p>
 <hr />
-<h2 id="about-me">About Me<a class="headerlink" href="#about-me" title="Permanent link">&para;</a></h2>
+<h2 id="2-caller-la-gi">2. Caller là gì?<a class="headerlink" href="#2-caller-la-gi" title="Permanent link">&para;</a></h2>
 <ul>
-<li><strong>Role:</strong> Fullstack Developer (.NET, React, PostgreSQL)</li>
-<li><strong>Focus Areas:</strong> Clean Architecture, System Design, Cloud Integration</li>
-<li><strong>Location:</strong> Ho Chi Minh, Vietnam</li>
+<li><strong>caller</strong> = nơi gọi đến method async.</li>
+<li>Khi bạn <code>await</code> một async method, nếu nó chưa xong -&gt; quyền điều khiển được trả về lại cho caller để tiếp tục làm việc khác, không bị chặn.</li>
 </ul>
-<hr />
-<h2 id="quick-links">Quick Links<a class="headerlink" href="#quick-links" title="Permanent link">&para;</a></h2>
+<p>Ví dụ:</p>
+<div class="highlight"><pre><span></span><code><span class="k">public</span><span class="w"> </span><span class="k">async</span><span class="w"> </span><span class="n">Task</span><span class="o">&lt;</span><span class="kt">string</span><span class="o">&gt;</span><span class="w"> </span><span class="n">DownloadAsync</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">await</span><span class="w"> </span><span class="n">Task</span><span class="p">.</span><span class="n">Delay</span><span class="p">(</span><span class="mi">2000</span><span class="p">);</span><span class="w"> </span><span class="c1">// giả lập tải dữ liệu</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="s">&quot;Data&quot;</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="k">public</span><span class="w"> </span><span class="k">async</span><span class="w"> </span><span class="n">Task</span><span class="w"> </span><span class="nf">RunAsync</span><span class="p">();</span>
+<span class="p">{</span>
+<span class="w">  </span><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">&quot;Start&quot;</span><span class="p">);</span>
+
+<span class="w">  </span><span class="kt">var</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="n">DownloadAsync</span><span class="p">();</span><span class="w"> </span><span class="c1">// caller = RunAsync()</span>
+<span class="w">  </span><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">result</span><span class="p">);</span>
+
+<span class="w">  </span><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">&quot;End&quot;</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+<p><strong>Ở đây</strong></p>
 <ul>
-<li>🌐 <strong>Docs site:</strong> <a href="https://alphadev14.github.io/digitaldocs/">P&amp;T Digital Docs</a></li>
-<li>🗂️ <strong>Source code:</strong> <a href="https://github.com/alphadev14/digitaldocs">GitHub Repository</a></li>
-<li>📄 <strong>Mindmap:</strong> <a href="docs/roadmap.md">View my mindmap</a></li>
+<li><code>RunAsync()</code> gọi <code>DownloadAsync()</code> -&gt; RunAsync chính là <strong>caller</strong>.</li>
+<li>Khi <code>DownloadAsync()</code> đang <code>await Task.Delay(2000)</code> -&gt; nó trả về quyền điểu khiển cho <code>RunAsync()</code>, cho phép RunAsync không bị block thread.</li>
 </ul>
+<p>👉 Ý nghĩa: hệ thống không bị “đứng chờ”, có thể phục vụ request khác.</p>
 <hr />
-<h2 id="contact">Contact<a class="headerlink" href="#contact" title="Permanent link">&para;</a></h2>
+<p>Minh họa:</p>
+<p align="center">
+  <img src="/digitaldocs/assets/async-await-image-1.png" alt="Cấu hình biến môi trường" width="600">
+</p>
+
+<p align="center">
+  <img src="/digitaldocs/assets/async-await-image-2.png" alt="Cấu hình biến môi trường" width="600">
+</p>
+
+<hr />
+<h2 id="3-thread-la-gi">3. Thread là gì?<a class="headerlink" href="#3-thread-la-gi" title="Permanent link">&para;</a></h2>
 <ul>
-<li>💼 <strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/tampv">https://www.linkedin.com/in/tampv</a></li>
-<li>🌐 <strong>GitHub:</strong> <a href="https://github.com/alphadev14">https://github.com/alphadev14</a></li>
-<li>📞 <strong>Phone:</strong> +84 854 821 811</li>
-<li>🌐 <strong>Website</strong> : <a href="https://tampv.pro.vn/">https://tampv.pro.vn</a></li>
+<li><strong>Thread</strong> = luồng thực thi nhỏ nhất trong chương trình.</li>
+<li>CPU có thể chạy nhiều thread song song (đa luồng).</li>
+<li>
+<p>Một ứng dụng .NET Core có thể có nhiều thread: <strong>Main thread</strong> (luồng chính), <strong>ThreadPool threads</strong> (luồng dùng cho <code>async/await</code>, xử lý song song).</p>
+</li>
+<li>
+<p>Khi bạn chạy <code>async/await</code>: Nếu <strong>I/O bound</strong> -&gt; thread nhường lại, không bị giữ. Nếu <strong>CPU bound</strong> -&gt; thread phải chạy tính toán, tốn CPU</p>
+</li>
 </ul>
+<h2 id="4-khi-nao-thi-ton-cpu">4. Khi nào thì tốn CPU?<a class="headerlink" href="#4-khi-nao-thi-ton-cpu" title="Permanent link">&para;</a></h2>
+<h4 id="ton-cpu-khi-cong-viec-phai-tinh-toan-nang">Tốn CPU khi công việc phải tính toán nặng.<a class="headerlink" href="#ton-cpu-khi-cong-viec-phai-tinh-toan-nang" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Vòng lặp lớn (for hàng triệu lần).</li>
+<li>Xử lý ảnh, video, AI, thuật toán mã hóa...</li>
+<li>Phân tích dữ liệu, machine learning...</li>
+</ul>
+<p>Ví dụ:</p>
+<div class="highlight"><pre><span></span><code><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">1000000000</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span>
+<span class="w">  </span><span class="n">sum</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">i</span><span class="p">;</span><span class="w"> </span><span class="c1">// tốn CPU vì phải tính toán</span>
+</code></pre></div>
+<h3 id="khong-ton-cpu-khi-chi-cho-io">Không tốn CPU khi chỉ chờ I/O.<a class="headerlink" href="#khong-ton-cpu-khi-chi-cho-io" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Gọi API bên ngoài.</li>
+<li>Đọc/ghi file, database.</li>
+<li>Gửi request qua network.</li>
+</ul>
+<p>Ví dụ:</p>
+<div class="highlight"><pre><span></span><code><span class="k">await</span><span class="w"> </span><span class="n">httpClient</span><span class="p">.</span><span class="n">GetStringAsync</span><span class="p">(</span><span class="s">&quot;https://api.example.com&quot;</span><span class="p">);</span>
+</code></pre></div>
+<p>👉 Trong lúc chờ server phản hồi, CPU rảnh có thể xử lý việc khác.</p>
 <hr />
-<h2 id="license">License<a class="headerlink" href="#license" title="Permanent link">&para;</a></h2>
-<p>© 2025 P&amp;T Digital — All rights reserved.</p>
+<h2 id="5-tom-tat">5. Tóm tắt<a class="headerlink" href="#5-tom-tat" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Task = lời hứa về một công việc sẽ hoàn thành.</li>
+<li>Caller = nơi gọi method async. Async method chưa xong thì trả quyền điều khiển về caller.</li>
+<li>Thread = luồng chạy trong CPU. Async/await giúp không block thread.</li>
+<li>CPU tốn tài nguyên khi phải tính toán nặng (CPU bound), còn khi chỉ chờ I/O (API/DB/file...) thì không tốn CPU.</li>
+</ul>
 
 
 
@@ -1449,10 +1574,10 @@ This is my personal documentation hub where I collect and organize:</p>
     
     
       
-      <script id="__config" type="application/json">{"base": ".", "features": ["navigation.footer"], "search": "assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.footer"], "search": "../../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="assets/javascripts/bundle.f55a23d4.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.f55a23d4.min.js"></script>
       
     
   </body>
