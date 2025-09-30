@@ -77,6 +77,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#authentication-voi-jwt" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -389,6 +394,21 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Authentication (JWT)
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
         
@@ -401,6 +421,94 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-jwt-la-gi" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. JWT là gì?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-tao-authcontroller-login-register" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Tạo AuthController (Login, Register)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Tạo AuthController (Login, Register)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#authcontrollercs" class="md-nav__link">
+    <span class="md-ellipsis">
+      AuthController.cs
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cau-hinh-trong-appsettingsjson" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cấu hình trong appsettings.json
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-middleware-xac-thuc-jwt" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Middleware xác thực JWT
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-luu-token-o-frontend-fe" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Lưu token ở Frontend (FE)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-refresh-token" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Refresh Token
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -1219,6 +1327,85 @@
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-jwt-la-gi" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. JWT là gì?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-tao-authcontroller-login-register" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Tạo AuthController (Login, Register)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Tạo AuthController (Login, Register)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#authcontrollercs" class="md-nav__link">
+    <span class="md-ellipsis">
+      AuthController.cs
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cau-hinh-trong-appsettingsjson" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cấu hình trong appsettings.json
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-middleware-xac-thuc-jwt" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Middleware xác thực JWT
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-luu-token-o-frontend-fe" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Lưu token ở Frontend (FE)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-refresh-token" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Refresh Token
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -1234,12 +1421,163 @@
 
 
 
-  <h1>Authentication (JWT)</h1>
+<h1 id="authentication-voi-jwt">Authentication với JWT<a class="headerlink" href="#authentication-voi-jwt" title="Permanent link">&para;</a></h1>
+<h2 id="1-jwt-la-gi">1. JWT là gì?<a class="headerlink" href="#1-jwt-la-gi" title="Permanent link">&para;</a></h2>
+<ul>
+<li>
+<p><strong>JWT (Json Web Token)</strong> là chuẩn mở dùng để truyền thông tin giữa client và server dưới dạng <strong>token</strong>.</p>
+</li>
+<li>
+<p>Cấu trúc của JWT gồm 3 phần (Header.Payload.Signature) được nối bằng dấu <code>.</code>:</p>
+</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="w">  </span><span class="n">xxxxx</span><span class="p">.</span><span class="n">yyyyy</span><span class="p">.</span><span class="n">zzzzz</span>
+</code></pre></div>
+<ul>
+<li><strong>Header</strong>: thuật toán ký (HS256, RS256).</li>
+<li><strong>Payload</strong>: chứa claim (userId, role, exp).</li>
+<li><strong>Signature</strong>: đảm bảo token không bị sửa.</li>
+</ul>
+<p>Khi người dùng đăng nhập thành công, server cấp JWT cho client. Sau đó client gửi JWT này trong <code>Authorization: Bearer &lt;token&gt;</code>ở mỗi request.</p>
+<hr />
+<h2 id="2-tao-authcontroller-login-register">2. Tạo AuthController (Login, Register)<a class="headerlink" href="#2-tao-authcontroller-login-register" title="Permanent link">&para;</a></h2>
+<p>Ví dụ:</p>
+<h4 id="authcontrollercs"><code>AuthController.cs</code><a class="headerlink" href="#authcontrollercs" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="na">[ApiController]</span>
+<span class="na">[Route(&quot;api/[controller]</span><span class="s">&quot;)]</span>
+<span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">AuthController</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">ControllerBase</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">private</span><span class="w"> </span><span class="k">readonly</span><span class="w"> </span><span class="n">IConfiguration</span><span class="w"> </span><span class="n">_config</span><span class="p">;</span>
+<span class="w">    </span><span class="k">private</span><span class="w"> </span><span class="k">readonly</span><span class="w"> </span><span class="n">IUserService</span><span class="w"> </span><span class="n">_userService</span><span class="p">;</span>
 
-<p>JWT là gì?</p>
-<p>Tạo AuthController (Login, Register)</p>
-<p>Middleware xác thực JWT</p>
-<p>Lưu token FE</p>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="nf">AuthController</span><span class="p">(</span><span class="n">IConfiguration</span><span class="w"> </span><span class="n">config</span><span class="p">,</span><span class="w"> </span><span class="n">IUserService</span><span class="w"> </span><span class="n">userService</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">_config</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">config</span><span class="p">;</span>
+<span class="w">        </span><span class="n">_userService</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">userService</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="na">[HttpPost(&quot;register&quot;)]</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">IActionResult</span><span class="w"> </span><span class="nf">Register</span><span class="p">(</span><span class="n">RegisterDto</span><span class="w"> </span><span class="n">model</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="kt">var</span><span class="w"> </span><span class="n">user</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">_userService</span><span class="p">.</span><span class="n">Register</span><span class="p">(</span><span class="n">model</span><span class="p">);</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="nf">Ok</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">message</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Đăng ký thành công&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">user</span><span class="w"> </span><span class="p">});</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="na">[HttpPost(&quot;login&quot;)]</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">IActionResult</span><span class="w"> </span><span class="nf">Login</span><span class="p">(</span><span class="n">LoginDto</span><span class="w"> </span><span class="n">model</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="kt">var</span><span class="w"> </span><span class="n">user</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">_userService</span><span class="p">.</span><span class="n">ValidateUser</span><span class="p">(</span><span class="n">model</span><span class="p">);</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">user</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="k">null</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">Unauthorized</span><span class="p">();</span>
+
+<span class="w">        </span><span class="kt">var</span><span class="w"> </span><span class="n">token</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">GenerateJwtToken</span><span class="p">(</span><span class="n">user</span><span class="p">);</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="nf">Ok</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">token</span><span class="w"> </span><span class="p">});</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="k">private</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="nf">GenerateJwtToken</span><span class="p">(</span><span class="n">User</span><span class="w"> </span><span class="n">user</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="kt">var</span><span class="w"> </span><span class="n">claims</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="p">[]</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="k">new</span><span class="w"> </span><span class="nf">Claim</span><span class="p">(</span><span class="n">ClaimTypes</span><span class="p">.</span><span class="n">NameIdentifier</span><span class="p">,</span><span class="w"> </span><span class="n">user</span><span class="p">.</span><span class="n">Id</span><span class="p">.</span><span class="n">ToString</span><span class="p">()),</span>
+<span class="w">            </span><span class="k">new</span><span class="w"> </span><span class="nf">Claim</span><span class="p">(</span><span class="n">ClaimTypes</span><span class="p">.</span><span class="n">Email</span><span class="p">,</span><span class="w"> </span><span class="n">user</span><span class="p">.</span><span class="n">Email</span><span class="p">),</span>
+<span class="w">            </span><span class="k">new</span><span class="w"> </span><span class="nf">Claim</span><span class="p">(</span><span class="n">ClaimTypes</span><span class="p">.</span><span class="n">Role</span><span class="p">,</span><span class="w"> </span><span class="n">user</span><span class="p">.</span><span class="n">Role</span><span class="p">)</span>
+<span class="w">        </span><span class="p">};</span>
+
+<span class="w">        </span><span class="kt">var</span><span class="w"> </span><span class="n">key</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">SymmetricSecurityKey</span><span class="p">(</span>
+<span class="w">            </span><span class="n">Encoding</span><span class="p">.</span><span class="n">UTF8</span><span class="p">.</span><span class="n">GetBytes</span><span class="p">(</span><span class="n">_config</span><span class="p">[</span><span class="s">&quot;Jwt:Key&quot;</span><span class="p">])</span>
+<span class="w">        </span><span class="p">);</span>
+<span class="w">        </span><span class="kt">var</span><span class="w"> </span><span class="n">creds</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">SigningCredentials</span><span class="p">(</span><span class="n">key</span><span class="p">,</span><span class="w"> </span><span class="n">SecurityAlgorithms</span><span class="p">.</span><span class="n">HmacSha256</span><span class="p">);</span>
+
+<span class="w">        </span><span class="kt">var</span><span class="w"> </span><span class="n">token</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">JwtSecurityToken</span><span class="p">(</span>
+<span class="w">            </span><span class="n">issuer</span><span class="p">:</span><span class="w"> </span><span class="n">_config</span><span class="p">[</span><span class="s">&quot;Jwt:Issuer&quot;</span><span class="p">],</span>
+<span class="w">            </span><span class="n">audience</span><span class="p">:</span><span class="w"> </span><span class="n">_config</span><span class="p">[</span><span class="s">&quot;Jwt:Audience&quot;</span><span class="p">],</span>
+<span class="w">            </span><span class="n">claims</span><span class="p">:</span><span class="w"> </span><span class="n">claims</span><span class="p">,</span>
+<span class="w">            </span><span class="n">expires</span><span class="p">:</span><span class="w"> </span><span class="n">DateTime</span><span class="p">.</span><span class="n">Now</span><span class="p">.</span><span class="n">AddHours</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span>
+<span class="w">            </span><span class="n">signingCredentials</span><span class="p">:</span><span class="w"> </span><span class="n">creds</span>
+<span class="w">        </span><span class="p">);</span>
+
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="nf">JwtSecurityTokenHandler</span><span class="p">().</span><span class="n">WriteToken</span><span class="p">(</span><span class="n">token</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<h4 id="cau-hinh-trong-appsettingsjson">Cấu hình trong <code>appsettings.json</code><a class="headerlink" href="#cau-hinh-trong-appsettingsjson" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="s">&quot;Jwt&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="s">&quot;Key&quot;</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;supersecretkey123456&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="s">&quot;Issuer&quot;</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;yourapp&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="s">&quot;Audience&quot;</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;yourappusers&quot;</span>
+<span class="p">}</span>
+</code></pre></div>
+<h2 id="3-middleware-xac-thuc-jwt">3. Middleware xác thực JWT<a class="headerlink" href="#3-middleware-xac-thuc-jwt" title="Permanent link">&para;</a></h2>
+<p>Trong <code>Program.cs</code> thêm JWT authentication:</p>
+<div class="highlight"><pre><span></span><code><span class="n">builder</span><span class="p">.</span><span class="n">Services</span><span class="p">.</span><span class="n">AddAuthentication</span><span class="p">(</span><span class="n">options</span><span class="w"> </span><span class="o">=&gt;</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">options</span><span class="p">.</span><span class="n">DefaultAuthenticateScheme</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">JwtBearerDefaults</span><span class="p">.</span><span class="n">AuthenticationScheme</span><span class="p">;</span>
+<span class="w">    </span><span class="n">options</span><span class="p">.</span><span class="n">DefaultChallengeScheme</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">JwtBearerDefaults</span><span class="p">.</span><span class="n">AuthenticationScheme</span><span class="p">;</span>
+<span class="p">})</span>
+<span class="p">.</span><span class="n">AddJwtBearer</span><span class="p">(</span><span class="n">options</span><span class="w"> </span><span class="o">=&gt;</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">options</span><span class="p">.</span><span class="n">TokenValidationParameters</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">TokenValidationParameters</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">ValidateIssuer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">true</span><span class="p">,</span>
+<span class="w">        </span><span class="n">ValidateAudience</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">true</span><span class="p">,</span>
+<span class="w">        </span><span class="n">ValidateLifetime</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">true</span><span class="p">,</span>
+<span class="w">        </span><span class="n">ValidateIssuerSigningKey</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">true</span><span class="p">,</span>
+<span class="w">        </span><span class="n">ValidIssuer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">builder</span><span class="p">.</span><span class="n">Configuration</span><span class="p">[</span><span class="s">&quot;Jwt:Issuer&quot;</span><span class="p">],</span>
+<span class="w">        </span><span class="n">ValidAudience</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">builder</span><span class="p">.</span><span class="n">Configuration</span><span class="p">[</span><span class="s">&quot;Jwt:Audience&quot;</span><span class="p">],</span>
+<span class="w">        </span><span class="n">IssuerSigningKey</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">SymmetricSecurityKey</span><span class="p">(</span>
+<span class="w">            </span><span class="n">Encoding</span><span class="p">.</span><span class="n">UTF8</span><span class="p">.</span><span class="n">GetBytes</span><span class="p">(</span><span class="n">builder</span><span class="p">.</span><span class="n">Configuration</span><span class="p">[</span><span class="s">&quot;Jwt:Key&quot;</span><span class="p">])</span>
+<span class="w">        </span><span class="p">)</span>
+<span class="w">    </span><span class="p">};</span>
+<span class="p">});</span>
+
+<span class="n">builder</span><span class="p">.</span><span class="n">Services</span><span class="p">.</span><span class="n">AddAuthorization</span><span class="p">();</span>
+
+<span class="kt">var</span><span class="w"> </span><span class="n">app</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">builder</span><span class="p">.</span><span class="n">Build</span><span class="p">();</span>
+
+<span class="n">app</span><span class="p">.</span><span class="n">UseAuthentication</span><span class="p">();</span>
+<span class="n">app</span><span class="p">.</span><span class="n">UseAuthorization</span><span class="p">();</span>
+</code></pre></div>
+<p>👉 Khi đó, bạn có thể dùng [<code>Authorize</code>] trong controller:</p>
+<div class="highlight"><pre><span></span><code><span class="na">[Authorize]</span>
+<span class="na">[HttpGet(&quot;profile&quot;)]</span>
+<span class="k">public</span><span class="w"> </span><span class="n">IActionResult</span><span class="w"> </span><span class="nf">Profile</span><span class="p">()</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kt">var</span><span class="w"> </span><span class="n">userId</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">User</span><span class="p">.</span><span class="n">FindFirst</span><span class="p">(</span><span class="n">ClaimTypes</span><span class="p">.</span><span class="n">NameIdentifier</span><span class="p">)</span><span class="o">?.</span><span class="n">Value</span><span class="p">;</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nf">Ok</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">message</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Bạn đang đăng nhập&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">userId</span><span class="w"> </span><span class="p">});</span>
+<span class="p">}</span>
+</code></pre></div>
+<h2 id="4-luu-token-o-frontend-fe">4. Lưu token ở Frontend (FE)<a class="headerlink" href="#4-luu-token-o-frontend-fe" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Sau khi login thành công, server trả về:</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="p">{</span><span class="w"> </span><span class="nt">&quot;token&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;eyJhbGciOi...&quot;</span><span class="w"> </span><span class="p">}</span>
+</code></pre></div>
+<ul>
+<li>
+<p>FE nên lưu token ở:</p>
+<ul>
+<li><strong>LocalStorage</strong>: dễ dùng, nhưng bị XSS tấn công.</li>
+<li><strong>HttpOnly Cookie:</strong>: an toàn hơn, nhưng khó thao tác JS. Trong thực tế thì các công ty lớn lưu ở đây.</li>
+</ul>
+</li>
+<li>
+<p>Ví dụ ReactJS:</p>
+</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="c1">// Khi login thành công</span>
+<span class="nx">localStorage</span><span class="p">.</span><span class="nx">setItem</span><span class="p">(</span><span class="s2">&quot;token&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">response</span><span class="p">.</span><span class="nx">data</span><span class="p">.</span><span class="nx">token</span><span class="p">);</span>
+
+<span class="c1">// Khi gọi API</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">token</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">localStorage</span><span class="p">.</span><span class="nx">getItem</span><span class="p">(</span><span class="s2">&quot;token&quot;</span><span class="p">);</span>
+<span class="nx">axios</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">&quot;/api/user/profile&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">headers</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">Authorization</span><span class="o">:</span><span class="w"> </span><span class="sb">`Bearer </span><span class="si">${</span><span class="nx">token</span><span class="si">}</span><span class="sb">`</span><span class="w"> </span><span class="p">},</span>
+<span class="p">});</span>
+</code></pre></div>
+<h2 id="5-refresh-token">5. Refresh Token<a class="headerlink" href="#5-refresh-token" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Vì <strong>JWT</strong> thường có thời gian sống ngắn (1h, 2h) -&gt; cần <strong>refresh token</strong> để tránh login lại nhiều lần.</li>
+<li>Thường sẽ lưu ở BE <strong>refresh token</strong> và ở FE <strong>access token</strong> và <strong>refresh token</strong></li>
+<li>Khi <strong>access token</strong> hết hạn -&gt; FE gọi API refresh để xin token mới</li>
+</ul>
 
 
 
