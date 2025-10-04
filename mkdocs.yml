@@ -41,7 +41,8 @@ nav:
           - UI (AntD + Tailwind): junior/frontend/05-ui-anti-tailwind.md
           - Testing React: junior/frontend/06-testing-react.md
       - Database (PostgreSQL):
-          - SQL Basic: /database/01-sql-basic.md
+          - PostgreSQL Basic: junior/database/01-postgresql-basic.md
+          - PostgreSQL Advanced: junior/database/02-postgresql-advanced.md
           - Transactions: junior/database/02-transactions.md
           - Isolation Levels: junior/database/03-isolation-levels.md
           - Index & Partitioning: junior/database/04-index-partitioning.md
