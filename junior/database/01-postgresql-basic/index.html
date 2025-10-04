@@ -1,0 +1,2376 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://alphadev14.github.io/digitaldocs/junior/database/01-postgresql-basic/">
+      
+      
+        <link rel="prev" href="../../frontend/06-testing-react/">
+      
+      
+        <link rel="next" href="../02-transactions/">
+      
+      
+      <link rel="icon" href="../../../assets/logo.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.21">
+    
+    
+      
+        <title>PostgreSQL Basic - P&T | Digital Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.2a3383ac.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../extra.css">
+    
+      <link rel="stylesheet" href="../../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="deep-purple" data-md-color-accent="lime">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#gioi-thieu-ve-postgresql" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="P&amp;T | Digital Docs" class="md-header__button md-logo" aria-label="P&T | Digital Docs" data-md-component="logo">
+      
+  <img src="../../../assets/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            P&T | Digital Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              PostgreSQL Basic
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="deep-purple" data-md-color-accent="lime"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="pink"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="P&amp;T | Digital Docs" class="md-nav__button md-logo" aria-label="P&T | Digital Docs" data-md-component="logo">
+      
+  <img src="../../../assets/logo.png" alt="logo">
+
+    </a>
+    P&T | Digital Docs
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Junior
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Junior
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Backend
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            Backend
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../backend/01-aspnet-core-webapi/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    ASP.NET Core WebAPI
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../backend/02-middleware-dependency-injection/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Middleware & Dependency Injection
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../backend/03-entity-framework-core/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Entity Framework Core
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../backend/04-linq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    LINQ
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../backend/05-authentication-jwt/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Authentication (JWT)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../backend/06-clean-architecture-solid/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Clean Architecture & SOLID
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../backend/07-async-await/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Async / Await
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../backend/08-async-await-2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Async / Await 2
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Frontend
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            Frontend
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../frontend/01-react-hooks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    React Hooks
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../frontend/02-context-api/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Context API
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../frontend/03-react-router/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    React Router
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../frontend/04-state-management/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    State Management
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../frontend/05-ui-anti-tailwind.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    UI (AntD + Tailwind)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../frontend/06-testing-react/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Testing React
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Database (PostgreSQL)
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            Database (PostgreSQL)
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    PostgreSQL Basic
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    PostgreSQL Basic
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-postgresql" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. PostgreSQL
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-cac-kieu-du-lieu" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Các kiểu dữ liệu
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Các kiểu dữ liệu">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-kieu-so-nguyen-integer-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.1 Kiểu số nguyên (Integer Types)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-kieu-so-thuc-floating-point-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.2 Kiểu số thực (Floating-point Types)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23-kieu-chuoi-character-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.3 Kiểu chuỗi (Character Types)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#24-kieu-logic-boolean" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.4 Kiểu logic (Boolean)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#25-kieu-ngay-gio-datetime" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.5 Kiểu ngày giờ (Date/Time)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#26-json-jsonb" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.6 JSON &amp;&amp; JSONB
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#27-uuid" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.7 UUID
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#28-array" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.8 ARRAY
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#29-money" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.9 MONEY
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-lam-viec-voi-database-table" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. làm việc với Database &amp; Table
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. làm việc với Database &amp; Table">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-tao-database" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.1 Tạo Database
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-tao-bang" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.2 Tạo bảng
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33-sua-bang" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.3 Sửa bảng
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#34-xoa-bang" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.4 Xóa bảng
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-curd-co-ban" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. CURD cơ bản
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. CURD cơ bản">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-insert" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.1 INSERT
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-select" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.2 SELECT
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#43-update" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.3 UPDATE
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#44-delete" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.4 DELETE
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-constraints" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Constraints
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-truy-van" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. Truy vấn
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. Truy vấn">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#61-toan-tu-ieu-kien" class="md-nav__link">
+    <span class="md-ellipsis">
+      6.1 Toán tử &amp; điều kiện
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#62-aggregate-functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      6.2 Aggregate functions
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#63-group-by-having" class="md-nav__link">
+    <span class="md-ellipsis">
+      6.3 GROUP BY &amp; HAVING
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-join" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. JOIN
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7. JOIN">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#71-inner-join" class="md-nav__link">
+    <span class="md-ellipsis">
+      7.1 INNER JOIN
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#72-left-join-hoac-left-outer-join" class="md-nav__link">
+    <span class="md-ellipsis">
+      7.2 LEFT JOIN (hoặc LEFT OUTER JOIN)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#73-right-join-hoac-right-outer-join" class="md-nav__link">
+    <span class="md-ellipsis">
+      7.3 RIGHT JOIN (hoặc RIGHT OUTER JOIN)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02-postgresql-advanced.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    PostgreSQL Advanced
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02-transactions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Transactions
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03-isolation-levels/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Isolation Levels
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04-index-partitioning/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Index & Partitioning
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05-query-optimization/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Query Optimization
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../06-jsonb-postgresql/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    JSONB in PostgreSQL
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Testing & Deployment/index.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Testing & Deployment
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_5" id="__nav_2_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Project
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_5">
+            <span class="md-nav__icon md-icon"></span>
+            Project
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_5_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_5_1" id="__nav_2_5_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Todos
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_5_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_5_1">
+            <span class="md-nav__icon md-icon"></span>
+            Todos
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_5_1_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_5_1_1" id="__nav_2_5_1_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Deploy Frontend
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_2_5_1_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_5_1_1">
+            <span class="md-nav__icon md-icon"></span>
+            Deploy Frontend
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../project/todos/05-deploy-fe/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Deploy FE lên Vercel
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_5_1_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_5_1_2" id="__nav_2_5_1_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Deploy Backend
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_2_5_1_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_5_1_2">
+            <span class="md-nav__icon md-icon"></span>
+            Deploy Backend
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../project/todos/06-deploy-be/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Deploy BE lên Render
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_5_1_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_5_1_3" id="__nav_2_5_1_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Deploy Database
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_2_5_1_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_5_1_3">
+            <span class="md-nav__icon md-icon"></span>
+            Deploy Database
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../project/todos/07-deploy-db/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Deploy Databae lên Render
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../mid-level/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Mid-Level
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../senior/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Senior
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-postgresql" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. PostgreSQL
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-cac-kieu-du-lieu" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Các kiểu dữ liệu
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Các kiểu dữ liệu">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-kieu-so-nguyen-integer-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.1 Kiểu số nguyên (Integer Types)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-kieu-so-thuc-floating-point-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.2 Kiểu số thực (Floating-point Types)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23-kieu-chuoi-character-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.3 Kiểu chuỗi (Character Types)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#24-kieu-logic-boolean" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.4 Kiểu logic (Boolean)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#25-kieu-ngay-gio-datetime" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.5 Kiểu ngày giờ (Date/Time)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#26-json-jsonb" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.6 JSON &amp;&amp; JSONB
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#27-uuid" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.7 UUID
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#28-array" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.8 ARRAY
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#29-money" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.9 MONEY
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-lam-viec-voi-database-table" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. làm việc với Database &amp; Table
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. làm việc với Database &amp; Table">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-tao-database" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.1 Tạo Database
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-tao-bang" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.2 Tạo bảng
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33-sua-bang" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.3 Sửa bảng
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#34-xoa-bang" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.4 Xóa bảng
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-curd-co-ban" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. CURD cơ bản
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. CURD cơ bản">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-insert" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.1 INSERT
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-select" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.2 SELECT
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#43-update" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.3 UPDATE
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#44-delete" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.4 DELETE
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-constraints" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Constraints
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-truy-van" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. Truy vấn
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. Truy vấn">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#61-toan-tu-ieu-kien" class="md-nav__link">
+    <span class="md-ellipsis">
+      6.1 Toán tử &amp; điều kiện
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#62-aggregate-functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      6.2 Aggregate functions
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#63-group-by-having" class="md-nav__link">
+    <span class="md-ellipsis">
+      6.3 GROUP BY &amp; HAVING
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-join" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. JOIN
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7. JOIN">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#71-inner-join" class="md-nav__link">
+    <span class="md-ellipsis">
+      7.1 INNER JOIN
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#72-left-join-hoac-left-outer-join" class="md-nav__link">
+    <span class="md-ellipsis">
+      7.2 LEFT JOIN (hoặc LEFT OUTER JOIN)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#73-right-join-hoac-right-outer-join" class="md-nav__link">
+    <span class="md-ellipsis">
+      7.3 RIGHT JOIN (hoặc RIGHT OUTER JOIN)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="gioi-thieu-ve-postgresql">Giới thiệu về PostgreSQL<a class="headerlink" href="#gioi-thieu-ve-postgresql" title="Permanent link">&para;</a></h1>
+<h2 id="1-postgresql">1. PostgreSQL<a class="headerlink" href="#1-postgresql" title="Permanent link">&para;</a></h2>
+<ul>
+<li>PostgreSQL là một RDBM (Relational Database Management System) mã nguồn mở.</li>
+<li>Hỗ trợ chuẩn SQL, mạnh về tính mở rộng và dữ liệu phức tạp.</li>
+<li>Thường dùng trong:</li>
+<li>Hệ thống backend (API, web app, microservices)</li>
+<li>Ứng dụng phân tích dữ liệu (analysts, BI)</li>
+<li>Hệ thống tài chính, thương mại điện tử.</li>
+</ul>
+<h2 id="2-cac-kieu-du-lieu">2. Các kiểu dữ liệu<a class="headerlink" href="#2-cac-kieu-du-lieu" title="Permanent link">&para;</a></h2>
+<h4 id="21-kieu-so-nguyen-integer-types">2.1 Kiểu số nguyên (Integer Types)<a class="headerlink" href="#21-kieu-so-nguyen-integer-types" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>Kiểu dữ liệu</th>
+<th>Kích thước (bytes)</th>
+<th>Khoảng giá trị</th>
+<th>Mô tả</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>SMALLINT</code> (int2)</td>
+<td>2 bytes</td>
+<td>-32,768 đến 32,767</td>
+<td>Số nguyên nhỏ</td>
+</tr>
+<tr>
+<td><code>INTEGER</code> (int4, <code>INT</code>)</td>
+<td>4 bytes</td>
+<td>-2,147,483,648 đến 2,147,483,647</td>
+<td>Số nguyên thường dùng</td>
+</tr>
+<tr>
+<td><code>BIGINT</code> (int8)</td>
+<td>8 bytes</td>
+<td>-9,223,372,036,854,775,808 đến 9,223,372,036,854,775,807</td>
+<td>Số nguyên lớn</td>
+</tr>
+<tr>
+<td><code>SERIAL</code></td>
+<td>4 bytes (int4 + auto increment)</td>
+<td>1 đến 2,147,483,647</td>
+<td>Tự tăng, thường dùng làm primary key</td>
+</tr>
+<tr>
+<td><code>BIGSERIAL</code></td>
+<td>8 bytes (int8 + auto increment)</td>
+<td>1 đến 9,223,372,036,854,775,807</td>
+<td>Tự tăng cho khóa chính lớn</td>
+</tr>
+</tbody>
+</table>
+<p>👉 Ghi nhớ:</p>
+<ul>
+<li><code>SERIAL</code> và <code>BIGSERIAL</code> thực chất chỉ là shortcut = <code>INTEGER/BIGINT + sequence + DEFAULT</code>.</li>
+<li>Dùng <code>BIGINT</code> cho dữ liệu lớn (log, giao dịch).</li>
+</ul>
+<h4 id="22-kieu-so-thuc-floating-point-types">2.2 Kiểu số thực (Floating-point Types)<a class="headerlink" href="#22-kieu-so-thuc-floating-point-types" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>Kiểu dữ liệu</th>
+<th>Kích thước (bytes)</th>
+<th>Độ chính xác</th>
+<th>Khoảng giá trị</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>REAL</code> (float4)</td>
+<td>4 bytes</td>
+<td>~6 chữ số thập phân</td>
+<td>3.4e-38 đến 1.7e+38</td>
+</tr>
+<tr>
+<td><code>DOUBLE PRECISION</code> (float8)</td>
+<td>8 bytes</td>
+<td>~15 chữ số thập phân</td>
+<td>1.7e-308 đến 1.7e+308</td>
+</tr>
+<tr>
+<td><code>NUMERIC(p, s) / DECIMAL(p, s)</code></td>
+<td>thay đổi</td>
+<td>Chính xác tuyệt đối (do định nghĩa)</td>
+<td>Tùy p (precision), s (scale)</td>
+</tr>
+</tbody>
+</table>
+<p>👉 Ghi nhớ:</p>
+<ul>
+<li><code>REAL</code> và <code>DOUBLE PRECISION</code> nhanh hơn nhưng có thể sai số.</li>
+<li><code>NUMERIC</code> (hoặc <code>DECIMAL</code>) chậm hơn nhưng chính xác tuyệt đối → thường dùng cho tiền tệ (<code>NUMERIC(12,2)</code>).</li>
+</ul>
+<h4 id="23-kieu-chuoi-character-types">2.3 Kiểu chuỗi (Character Types)<a class="headerlink" href="#23-kieu-chuoi-character-types" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>Kiểu dữ liệu</th>
+<th>Kích thước (bytes)</th>
+<th>Ghi chú</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>CHAR(n)</code></td>
+<td>cố định n byte</td>
+<td>Nếu chuỗi ngắn hơn thì pad thêm khoảng trắng</td>
+</tr>
+<tr>
+<td><code>VARCHAR(n)</code></td>
+<td>tối đa n byte</td>
+<td>Linh hoạt, kiểm soát độ dài</td>
+</tr>
+<tr>
+<td><code>TEXT</code></td>
+<td>không giới hạn (lên đến 1GB mỗi field)</td>
+<td>Phổ biến nhất trong PostgreSQL</td>
+</tr>
+</tbody>
+</table>
+<p>👉 Trong PostgreSQL, TEXT và VARCHAR hiệu năng gần như giống nhau, thường dùng TEXT trừ khi cần giới hạn độ dài.</p>
+<h4 id="24-kieu-logic-boolean">2.4 Kiểu logic (Boolean)<a class="headerlink" href="#24-kieu-logic-boolean" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>Kiểu dữ liệu</th>
+<th>giá trị</th>
+<th>kích thước</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>BOOLEAN</code></td>
+<td><code>TRUE</code>, <code>FALSE</code>, <code>NULL</code></td>
+<td>1 byte</td>
+</tr>
+</tbody>
+</table>
+<h4 id="25-kieu-ngay-gio-datetime">2.5 Kiểu ngày giờ (Date/Time)<a class="headerlink" href="#25-kieu-ngay-gio-datetime" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>Kiểu dữ liệu</th>
+<th>Kích thước (bytes)</th>
+<th>Độ chính xác</th>
+<th>Khoảng giá trị</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>DATE</code></td>
+<td>4 bytes</td>
+<td>Ngày (không có giờ)</td>
+<td>4713 TCN – 587489 SCN</td>
+</tr>
+<tr>
+<td><code>TIME [(p)]</code></td>
+<td>8 bytes</td>
+<td>Giờ (chính xác microsecond)</td>
+<td>00:00:00 – 24:00:00</td>
+</tr>
+<tr>
+<td><code>TIMESTAMP [(p)]</code></td>
+<td>8 bytes</td>
+<td>Ngày + Giờ</td>
+<td>4713 TCN – 294276 SCN</td>
+</tr>
+<tr>
+<td><code>TIMESTAMP WITH TIME ZONE (timestamptz)</code></td>
+<td>8 bytes</td>
+<td>Có timezone</td>
+<td>4713 TCN – 294276 SCN</td>
+</tr>
+<tr>
+<td><code>INTERVAL</code></td>
+<td>16 bytes</td>
+<td>Khoảng thời gian</td>
+<td>±178,000,000 năm</td>
+</tr>
+</tbody>
+</table>
+<p>👉 Ví dụ:</p>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">NOW</span><span class="p">();</span><span class="w"> </span><span class="c1">-- thời gian hiện tại</span>
+<span class="k">SELECT</span><span class="w"> </span><span class="k">CURRENT_DATE</span><span class="p">;</span>
+<span class="k">SELECT</span><span class="w"> </span><span class="n">NOW</span><span class="p">()</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nb">INTERVAL</span><span class="w"> </span><span class="s1">&#39;7 days&#39;</span><span class="p">;</span><span class="w"> </span><span class="c1">-- cộng thêm 7 ngày</span>
+</code></pre></div>
+<h4 id="26-json-jsonb">2.6 JSON &amp;&amp; JSONB<a class="headerlink" href="#26-json-jsonb" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>Kiểu dữ liệu</th>
+<th>Kích thước</th>
+<th>Mô tả</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>JSON</code></td>
+<td>thay đổi</td>
+<td>Lưu raw JSON, chậm hơn</td>
+</tr>
+<tr>
+<td><code>JSONB</code></td>
+<td>thay đổi</td>
+<td>Lưu JSON nhị phân (binary), nhanh hơn khi query</td>
+</tr>
+</tbody>
+</table>
+<p>👉 Ví dụ:</p>
+<div class="highlight"><pre><span></span><code><span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">products</span><span class="w"> </span><span class="p">(</span>
+<span class="w">  </span><span class="n">id</span><span class="w"> </span><span class="nb">SERIAL</span><span class="w"> </span><span class="k">PRIMARY</span><span class="w"> </span><span class="k">KEY</span><span class="p">,</span>
+<span class="w">  </span><span class="k">data</span><span class="w"> </span><span class="n">JSONB</span>
+<span class="p">);</span>
+
+<span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">products</span><span class="p">(</span><span class="k">data</span><span class="p">)</span>
+<span class="k">vALUES</span><span class="w"> </span><span class="p">(</span><span class="s1">&#39;{&quot;name&quot;: &quot;Laptop&quot;, &quot;price&quot;: 1500, &quot;tags&quot;: [&quot;tech&quot;,&quot;computer&quot;]}&#39;</span><span class="p">);</span>
+
+<span class="c1">-- Lấy giá trị từ JSONB</span>
+
+<span class="k">SELECT</span><span class="w"> </span><span class="k">data</span><span class="w"> </span><span class="o">-&gt;&gt;</span><span class="s1">&#39;name&#39;</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">product_name</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">products</span><span class="p">;</span>
+</code></pre></div>
+<h4 id="27-uuid">2.7 UUID<a class="headerlink" href="#27-uuid" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>Kiểu dữ liệu</th>
+<th>Kích thước</th>
+<th>Ví dụ</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>UUID</code></td>
+<td>16 bytes</td>
+<td>'550e8400-e29b-41d4-a716-446655440000'</td>
+</tr>
+</tbody>
+</table>
+<p>👉 Thường dùng làm khóa chính thay cho SERIAL, tránh trùng lặp trong hệ thống phân tán.</p>
+<div class="highlight"><pre><span></span><code><span class="k">CREATE</span><span class="w"> </span><span class="n">EXTENSION</span><span class="w"> </span><span class="k">IF</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">EXISTS</span><span class="w"> </span><span class="ss">&quot;uuid-ossp&quot;</span><span class="p">;</span>
+<span class="k">SELECT</span><span class="w"> </span><span class="n">uuid_generate_v4</span><span class="p">();</span>
+</code></pre></div>
+<h4 id="28-array">2.8 ARRAY<a class="headerlink" href="#28-array" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>Kiểu dữ liệu</th>
+<th>Kích thước</th>
+<th>Ghi chú</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>UUID</code></td>
+<td>thay đổi</td>
+<td>Có thể chứa list giá trị, <code>'{1,2,3}'</code></td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre><span></span><code><span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">students</span><span class="w"> </span><span class="p">(</span>
+<span class="w">  </span><span class="n">id</span><span class="w"> </span><span class="nb">SERIAL</span><span class="w"> </span><span class="k">PRIMARY</span><span class="w"> </span><span class="k">KEY</span><span class="p">,</span>
+<span class="w">  </span><span class="n">name</span><span class="w"> </span><span class="nb">TEXT</span><span class="p">,</span>
+<span class="w">  </span><span class="n">scores</span><span class="w"> </span><span class="nb">INT</span><span class="p">[]</span>
+<span class="p">);</span>
+
+<span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">students</span><span class="w"> </span><span class="p">(</span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">scores</span><span class="p">)</span>
+<span class="k">VALUES</span><span class="w"> </span><span class="p">(</span><span class="s1">&#39;Alice&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;{85,90,92}&#39;</span><span class="p">);</span>
+
+<span class="c1">-- Trích xuất mảng</span>
+<span class="k">SELECT</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="k">unnest</span><span class="p">(</span><span class="n">scores</span><span class="p">)</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">students</span><span class="p">;</span>
+</code></pre></div>
+<h4 id="29-money">2.9 MONEY<a class="headerlink" href="#29-money" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>Kiểu dữ liệu</th>
+<th>Kích thước</th>
+<th>Khoảng giá trị</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>MONEY</code></td>
+<td>8 bytes</td>
+<td>-922 trilion đến +922 trilion</td>
+</tr>
+</tbody>
+</table>
+<p>👉 Không khuyến nghị dùng (do phụ thuộc locale). Nên dùng NUMERIC(12,2) thay thế.</p>
+<h2 id="3-lam-viec-voi-database-table">3. làm việc với Database &amp; Table<a class="headerlink" href="#3-lam-viec-voi-database-table" title="Permanent link">&para;</a></h2>
+<h4 id="31-tao-database">3.1 Tạo Database<a class="headerlink" href="#31-tao-database" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="k">CREATE</span><span class="w"> </span><span class="k">DATABASE</span><span class="w"> </span><span class="n">shopdb</span><span class="p">;</span>
+<span class="err">\</span><span class="k">c</span><span class="w"> </span><span class="n">shopdb</span><span class="p">;</span>
+</code></pre></div>
+<h4 id="32-tao-bang">3.2 Tạo bảng<a class="headerlink" href="#32-tao-bang" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">users</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="n">id</span><span class="w"> </span><span class="nb">SERIAL</span><span class="w"> </span><span class="k">PRIMARY</span><span class="w"> </span><span class="k">KEY</span><span class="p">,</span>
+<span class="w">    </span><span class="n">name</span><span class="w"> </span><span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span>
+<span class="w">    </span><span class="n">email</span><span class="w"> </span><span class="nb">TEXT</span><span class="w"> </span><span class="k">UNIQUE</span><span class="p">,</span>
+<span class="w">    </span><span class="n">is_active</span><span class="w"> </span><span class="nb">BOOLEAN</span><span class="w"> </span><span class="k">DEFAULT</span><span class="w"> </span><span class="k">TRUE</span><span class="p">,</span>
+<span class="w">    </span><span class="n">created_at</span><span class="w"> </span><span class="k">TIMESTAMP</span><span class="w"> </span><span class="k">DEFAULT</span><span class="w"> </span><span class="k">CURRENT_TIMESTAMP</span>
+<span class="p">);</span>
+</code></pre></div>
+<h4 id="33-sua-bang">3.3 Sửa bảng<a class="headerlink" href="#33-sua-bang" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="n">LTER</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">users</span><span class="w"> </span><span class="k">ADD</span><span class="w"> </span><span class="k">COLUMN</span><span class="w"> </span><span class="n">age</span><span class="w"> </span><span class="nb">INT</span><span class="p">;</span>
+<span class="k">ALTER</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">users</span><span class="w"> </span><span class="k">DROP</span><span class="w"> </span><span class="k">COLUMN</span><span class="w"> </span><span class="n">age</span><span class="p">;</span>
+</code></pre></div>
+<h4 id="34-xoa-bang">3.4 Xóa bảng<a class="headerlink" href="#34-xoa-bang" title="Permanent link">&para;</a></h4>
+<h2 id="4-curd-co-ban">4. CURD cơ bản<a class="headerlink" href="#4-curd-co-ban" title="Permanent link">&para;</a></h2>
+<h4 id="41-insert">4.1 INSERT<a class="headerlink" href="#41-insert" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">users</span><span class="p">(</span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">email</span><span class="p">)</span>
+<span class="k">VALUES</span>
+<span class="w">  </span><span class="p">(</span><span class="s1">&#39;Phan Van Tam&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;phanvantam2020@gmail.com&#39;</span><span class="p">),</span>
+<span class="w">  </span><span class="p">(</span><span class="s1">&#39;Alpha Dev&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;alphadev01@gmail.com&#39;</span><span class="p">);</span>
+</code></pre></div>
+<h4 id="42-select">4.2 SELECT<a class="headerlink" href="#42-select" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span>
+<span class="w">  </span><span class="n">name</span><span class="p">,</span>
+<span class="w">  </span><span class="n">email</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">users</span>
+<span class="k">WHERE</span><span class="w"> </span><span class="n">is_active</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">true</span>
+<span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">created_at</span><span class="w"> </span><span class="k">DESC</span>
+<span class="k">LIMIT</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span>
+</code></pre></div>
+<h4 id="43-update">4.3 UPDATE<a class="headerlink" href="#43-update" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="k">UPDATE</span><span class="w"> </span><span class="n">users</span>
+<span class="k">SET</span><span class="w"> </span><span class="n">is_active</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">false</span>
+<span class="k">WHERE</span><span class="w"> </span><span class="n">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+</code></pre></div>
+<h4 id="44-delete">4.4 DELETE<a class="headerlink" href="#44-delete" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="k">DELETE</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">users</span>
+<span class="k">WHERE</span><span class="w"> </span><span class="n">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+</code></pre></div>
+<h2 id="5-constraints">5. Constraints<a class="headerlink" href="#5-constraints" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>PRIMARY KEY</code>: khóa chính</li>
+<li><code>UNIQUE</code>: không trùng lặp</li>
+<li><code>NOT NULL</code>: bắt buộc có giá trị</li>
+<li><code>DEFAULT</code>: giá trị mặc định</li>
+<li><code>OREIGN KEY</code>: tham chiếu bảng khác</li>
+</ul>
+<h2 id="6-truy-van">6. Truy vấn<a class="headerlink" href="#6-truy-van" title="Permanent link">&para;</a></h2>
+<h4 id="61-toan-tu-ieu-kien">6.1 Toán tử &amp; điều kiện<a class="headerlink" href="#61-toan-tu-ieu-kien" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="w">  </span><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">users</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">id</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span>
+<span class="w">  </span><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">users</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="k">LIKE</span><span class="w"> </span><span class="s1">&#39;A%&#39;</span><span class="p">;</span>
+<span class="w">  </span><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">users</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">id</span><span class="w"> </span><span class="k">IN</span><span class="w"> </span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">);</span>
+<span class="w">  </span><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">users</span><span class="w"> </span><span class="k">WhERE</span><span class="w"> </span><span class="n">created_at</span><span class="w"> </span><span class="k">BETWEEN</span><span class="w"> </span><span class="s1">&#39;2025-01-01&#39;</span><span class="w"> </span><span class="k">AND</span><span class="w"> </span><span class="s1">&#39;2025-12-31&#39;</span><span class="p">;</span>
+</code></pre></div>
+<h4 id="62-aggregate-functions">6.2 Aggregate functions<a class="headerlink" href="#62-aggregate-functions" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="k">COUNT</span><span class="p">(</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">users</span><span class="p">;</span>
+<span class="k">SELECT</span><span class="w"> </span><span class="k">AVG</span><span class="p">(</span><span class="n">total</span><span class="p">)</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">orders</span><span class="p">;</span>
+<span class="k">SELECT</span><span class="w"> </span><span class="k">SUM</span><span class="p">(</span><span class="n">total</span><span class="p">)</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">orders</span><span class="p">;</span>
+<span class="k">SELECT</span><span class="w"> </span><span class="k">MAX</span><span class="p">(</span><span class="n">total</span><span class="p">),</span><span class="w"> </span><span class="k">MIN</span><span class="p">(</span><span class="n">total</span><span class="p">)</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">orders</span><span class="p">;</span>
+</code></pre></div>
+<h4 id="63-group-by-having">6.3 GROUP BY &amp; HAVING<a class="headerlink" href="#63-group-by-having" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">user_id</span><span class="p">,</span><span class="w"> </span><span class="k">COUNT</span><span class="p">(</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">order_count</span><span class="p">,</span><span class="w"> </span><span class="k">SUM</span><span class="p">(</span><span class="n">total</span><span class="p">)</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">total_amount</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">orders</span>
+<span class="k">GROUP</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">user_id</span>
+<span class="k">HAVING</span><span class="w"> </span><span class="k">SUM</span><span class="p">(</span><span class="n">total</span><span class="p">)</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">1000</span><span class="p">;</span>
+</code></pre></div>
+<h2 id="7-join">7. JOIN<a class="headerlink" href="#7-join" title="Permanent link">&para;</a></h2>
+<p>Trong SQL, JOIN được dùng để kết hợp dữ liệu từ nhiều bảng dựa trên một điều kiện chung (thường là khóa ngoại). PostgreSQL hỗ trợ nhiều loại JOIN khác nhau.</p>
+<h4 id="71-inner-join">7.1 INNER JOIN<a class="headerlink" href="#71-inner-join" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Chỉ trả về những dòng có dữ liệu khớp ở cả 2 bảng.</li>
+<li>Là loại join phổ biến nhất.</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">emp</span><span class="p">.</span><span class="n">id</span><span class="p">,</span><span class="w"> </span><span class="n">em</span><span class="p">.</span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">dep</span><span class="p">.</span><span class="n">id</span><span class="p">,</span><span class="w"> </span><span class="n">dep</span><span class="p">.</span><span class="n">name</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">employee</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">emp</span>
+<span class="k">INNER</span><span class="w"> </span><span class="k">JOIN</span><span class="w"> </span><span class="n">department</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">dep</span>
+<span class="k">ON</span><span class="w"> </span><span class="n">emp</span><span class="p">.</span><span class="n">department_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">dep</span><span class="p">.</span><span class="n">id</span>
+</code></pre></div>
+<p>👉 Kết quả: chỉ những nhân viên có <code>department_id</code> tồn tại trong bảng <strong>department</strong></p>
+<h4 id="72-left-join-hoac-left-outer-join">7.2 LEFT JOIN (hoặc LEFT OUTER JOIN)<a class="headerlink" href="#72-left-join-hoac-left-outer-join" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Trả về tất cả bản ghi bên trái (left table) và dữ liệu khớp bên phải (right table)</li>
+<li>Nếu không khớp, cột bên phải sẽ có giá trị <code>NULL</code>.</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="n">id</span><span class="p">,</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">d</span><span class="p">.</span><span class="n">name</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">department</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">employee</span><span class="w"> </span><span class="n">e</span>
+<span class="k">LEFT</span><span class="w"> </span><span class="k">JOIN</span><span class="w"> </span><span class="n">department</span><span class="w"> </span><span class="n">d</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="n">department_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">d</span><span class="p">.</span><span class="n">id</span><span class="p">;</span>
+</code></pre></div>
+<p>👉 Kết quả: tất cả nhân viên, kể cả những người chưa có department (cột department = NULL).</p>
+<h4 id="73-right-join-hoac-right-outer-join">7.3 RIGHT JOIN (hoặc RIGHT OUTER JOIN)<a class="headerlink" href="#73-right-join-hoac-right-outer-join" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Ngược với LEFT JOIN: lấy tất cả bản ghi bên phải và chỉ những dữ liệu khớp từ bảng bên trái.</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="n">id</span><span class="p">,</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">d</span><span class="p">.</span><span class="n">name</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">department</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">employee</span><span class="w"> </span><span class="n">e</span>
+<span class="k">RIGHT</span><span class="w"> </span><span class="k">JOIN</span><span class="w"> </span><span class="n">department</span><span class="w"> </span><span class="n">d</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="n">department_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">d</span><span class="p">.</span><span class="n">id</span><span class="p">;</span>
+</code></pre></div>
+<p>👉 Kết quả: tất cả phòng ban, kể cả những phòng chưa có nhân viên nào.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        
+<div class="custom-footer">
+  <div class="footer-left">
+    Made with love ❤️ <span style="font-weight: bold;">P&T</span>
+  </div>
+  <div class="footer-right">
+    <a href="https://github.com/your-org" target="_blank"> <span class="twemoji">🐙</span> </a>
+    <a href="https://linkedin.com/company/your-org" target="_blank"> <span class="twemoji">💼</span> </a>
+    <a href="https://youtube.com/@your-org" target="_blank"> <span class="twemoji">▶️</span> </a>
+  </div>
+</div>
+
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.footer"], "search": "../../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      
+    
+  </body>
+</html>
