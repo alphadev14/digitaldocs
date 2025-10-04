@@ -77,6 +77,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#index-partitioning-trong-postgresql" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -803,6 +808,21 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Index & Partitioning
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
         
@@ -815,6 +835,154 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-index" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Index
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Index">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11-cach-hoat-ong" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.1. Cách hoạt động
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-vi-du-tao-index" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.2 Ví dụ tạo Index
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13-cac-loai-index-trong-postgresql" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.3 Các loại Index trong PostgreSQL
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1.3 Các loại Index trong PostgreSQL">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a-b-tree-mac-inh" class="md-nav__link">
+    <span class="md-ellipsis">
+      a. B-Tree (mặc định):
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b-hash-index" class="md-nav__link">
+    <span class="md-ellipsis">
+      b. Hash Index:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#c-gin-generalized-inverted-index" class="md-nav__link">
+    <span class="md-ellipsis">
+      c. GIN (Generalized Inverted Index):
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#d-gist-generalized-search-tree" class="md-nav__link">
+    <span class="md-ellipsis">
+      d. GiST (Generalized Search Tree):
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#d-brin-block-range-index" class="md-nav__link">
+    <span class="md-ellipsis">
+      d. BRIN (Block Range Index):
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-cach-su-dung" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Cách sử dụng
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-partition-table-phan-vung-bang" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Partition Table (Phân vùng bảng)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-so-sanh-index-va-partition" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. So sánh Index và PARTITION
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-best-practices" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Best Practices
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -1265,6 +1433,145 @@
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-index" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Index
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Index">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11-cach-hoat-ong" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.1. Cách hoạt động
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-vi-du-tao-index" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.2 Ví dụ tạo Index
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13-cac-loai-index-trong-postgresql" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.3 Các loại Index trong PostgreSQL
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1.3 Các loại Index trong PostgreSQL">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a-b-tree-mac-inh" class="md-nav__link">
+    <span class="md-ellipsis">
+      a. B-Tree (mặc định):
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b-hash-index" class="md-nav__link">
+    <span class="md-ellipsis">
+      b. Hash Index:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#c-gin-generalized-inverted-index" class="md-nav__link">
+    <span class="md-ellipsis">
+      c. GIN (Generalized Inverted Index):
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#d-gist-generalized-search-tree" class="md-nav__link">
+    <span class="md-ellipsis">
+      d. GiST (Generalized Search Tree):
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#d-brin-block-range-index" class="md-nav__link">
+    <span class="md-ellipsis">
+      d. BRIN (Block Range Index):
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-cach-su-dung" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Cách sử dụng
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-partition-table-phan-vung-bang" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Partition Table (Phân vùng bảng)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-so-sanh-index-va-partition" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. So sánh Index và PARTITION
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-best-practices" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Best Practices
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -1280,9 +1587,145 @@
 
 
 
-  <h1>Index & Partitioning</h1>
+<h1 id="index-partitioning-trong-postgresql">Index &amp; Partitioning trong PostgreSQL<a class="headerlink" href="#index-partitioning-trong-postgresql" title="Permanent link">&para;</a></h1>
+<h2 id="1-index">1. Index<a class="headerlink" href="#1-index" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Index</strong> là cấu trúc dữ liệu đặc biệt (thường là <code>B-Tree</code>) giúp tăng tốc độ truy vấn trong cơ sở dữ liệu.</li>
+<li>Hoạt động giống như mục lục trong sách: thay vì đọc toàn bộ sách, DB có thể tra nhanh vị trí của dữ liệu.</li>
+</ul>
+<h4 id="11-cach-hoat-ong">1.1. Cách hoạt động<a class="headerlink" href="#11-cach-hoat-ong" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Khi bạn chạy query với <code>WHERE</code>, <code>JOIN</code>, <code>ORDER BY</code>, PostgreSQL sẽ kiểm tra có Index phù hợp hay không.</li>
+<li>Nếu có Index -&gt; DB truy vấn nhanh hơn nhiều (do không phải scan toàn bộ bảng).</li>
+</ul>
+<h4 id="12-vi-du-tao-index">1.2 Ví dụ tạo Index<a class="headerlink" href="#12-vi-du-tao-index" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="c1">-- Tạo index trên cột email</span>
+<span class="k">CREATE</span><span class="w"> </span><span class="k">INDEX</span><span class="w"> </span><span class="n">idx_user_email</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">users</span><span class="p">(</span><span class="n">email</span><span class="p">);</span>
 
-<p>Index là gì, Partition table</p>
+<span class="c1">-- Xóa index</span>
+<span class="k">DROP</span><span class="w"> </span><span class="k">INDEX</span><span class="w"> </span><span class="n">idx_user_email</span><span class="p">;</span>
+</code></pre></div>
+<h4 id="13-cac-loai-index-trong-postgresql">1.3 Các loại Index trong PostgreSQL<a class="headerlink" href="#13-cac-loai-index-trong-postgresql" title="Permanent link">&para;</a></h4>
+<h6 id="a-b-tree-mac-inh">a. B-Tree (mặc định):<a class="headerlink" href="#a-b-tree-mac-inh" title="Permanent link">&para;</a></h6>
+<p><code>Dùng cho so sánh =, &lt;, &gt;, BETWEEN</code>.</p>
+<h6 id="b-hash-index">b. Hash Index:<a class="headerlink" href="#b-hash-index" title="Permanent link">&para;</a></h6>
+<p><code>tối ưu cho so sánh = (ít dùng, vì B-Tree cũng làm được)</code>.</p>
+<h6 id="c-gin-generalized-inverted-index">c. GIN (Generalized Inverted Index):<a class="headerlink" href="#c-gin-generalized-inverted-index" title="Permanent link">&para;</a></h6>
+<p><code>tối ưu cho dữ liệu dạng mảng, JSONB, full-text search</code>.</p>
+<h6 id="d-gist-generalized-search-tree">d. GiST (Generalized Search Tree):<a class="headerlink" href="#d-gist-generalized-search-tree" title="Permanent link">&para;</a></h6>
+<p><code>cho dữ liệu không gian (PostGIS, tìm kiếm khoảng cách)</code>.</p>
+<h6 id="d-brin-block-range-index">d. BRIN (Block Range Index):<a class="headerlink" href="#d-brin-block-range-index" title="Permanent link">&para;</a></h6>
+<p><code>tiết kiệm bộ nhớ, phù hợp với bảng rất lớn (dữ liệu tuần tự, ví dụ cột timestamp).</code>.</p>
+<h4 id="3-cach-su-dung">3. Cách sử dụng<a class="headerlink" href="#3-cach-su-dung" title="Permanent link">&para;</a></h4>
+<p><strong>📌 Khi nào nên dùng Index</strong></p>
+<ul>
+<li>
+<p>Truy vấn <code>SELECT</code> thường xuyên trên một cột.</p>
+</li>
+<li>
+<p><code>JOIN</code> giữa các bảng.</p>
+</li>
+<li>
+<p><code>WHERE</code>, <code>ORDER BY</code>, <code>GROUP BY</code> trên cột đó.</p>
+</li>
+</ul>
+<p><strong>❌ Không nên tạo quá nhiều Index vì</strong></p>
+<ul>
+<li>Làm chậm INSERT, UPDATE, DELETE (do phải cập nhật index).</li>
+<li>Tốn dung lượng lưu trữ.</li>
+</ul>
+<h2 id="2-partition-table-phan-vung-bang">2. Partition Table (Phân vùng bảng)<a class="headerlink" href="#2-partition-table-phan-vung-bang" title="Permanent link">&para;</a></h2>
+<ul>
+<li>
+<p><strong>Partitioning</strong> là chia bảng lớn thành nhiều <strong>bảng con (partition)</strong> để dễ quản lý và tăng hiệu suất query.</p>
+</li>
+<li>
+<p>Người dùng query bảng cha, PostgreSQL sẽ tự động tìm partition phù hợp.</p>
+</li>
+</ul>
+<p><strong>📌 Các loại Partitioning trong PostgreSQL</strong></p>
+<ul>
+<li><strong>Range Partitioning</strong>: chia theo khoảng giá trị.</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">sales</span><span class="w"> </span><span class="p">(</span>
+<span class="w">  </span><span class="n">id</span><span class="w"> </span><span class="nb">SERIAL</span><span class="p">,</span>
+<span class="w">  </span><span class="n">sale_date</span><span class="w"> </span><span class="nb">DATE</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span>
+<span class="w">  </span><span class="n">amount</span><span class="w"> </span><span class="nb">NUMERIC</span>
+<span class="p">)</span><span class="w"> </span><span class="n">PARTITION</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">RANGE</span><span class="w"> </span><span class="p">(</span><span class="n">sale_date</span><span class="p">);</span>
+
+<span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">sales_2023</span><span class="w"> </span><span class="n">PARTITION</span><span class="w"> </span><span class="k">OF</span><span class="w"> </span><span class="n">sales</span>
+<span class="w">  </span><span class="k">FOR</span><span class="w"> </span><span class="k">VALUES</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="p">(</span><span class="s1">&#39;2023-01-01&#39;</span><span class="p">)</span><span class="w"> </span><span class="k">TO</span><span class="w"> </span><span class="p">(</span><span class="s1">&#39;2023-12-31&#39;</span><span class="p">);</span>
+
+<span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">sales_2024</span><span class="w"> </span><span class="n">PARTITION</span><span class="w"> </span><span class="k">OF</span><span class="w"> </span><span class="n">sales</span>
+<span class="w">  </span><span class="k">FOR</span><span class="w"> </span><span class="k">VALUES</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="p">(</span><span class="s1">&#39;2024-01-01&#39;</span><span class="p">)</span><span class="w"> </span><span class="k">TO</span><span class="w"> </span><span class="p">(</span><span class="s1">&#39;2024-12-31&#39;</span><span class="p">);</span>
+</code></pre></div>
+<ul>
+<li><strong>List Partitioning</strong>: chia theo danh sách giá trị cụ thể.</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">users</span><span class="w"> </span><span class="p">(</span>
+<span class="w">  </span><span class="n">id</span><span class="w"> </span><span class="nb">SERIAL</span><span class="p">,</span>
+<span class="w">  </span><span class="n">region</span><span class="w"> </span><span class="nb">TEXT</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span>
+<span class="p">)</span><span class="w"> </span><span class="n">PARTITION</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">LIST</span><span class="p">(</span><span class="n">region</span><span class="p">);</span>
+
+<span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">users_vn</span><span class="w"> </span><span class="n">PARTITION</span><span class="w"> </span><span class="k">OF</span><span class="w"> </span><span class="n">users</span><span class="w"> </span><span class="k">FOR</span><span class="w"> </span><span class="k">VALUES</span><span class="w"> </span><span class="k">IN</span><span class="w"> </span><span class="p">(</span><span class="s1">&#39;VN&#39;</span><span class="p">);</span>
+<span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">users_us</span><span class="w"> </span><span class="n">PARTITION</span><span class="w"> </span><span class="k">OF</span><span class="w"> </span><span class="n">users</span><span class="w"> </span><span class="k">FOR</span><span class="w"> </span><span class="k">VALUES</span><span class="w"> </span><span class="k">IN</span><span class="w"> </span><span class="p">(</span><span class="s1">&#39;US&#39;</span><span class="p">);</span>
+</code></pre></div>
+<ul>
+<li><strong>Hash Partitioning</strong>: PostgreSQL tự hash giá trị cột để chia theo điều kiện.</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">orders</span><span class="w"> </span><span class="p">(</span>
+<span class="w">  </span><span class="n">id</span><span class="w"> </span><span class="nb">SERIAL</span><span class="p">,</span>
+<span class="w">  </span><span class="n">customer_id</span><span class="w"> </span><span class="nb">INT</span>
+<span class="p">)</span><span class="w"> </span><span class="n">PARTITION</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">HASH</span><span class="w"> </span><span class="p">(</span><span class="n">customer_id</span><span class="p">);</span>
+
+<span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">orders_p1</span><span class="w"> </span><span class="n">PARTITION</span><span class="w"> </span><span class="k">OF</span><span class="w"> </span><span class="n">orders</span><span class="w"> </span><span class="k">FOR</span><span class="w"> </span><span class="k">VALUES</span><span class="w"> </span><span class="k">WITH</span><span class="w"> </span><span class="p">(</span><span class="n">MODULUS</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="n">REMAINDER</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span>
+<span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">orders_p2</span><span class="w"> </span><span class="n">PARTITION</span><span class="w"> </span><span class="k">OF</span><span class="w"> </span><span class="n">orders</span><span class="w"> </span><span class="k">FOR</span><span class="w"> </span><span class="k">VALUES</span><span class="w"> </span><span class="k">WITH</span><span class="w"> </span><span class="p">(</span><span class="n">MODULUS</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="n">REMAINDER</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span>
+<span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">orders_p3</span><span class="w"> </span><span class="n">PARTITION</span><span class="w"> </span><span class="k">OF</span><span class="w"> </span><span class="n">orders</span><span class="w"> </span><span class="k">FOR</span><span class="w"> </span><span class="k">VALUES</span><span class="w"> </span><span class="k">WITH</span><span class="w"> </span><span class="p">(</span><span class="n">MODULUS</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="n">REMAINDER</span><span class="w"> </span><span class="mi">2</span><span class="p">);</span>
+<span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">orders_p4</span><span class="w"> </span><span class="n">PARTITION</span><span class="w"> </span><span class="k">OF</span><span class="w"> </span><span class="n">orders</span><span class="w"> </span><span class="k">FOR</span><span class="w"> </span><span class="k">VALUES</span><span class="w"> </span><span class="k">WITH</span><span class="w"> </span><span class="p">(</span><span class="n">MODULUS</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="n">REMAINDER</span><span class="w"> </span><span class="mi">3</span><span class="p">);</span>
+</code></pre></div>
+<p><code>FOR VALUES WITH (MODULUS 4, REMAINDER 0)</code></p>
+<ul>
+<li><code>MODULUS 4</code>: Tổng số partition con được tạo ra là 4 (tức bảng orders sẽ được chia thành 4 bảng con: orders_p1, orders_p2, orders_p3, orders_p4).</li>
+<li><code>REMAINDER 0</code>: giá trị hash mod 4 = 0, sẽ được lưu vào bảng orders_p1. - Tức là PostgreSQL sẽ lấy giá trị cột dùng để partition (ví dụ: customer_id) - Tính hash(customer_id) % 4 - Nếu kết quả = 0 -&gt; dữ liệu lưu vào bảng orders_p1.</li>
+</ul>
+<h2 id="3-so-sanh-index-va-partition">3. So sánh <strong><em>Index</em></strong> và <strong><em>PARTITION</em></strong><a class="headerlink" href="#3-so-sanh-index-va-partition" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Đặc điểm</th>
+<th>Index</th>
+<th>Partition</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Tăng tốc độ truy vấn</td>
+<td>✅ Có</td>
+<td>✅ Có (khi lọc theo partition key)</td>
+</tr>
+<tr>
+<td>Giảm dung lượng lưu trữ</td>
+<td>❌ Không</td>
+<td>✅ Có thể (nếu dữ liệu chia nhỏ)</td>
+</tr>
+<tr>
+<td>Quản lý dữ liệu lớn</td>
+<td>❌ Không</td>
+<td>✅ Rất tốt (tránh full scan bảng lớn)</td>
+</tr>
+<tr>
+<td>Phù hợp khi</td>
+<td>truy vấn nhiều, bảng vừa</td>
+<td>Bảng rất lớn (hàng trăm triệu bảng ghi)</td>
+</tr>
+</tbody>
+</table>
+<h2 id="4-best-practices">4. Best Practices<a class="headerlink" href="#4-best-practices" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Với bảng nhỏ, trung bình -&gt; chỉ cần <strong>Index</strong>.</li>
+<li>Với bảng lớn (log, giao dịch theo thời gian) -&gt; dùng <strong>Partition</strong> + <strong>Index</strong> trong từng partition.</li>
+<li>Dùng <strong>EXPLAIN ANALYZE</strong> để kiểm tra query có dùng Index/Partition không.</li>
+</ul>
 
 
 
