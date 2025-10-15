@@ -2,154 +2,158 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://alphadev14.github.io/digitaldocs/</loc>
-         <lastmod>2025-10-04</lastmod>
+         <lastmod>2025-10-15</lastmod>
     </url>
     <url>
          <loc>https://alphadev14.github.io/digitaldocs/level1/</loc>
-         <lastmod>2025-10-04</lastmod>
+         <lastmod>2025-10-15</lastmod>
     </url>
     <url>
          <loc>https://alphadev14.github.io/digitaldocs/level2/</loc>
-         <lastmod>2025-10-04</lastmod>
+         <lastmod>2025-10-15</lastmod>
     </url>
     <url>
          <loc>https://alphadev14.github.io/digitaldocs/level3/</loc>
-         <lastmod>2025-10-04</lastmod>
+         <lastmod>2025-10-15</lastmod>
     </url>
     <url>
          <loc>https://alphadev14.github.io/digitaldocs/stack/</loc>
-         <lastmod>2025-10-04</lastmod>
+         <lastmod>2025-10-15</lastmod>
     </url>
     <url>
          <loc>https://alphadev14.github.io/digitaldocs/junior/</loc>
-         <lastmod>2025-10-04</lastmod>
+         <lastmod>2025-10-15</lastmod>
     </url>
     <url>
          <loc>https://alphadev14.github.io/digitaldocs/junior/Testing%20%26%20Deployment/01-unit-test-dotnet/</loc>
-         <lastmod>2025-10-04</lastmod>
+         <lastmod>2025-10-15</lastmod>
     </url>
     <url>
          <loc>https://alphadev14.github.io/digitaldocs/junior/Testing%20%26%20Deployment/02-integration-test/</loc>
-         <lastmod>2025-10-04</lastmod>
+         <lastmod>2025-10-15</lastmod>
     </url>
     <url>
          <loc>https://alphadev14.github.io/digitaldocs/junior/Testing%20%26%20Deployment/03-deploy-backend/</loc>
-         <lastmod>2025-10-04</lastmod>
+         <lastmod>2025-10-15</lastmod>
     </url>
     <url>
          <loc>https://alphadev14.github.io/digitaldocs/junior/Testing%20%26%20Deployment/04-deploy-frontend/</loc>
-         <lastmod>2025-10-04</lastmod>
+         <lastmod>2025-10-15</lastmod>
     </url>
     <url>
          <loc>https://alphadev14.github.io/digitaldocs/junior/Testing%20%26%20Deployment/05-connect-cloud-db/</loc>
-         <lastmod>2025-10-04</lastmod>
+         <lastmod>2025-10-15</lastmod>
     </url>
     <url>
          <loc>https://alphadev14.github.io/digitaldocs/junior/backend/01-aspnet-core-webapi/</loc>
-         <lastmod>2025-10-04</lastmod>
+         <lastmod>2025-10-15</lastmod>
     </url>
     <url>
          <loc>https://alphadev14.github.io/digitaldocs/junior/backend/02-middleware-dependency-injection/</loc>
-         <lastmod>2025-10-04</lastmod>
+         <lastmod>2025-10-15</lastmod>
     </url>
     <url>
          <loc>https://alphadev14.github.io/digitaldocs/junior/backend/03-entity-framework-core/</loc>
-         <lastmod>2025-10-04</lastmod>
+         <lastmod>2025-10-15</lastmod>
     </url>
     <url>
          <loc>https://alphadev14.github.io/digitaldocs/junior/backend/04-linq/</loc>
-         <lastmod>2025-10-04</lastmod>
+         <lastmod>2025-10-15</lastmod>
     </url>
     <url>
          <loc>https://alphadev14.github.io/digitaldocs/junior/backend/05-authentication-jwt/</loc>
-         <lastmod>2025-10-04</lastmod>
+         <lastmod>2025-10-15</lastmod>
     </url>
     <url>
          <loc>https://alphadev14.github.io/digitaldocs/junior/backend/06-clean-architecture-solid/</loc>
-         <lastmod>2025-10-04</lastmod>
+         <lastmod>2025-10-15</lastmod>
     </url>
     <url>
          <loc>https://alphadev14.github.io/digitaldocs/junior/backend/07-async-await/</loc>
-         <lastmod>2025-10-04</lastmod>
+         <lastmod>2025-10-15</lastmod>
     </url>
     <url>
          <loc>https://alphadev14.github.io/digitaldocs/junior/backend/08-async-await-2/</loc>
-         <lastmod>2025-10-04</lastmod>
+         <lastmod>2025-10-15</lastmod>
     </url>
     <url>
          <loc>https://alphadev14.github.io/digitaldocs/junior/database/01-postgresql-basic/</loc>
-         <lastmod>2025-10-04</lastmod>
+         <lastmod>2025-10-15</lastmod>
     </url>
     <url>
          <loc>https://alphadev14.github.io/digitaldocs/junior/database/01-sql-basic/</loc>
-         <lastmod>2025-10-04</lastmod>
+         <lastmod>2025-10-15</lastmod>
     </url>
     <url>
          <loc>https://alphadev14.github.io/digitaldocs/junior/database/02-transactions/</loc>
-         <lastmod>2025-10-04</lastmod>
+         <lastmod>2025-10-15</lastmod>
     </url>
     <url>
          <loc>https://alphadev14.github.io/digitaldocs/junior/database/03-isolation-levels/</loc>
-         <lastmod>2025-10-04</lastmod>
+         <lastmod>2025-10-15</lastmod>
     </url>
     <url>
          <loc>https://alphadev14.github.io/digitaldocs/junior/database/04-index-partitioning/</loc>
-         <lastmod>2025-10-04</lastmod>
+         <lastmod>2025-10-15</lastmod>
     </url>
     <url>
          <loc>https://alphadev14.github.io/digitaldocs/junior/database/05-query-optimization/</loc>
-         <lastmod>2025-10-04</lastmod>
+         <lastmod>2025-10-15</lastmod>
+    </url>
+    <url>
+         <loc>https://alphadev14.github.io/digitaldocs/junior/database/05-transactions/</loc>
+         <lastmod>2025-10-15</lastmod>
     </url>
     <url>
          <loc>https://alphadev14.github.io/digitaldocs/junior/database/06-jsonb-postgresql/</loc>
-         <lastmod>2025-10-04</lastmod>
+         <lastmod>2025-10-15</lastmod>
     </url>
     <url>
          <loc>https://alphadev14.github.io/digitaldocs/junior/frontend/01-react-hooks%20copy/</loc>
-         <lastmod>2025-10-04</lastmod>
+         <lastmod>2025-10-15</lastmod>
     </url>
     <url>
          <loc>https://alphadev14.github.io/digitaldocs/junior/frontend/01-react-hooks/</loc>
-         <lastmod>2025-10-04</lastmod>
+         <lastmod>2025-10-15</lastmod>
     </url>
     <url>
          <loc>https://alphadev14.github.io/digitaldocs/junior/frontend/02-context-api/</loc>
-         <lastmod>2025-10-04</lastmod>
+         <lastmod>2025-10-15</lastmod>
     </url>
     <url>
          <loc>https://alphadev14.github.io/digitaldocs/junior/frontend/03-react-router/</loc>
-         <lastmod>2025-10-04</lastmod>
+         <lastmod>2025-10-15</lastmod>
     </url>
     <url>
          <loc>https://alphadev14.github.io/digitaldocs/junior/frontend/04-state-management/</loc>
-         <lastmod>2025-10-04</lastmod>
+         <lastmod>2025-10-15</lastmod>
     </url>
     <url>
          <loc>https://alphadev14.github.io/digitaldocs/junior/frontend/05-ui-antd-tailwind/</loc>
-         <lastmod>2025-10-04</lastmod>
+         <lastmod>2025-10-15</lastmod>
     </url>
     <url>
          <loc>https://alphadev14.github.io/digitaldocs/junior/frontend/06-testing-react/</loc>
-         <lastmod>2025-10-04</lastmod>
+         <lastmod>2025-10-15</lastmod>
     </url>
     <url>
          <loc>https://alphadev14.github.io/digitaldocs/junior/project/todos/05-deploy-fe/</loc>
-         <lastmod>2025-10-04</lastmod>
+         <lastmod>2025-10-15</lastmod>
     </url>
     <url>
          <loc>https://alphadev14.github.io/digitaldocs/junior/project/todos/06-deploy-be/</loc>
-         <lastmod>2025-10-04</lastmod>
+         <lastmod>2025-10-15</lastmod>
     </url>
     <url>
          <loc>https://alphadev14.github.io/digitaldocs/junior/project/todos/07-deploy-db/</loc>
-         <lastmod>2025-10-04</lastmod>
+         <lastmod>2025-10-15</lastmod>
     </url>
     <url>
          <loc>https://alphadev14.github.io/digitaldocs/mid-level/</loc>
-         <lastmod>2025-10-04</lastmod>
+         <lastmod>2025-10-15</lastmod>
     </url>
     <url>
          <loc>https://alphadev14.github.io/digitaldocs/senior/</loc>
-         <lastmod>2025-10-04</lastmod>
+         <lastmod>2025-10-15</lastmod>
     </url>
 </urlset>
