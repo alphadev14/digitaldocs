@@ -161,7 +161,7 @@ CREATE TABLE users (
 #### 3.3 Sửa bảng
 
 ```sql
-LTER TABLE users ADD COLUMN age INT;
+ALTER TABLE users ADD COLUMN age INT;
 ALTER TABLE users DROP COLUMN age;
 ```
 
