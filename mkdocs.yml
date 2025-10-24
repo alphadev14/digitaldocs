@@ -42,12 +42,12 @@ nav:
           - Testing React: junior/frontend/06-testing-react.md
       - Database (PostgreSQL):
           - PostgreSQL Basic: junior/database/01-postgresql-basic.md
-          - PostgreSQL Advanced: junior/database/02-postgresql-advanced.md
-          - Transactions: junior/database/05-transactions.md
+          - Transactions: junior/database/02-transactions.md
           - Isolation Levels: junior/database/03-isolation-levels.md
           - Index & Partitioning: junior/database/04-index-partitioning.md
-          - Query Optimization: junior/database/07-query-optimization.md
-          - JSONB in PostgreSQL: junior/database/06-jsonb-postgresql.md
+          - JSONB in PostgreSQL: junior/database/05-jsonb-postgresql.md
+          - Query Optimization: junior/database/06-query-optimization.md
+          - PostgreSQL Advanced: junior/database/07-postgresql-advanced.md
       - Testing & Deployment: Testing & Deployment/index.md
       - Project:
           - Todos:
