@@ -11,6 +11,10 @@
         <link rel="canonical" href="https://alphadev14.github.io/digitaldocs/junior/database/05-transactions/">
       
       
+        <link rel="prev" href="../02-postgresql-advanced/">
+      
+      
+        <link rel="next" href="../03-isolation-levels/">
       
       
       <link rel="icon" href="../../../assets/logo.png">
@@ -18,7 +22,7 @@
     
     
       
-        <title>Transaction trong PostgreSQL - P&T | Digital Docs</title>
+        <title>Transactions - P&T | Digital Docs</title>
       
     
     
@@ -109,7 +113,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Transaction trong PostgreSQL
+              Transactions
             
           </span>
         </div>
@@ -209,18 +213,20 @@
       
   
   
+    
   
   
+  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
         
           
           <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
@@ -236,7 +242,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             Junior
@@ -661,18 +667,20 @@
                 
   
   
+    
   
   
+  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" checked>
         
           
           <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
@@ -688,7 +696,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2_3">
             <span class="md-nav__icon md-icon"></span>
             Database (PostgreSQL)
@@ -725,7 +733,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../02-postgresql-advanced.md" class="md-nav__link">
+      <a href="../02-postgresql-advanced/" class="md-nav__link">
         
   
   
@@ -745,10 +753,32 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../02-transactions/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Transactions
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -759,6 +789,113 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-transaction-la-gi" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Transaction là gì?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-bon-tinh-chat-acid-cua-transaction" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Bốn tính chất ACID của Transaction
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-cach-su-dung-transaction-trong-postgresql" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Cách sử dụng Transaction trong PostgreSQL
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Cách sử dụng Transaction trong PostgreSQL">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bat-au-va-ket-thuc-transaction" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔹 Bắt đầu và kết thúc Transaction
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vi-du-minh-hoa-voi-rollback" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔹 Ví dụ minh họa với ROLLBACK
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-savepoint-trong-transaction" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Savepoint trong Transaction
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-isolation-levels-muc-o-co-lap" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Isolation Levels (Mức độ cô lập)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-khi-nao-nen-dung-transaction" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. Khi nào nên dùng Transaction?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-tong-ket" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. Tổng kết
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -817,7 +954,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../05-query-optimization/" class="md-nav__link">
+      <a href="../07-query-optimization/" class="md-nav__link">
         
   
   

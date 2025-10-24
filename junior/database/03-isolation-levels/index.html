@@ -11,7 +11,7 @@
         <link rel="canonical" href="https://alphadev14.github.io/digitaldocs/junior/database/03-isolation-levels/">
       
       
-        <link rel="prev" href="../02-transactions/">
+        <link rel="prev" href="../05-transactions/">
       
       
         <link rel="next" href="../04-index-partitioning/">
@@ -76,6 +76,11 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
+      
+        
+        <a href="#03-postgresql-transaction-isolation-levels" class="md-skip">
+          Skip to content
+        </a>
       
     </div>
     <div data-md-component="announce">
@@ -728,7 +733,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../02-postgresql-advanced.md" class="md-nav__link">
+      <a href="../02-postgresql-advanced/" class="md-nav__link">
         
   
   
@@ -751,7 +756,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../02-transactions/" class="md-nav__link">
+      <a href="../05-transactions/" class="md-nav__link">
         
   
   
@@ -780,6 +785,21 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Isolation Levels
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
         
@@ -792,6 +812,130 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-gioi-thieu" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Giới thiệu
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-cac-hien-tuong-co-the-xay-ra" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Các hiện tượng có thể xảy ra
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-cac-muc-isolation-trong-postgresql" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Các mức Isolation trong PostgreSQL
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-chi-tiet-tung-muc" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Chi tiết từng mức
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Chi tiết từng mức">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-read-uncommitted" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.1 Read Uncommitted
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-read-committed-mac-inh" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.2 Read Committed (mặc định)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#43-repeatable-read" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.3 Repeatable Read
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#44-serializable" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.4 Serializable
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-thiet-lap-isolation-level" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Thiết lập Isolation Level
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-khi-nao-dung" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. Khi nào dùng
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-tong-ket" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. Tổng kết
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -828,7 +972,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../05-query-optimization/" class="md-nav__link">
+      <a href="../07-query-optimization/" class="md-nav__link">
         
   
   
@@ -1265,6 +1409,121 @@
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-gioi-thieu" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Giới thiệu
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-cac-hien-tuong-co-the-xay-ra" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Các hiện tượng có thể xảy ra
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-cac-muc-isolation-trong-postgresql" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Các mức Isolation trong PostgreSQL
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-chi-tiet-tung-muc" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Chi tiết từng mức
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Chi tiết từng mức">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-read-uncommitted" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.1 Read Uncommitted
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-read-committed-mac-inh" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.2 Read Committed (mặc định)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#43-repeatable-read" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.3 Repeatable Read
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#44-serializable" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.4 Serializable
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-thiet-lap-isolation-level" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Thiết lập Isolation Level
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-khi-nao-dung" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. Khi nào dùng
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-tong-ket" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. Tổng kết
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -1280,9 +1539,186 @@
 
 
 
-  <h1>Isolation Levels</h1>
+<h1 id="03-postgresql-transaction-isolation-levels">03 - PostgreSQL Transaction Isolation Levels<a class="headerlink" href="#03-postgresql-transaction-isolation-levels" title="Permanent link">&para;</a></h1>
+<h2 id="1-gioi-thieu">1. Giới thiệu<a class="headerlink" href="#1-gioi-thieu" title="Permanent link">&para;</a></h2>
+<p>Isolation Level xác định cách các transaction tương tác với nhau trong cơ sở dữ liệu.
+Giúp đảm bảo tính nhất quán và tránh xung đột khi nhiều transaction chạy song song.</p>
+<h2 id="2-cac-hien-tuong-co-the-xay-ra">2. Các hiện tượng có thể xảy ra<a class="headerlink" href="#2-cac-hien-tuong-co-the-xay-ra" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Hiện tượng</th>
+<th>Mô tả</th>
+<th>Ví dụ</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Dirty Read</strong></td>
+<td>Đọc dữ liệu chưa commit</td>
+<td>Transaction A update giá = 2000 (chưa commit), B đọc thấy 2000. A rollback → sai</td>
+</tr>
+<tr>
+<td><strong>Non-repeatable Read</strong></td>
+<td>Đọc 2 lần thấy khác nhau</td>
+<td>A đọc giá = 1000, B update &amp; commit giá = 2000, A đọc lại thấy 2000</td>
+</tr>
+<tr>
+<td><strong>Phantom Read</strong></td>
+<td>Số dòng thay đổi giữa 2 lần đọc</td>
+<td>A SELECT &gt; 100, B insert thêm dòng thỏa điều kiện, A đọc lại thấy nhiều hơn</td>
+</tr>
+</tbody>
+</table>
+<h2 id="3-cac-muc-isolation-trong-postgresql">3. Các mức Isolation trong PostgreSQL<a class="headerlink" href="#3-cac-muc-isolation-trong-postgresql" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Level</th>
+<th>Dirty Read</th>
+<th>Non-repeatable Read</th>
+<th>Phantom Read</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Read Uncommitted</strong></td>
+<td>❌ Có thể</td>
+<td>❌ Có thể</td>
+<td>❌ Có thể</td>
+</tr>
+<tr>
+<td><strong>Read Committed (default)</strong></td>
+<td>✅ Không</td>
+<td>❌ Có thể</td>
+<td>❌ Có thể</td>
+</tr>
+<tr>
+<td><strong>Repeatable Read</strong></td>
+<td>✅ Không</td>
+<td>✅ Không</td>
+<td>❌ Có thể (hiếm)</td>
+</tr>
+<tr>
+<td><strong>Serializable</strong></td>
+<td>✅ Không</td>
+<td>✅ Không</td>
+<td>✅ Không</td>
+</tr>
+</tbody>
+</table>
+<h2 id="4-chi-tiet-tung-muc">4. Chi tiết từng mức<a class="headerlink" href="#4-chi-tiet-tung-muc" title="Permanent link">&para;</a></h2>
+<h3 id="41-read-uncommitted">4.1 Read Uncommitted<a class="headerlink" href="#41-read-uncommitted" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Cho phép đọc dữ liệu chưa commit.</li>
+<li>PostgreSQL thực tế xử lý giống Read Committed.</li>
+</ul>
+<h3 id="42-read-committed-mac-inh">4.2 Read Committed (mặc định)<a class="headerlink" href="#42-read-committed-mac-inh" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Mỗi câu SELECT chỉ thấy dữ liệu commit tại thời điểm chạy.</li>
+<li>Nếu transaction khác commit sau đó, lệnh SELECT kế tiếp sẽ thấy dữ liệu mới.</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="k">BEGIN</span><span class="p">;</span>
+<span class="k">SELECT</span><span class="w"> </span><span class="n">amount</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">orders</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w">  </span><span class="c1">-- 1000</span>
 
-<p>Read Uncommitted, Read Committed, Repeatable Read, Serializable</p>
+<span class="c1">-- Session 2</span>
+<span class="k">UPDATE</span><span class="w"> </span><span class="n">orders</span><span class="w"> </span><span class="k">SET</span><span class="w"> </span><span class="n">amount</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2000</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<span class="k">COMMIT</span><span class="p">;</span>
+
+<span class="c1">-- Session 1</span>
+<span class="k">SELECT</span><span class="w"> </span><span class="n">amount</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">orders</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w">  </span><span class="c1">-- 2000</span>
+<span class="k">COMMIT</span><span class="p">;</span>
+</code></pre></div>
+<h3 id="43-repeatable-read">4.3 Repeatable Read<a class="headerlink" href="#43-repeatable-read" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Snapshot cố định trong suốt transaction.</li>
+<li>Mọi SELECT đều thấy cùng dữ liệu.</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="k">BEGIN</span><span class="w"> </span><span class="k">TRANSACTION</span><span class="w"> </span><span class="k">ISOLATION</span><span class="w"> </span><span class="k">LEVEL</span><span class="w"> </span><span class="k">REPEATABLE</span><span class="w"> </span><span class="k">READ</span><span class="p">;</span>
+<span class="k">SELECT</span><span class="w"> </span><span class="n">amount</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">orders</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w">  </span><span class="c1">-- 1000</span>
+
+<span class="c1">-- Session 2</span>
+<span class="k">UPDATE</span><span class="w"> </span><span class="n">orders</span><span class="w"> </span><span class="k">SET</span><span class="w"> </span><span class="n">amount</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2000</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<span class="k">COMMIT</span><span class="p">;</span>
+
+<span class="c1">-- Session 1</span>
+<span class="k">SELECT</span><span class="w"> </span><span class="n">amount</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">orders</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w">  </span><span class="c1">-- 1000 (không đổi)</span>
+<span class="k">COMMIT</span><span class="p">;</span>
+</code></pre></div>
+<h3 id="44-serializable">4.4 Serializable<a class="headerlink" href="#44-serializable" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Mô phỏng như chạy tuần tự từng transaction.</li>
+<li>PostgreSQL sẽ rollback nếu phát hiện xung đột logic.</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="k">BEGIN</span><span class="w"> </span><span class="k">TRANSACTION</span><span class="w"> </span><span class="k">ISOLATION</span><span class="w"> </span><span class="k">LEVEL</span><span class="w"> </span><span class="k">SERIALIZABLE</span><span class="p">;</span>
+<span class="k">SELECT</span><span class="w"> </span><span class="k">SUM</span><span class="p">(</span><span class="n">balance</span><span class="p">)</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">accounts</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="k">type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;user&#39;</span><span class="p">;</span>
+<span class="c1">-- Transaction khác INSERT thêm dòng</span>
+<span class="k">COMMIT</span><span class="p">;</span><span class="w"> </span><span class="c1">-- Có thể bị serialization_failure</span>
+</code></pre></div>
+<h2 id="5-thiet-lap-isolation-level">5. Thiết lập Isolation Level<a class="headerlink" href="#5-thiet-lap-isolation-level" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><span class="k">BEGIN</span><span class="w"> </span><span class="k">TRANSACTION</span><span class="w"> </span><span class="k">ISOLATION</span><span class="w"> </span><span class="k">LEVEL</span><span class="w"> </span><span class="k">SERIALIZABLE</span><span class="p">;</span>
+<span class="c1">-- hoặc</span>
+<span class="k">SET</span><span class="w"> </span><span class="k">TRANSACTION</span><span class="w"> </span><span class="k">ISOLATION</span><span class="w"> </span><span class="k">LEVEL</span><span class="w"> </span><span class="k">REPEATABLE</span><span class="w"> </span><span class="k">READ</span><span class="p">;</span>
+<span class="k">SHOW</span><span class="w"> </span><span class="k">TRANSACTION</span><span class="w"> </span><span class="k">ISOLATION</span><span class="w"> </span><span class="k">LEVEL</span><span class="p">;</span>
+</code></pre></div>
+<h2 id="6-khi-nao-dung">6. Khi nào dùng<a class="headerlink" href="#6-khi-nao-dung" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Mức</th>
+<th>Khi nào dùng</th>
+<th>Đặc điểm</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Read Committed</strong></td>
+<td>Mặc định, đủ cho hầu hết ứng dụng</td>
+<td>Cân bằng tốc độ &amp; an toàn</td>
+</tr>
+<tr>
+<td><strong>Repeatable Read</strong></td>
+<td>Báo cáo, truy vấn đọc nhiều</td>
+<td>Snapshot cố định</td>
+</tr>
+<tr>
+<td><strong>Serializable</strong></td>
+<td>Giao dịch tài chính</td>
+<td>An toàn tối đa, chậm hơn</td>
+</tr>
+</tbody>
+</table>
+<h2 id="7-tong-ket">7. Tổng kết<a class="headerlink" href="#7-tong-ket" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Level</th>
+<th>Nhất quán</th>
+<th>Hiệu năng</th>
+<th>Ứng dụng</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Read Committed</td>
+<td>Trung bình</td>
+<td>Nhanh</td>
+<td>Web API, CRUD</td>
+</tr>
+<tr>
+<td>Repeatable Read</td>
+<td>Cao</td>
+<td>Trung bình</td>
+<td>Báo cáo</td>
+</tr>
+<tr>
+<td>Serializable</td>
+<td>Rất cao</td>
+<td>Thấp</td>
+<td>Ngân hàng, kế toán</td>
+</tr>
+</tbody>
+</table>
 
 
 
