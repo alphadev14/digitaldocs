@@ -8,13 +8,13 @@
       
       
       
-        <link rel="canonical" href="https://alphadev14.github.io/digitaldocs/junior/database/03-isolation-levels/">
+        <link rel="canonical" href="https://alphadev14.github.io/digitaldocs/junior/database/02-transactions/">
       
       
-        <link rel="prev" href="../02-transactions/">
+        <link rel="prev" href="../01-postgresql-basic/">
       
       
-        <link rel="next" href="../04-index-partitioning/">
+        <link rel="next" href="../03-isolation-levels/">
       
       
       <link rel="icon" href="../../../assets/logo.png">
@@ -22,7 +22,7 @@
     
     
       
-        <title>Isolation Levels - P&T | Digital Docs</title>
+        <title>Transactions - P&T | Digital Docs</title>
       
     
     
@@ -78,7 +78,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#03-postgresql-transaction-isolation-levels" class="md-skip">
+        <a href="#transaction-trong-postgresql" class="md-skip">
           Skip to content
         </a>
       
@@ -113,7 +113,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Isolation Levels
+              Transactions
             
           </span>
         </div>
@@ -730,29 +730,6 @@
                 
   
   
-  
-  
-    <li class="md-nav__item">
-      <a href="../02-transactions/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Transactions
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
     
   
   
@@ -770,7 +747,7 @@
   
   
   <span class="md-ellipsis">
-    Isolation Levels
+    Transactions
     
   </span>
   
@@ -783,7 +760,7 @@
   
   
   <span class="md-ellipsis">
-    Isolation Levels
+    Transactions
     
   </span>
   
@@ -806,73 +783,46 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#1-gioi-thieu" class="md-nav__link">
+  <a href="#1-transaction-la-gi" class="md-nav__link">
     <span class="md-ellipsis">
-      1. Giới thiệu
+      1. Transaction là gì?
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#2-cac-hien-tuong-co-the-xay-ra" class="md-nav__link">
+  <a href="#2-bon-tinh-chat-acid-cua-transaction" class="md-nav__link">
     <span class="md-ellipsis">
-      2. Các hiện tượng có thể xảy ra
+      2. Bốn tính chất ACID của Transaction
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#3-cac-muc-isolation-trong-postgresql" class="md-nav__link">
+  <a href="#3-cach-su-dung-transaction-trong-postgresql" class="md-nav__link">
     <span class="md-ellipsis">
-      3. Các mức Isolation trong PostgreSQL
+      3. Cách sử dụng Transaction trong PostgreSQL
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#4-chi-tiet-tung-muc" class="md-nav__link">
-    <span class="md-ellipsis">
-      4. Chi tiết từng mức
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="4. Chi tiết từng mức">
+    <nav class="md-nav" aria-label="3. Cách sử dụng Transaction trong PostgreSQL">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#41-read-uncommitted" class="md-nav__link">
+  <a href="#bat-au-va-ket-thuc-transaction" class="md-nav__link">
     <span class="md-ellipsis">
-      4.1 Read Uncommitted
+      🔹 Bắt đầu và kết thúc Transaction
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#42-read-committed-mac-inh" class="md-nav__link">
+  <a href="#vi-du-minh-hoa-voi-rollback" class="md-nav__link">
     <span class="md-ellipsis">
-      4.2 Read Committed (mặc định)
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#43-repeatable-read" class="md-nav__link">
-    <span class="md-ellipsis">
-      4.3 Repeatable Read
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#44-serializable" class="md-nav__link">
-    <span class="md-ellipsis">
-      4.4 Serializable
+      🔹 Ví dụ minh họa với ROLLBACK
     </span>
   </a>
   
@@ -884,18 +834,27 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#5-thiet-lap-isolation-level" class="md-nav__link">
+  <a href="#4-savepoint-trong-transaction" class="md-nav__link">
     <span class="md-ellipsis">
-      5. Thiết lập Isolation Level
+      4. Savepoint trong Transaction
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#6-khi-nao-dung" class="md-nav__link">
+  <a href="#5-isolation-levels-muc-o-co-lap" class="md-nav__link">
     <span class="md-ellipsis">
-      6. Khi nào dùng
+      5. Isolation Levels (Mức độ cô lập)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-khi-nao-nen-dung-transaction" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. Khi nào nên dùng Transaction?
     </span>
   </a>
   
@@ -914,6 +873,29 @@
   
 </nav>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03-isolation-levels/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Isolation Levels
+    
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -1419,73 +1401,46 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#1-gioi-thieu" class="md-nav__link">
+  <a href="#1-transaction-la-gi" class="md-nav__link">
     <span class="md-ellipsis">
-      1. Giới thiệu
+      1. Transaction là gì?
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#2-cac-hien-tuong-co-the-xay-ra" class="md-nav__link">
+  <a href="#2-bon-tinh-chat-acid-cua-transaction" class="md-nav__link">
     <span class="md-ellipsis">
-      2. Các hiện tượng có thể xảy ra
+      2. Bốn tính chất ACID của Transaction
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#3-cac-muc-isolation-trong-postgresql" class="md-nav__link">
+  <a href="#3-cach-su-dung-transaction-trong-postgresql" class="md-nav__link">
     <span class="md-ellipsis">
-      3. Các mức Isolation trong PostgreSQL
+      3. Cách sử dụng Transaction trong PostgreSQL
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#4-chi-tiet-tung-muc" class="md-nav__link">
-    <span class="md-ellipsis">
-      4. Chi tiết từng mức
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="4. Chi tiết từng mức">
+    <nav class="md-nav" aria-label="3. Cách sử dụng Transaction trong PostgreSQL">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#41-read-uncommitted" class="md-nav__link">
+  <a href="#bat-au-va-ket-thuc-transaction" class="md-nav__link">
     <span class="md-ellipsis">
-      4.1 Read Uncommitted
+      🔹 Bắt đầu và kết thúc Transaction
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#42-read-committed-mac-inh" class="md-nav__link">
+  <a href="#vi-du-minh-hoa-voi-rollback" class="md-nav__link">
     <span class="md-ellipsis">
-      4.2 Read Committed (mặc định)
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#43-repeatable-read" class="md-nav__link">
-    <span class="md-ellipsis">
-      4.3 Repeatable Read
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#44-serializable" class="md-nav__link">
-    <span class="md-ellipsis">
-      4.4 Serializable
+      🔹 Ví dụ minh họa với ROLLBACK
     </span>
   </a>
   
@@ -1497,18 +1452,27 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#5-thiet-lap-isolation-level" class="md-nav__link">
+  <a href="#4-savepoint-trong-transaction" class="md-nav__link">
     <span class="md-ellipsis">
-      5. Thiết lập Isolation Level
+      4. Savepoint trong Transaction
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#6-khi-nao-dung" class="md-nav__link">
+  <a href="#5-isolation-levels-muc-o-co-lap" class="md-nav__link">
     <span class="md-ellipsis">
-      6. Khi nào dùng
+      5. Isolation Levels (Mức độ cô lập)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-khi-nao-nen-dung-transaction" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. Khi nào nên dùng Transaction?
     </span>
   </a>
   
@@ -1539,186 +1503,338 @@
 
 
 
-<h1 id="03-postgresql-transaction-isolation-levels">03 - PostgreSQL Transaction Isolation Levels<a class="headerlink" href="#03-postgresql-transaction-isolation-levels" title="Permanent link">&para;</a></h1>
-<h2 id="1-gioi-thieu">1. Giới thiệu<a class="headerlink" href="#1-gioi-thieu" title="Permanent link">&para;</a></h2>
-<p>Isolation Level xác định cách các transaction tương tác với nhau trong cơ sở dữ liệu.
-Giúp đảm bảo tính nhất quán và tránh xung đột khi nhiều transaction chạy song song.</p>
-<h2 id="2-cac-hien-tuong-co-the-xay-ra">2. Các hiện tượng có thể xảy ra<a class="headerlink" href="#2-cac-hien-tuong-co-the-xay-ra" title="Permanent link">&para;</a></h2>
+<h1 id="transaction-trong-postgresql">Transaction trong PostgreSQL<a class="headerlink" href="#transaction-trong-postgresql" title="Permanent link">&para;</a></h1>
+<h2 id="1-transaction-la-gi">1. Transaction là gì?<a class="headerlink" href="#1-transaction-la-gi" title="Permanent link">&para;</a></h2>
+<p><strong>Transaction</strong> là một <strong>tập hợp các thao tác (câu lệnh SQL)</strong> được thực hiện như một <strong>đơn vị logic duy nhất</strong>.<br />
+Tất cả các thao tác trong transaction <strong>hoặc cùng thành công (COMMIT)</strong>, <strong>hoặc cùng thất bại (ROLLBACK)</strong>.<br />
+Điều này giúp đảm bảo tính toàn vẹn dữ liệu khi có lỗi hoặc sự cố trong quá trình xử lý.</p>
+<hr />
+<h2 id="2-bon-tinh-chat-acid-cua-transaction">2. Bốn tính chất ACID của Transaction<a class="headerlink" href="#2-bon-tinh-chat-acid-cua-transaction" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
 <tr>
-<th>Hiện tượng</th>
-<th>Mô tả</th>
-<th>Ví dụ</th>
+<th>Tính chất</th>
+<th>Ý nghĩa</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><strong>Dirty Read</strong></td>
-<td>Đọc dữ liệu chưa commit</td>
-<td>Transaction A update giá = 2000 (chưa commit), B đọc thấy 2000. A rollback → sai</td>
+<td><strong>Atomicity</strong></td>
+<td>Tính nguyên tử – Toàn bộ transaction được xem như một đơn vị không thể chia nhỏ. Nếu một phần thất bại, toàn bộ transaction bị hủy.</td>
 </tr>
 <tr>
-<td><strong>Non-repeatable Read</strong></td>
-<td>Đọc 2 lần thấy khác nhau</td>
-<td>A đọc giá = 1000, B update &amp; commit giá = 2000, A đọc lại thấy 2000</td>
+<td><strong>Consistency</strong></td>
+<td>Sau khi transaction hoàn thành, dữ liệu trong database luôn ở trạng thái hợp lệ (đúng với ràng buộc dữ liệu).</td>
 </tr>
 <tr>
-<td><strong>Phantom Read</strong></td>
-<td>Số dòng thay đổi giữa 2 lần đọc</td>
-<td>A SELECT &gt; 100, B insert thêm dòng thỏa điều kiện, A đọc lại thấy nhiều hơn</td>
+<td><strong>Isolation</strong></td>
+<td>Mỗi transaction hoạt động độc lập, không bị ảnh hưởng bởi transaction khác.</td>
+</tr>
+<tr>
+<td><strong>Durability</strong></td>
+<td>Sau khi COMMIT, thay đổi sẽ được lưu vĩnh viễn trong hệ thống (ngay cả khi hệ thống bị tắt hoặc lỗi).</td>
 </tr>
 </tbody>
 </table>
-<h2 id="3-cac-muc-isolation-trong-postgresql">3. Các mức Isolation trong PostgreSQL<a class="headerlink" href="#3-cac-muc-isolation-trong-postgresql" title="Permanent link">&para;</a></h2>
+<hr />
+<h2 id="3-cach-su-dung-transaction-trong-postgresql">3. Cách sử dụng Transaction trong PostgreSQL<a class="headerlink" href="#3-cach-su-dung-transaction-trong-postgresql" title="Permanent link">&para;</a></h2>
+<h3 id="bat-au-va-ket-thuc-transaction">🔹 Bắt đầu và kết thúc Transaction<a class="headerlink" href="#bat-au-va-ket-thuc-transaction" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="k">BEGIN</span><span class="p">;</span>
+
+<span class="k">UPDATE</span><span class="w"> </span><span class="n">accounts</span><span class="w"> </span><span class="k">SET</span><span class="w"> </span><span class="n">balance</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">balance</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">100</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<span class="k">UPDATE</span><span class="w"> </span><span class="n">accounts</span><span class="w"> </span><span class="k">SET</span><span class="w"> </span><span class="n">balance</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">balance</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">100</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span>
+
+<span class="k">COMMIT</span><span class="p">;</span>
+</code></pre></div>
+<ul>
+<li><strong>BEGIN</strong>: bắt đầu transaction.</li>
+<li><strong>COMMIT</strong>: xác nhận và lưu các thay đổi vào database.</li>
+<li><strong>ROLLBACK</strong>: hủy tất cả thay đổi trong transaction (nếu có lỗi).</li>
+</ul>
+<hr />
+<h3 id="vi-du-minh-hoa-voi-rollback">🔹 Ví dụ minh họa với ROLLBACK<a class="headerlink" href="#vi-du-minh-hoa-voi-rollback" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="k">BEGIN</span><span class="p">;</span>
+
+<span class="k">UPDATE</span><span class="w"> </span><span class="n">products</span><span class="w"> </span><span class="k">SET</span><span class="w"> </span><span class="n">quantity</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">quantity</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">10</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<span class="k">UPDATE</span><span class="w"> </span><span class="n">orders</span><span class="w"> </span><span class="k">SET</span><span class="w"> </span><span class="n">total</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">total</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">500</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">99</span><span class="p">;</span>
+
+<span class="c1">-- Có lỗi xảy ra ở đây</span>
+<span class="k">ROLLBACK</span><span class="p">;</span>
+</code></pre></div>
+<p>➡ Khi thực hiện <code>ROLLBACK</code>, tất cả thay đổi trước đó trong transaction đều bị hủy bỏ.</p>
+<hr />
+<h2 id="4-savepoint-trong-transaction">4. Savepoint trong Transaction<a class="headerlink" href="#4-savepoint-trong-transaction" title="Permanent link">&para;</a></h2>
+<p>Savepoint cho phép bạn <strong>tạo điểm khôi phục tạm thời</strong> trong transaction, giúp rollback <strong>một phần</strong> thay vì toàn bộ.</p>
+<div class="highlight"><pre><span></span><code><span class="k">BEGIN</span><span class="p">;</span>
+
+<span class="k">UPDATE</span><span class="w"> </span><span class="n">accounts</span><span class="w"> </span><span class="k">SET</span><span class="w"> </span><span class="n">balance</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">balance</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">100</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<span class="n">SAVEPOINT</span><span class="w"> </span><span class="n">sp1</span><span class="p">;</span>
+
+<span class="k">UPDATE</span><span class="w"> </span><span class="n">accounts</span><span class="w"> </span><span class="k">SET</span><span class="w"> </span><span class="n">balance</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">balance</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">200</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span>
+<span class="k">ROLLBACK</span><span class="w"> </span><span class="k">TO</span><span class="w"> </span><span class="n">sp1</span><span class="p">;</span><span class="w"> </span><span class="c1">-- Quay lại trước khi trừ 200</span>
+
+<span class="k">COMMIT</span><span class="p">;</span>
+</code></pre></div>
+<hr />
+<h2 id="5-isolation-levels-muc-o-co-lap">5. Isolation Levels (Mức độ cô lập)<a class="headerlink" href="#5-isolation-levels-muc-o-co-lap" title="Permanent link">&para;</a></h2>
+<p>PostgreSQL hỗ trợ 4 mức độ cô lập (Isolation Level):</p>
 <table>
 <thead>
 <tr>
 <th>Level</th>
-<th>Dirty Read</th>
-<th>Non-repeatable Read</th>
-<th>Phantom Read</th>
+<th>Mô tả</th>
+<th>Nguy cơ gặp phải</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><strong>Read Uncommitted</strong></td>
-<td>❌ Có thể</td>
-<td>❌ Có thể</td>
-<td>❌ Có thể</td>
+<td><strong>READ UNCOMMITTED</strong></td>
+<td>Cho phép đọc dữ liệu chưa COMMIT.</td>
+<td>Dirty Read</td>
 </tr>
 <tr>
-<td><strong>Read Committed (default)</strong></td>
-<td>✅ Không</td>
-<td>❌ Có thể</td>
-<td>❌ Có thể</td>
+<td><strong>READ COMMITTED</strong> <em>(mặc định)</em></td>
+<td>Chỉ đọc dữ liệu đã COMMIT.</td>
+<td>Non-repeatable Read</td>
 </tr>
 <tr>
-<td><strong>Repeatable Read</strong></td>
-<td>✅ Không</td>
-<td>✅ Không</td>
-<td>❌ Có thể (hiếm)</td>
+<td><strong>REPEATABLE READ</strong></td>
+<td>Giữ snapshot dữ liệu trong suốt transaction.</td>
+<td>Phantom Read</td>
 </tr>
 <tr>
-<td><strong>Serializable</strong></td>
-<td>✅ Không</td>
-<td>✅ Không</td>
-<td>✅ Không</td>
+<td><strong>SERIALIZABLE</strong></td>
+<td>Giả lập thực thi tuần tự tuyệt đối.</td>
+<td>Không có nguy cơ</td>
 </tr>
 </tbody>
 </table>
-<h2 id="4-chi-tiet-tung-muc">4. Chi tiết từng mức<a class="headerlink" href="#4-chi-tiet-tung-muc" title="Permanent link">&para;</a></h2>
-<h3 id="41-read-uncommitted">4.1 Read Uncommitted<a class="headerlink" href="#41-read-uncommitted" title="Permanent link">&para;</a></h3>
-<ul>
-<li>Cho phép đọc dữ liệu chưa commit.</li>
-<li>PostgreSQL thực tế xử lý giống Read Committed.</li>
-</ul>
-<h3 id="42-read-committed-mac-inh">4.2 Read Committed (mặc định)<a class="headerlink" href="#42-read-committed-mac-inh" title="Permanent link">&para;</a></h3>
-<ul>
-<li>Mỗi câu SELECT chỉ thấy dữ liệu commit tại thời điểm chạy.</li>
-<li>Nếu transaction khác commit sau đó, lệnh SELECT kế tiếp sẽ thấy dữ liệu mới.</li>
-</ul>
-<div class="highlight"><pre><span></span><code><span class="k">BEGIN</span><span class="p">;</span>
-<span class="k">SELECT</span><span class="w"> </span><span class="n">amount</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">orders</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w">  </span><span class="c1">-- 1000</span>
-
-<span class="c1">-- Session 2</span>
-<span class="k">UPDATE</span><span class="w"> </span><span class="n">orders</span><span class="w"> </span><span class="k">SET</span><span class="w"> </span><span class="n">amount</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2000</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
-<span class="k">COMMIT</span><span class="p">;</span>
-
-<span class="c1">-- Session 1</span>
-<span class="k">SELECT</span><span class="w"> </span><span class="n">amount</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">orders</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w">  </span><span class="c1">-- 2000</span>
-<span class="k">COMMIT</span><span class="p">;</span>
+<p>Thiết lập isolation level:</p>
+<div class="highlight"><pre><span></span><code><span class="k">SET</span><span class="w"> </span><span class="k">TRANSACTION</span><span class="w"> </span><span class="k">ISOLATION</span><span class="w"> </span><span class="k">LEVEL</span><span class="w"> </span><span class="k">REPEATABLE</span><span class="w"> </span><span class="k">READ</span><span class="p">;</span>
 </code></pre></div>
-<h3 id="43-repeatable-read">4.3 Repeatable Read<a class="headerlink" href="#43-repeatable-read" title="Permanent link">&para;</a></h3>
-<ul>
-<li>Snapshot cố định trong suốt transaction.</li>
-<li>Mọi SELECT đều thấy cùng dữ liệu.</li>
-</ul>
-<div class="highlight"><pre><span></span><code><span class="k">BEGIN</span><span class="w"> </span><span class="k">TRANSACTION</span><span class="w"> </span><span class="k">ISOLATION</span><span class="w"> </span><span class="k">LEVEL</span><span class="w"> </span><span class="k">REPEATABLE</span><span class="w"> </span><span class="k">READ</span><span class="p">;</span>
-<span class="k">SELECT</span><span class="w"> </span><span class="n">amount</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">orders</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w">  </span><span class="c1">-- 1000</span>
-
-<span class="c1">-- Session 2</span>
-<span class="k">UPDATE</span><span class="w"> </span><span class="n">orders</span><span class="w"> </span><span class="k">SET</span><span class="w"> </span><span class="n">amount</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2000</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
-<span class="k">COMMIT</span><span class="p">;</span>
-
-<span class="c1">-- Session 1</span>
-<span class="k">SELECT</span><span class="w"> </span><span class="n">amount</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">orders</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w">  </span><span class="c1">-- 1000 (không đổi)</span>
-<span class="k">COMMIT</span><span class="p">;</span>
-</code></pre></div>
-<h3 id="44-serializable">4.4 Serializable<a class="headerlink" href="#44-serializable" title="Permanent link">&para;</a></h3>
-<ul>
-<li>Mô phỏng như chạy tuần tự từng transaction.</li>
-<li>PostgreSQL sẽ rollback nếu phát hiện xung đột logic.</li>
-</ul>
-<div class="highlight"><pre><span></span><code><span class="k">BEGIN</span><span class="w"> </span><span class="k">TRANSACTION</span><span class="w"> </span><span class="k">ISOLATION</span><span class="w"> </span><span class="k">LEVEL</span><span class="w"> </span><span class="k">SERIALIZABLE</span><span class="p">;</span>
-<span class="k">SELECT</span><span class="w"> </span><span class="k">SUM</span><span class="p">(</span><span class="n">balance</span><span class="p">)</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">accounts</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="k">type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;user&#39;</span><span class="p">;</span>
-<span class="c1">-- Transaction khác INSERT thêm dòng</span>
-<span class="k">COMMIT</span><span class="p">;</span><span class="w"> </span><span class="c1">-- Có thể bị serialization_failure</span>
-</code></pre></div>
-<h2 id="5-thiet-lap-isolation-level">5. Thiết lập Isolation Level<a class="headerlink" href="#5-thiet-lap-isolation-level" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code><span class="k">BEGIN</span><span class="w"> </span><span class="k">TRANSACTION</span><span class="w"> </span><span class="k">ISOLATION</span><span class="w"> </span><span class="k">LEVEL</span><span class="w"> </span><span class="k">SERIALIZABLE</span><span class="p">;</span>
-<span class="c1">-- hoặc</span>
-<span class="k">SET</span><span class="w"> </span><span class="k">TRANSACTION</span><span class="w"> </span><span class="k">ISOLATION</span><span class="w"> </span><span class="k">LEVEL</span><span class="w"> </span><span class="k">REPEATABLE</span><span class="w"> </span><span class="k">READ</span><span class="p">;</span>
-<span class="k">SHOW</span><span class="w"> </span><span class="k">TRANSACTION</span><span class="w"> </span><span class="k">ISOLATION</span><span class="w"> </span><span class="k">LEVEL</span><span class="p">;</span>
-</code></pre></div>
-<h2 id="6-khi-nao-dung">6. Khi nào dùng<a class="headerlink" href="#6-khi-nao-dung" title="Permanent link">&para;</a></h2>
+<hr />
+<h2 id="6-khi-nao-nen-dung-transaction">6. Khi nào nên dùng Transaction?<a class="headerlink" href="#6-khi-nao-nen-dung-transaction" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
 <tr>
-<th>Mức</th>
-<th>Khi nào dùng</th>
-<th>Đặc điểm</th>
+<th>Tình huống</th>
+<th>Lý do</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><strong>Read Committed</strong></td>
-<td>Mặc định, đủ cho hầu hết ứng dụng</td>
-<td>Cân bằng tốc độ &amp; an toàn</td>
+<td>Chuyển tiền giữa 2 tài khoản</td>
+<td>Đảm bảo 2 thao tác cập nhật diễn ra toàn vẹn</td>
 </tr>
 <tr>
-<td><strong>Repeatable Read</strong></td>
-<td>Báo cáo, truy vấn đọc nhiều</td>
-<td>Snapshot cố định</td>
+<td>Đặt hàng &amp; trừ tồn kho</td>
+<td>Tránh lỗi khi trừ kho nhưng không ghi đơn hàng</td>
 </tr>
 <tr>
-<td><strong>Serializable</strong></td>
-<td>Giao dịch tài chính</td>
-<td>An toàn tối đa, chậm hơn</td>
+<td>Ghi log nhiều bảng</td>
+<td>Đảm bảo tất cả bảng được cập nhật nhất quán</td>
 </tr>
 </tbody>
 </table>
+<hr />
 <h2 id="7-tong-ket">7. Tổng kết<a class="headerlink" href="#7-tong-ket" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
 <tr>
-<th>Level</th>
-<th>Nhất quán</th>
-<th>Hiệu năng</th>
-<th>Ứng dụng</th>
+<th>Câu lệnh</th>
+<th>Chức năng</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Read Committed</td>
-<td>Trung bình</td>
-<td>Nhanh</td>
-<td>Web API, CRUD</td>
+<td><code>BEGIN;</code></td>
+<td>Bắt đầu Transaction</td>
 </tr>
 <tr>
-<td>Repeatable Read</td>
-<td>Cao</td>
-<td>Trung bình</td>
-<td>Báo cáo</td>
+<td><code>COMMIT;</code></td>
+<td>Xác nhận và lưu thay đổi</td>
 </tr>
 <tr>
-<td>Serializable</td>
-<td>Rất cao</td>
-<td>Thấp</td>
-<td>Ngân hàng, kế toán</td>
+<td><code>ROLLBACK;</code></td>
+<td>Hủy bỏ toàn bộ thay đổi</td>
+</tr>
+<tr>
+<td><code>SAVEPOINT sp1;</code></td>
+<td>Tạo điểm lưu trung gian</td>
+</tr>
+<tr>
+<td><code>ROLLBACK TO sp1;</code></td>
+<td>Quay lại điểm lưu trung gian</td>
 </tr>
 </tbody>
 </table>
+<p><strong>👉 Ghi nhớ:</strong> Transaction giúp đảm bảo <strong>tính toàn vẹn và an toàn dữ liệu</strong> trong các hệ thống thực tế có nhiều thao tác liên quan nhau.</p>
+<h1 id="transaction-trong-postgresql_1">Transaction trong PostgreSQL<a class="headerlink" href="#transaction-trong-postgresql_1" title="Permanent link">&para;</a></h1>
+<h2 id="1-transaction-la-gi_1">1. Transaction là gì?<a class="headerlink" href="#1-transaction-la-gi_1" title="Permanent link">&para;</a></h2>
+<p><strong>Transaction</strong> là một <strong>tập hợp các thao tác (câu lệnh SQL)</strong> được thực hiện như một <strong>đơn vị logic duy nhất</strong>.<br />
+Tất cả các thao tác trong transaction <strong>hoặc cùng thành công (COMMIT)</strong>, <strong>hoặc cùng thất bại (ROLLBACK)</strong>.<br />
+Điều này giúp đảm bảo tính toàn vẹn dữ liệu khi có lỗi hoặc sự cố trong quá trình xử lý.</p>
+<hr />
+<h2 id="2-bon-tinh-chat-acid-cua-transaction_1">2. Bốn tính chất ACID của Transaction<a class="headerlink" href="#2-bon-tinh-chat-acid-cua-transaction_1" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Tính chất</th>
+<th>Ý nghĩa</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Atomicity</strong></td>
+<td>Tính nguyên tử – Toàn bộ transaction được xem như một đơn vị không thể chia nhỏ. Nếu một phần thất bại, toàn bộ transaction bị hủy.</td>
+</tr>
+<tr>
+<td><strong>Consistency</strong></td>
+<td>Sau khi transaction hoàn thành, dữ liệu trong database luôn ở trạng thái hợp lệ (đúng với ràng buộc dữ liệu).</td>
+</tr>
+<tr>
+<td><strong>Isolation</strong></td>
+<td>Mỗi transaction hoạt động độc lập, không bị ảnh hưởng bởi transaction khác.</td>
+</tr>
+<tr>
+<td><strong>Durability</strong></td>
+<td>Sau khi COMMIT, thay đổi sẽ được lưu vĩnh viễn trong hệ thống (ngay cả khi hệ thống bị tắt hoặc lỗi).</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="3-cach-su-dung-transaction-trong-postgresql_1">3. Cách sử dụng Transaction trong PostgreSQL<a class="headerlink" href="#3-cach-su-dung-transaction-trong-postgresql_1" title="Permanent link">&para;</a></h2>
+<h3 id="bat-au-va-ket-thuc-transaction_1">🔹 Bắt đầu và kết thúc Transaction<a class="headerlink" href="#bat-au-va-ket-thuc-transaction_1" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="k">BEGIN</span><span class="p">;</span>
+
+<span class="k">UPDATE</span><span class="w"> </span><span class="n">accounts</span><span class="w"> </span><span class="k">SET</span><span class="w"> </span><span class="n">balance</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">balance</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">100</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<span class="k">UPDATE</span><span class="w"> </span><span class="n">accounts</span><span class="w"> </span><span class="k">SET</span><span class="w"> </span><span class="n">balance</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">balance</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">100</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span>
+
+<span class="k">COMMIT</span><span class="p">;</span>
+</code></pre></div>
+<ul>
+<li><strong>BEGIN</strong>: bắt đầu transaction.</li>
+<li><strong>COMMIT</strong>: xác nhận và lưu các thay đổi vào database.</li>
+<li><strong>ROLLBACK</strong>: hủy tất cả thay đổi trong transaction (nếu có lỗi).</li>
+</ul>
+<hr />
+<h3 id="vi-du-minh-hoa-voi-rollback_1">🔹 Ví dụ minh họa với ROLLBACK<a class="headerlink" href="#vi-du-minh-hoa-voi-rollback_1" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="k">BEGIN</span><span class="p">;</span>
+
+<span class="k">UPDATE</span><span class="w"> </span><span class="n">products</span><span class="w"> </span><span class="k">SET</span><span class="w"> </span><span class="n">quantity</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">quantity</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">10</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<span class="k">UPDATE</span><span class="w"> </span><span class="n">orders</span><span class="w"> </span><span class="k">SET</span><span class="w"> </span><span class="n">total</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">total</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">500</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">99</span><span class="p">;</span>
+
+<span class="c1">-- Có lỗi xảy ra ở đây</span>
+<span class="k">ROLLBACK</span><span class="p">;</span>
+</code></pre></div>
+<p>➡ Khi thực hiện <code>ROLLBACK</code>, tất cả thay đổi trước đó trong transaction đều bị hủy bỏ.</p>
+<hr />
+<h2 id="4-savepoint-trong-transaction_1">4. Savepoint trong Transaction<a class="headerlink" href="#4-savepoint-trong-transaction_1" title="Permanent link">&para;</a></h2>
+<p>Savepoint cho phép bạn <strong>tạo điểm khôi phục tạm thời</strong> trong transaction, giúp rollback <strong>một phần</strong> thay vì toàn bộ.</p>
+<div class="highlight"><pre><span></span><code><span class="k">BEGIN</span><span class="p">;</span>
+
+<span class="k">UPDATE</span><span class="w"> </span><span class="n">accounts</span><span class="w"> </span><span class="k">SET</span><span class="w"> </span><span class="n">balance</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">balance</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">100</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<span class="n">SAVEPOINT</span><span class="w"> </span><span class="n">sp1</span><span class="p">;</span>
+
+<span class="k">UPDATE</span><span class="w"> </span><span class="n">accounts</span><span class="w"> </span><span class="k">SET</span><span class="w"> </span><span class="n">balance</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">balance</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">200</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span>
+<span class="k">ROLLBACK</span><span class="w"> </span><span class="k">TO</span><span class="w"> </span><span class="n">sp1</span><span class="p">;</span><span class="w"> </span><span class="c1">-- Quay lại trước khi trừ 200</span>
+
+<span class="k">COMMIT</span><span class="p">;</span>
+</code></pre></div>
+<hr />
+<h2 id="5-isolation-levels-muc-o-co-lap_1">5. Isolation Levels (Mức độ cô lập)<a class="headerlink" href="#5-isolation-levels-muc-o-co-lap_1" title="Permanent link">&para;</a></h2>
+<p>PostgreSQL hỗ trợ 4 mức độ cô lập (Isolation Level):</p>
+<table>
+<thead>
+<tr>
+<th>Level</th>
+<th>Mô tả</th>
+<th>Nguy cơ gặp phải</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>READ UNCOMMITTED</strong></td>
+<td>Cho phép đọc dữ liệu chưa COMMIT.</td>
+<td>Dirty Read</td>
+</tr>
+<tr>
+<td><strong>READ COMMITTED</strong> <em>(mặc định)</em></td>
+<td>Chỉ đọc dữ liệu đã COMMIT.</td>
+<td>Non-repeatable Read</td>
+</tr>
+<tr>
+<td><strong>REPEATABLE READ</strong></td>
+<td>Giữ snapshot dữ liệu trong suốt transaction.</td>
+<td>Phantom Read</td>
+</tr>
+<tr>
+<td><strong>SERIALIZABLE</strong></td>
+<td>Giả lập thực thi tuần tự tuyệt đối.</td>
+<td>Không có nguy cơ</td>
+</tr>
+</tbody>
+</table>
+<p>Thiết lập isolation level:</p>
+<div class="highlight"><pre><span></span><code><span class="k">SET</span><span class="w"> </span><span class="k">TRANSACTION</span><span class="w"> </span><span class="k">ISOLATION</span><span class="w"> </span><span class="k">LEVEL</span><span class="w"> </span><span class="k">REPEATABLE</span><span class="w"> </span><span class="k">READ</span><span class="p">;</span>
+</code></pre></div>
+<hr />
+<h2 id="6-khi-nao-nen-dung-transaction_1">6. Khi nào nên dùng Transaction?<a class="headerlink" href="#6-khi-nao-nen-dung-transaction_1" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Tình huống</th>
+<th>Lý do</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Chuyển tiền giữa 2 tài khoản</td>
+<td>Đảm bảo 2 thao tác cập nhật diễn ra toàn vẹn</td>
+</tr>
+<tr>
+<td>Đặt hàng &amp; trừ tồn kho</td>
+<td>Tránh lỗi khi trừ kho nhưng không ghi đơn hàng</td>
+</tr>
+<tr>
+<td>Ghi log nhiều bảng</td>
+<td>Đảm bảo tất cả bảng được cập nhật nhất quán</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="7-tong-ket_1">7. Tổng kết<a class="headerlink" href="#7-tong-ket_1" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Câu lệnh</th>
+<th>Chức năng</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>BEGIN;</code></td>
+<td>Bắt đầu Transaction</td>
+</tr>
+<tr>
+<td><code>COMMIT;</code></td>
+<td>Xác nhận và lưu thay đổi</td>
+</tr>
+<tr>
+<td><code>ROLLBACK;</code></td>
+<td>Hủy bỏ toàn bộ thay đổi</td>
+</tr>
+<tr>
+<td><code>SAVEPOINT sp1;</code></td>
+<td>Tạo điểm lưu trung gian</td>
+</tr>
+<tr>
+<td><code>ROLLBACK TO sp1;</code></td>
+<td>Quay lại điểm lưu trung gian</td>
+</tr>
+</tbody>
+</table>
+<p><strong>👉 Ghi nhớ:</strong> Transaction giúp đảm bảo <strong>tính toàn vẹn và an toàn dữ liệu</strong> trong các hệ thống thực tế có nhiều thao tác liên quan nhau.</p>
 
 
 
