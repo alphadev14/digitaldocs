@@ -8,9 +8,13 @@
       
       
       
-        <link rel="canonical" href="https://alphadev14.github.io/digitaldocs/junior/database/07-query-optimization/">
+        <link rel="canonical" href="https://alphadev14.github.io/digitaldocs/junior/database/06-query-optimization/">
       
       
+        <link rel="prev" href="../05-jsonb-postgresql/">
+      
+      
+        <link rel="next" href="../07-postgresql-advanced/">
       
       
       <link rel="icon" href="../../../assets/logo.png">
@@ -18,7 +22,7 @@
     
     
       
-        <title>07 query optimization - P&T | Digital Docs</title>
+        <title>Query Optimization - P&T | Digital Docs</title>
       
     
     
@@ -73,6 +77,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#query-optimization-in-postgresql" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -104,7 +113,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              07 query optimization
+              Query Optimization
             
           </span>
         </div>
@@ -204,18 +213,20 @@
       
   
   
+    
   
   
+  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
         
           
           <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
@@ -231,7 +242,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             Junior
@@ -656,18 +667,20 @@
                 
   
   
+    
   
   
+  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" checked>
         
           
           <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
@@ -683,7 +696,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2_3">
             <span class="md-nav__icon md-icon"></span>
             Database (PostgreSQL)
@@ -809,10 +822,32 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../06-query-optimization.md" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Query Optimization
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -823,6 +858,227 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-phan-tich-truy-van-bang-explain" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Phân tích truy vấn bằng EXPLAIN
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Phân tích truy vấn bằng EXPLAIN">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#lenh-co-ban" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧩 Lệnh cơ bản
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cac-thanh-phan-trong-explain" class="md-nav__link">
+    <span class="md-ellipsis">
+      📊 Các thành phần trong EXPLAIN
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-toi-uu-join" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Tối ưu JOIN
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Tối ưu JOIN">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cac-loai-join-pho-bien" class="md-nav__link">
+    <span class="md-ellipsis">
+      💡 Các loại JOIN phổ biến
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#meo-toi-uu-join" class="md-nav__link">
+    <span class="md-ellipsis">
+      ⚙️ Mẹo tối ưu JOIN
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-index-tuning" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Index Tuning
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Index Tuning">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#khi-nao-nen-tao-index" class="md-nav__link">
+    <span class="md-ellipsis">
+      🎯 Khi nào nên tạo index
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cac-loai-index" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧱 Các loại index
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tips" class="md-nav__link">
+    <span class="md-ellipsis">
+      ⚡ Tips
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-cau-truc-cau-lenh-truy-van" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Cấu trúc câu lệnh truy vấn
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Cấu trúc câu lệnh truy vấn">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#best-practices" class="md-nav__link">
+    <span class="md-ellipsis">
+      🚀 Best practices
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vi-du" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ví dụ
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-toi-uu-order-by-group-by" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Tối ưu ORDER BY, GROUP BY
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Tối ưu ORDER BY, GROUP BY">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#order-by" class="md-nav__link">
+    <span class="md-ellipsis">
+      ORDER BY
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#group-by" class="md-nav__link">
+    <span class="md-ellipsis">
+      GROUP BY
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-vacuum-analyze" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. Vacuum &amp; Analyze
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-tong-hop-quy-trinh-toi-uu" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. Tổng hợp quy trình tối ưu
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ket-luan" class="md-nav__link">
+    <span class="md-ellipsis">
+      📘 Kết luận
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1249,6 +1505,217 @@
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-phan-tich-truy-van-bang-explain" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Phân tích truy vấn bằng EXPLAIN
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Phân tích truy vấn bằng EXPLAIN">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#lenh-co-ban" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧩 Lệnh cơ bản
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cac-thanh-phan-trong-explain" class="md-nav__link">
+    <span class="md-ellipsis">
+      📊 Các thành phần trong EXPLAIN
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-toi-uu-join" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Tối ưu JOIN
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Tối ưu JOIN">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cac-loai-join-pho-bien" class="md-nav__link">
+    <span class="md-ellipsis">
+      💡 Các loại JOIN phổ biến
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#meo-toi-uu-join" class="md-nav__link">
+    <span class="md-ellipsis">
+      ⚙️ Mẹo tối ưu JOIN
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-index-tuning" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Index Tuning
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Index Tuning">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#khi-nao-nen-tao-index" class="md-nav__link">
+    <span class="md-ellipsis">
+      🎯 Khi nào nên tạo index
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cac-loai-index" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧱 Các loại index
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tips" class="md-nav__link">
+    <span class="md-ellipsis">
+      ⚡ Tips
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-cau-truc-cau-lenh-truy-van" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Cấu trúc câu lệnh truy vấn
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Cấu trúc câu lệnh truy vấn">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#best-practices" class="md-nav__link">
+    <span class="md-ellipsis">
+      🚀 Best practices
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vi-du" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ví dụ
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-toi-uu-order-by-group-by" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Tối ưu ORDER BY, GROUP BY
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Tối ưu ORDER BY, GROUP BY">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#order-by" class="md-nav__link">
+    <span class="md-ellipsis">
+      ORDER BY
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#group-by" class="md-nav__link">
+    <span class="md-ellipsis">
+      GROUP BY
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-vacuum-analyze" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. Vacuum &amp; Analyze
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-tong-hop-quy-trinh-toi-uu" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. Tổng hợp quy trình tối ưu
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ket-luan" class="md-nav__link">
+    <span class="md-ellipsis">
+      📘 Kết luận
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -1264,9 +1731,178 @@
 
 
 
-  <h1>07 query optimization</h1>
+<h1 id="query-optimization-in-postgresql">Query Optimization in PostgreSQL<a class="headerlink" href="#query-optimization-in-postgresql" title="Permanent link">&para;</a></h1>
+<p>Tối ưu hóa truy vấn là bước quan trọng giúp hệ thống đạt hiệu năng cao, đặc biệt khi dữ liệu lớn. PostgreSQL cung cấp nhiều công cụ và kỹ thuật để giúp chúng ra hiểu và cải thiện hiệu suất truy vấn.</p>
+<p>Chạy nhanh hơn bằng cách:</p>
+<ul>
+<li>Giảm số lượng dữ liệu phải quét (scan).</li>
+<li>Chọn index và kế hoạch thực thi (execution plan) tối ưu nhất.</li>
+<li>Giảm thiểu JOIN, sort, hoặc I/O không cần thiết.</li>
+</ul>
+<p>Công cụ mạnh nhất để phân tích hiệu năng trong PostgreSQL chính là <strong>EXPLAIN</strong> và <strong>EXPLAIN ANALYZE</strong>.</p>
+<hr />
+<h2 id="1-phan-tich-truy-van-bang-explain">1. Phân tích truy vấn bằng EXPLAIN<a class="headerlink" href="#1-phan-tich-truy-van-bang-explain" title="Permanent link">&para;</a></h2>
+<h3 id="lenh-co-ban">🧩 Lệnh cơ bản<a class="headerlink" href="#lenh-co-ban" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="k">EXPLAIN</span><span class="w"> </span><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">users</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">age</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">30</span><span class="p">;</span>
+</code></pre></div>
+<ul>
+<li>PostgreSQL sẽ hiển thị <strong>kế hoạch thực thi (execution plan)</strong> — cách hệ thống dự định chạy truy vấn.</li>
+<li>Để xem chi tiết hơn, thêm <code>ANALYZE</code>:</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="k">EXPLAIN</span><span class="w"> </span><span class="k">ANALYZE</span><span class="w"> </span><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">users</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">age</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">30</span><span class="p">;</span>
+</code></pre></div>
+<p>➡️ PostgreSQL sẽ <strong>thực thi truy vấn thật</strong> và hiển thị thời gian thực thi, số dòng đọc, index nào được dùng.</p>
+<h3 id="cac-thanh-phan-trong-explain">📊 Các thành phần trong EXPLAIN<a class="headerlink" href="#cac-thanh-phan-trong-explain" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Thành phần</th>
+<th>Ý nghĩa</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Seq Scan</td>
+<td>Quét tuần tự toàn bộ bảng. (Chậm với bảng lớn)</td>
+</tr>
+<tr>
+<td>Index Scan</td>
+<td>Quét dữ liệu qua index (Nhanh hơn nhiều)</td>
+</tr>
+<tr>
+<td>Bitmap Heap Scan</td>
+<td>Dùng khi truy vấn nhiều dòng qua index</td>
+</tr>
+<tr>
+<td>Nested Loop</td>
+<td>Lặp qua từng dòng của bảng A để JOIN bảng B</td>
+</tr>
+<tr>
+<td>Hash Join</td>
+<td>Dựng hash table từ 1 bảng rồi JOIN bảng còn lại (hiệu quả với tập dữ liệu lớn)</td>
+</tr>
+<tr>
+<td>Merge Join</td>
+<td>JOIN hai bảng đã được sắp xếp theo cùng key</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="2-toi-uu-join">2. Tối ưu JOIN<a class="headerlink" href="#2-toi-uu-join" title="Permanent link">&para;</a></h2>
+<h3 id="cac-loai-join-pho-bien">💡 Các loại JOIN phổ biến<a class="headerlink" href="#cac-loai-join-pho-bien" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Nested Loop Join</strong> → tốt cho bảng nhỏ JOIN với bảng có index.</li>
+<li><strong>Hash Join</strong> → tốt cho tập dữ liệu lớn không sắp xếp.</li>
+<li><strong>Merge Join</strong> → tốt cho dữ liệu đã ORDER BY hoặc có index phù hợp.</li>
+</ul>
+<h3 id="meo-toi-uu-join">⚙️ Mẹo tối ưu JOIN<a class="headerlink" href="#meo-toi-uu-join" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Đảm bảo <strong>cột JOIN có index</strong> (đặc biệt khi JOIN theo khóa ngoại).</li>
+<li>Giới hạn dữ liệu trước khi JOIN (<code>WHERE</code>, <code>LIMIT</code>, <code>SELECT cụ thể</code>).</li>
+<li>Tránh JOIN nhiều bảng không cần thiết.</li>
+<li>Sử dụng <strong>EXPLAIN ANALYZE</strong> để xem kế hoạch thực tế.</li>
+</ol>
+<hr />
+<h2 id="3-index-tuning">3. Index Tuning<a class="headerlink" href="#3-index-tuning" title="Permanent link">&para;</a></h2>
+<h3 id="khi-nao-nen-tao-index">🎯 Khi nào nên tạo index<a class="headerlink" href="#khi-nao-nen-tao-index" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Cột dùng trong <code>WHERE</code>, <code>JOIN</code>, <code>ORDER BY</code>, <code>GROUP BY</code>.</li>
+<li>Không nên index quá nhiều (tốn RAM và thời gian ghi dữ liệu).</li>
+</ul>
+<h3 id="cac-loai-index">🧱 Các loại index<a class="headerlink" href="#cac-loai-index" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Loại index</th>
+<th>Mô tả</th>
+<th>Phù hợp với</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>B-Tree</strong></td>
+<td>Mặc định, tốt cho so sánh =, &lt;, &gt;</td>
+<td>Most common queries</td>
+</tr>
+<tr>
+<td><strong>Hash</strong></td>
+<td>Chỉ cho so sánh "="</td>
+<td>Truy vấn key-value</td>
+</tr>
+<tr>
+<td><strong>GIN (Generalized Inverted Index)</strong></td>
+<td>Tìm kiếm text, JSONB, array</td>
+<td>Full-text search, JSONB</td>
+</tr>
+<tr>
+<td><strong>GiST</strong></td>
+<td>Không gian, địa lý, vector</td>
+<td>Dữ liệu hình học, vector search</td>
+</tr>
+</tbody>
+</table>
+<h3 id="tips">⚡ Tips<a class="headerlink" href="#tips" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="k">CREATE</span><span class="w"> </span><span class="k">INDEX</span><span class="w"> </span><span class="n">idx_user_email</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">users</span><span class="p">(</span><span class="n">email</span><span class="p">);</span>
+<span class="k">CREATE</span><span class="w"> </span><span class="k">INDEX</span><span class="w"> </span><span class="n">idx_orders_userid_date</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">orders</span><span class="p">(</span><span class="n">user_id</span><span class="p">,</span><span class="w"> </span><span class="n">order_date</span><span class="p">);</span>
+</code></pre></div>
+<ul>
+<li>Index đa cột (multi-column index) chỉ có hiệu quả <strong>theo thứ tự từ trái qua phải</strong>.</li>
+</ul>
+<hr />
+<h2 id="4-cau-truc-cau-lenh-truy-van">4. Cấu trúc câu lệnh truy vấn<a class="headerlink" href="#4-cau-truc-cau-lenh-truy-van" title="Permanent link">&para;</a></h2>
+<h3 id="best-practices">🚀 Best practices<a class="headerlink" href="#best-practices" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>SELECT chỉ cột cần thiết</strong> → giảm IO.</li>
+<li><strong>Tránh SELECT *</strong> → gây chậm khi bảng lớn.</li>
+<li><strong>Dùng WHERE trước khi JOIN</strong> để lọc sớm dữ liệu.</li>
+<li><strong>Sử dụng LIMIT</strong> khi chỉ cần một phần dữ liệu.</li>
+<li><strong>Cân nhắc subquery vs CTE (WITH)</strong> — CTE dễ đọc hơn, nhưng có thể bị vật hóa (materialize) khiến chậm hơn.</li>
+</ol>
+<h3 id="vi-du">Ví dụ<a class="headerlink" href="#vi-du" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c1">-- Không tốt</span>
+<span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">orders</span><span class="w"> </span><span class="n">o</span>
+<span class="k">JOIN</span><span class="w"> </span><span class="n">users</span><span class="w"> </span><span class="n">u</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">o</span><span class="p">.</span><span class="n">user_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">u</span><span class="p">.</span><span class="n">id</span><span class="p">;</span>
 
-
+<span class="c1">-- Tốt hơn</span>
+<span class="k">SELECT</span><span class="w"> </span><span class="n">o</span><span class="p">.</span><span class="n">id</span><span class="p">,</span><span class="w"> </span><span class="n">o</span><span class="p">.</span><span class="n">total</span><span class="p">,</span><span class="w"> </span><span class="n">u</span><span class="p">.</span><span class="n">name</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">orders</span><span class="w"> </span><span class="n">o</span>
+<span class="k">JOIN</span><span class="w"> </span><span class="n">users</span><span class="w"> </span><span class="n">u</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">o</span><span class="p">.</span><span class="n">user_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">u</span><span class="p">.</span><span class="n">id</span>
+<span class="k">WHERE</span><span class="w"> </span><span class="n">o</span><span class="p">.</span><span class="n">status</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;completed&#39;</span><span class="p">;</span>
+</code></pre></div>
+<hr />
+<h2 id="5-toi-uu-order-by-group-by">5. Tối ưu ORDER BY, GROUP BY<a class="headerlink" href="#5-toi-uu-order-by-group-by" title="Permanent link">&para;</a></h2>
+<h3 id="order-by">ORDER BY<a class="headerlink" href="#order-by" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Tận dụng index nếu sắp xếp cùng chiều với index.</li>
+<li>Tránh ORDER BY nhiều cột khi không có index tương ứng.</li>
+</ul>
+<h3 id="group-by">GROUP BY<a class="headerlink" href="#group-by" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Nếu thường xuyên GROUP BY trên cột nào, hãy tạo index hoặc materialized view.</li>
+</ul>
+<hr />
+<h2 id="6-vacuum-analyze">6. Vacuum &amp; Analyze<a class="headerlink" href="#6-vacuum-analyze" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>VACUUM</strong> → dọn rác, giải phóng không gian chết.</li>
+<li><strong>ANALYZE</strong> → cập nhật thống kê cho optimizer.</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="k">VACUUM</span><span class="w"> </span><span class="k">ANALYZE</span><span class="p">;</span>
+</code></pre></div>
+<p>➡️ Giúp PostgreSQL lên kế hoạch truy vấn hiệu quả hơn.</p>
+<hr />
+<h2 id="7-tong-hop-quy-trinh-toi-uu">7. Tổng hợp quy trình tối ưu<a class="headerlink" href="#7-tong-hop-quy-trinh-toi-uu" title="Permanent link">&para;</a></h2>
+<ol>
+<li>Dùng <code>EXPLAIN ANALYZE</code> để hiểu cách truy vấn chạy.</li>
+<li>Kiểm tra <strong>index</strong> có được dùng không.</li>
+<li>Giảm kích thước dữ liệu đầu vào (WHERE, LIMIT).</li>
+<li>Chọn <strong>JOIN phù hợp</strong>.</li>
+<li>Cấu trúc câu lệnh logic, dễ đọc.</li>
+<li>Thường xuyên <code>VACUUM</code> và <code>ANALYZE</code>.</li>
+</ol>
+<hr />
+<h2 id="ket-luan">📘 Kết luận<a class="headerlink" href="#ket-luan" title="Permanent link">&para;</a></h2>
+<p>Tối ưu hóa truy vấn không phải chỉ là thêm index, mà là <strong>quy trình tổng thể</strong> gồm hiểu dữ liệu, phân tích kế hoạch thực thi, và viết truy vấn hợp lý.<br />
+Khi bạn hiểu sâu <code>EXPLAIN</code>, <code>JOIN</code>, và <code>INDEX</code>, bạn đã nắm được cốt lõi của hiệu năng trong PostgreSQL.</p>
 
 
 
