@@ -1,379 +1,202 @@
-# 02-postgresql-advanced
+# PostgreSQL Advanced
 
-## Mục lục
+## 1. Stored Procedures & Functions
 
-1. Index nâng cao (types, functional, partial, multicolumn, maintenance)
-2. Partitioning nâng cao (thiết kế, range/list/hash, attach/detach, chuyển dữ liệu)
-3. Transaction nâng cao & Locking (advisory lock, deadlock, best practices)
-4. CTE (Common Table Expressions) & Recursive CTE
-5. Window Functions (OVER, PARTITION BY, ORDER BY, ranking, aggregate window)
-6. EXPLAIN / EXPLAIN ANALYZE & Query tuning checklist
-7. Maintenance: VACUUM, ANALYZE, REINDEX, pg_repack
-8. Tham khảo
+### 🔹 1.1 Function
+
+- Dùng để **trả về giá trị** (RETURN).
+- Có thể viết bằng SQL hoặc PL/pgSQL.
+- **Ví dụ:**
+
+```sql
+CREATE OR REPLACE FUNCTION get_user_count()
+RETURNS INTEGER AS $$
+BEGIN
+  RETURN (SELECT COUNT(*) FROM users);
+END;
+$$ LANGUAGE plpgsql;
+```
+
+### 🔹 1.2 Stored Procedure
+
+- Không trả về giá trị, thường dùng để **xử lý logic nghiệp vụ hoặc cập nhật nhiều bảng**.
+- Gọi bằng `CALL`, không dùng `SELECT`.
+- **Ví dụ:**
+
+```sql
+CREATE OR REPLACE PROCEDURE update_order_status(order_id INT, new_status TEXT)
+LANGUAGE plpgsql AS $$
+BEGIN
+  UPDATE orders SET status = new_status WHERE id = order_id;
+END;
+$$;
+```
 
 ---
 
-# 1. Index nâng cao
+## 2. Triggers
 
-## 1.1 Các loại index chính
+- Tự động thực thi **khi có INSERT, UPDATE, DELETE**.
+- Dùng để **ghi log, kiểm tra dữ liệu, đồng bộ bảng khác**.
 
-- **B-Tree**: mặc định, tốt cho `=`, `<`, `>`, `BETWEEN`, `ORDER BY`.
-- **GIN (Generalized Inverted Index)**: tối ưu cho `jsonb`, `array`, và full-text search. Hỗ trợ `@>`, `?`, `?|`, `?&`.
-- **GiST (Generalized Search Tree)**: dùng cho dữ liệu không gian (PostGIS) và tìm kiếm phức tạp.
-- **BRIN (Block Range Index)**: chỉ vài KB; hữu ích với bảng rất lớn có dữ liệu tuần tự (time-series).
-- **Hash**: chỉ cho `=`; ngày nay ít dùng (B-Tree thường tốt hơn).
-
-## 1.2 Functional index (index trên expression)
-
-Khi query dùng biểu thức, tạo index trên expression để dùng index:
+**Ví dụ:** Log khi thêm user mới:
 
 ```sql
--- chỉ số trên lower(email) để tìm case-insensitive
-CREATE INDEX idx_users_email_lower ON users (lower(email));
--- query sẽ dùng:
-SELECT * FROM users WHERE lower(email) = 'abc@example.com';
+CREATE TABLE user_logs (
+  id SERIAL PRIMARY KEY,
+  user_id INT,
+  action TEXT,
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE OR REPLACE FUNCTION log_user_insert()
+RETURNS TRIGGER AS $$
+BEGIN
+  INSERT INTO user_logs(user_id, action)
+  VALUES (NEW.id, 'User created');
+  RETURN NEW;
+END;
+$$ LANGUAGE plpgsql;
+
+CREATE TRIGGER trg_user_insert
+AFTER INSERT ON users
+FOR EACH ROW
+EXECUTE FUNCTION log_user_insert();
 ```
-
-## 1.3 Partial index (index một phần có điều kiện)
-
-Tạo index chỉ trên subset của rows để tiết kiệm không gian và tăng tốc cho queries cụ thể:
-
-```sql
-CREATE INDEX idx_users_active ON users (last_login) WHERE is_active = true;
-```
-
-## 1.4 Multicolumn index (index nhiều cột)
-
-Chú ý thứ tự cột trong index quyết định query nào có thể dùng index:
-
-```sql
-CREATE INDEX idx_orders_customer_date ON orders (customer_id, order_date);
--- dùng tốt cho WHERE customer_id = ? AND order_date >= ?
-```
-
-## 1.5 Index cho JSONB
-
-- GIN index cho JSONB:
-
-```sql
-CREATE INDEX idx_products_attrs_gin ON products USING GIN (attributes jsonb_path_ops);
--- hoặc default gin
-CREATE INDEX idx_products_attrs_gin2 ON products USING GIN (attributes);
-```
-
-- Dùng operator `@>` để kiểm tra containment:
-
-```sql
-SELECT * FROM products WHERE attributes @> '{"cpu":"i7"}';
-```
-
-## 1.6 Unique index & constraints
-
-- `UNIQUE` có thể được áp dụng lên expression/partial index.
-
-```sql
-CREATE UNIQUE INDEX ux_users_email_lower ON users (lower(email));
-```
-
-## 1.7 Tạo index không đồng bộ (CONCURRENTLY)
-
-Tránh lock trên table lớn:
-
-```sql
-CREATE INDEX CONCURRENTLY idx_orders_customer ON orders(customer_id);
--- Xóa index cũng có CONCURRENTLY
-DROP INDEX CONCURRENTLY idx_orders_customer;
-```
-
-Lưu ý: không được chạy trong transaction block.
-
-## 1.8 Khi nào index không được dùng?
-
-- Query chọn rất nhiều rows (sequential scan rẻ hơn).
-- Funciton không sargable (ví dụ `WHERE LOWER(col) LIKE '%abc'`) — leading wildcard.
-- Mismatch giữa data distribution và statistics.
-
-## 1.9 Kiểm tra index được sử dụng
-
-Sử dụng `EXPLAIN (ANALYZE, BUFFERS)` để xem planner chọn index hay sequential scan.
 
 ---
 
-# 2. Partitioning nâng cao
+## 3. Views & Materialized Views
 
-## 2.1 Khi nào nên partition?
+### 🔹 3.1 View
 
-- Bảng cực lớn (hàng triệu → hàng trăm triệu rows).
-- Dữ liệu có key phân vùng hợp lý (time-based, region, tenant).
-- Muốn nhanh chóng xóa data bằng cách DROP PARTITION thay vì DELETE.
-
-## 2.2 Các chiến lược partition
-
-- **Range**: time-series (order_date).
-- **List**: categorical values (region, country).
-- **Hash**: chia đều load khi không có natural range.
-
-## 2.3 Tạo bảng partitioned (Range example)
+- View là **bảng ảo** dựa trên kết quả của truy vấn.
+- Giúp **tái sử dụng truy vấn phức tạp**.
 
 ```sql
-CREATE TABLE orders (
-  id BIGSERIAL PRIMARY KEY,
-  customer_id BIGINT,
-  order_date DATE NOT NULL,
-  amount NUMERIC(12,2)
-) PARTITION BY RANGE (order_date);
-
-CREATE TABLE orders_2023 PARTITION OF orders
-  FOR VALUES FROM ('2023-01-01') TO ('2024-01-01');
-
-CREATE TABLE orders_2024 PARTITION OF orders
-  FOR VALUES FROM ('2024-01-01') TO ('2025-01-01');
+CREATE VIEW active_users AS
+SELECT id, name, email
+FROM users
+WHERE is_active = TRUE;
 ```
 
-- Lưu ý: bảng `orders` (parent) không chứa dữ liệu thực tế (để tránh duplicate rows) — data nằm trong partitions.
+### 🔹 3.2 Materialized View
 
-## 2.4 Hash partition example
+- Lưu kết quả truy vấn **vật lý trên đĩa**, cần **refresh** khi dữ liệu thay đổi.
 
 ```sql
-CREATE TABLE logs (
-  id BIGSERIAL PRIMARY KEY,
-  event_time TIMESTAMPTZ,
-  payload JSONB
-) PARTITION BY HASH (id);
+CREATE MATERIALIZED VIEW sales_summary AS
+SELECT customer_id, SUM(amount) AS total_sales
+FROM orders
+GROUP BY customer_id;
 
-CREATE TABLE logs_p0 PARTITION OF logs FOR VALUES WITH (MODULUS 4, REMAINDER 0);
-CREATE TABLE logs_p1 PARTITION OF logs FOR VALUES WITH (MODULUS 4, REMAINDER 1);
-CREATE TABLE logs_p2 PARTITION OF logs FOR VALUES WITH (MODULUS 4, REMAINDER 2);
-CREATE TABLE logs_p3 PARTITION OF logs FOR VALUES WITH (MODULUS 4, REMAINDER 3);
+REFRESH MATERIALIZED VIEW sales_summary;
 ```
-
-## 2.5 Chuyển một bảng hiện có sang partitioned
-
-Quy trình an toàn (một trong các cách):
-
-1. Tạo bảng mới partitioned (orders_new) với cấu trúc giống table cũ.
-2. Tạo partitions (range/list/hash) tương ứng.
-3. Copy dữ liệu theo từng partition để tránh long-running transaction:
-
-```sql
-INSERT INTO orders_new PARTITION FOR VALUES FROM ('2023-01-01') TO ('2024-01-01')
-SELECT * FROM orders WHERE order_date >= '2023-01-01' AND order_date < '2024-01-01';
-```
-
-4. Khi đã copy xong mọi partition, kiểm tra checksum / counts.
-5. Đổi tên tables (rename) hoặc drop table cũ và rename new → production.
-6. Tạo index trên từng partition (không có global index cho tất cả partitions).
-
-**Lưu ý:** từ PostgreSQL 11+ có `ATTACH PARTITION` để gắn bảng con đã có dữ liệu, nhưng cần đảm bảo phân vùng key phù hợp cho dữ liệu hiện có.
-
-## 2.6 Partition pruning & performance
-
-- Planner sẽ **prune** các partitions không cần thiết dựa trên WHERE clause → giảm scan.
-- Đảm bảo WHERE có predicate trên partition key để planner prune.
-- Ví dụ: `WHERE order_date >= '2024-01-01'` → chỉ scan partitions chứa 2024.
-
-## 2.7 Index & Partition
-
-- Index được tạo trên partition parent có thể propagate sang child (PG >= 12). Tuy nhiên, mỗi partition có index vật lý riêng.
-- Reindex/maintenance cần chạy trên partitions hoặc dùng script để loop qua partitions.
 
 ---
 
-# 3. Transaction nâng cao & Locking
+## 4. Common Table Expressions (CTE)
 
-## 3.1 Lock types
+- Giúp **chia nhỏ truy vấn phức tạp**.
+- Hỗ trợ **truy vấn đệ quy (recursive)**.
 
-- **Row-level locks**: `SELECT ... FOR UPDATE`, `FOR SHARE`.
-- **Table-level locks**: `LOCK TABLE ... IN EXCLUSIVE MODE`.
-- **Advisory locks**: app-level locking via `pg_advisory_lock()` / `pg_try_advisory_lock()`.
-
-## 3.2 Deadlock và detection
-
-- Deadlock xảy ra khi transaction A giữ lock X cần Y, transaction B giữ Y cần X.
-- PostgreSQL có deadlock detector và sẽ abort 1 transaction để break.
-- Best practice: acquire locks in consistent order, keep transactions short.
-
-## 3.3 Advisory lock example
-
-Use application-level lock for coarse operations:
+**Ví dụ – CTE cơ bản:**
 
 ```sql
--- block until get lock
-SELECT pg_advisory_lock(12345);
-
--- try lock (non-blocking)
-SELECT pg_try_advisory_lock(12345);
-
--- release
-SELECT pg_advisory_unlock(12345);
-```
-
-## 3.4 Transaction snapshot & Serializable
-
-- **Serializable** isolation uses Serializable Snapshot Isolation (SSI) in PG to prevent anomalies.
-- In high-contention work, Serializable may cause serialization failures that require retry logic in application.
-
-## 3.5 Long running transaction issues
-
-- Keeps old row versions (MVCC) alive → increased disk usage and bloat.
-- Vacuum can't reclaim tuples until no transaction needs old snapshot.
-- Avoid long-running idle transactions (e.g., open psql and forget).
-
----
-
-# 4. CTE (Common Table Expressions)
-
-## 4.1 Simple CTE (WITH)
-
-- CTE giúp tách query phức tạp thành các phần logic dễ đọc:
-
-```sql
-WITH active_users AS (
-  SELECT id FROM users WHERE is_active = true
+WITH high_value_orders AS (
+  SELECT * FROM orders WHERE amount > 1000
 )
-SELECT u.id, count(o.*) AS orders
-FROM active_users au
-JOIN users u ON u.id = au.id
-LEFT JOIN orders o ON o.user_id = u.id
-GROUP BY u.id;
+SELECT * FROM high_value_orders WHERE status = 'completed';
 ```
 
-## 4.2 Materialization vs Inline (Postgres behavior)
-
-- CTE trong PG trước v12 là **materialized** (thực hiện và cache kết quả).
-- Từ PG12+, CTE có thể inline giống subquery nếu optimizer thấy tốt (tránh unnecessary materialization) — nhưng có thể dùng `MATERIALIZED` / `NOT MATERIALIZED` để force behavior:
-
-```sql
-WITH t AS MATERIALIZED (SELECT ...)
-WITH t AS NOT MATERIALIZED (SELECT ...)
-```
-
-## 4.3 Recursive CTE (đệ quy)
-
-Dùng để traverse hierarchical data (parent-child):
+**Ví dụ – CTE đệ quy (recursive):**
 
 ```sql
 WITH RECURSIVE subordinates AS (
-  SELECT id, manager_id, name FROM employees WHERE id = 1
+  SELECT id, manager_id, name
+  FROM employees
+  WHERE manager_id IS NULL
+
   UNION ALL
+
   SELECT e.id, e.manager_id, e.name
   FROM employees e
-  JOIN subordinates s ON e.manager_id = s.id
+  INNER JOIN subordinates s ON e.manager_id = s.id
 )
 SELECT * FROM subordinates;
 ```
 
 ---
 
-# 5. Window Functions
+## 5. Performance Tuning nâng cao
 
-## 5.1 Tổng quan
+### 🔹 5.1 Connection Pooling
 
-Window functions chạy trên "window" của rows tương ứng và không gộp các rows lại (khác GROUP BY).  
-Cú pháp chung: `function(...) OVER (PARTITION BY ... ORDER BY ... ROWS BETWEEN ...)`
+- Dùng công cụ như **pgBouncer** để quản lý kết nối.
+- Giúp giảm tải khi có nhiều truy vấn đồng thời.
 
-## 5.2 Common window functions
+### 🔹 5.2 Query Plan & Cost
 
-- `ROW_NUMBER()` - index từng row trong partition.
-- `RANK()` / `DENSE_RANK()` - ranking with gaps or dense.
-- `LAG(col, offset)` / `LEAD(col, offset)` - truy xuất giá trị trước/sau.
-- Aggregate window: `SUM(... ) OVER (...)`, `AVG(...) OVER (...)`.
+- Dùng `EXPLAIN (ANALYZE, BUFFERS)` để xem chi phí thực thi.
+- Tập trung tối ưu các phần có **Seq Scan** hoặc **Nested Loop**.
 
-## 5.3 Ví dụ
+### 🔹 5.3 Partitioning nâng cao
 
-Top customer by month:
-
-```sql
-SELECT
-  customer_id,
-  order_month,
-  total,
-  RANK() OVER (PARTITION BY order_month ORDER BY total DESC) AS rank_in_month
-FROM monthly_totals
-ORDER BY order_month, rank_in_month;
-```
-
-Running total:
+- Dùng **hash partition** hoặc **range partition** để chia dữ liệu lớn.
+- Giúp tăng tốc truy vấn và dễ dàng quản lý dữ liệu.
 
 ```sql
-SELECT
-  id, order_date, amount,
-  SUM(amount) OVER (ORDER BY order_date ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW) AS running_total
-FROM orders
-ORDER BY order_date;
+CREATE TABLE orders_2025 PARTITION OF orders
+FOR VALUES FROM ('2025-01-01') TO ('2026-01-01');
 ```
 
-## 5.4 Performance note
+### 🔹 5.4 VACUUM & ANALYZE
 
-Window functions may require sorting; consider appropriate indexes on partition/order columns.
+- **VACUUM**: dọn rác dữ liệu sau khi xóa.
+- **ANALYZE**: cập nhật thống kê để query planner tối ưu.
+
+```sql
+VACUUM (VERBOSE, ANALYZE);
+```
+
+### 🔹 5.5 Parallel Query
+
+- PostgreSQL hỗ trợ chạy song song trên CPU nhiều lõi.
+- Tối ưu cho truy vấn lớn.
+
+```sql
+SET max_parallel_workers_per_gather = 4;
+```
 
 ---
 
-# 6. EXPLAIN / EXPLAIN ANALYZE & Query tuning checklist
+## 6. Extensions hữu ích
 
-## 6.1 EXPLAIN usage
-
-```sql
-EXPLAIN SELECT * FROM orders WHERE order_date >= '2024-01-01';
-EXPLAIN ANALYZE SELECT * FROM orders WHERE order_date >= '2024-01-01';
-```
-
-- `EXPLAIN` shows planned steps; `ANALYZE` runs query and shows actual time and rows. Use `BUFFERS` for buffer usage.
-
-## 6.2 Common things to check
-
-- Is planner using index or seq scan?
-- Cost estimates vs actual rows — statistics stale? Run `ANALYZE`.
-- Is there an expensive sort? Add index supporting ORDER BY.
-- Are joins done via nested loops vs hash join? For large joins, hash join may be better but requires memory.
-- Check `pg_stat_statements` to find hot queries.
-
-## 6.3 Example: optimize slow query
-
-- Add missing index (covering index).
-- Rewrite subqueries into joins or CTEs when appropriate.
-- Avoid SELECT \*; only request necessary columns.
-- Use LIMIT early when possible.
+| Extension            | Mục đích                               |
+| -------------------- | -------------------------------------- |
+| `pg_stat_statements` | Theo dõi và phân tích truy vấn         |
+| `uuid-ossp`          | Sinh UUID                              |
+| `pg_trgm`            | Tìm kiếm chuỗi gần đúng (fuzzy search) |
+| `citext`             | Kiểu text không phân biệt hoa thường   |
+| `timescaledb`        | Lưu dữ liệu dạng time-series           |
 
 ---
 
-# 7. Maintenance: VACUUM, ANALYZE, REINDEX, pg_repack
+## 7. Tổng kết
 
-## 7.1 VACUUM
-
-- `VACUUM` reclaims space from dead tuples (MVCC).
-- `VACUUM FULL` reclaims space but requires exclusive lock; slow.
-- Autovacuum runs automatically; tune autovacuum settings for large tables.
-
-## 7.2 ANALYZE
-
-- Collect statistics for planner; run manually after large data changes:
-
-```sql
-ANALYZE orders;
-```
-
-## 7.3 REINDEX
-
-- Rebuild corrupted or bloated indexes:
-
-```sql
-REINDEX TABLE orders;
-```
-
-## 7.4 pg_repack
-
-- Extension to rebuild table/index with minimal locks (good for production maintenance).
+| Chủ đề                            | Kỹ năng chính                        |
+| --------------------------------- | ------------------------------------ |
+| **Stored Procedures / Functions** | Viết logic nghiệp vụ trong DB        |
+| **Triggers**                      | Tự động xử lý khi dữ liệu thay đổi   |
+| **Views / Materialized Views**    | Tối ưu truy vấn và tái sử dụng       |
+| **CTE / Recursive Query**         | Làm việc với dữ liệu phức tạp        |
+| **Performance Tuning**            | Tối ưu truy vấn và quản lý hiệu năng |
+| **Extensions**                    | Mở rộng khả năng PostgreSQL          |
 
 ---
 
-# 8. Tham khảo
+✅ **Mục tiêu sau phần này:**
 
-- PostgreSQL official docs: https://www.postgresql.org/docs/
-- Index types: https://www.postgresql.org/docs/current/indexes-types.html
-- Partitioning: https://www.postgresql.org/docs/current/ddl-partitioning.html
-- EXPLAIN: https://www.postgresql.org/docs/current/using-explain.html
-
----
-
-_Ghi chú:_ Bạn có thể copy file này vào `docs/junior/database/02-postgresql-advanced.md` trong repo MkDocs của bạn.
+- Hiểu và triển khai logic nghiệp vụ trong DB.
+- Biết tối ưu hiệu năng và cấu trúc hệ thống DB lớn.
+- Làm việc tự tin với các truy vấn phức tạp và công cụ phân tích hiệu năng.
