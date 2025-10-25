@@ -34,12 +34,16 @@ nav:
           - Async / Await: junior/backend/07-async-await.md
           - Async / Await 2: junior/backend/08-async-await-2.md
       - Frontend:
-          - React Hooks: junior/frontend/01-react-hooks.md
-          - Context API: junior/frontend/02-context-api.md
-          - React Router: junior/frontend/03-react-router.md
+          - React Basic: junior/frontend/01-react-basic.md
+          - React Hooks: junior/frontend/02-react-hooks.md
+          - Context API: junior/frontend/03-context-api.md
           - State Management: junior/frontend/04-state-management.md
-          - UI (AntD + Tailwind): junior/frontend/05-ui-anti-tailwind.md
-          - Testing React: junior/frontend/06-testing-react.md
+          - React Router: junior/frontend/05-react-router.md
+          - UI (AntD + Tailwind): junior/frontend/06-ui-antd-tailwind.md
+          - Responsive & Accessibility: junior/frontend/07-responsive-accessibility.md
+          - Testing React: junior/frontend/08-testing-react.md
+          - Performance Optimization: junior/frontend/09-performance-optimization.md
+
       - Database (PostgreSQL):
           - PostgreSQL Basic: junior/database/01-postgresql-basic.md
           - Transactions: junior/database/02-transactions.md
