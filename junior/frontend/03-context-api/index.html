@@ -8,13 +8,13 @@
       
       
       
-        <link rel="canonical" href="https://alphadev14.github.io/digitaldocs/junior/frontend/01-react-basic/">
+        <link rel="canonical" href="https://alphadev14.github.io/digitaldocs/junior/frontend/03-context-api/">
       
       
-        <link rel="prev" href="../../backend/08-async-await-2/">
+        <link rel="prev" href="../02-react-hooks/">
       
       
-        <link rel="next" href="../02-react-hooks/">
+        <link rel="next" href="../../database/01-postgresql-basic/">
       
       
       <link rel="icon" href="../../../assets/logo.png">
@@ -22,7 +22,7 @@
     
     
       
-        <title>React Basic - P&T | Digital Docs</title>
+        <title>Context API - P&T | Digital Docs</title>
       
     
     
@@ -78,7 +78,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#react-foundation-co-ban" class="md-skip">
+        <a href="#context-api-quan-ly-du-lieu-toan-cuc-trong-react" class="md-skip">
           Skip to content
         </a>
       
@@ -113,7 +113,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              React Basic
+              Context API
             
           </span>
         </div>
@@ -523,32 +523,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    React Basic
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../01-react-basic/" class="md-nav__link">
         
   
   
@@ -559,170 +537,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#1-gioi-thieu-react" class="md-nav__link">
-    <span class="md-ellipsis">
-      1️⃣ Giới thiệu React
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="1️⃣ Giới thiệu React">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#uu-iem-chinh" class="md-nav__link">
-    <span class="md-ellipsis">
-      Ưu điểm chính:
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#2-jsx-javascript-xml" class="md-nav__link">
-    <span class="md-ellipsis">
-      2️⃣ JSX (JavaScript XML)
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#3-component-trong-react" class="md-nav__link">
-    <span class="md-ellipsis">
-      3️⃣ Component trong React
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="3️⃣ Component trong React">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#loai-1-function-component" class="md-nav__link">
-    <span class="md-ellipsis">
-      🧱 Loại 1: Function Component
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#loai-2-class-component-it-dung-trong-du-an-moi" class="md-nav__link">
-    <span class="md-ellipsis">
-      🧱 Loại 2: Class Component (ít dùng trong dự án mới)
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#4-props-properties" class="md-nav__link">
-    <span class="md-ellipsis">
-      4️⃣ Props (Properties)
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#5-state-trang-thai" class="md-nav__link">
-    <span class="md-ellipsis">
-      5️⃣ State (Trạng thái)
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#6-event-handling-xu-ly-su-kien" class="md-nav__link">
-    <span class="md-ellipsis">
-      6️⃣ Event Handling (Xử lý sự kiện)
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#7-lifecycle-co-ban-voi-useeffect" class="md-nav__link">
-    <span class="md-ellipsis">
-      7️⃣ Lifecycle cơ bản với useEffect
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="7️⃣ Lifecycle cơ bản với useEffect">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#a-chay-moi-lan-render" class="md-nav__link">
-    <span class="md-ellipsis">
-      a. Chạy mỗi lần render
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#b-chay-1-lan-khi-component-mount" class="md-nav__link">
-    <span class="md-ellipsis">
-      b. Chạy 1 lần khi component mount
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#c-chay-khi-gia-tri-phu-thuoc-thay-oi" class="md-nav__link">
-    <span class="md-ellipsis">
-      c. Chạy khi giá trị phụ thuộc thay đổi
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#8-tong-ket" class="md-nav__link">
-    <span class="md-ellipsis">
-      8️⃣ Tổng kết
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -755,10 +569,32 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../03-context-api/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Context API
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -769,6 +605,140 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-van-e-props-drilling-la-gi" class="md-nav__link">
+    <span class="md-ellipsis">
+      1️⃣ Vấn đề: Props Drilling là gì?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-giai-phap-context-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      2️⃣ Giải pháp: Context API
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-tao-va-su-dung-context" class="md-nav__link">
+    <span class="md-ellipsis">
+      3️⃣ Tạo và sử dụng Context
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3️⃣ Tạo và sử dụng Context">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#buoc-1-tao-context" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔹 Bước 1: Tạo Context
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#buoc-2-tao-provider" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔹 Bước 2: Tạo Provider
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#buoc-3-su-dung-du-lieu-trong-component-con" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔹 Bước 3: Sử dụng dữ liệu trong component con
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-cap-nhat-du-lieu-trong-context" class="md-nav__link">
+    <span class="md-ellipsis">
+      4️⃣ Cập nhật dữ liệu trong Context
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-tach-rieng-provider-cho-gon-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      5️⃣ Tách riêng Provider cho gọn code
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-khi-nao-nen-dung-context-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      6️⃣ Khi nào nên dùng Context API?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-usecontext-vs-reduxzustand" class="md-nav__link">
+    <span class="md-ellipsis">
+      7️⃣ useContext vs. Redux/Zustand
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-toi-uu-context-e-tranh-re-render" class="md-nav__link">
+    <span class="md-ellipsis">
+      8️⃣ Tối ưu Context để tránh re-render
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tong-ket" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧠 Tổng kết
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1527,19 +1497,55 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#1-gioi-thieu-react" class="md-nav__link">
+  <a href="#1-van-e-props-drilling-la-gi" class="md-nav__link">
     <span class="md-ellipsis">
-      1️⃣ Giới thiệu React
+      1️⃣ Vấn đề: Props Drilling là gì?
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="1️⃣ Giới thiệu React">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-giai-phap-context-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      2️⃣ Giải pháp: Context API
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-tao-va-su-dung-context" class="md-nav__link">
+    <span class="md-ellipsis">
+      3️⃣ Tạo và sử dụng Context
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3️⃣ Tạo và sử dụng Context">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#uu-iem-chinh" class="md-nav__link">
+  <a href="#buoc-1-tao-context" class="md-nav__link">
     <span class="md-ellipsis">
-      Ưu điểm chính:
+      🔹 Bước 1: Tạo Context
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#buoc-2-tao-provider" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔹 Bước 2: Tạo Provider
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#buoc-3-su-dung-du-lieu-trong-component-con" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔹 Bước 3: Sử dụng dữ liệu trong component con
     </span>
   </a>
   
@@ -1551,120 +1557,54 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#2-jsx-javascript-xml" class="md-nav__link">
+  <a href="#4-cap-nhat-du-lieu-trong-context" class="md-nav__link">
     <span class="md-ellipsis">
-      2️⃣ JSX (JavaScript XML)
+      4️⃣ Cập nhật dữ liệu trong Context
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#3-component-trong-react" class="md-nav__link">
+  <a href="#5-tach-rieng-provider-cho-gon-code" class="md-nav__link">
     <span class="md-ellipsis">
-      3️⃣ Component trong React
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="3️⃣ Component trong React">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#loai-1-function-component" class="md-nav__link">
-    <span class="md-ellipsis">
-      🧱 Loại 1: Function Component
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#loai-2-class-component-it-dung-trong-du-an-moi" class="md-nav__link">
-    <span class="md-ellipsis">
-      🧱 Loại 2: Class Component (ít dùng trong dự án mới)
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#4-props-properties" class="md-nav__link">
-    <span class="md-ellipsis">
-      4️⃣ Props (Properties)
+      5️⃣ Tách riêng Provider cho gọn code
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#5-state-trang-thai" class="md-nav__link">
+  <a href="#6-khi-nao-nen-dung-context-api" class="md-nav__link">
     <span class="md-ellipsis">
-      5️⃣ State (Trạng thái)
+      6️⃣ Khi nào nên dùng Context API?
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#6-event-handling-xu-ly-su-kien" class="md-nav__link">
+  <a href="#7-usecontext-vs-reduxzustand" class="md-nav__link">
     <span class="md-ellipsis">
-      6️⃣ Event Handling (Xử lý sự kiện)
+      7️⃣ useContext vs. Redux/Zustand
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#7-lifecycle-co-ban-voi-useeffect" class="md-nav__link">
+  <a href="#8-toi-uu-context-e-tranh-re-render" class="md-nav__link">
     <span class="md-ellipsis">
-      7️⃣ Lifecycle cơ bản với useEffect
+      8️⃣ Tối ưu Context để tránh re-render
     </span>
   </a>
-  
-    <nav class="md-nav" aria-label="7️⃣ Lifecycle cơ bản với useEffect">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#a-chay-moi-lan-render" class="md-nav__link">
-    <span class="md-ellipsis">
-      a. Chạy mỗi lần render
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#b-chay-1-lan-khi-component-mount" class="md-nav__link">
-    <span class="md-ellipsis">
-      b. Chạy 1 lần khi component mount
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#c-chay-khi-gia-tri-phu-thuoc-thay-oi" class="md-nav__link">
-    <span class="md-ellipsis">
-      c. Chạy khi giá trị phụ thuộc thay đổi
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#8-tong-ket" class="md-nav__link">
+  <a href="#tong-ket" class="md-nav__link">
     <span class="md-ellipsis">
-      8️⃣ Tổng kết
+      🧠 Tổng kết
     </span>
   </a>
   
@@ -1686,143 +1626,218 @@
 
 
 
-<h1 id="react-foundation-co-ban">🧩 React Foundation (Cơ bản)<a class="headerlink" href="#react-foundation-co-ban" title="Permanent link">&para;</a></h1>
-<p><strong>🎯 Mục tiêu:</strong> Hiểu cách React hoạt động, component, props, state, và các hooks cơ bản (như <code>useState</code>, <code>useEffect</code>).</p>
-<hr />
-<h2 id="1-gioi-thieu-react">1️⃣ Giới thiệu React<a class="headerlink" href="#1-gioi-thieu-react" title="Permanent link">&para;</a></h2>
-<p><strong>React</strong> là thư viện JavaScript được phát triển bởi Facebook (Meta) dùng để xây dựng <strong>UI (giao diện người dùng)</strong>.<br />
-React giúp chia nhỏ giao diện thành các <strong>component</strong> – các khối có thể tái sử dụng.</p>
-<h3 id="uu-iem-chinh">Ưu điểm chính:<a class="headerlink" href="#uu-iem-chinh" title="Permanent link">&para;</a></h3>
+<h1 id="context-api-quan-ly-du-lieu-toan-cuc-trong-react">Context API — Quản lý dữ liệu toàn cục trong React<a class="headerlink" href="#context-api-quan-ly-du-lieu-toan-cuc-trong-react" title="Permanent link">&para;</a></h1>
+<p><strong>🎯 Mục tiêu:</strong></p>
 <ul>
-<li>Tư duy <strong>Component-Based</strong> (tái sử dụng code dễ dàng).</li>
-<li><strong>Virtual DOM</strong> giúp cập nhật UI hiệu quả.</li>
-<li>Dễ mở rộng, tích hợp với framework khác.</li>
-<li>Hỗ trợ <strong>Hooks</strong> để quản lý state &amp; logic.</li>
+<li>Hiểu cách <strong>chia sẻ dữ liệu giữa nhiều component</strong> trong React <strong>mà không cần truyền props qua nhiều cấp (props drilling)</strong>.</li>
+<li>Nắm vững cách tạo, cung cấp, và sử dụng <strong>React Context API</strong>.</li>
 </ul>
 <hr />
-<h2 id="2-jsx-javascript-xml">2️⃣ JSX (JavaScript XML)<a class="headerlink" href="#2-jsx-javascript-xml" title="Permanent link">&para;</a></h2>
-<p>React dùng <strong>JSX</strong> để viết HTML trong JavaScript.<br />
-Ví dụ:</p>
-<div class="highlight"><pre><span></span><code><span class="kd">function</span><span class="w"> </span><span class="nx">Hello</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span><span class="nx">Xin</span><span class="w"> </span><span class="nx">chào</span><span class="w"> </span><span class="nx">React</span><span class="o">!</span><span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;;</span>
-<span class="p">}</span>
-</code></pre></div>
-<p>JSX cho phép nhúng biểu thức JavaScript bằng <code>{}</code>:</p>
-<div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;MWG&quot;</span><span class="p">;</span>
-<span class="k">return</span><span class="w"> </span><span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;</span><span class="nx">Chào</span><span class="w"> </span><span class="nx">mừng</span><span class="w"> </span><span class="nx">đến</span><span class="w"> </span><span class="nx">với</span><span class="w"> </span><span class="p">{</span><span class="nx">name</span><span class="p">}&lt;/</span><span class="nt">h2</span><span class="p">&gt;;</span>
-</code></pre></div>
-<hr />
-<h2 id="3-component-trong-react">3️⃣ Component trong React<a class="headerlink" href="#3-component-trong-react" title="Permanent link">&para;</a></h2>
-<h3 id="loai-1-function-component">🧱 Loại 1: <strong>Function Component</strong><a class="headerlink" href="#loai-1-function-component" title="Permanent link">&para;</a></h3>
-<p>Là kiểu viết hiện đại – dùng <strong>Hooks</strong> để quản lý state và lifecycle.</p>
-<div class="highlight"><pre><span></span><code><span class="kd">function</span><span class="w"> </span><span class="nx">Welcome</span><span class="p">(</span><span class="nx">props</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span><span class="nx">Xin</span><span class="w"> </span><span class="nx">chào</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="nx">props</span><span class="p">.</span><span class="nx">name</span><span class="p">}&lt;/</span><span class="nt">h1</span><span class="p">&gt;;</span>
-<span class="p">}</span>
-</code></pre></div>
-<p>Gọi component:</p>
-<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">Welcome</span><span class="w"> </span><span class="na">name</span><span class="o">=</span><span class="s">&quot;Phan&quot;</span><span class="w"> </span><span class="p">/&gt;</span>
-</code></pre></div>
-<h3 id="loai-2-class-component-it-dung-trong-du-an-moi">🧱 Loại 2: <strong>Class Component</strong> (ít dùng trong dự án mới)<a class="headerlink" href="#loai-2-class-component-it-dung-trong-du-an-moi" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><span class="kd">class</span><span class="w"> </span><span class="nx">Welcome</span><span class="w"> </span><span class="k">extends</span><span class="w"> </span><span class="nx">React</span><span class="p">.</span><span class="nx">Component</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="nx">render</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span><span class="nx">Xin</span><span class="w"> </span><span class="nx">chào</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">name</span><span class="p">}&lt;/</span><span class="nt">h1</span><span class="p">&gt;;</span>
-<span class="w">  </span><span class="p">}</span>
-<span class="p">}</span>
-</code></pre></div>
-<hr />
-<h2 id="4-props-properties">4️⃣ Props (Properties)<a class="headerlink" href="#4-props-properties" title="Permanent link">&para;</a></h2>
-<ul>
-<li><strong>Props</strong> là dữ liệu truyền từ component cha xuống component con.</li>
-<li>Props là <strong>immutable</strong> – không thể thay đổi trong component con.</li>
-</ul>
-<div class="highlight"><pre><span></span><code><span class="kd">function</span><span class="w"> </span><span class="nx">UserCard</span><span class="p">({</span><span class="w"> </span><span class="nx">name</span><span class="p">,</span><span class="w"> </span><span class="nx">age</span><span class="w"> </span><span class="p">})</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">(</span>
-<span class="w">    </span><span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
-<span class="w">      </span><span class="p">&lt;</span><span class="nt">h3</span><span class="p">&gt;{</span><span class="nx">name</span><span class="p">}&lt;/</span><span class="nt">h3</span><span class="p">&gt;</span>
-<span class="w">      </span><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span><span class="nx">Tuổi</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="nx">age</span><span class="p">}&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
-<span class="w">    </span><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-<span class="w">  </span><span class="p">);</span>
+<h2 id="1-van-e-props-drilling-la-gi">1️⃣ Vấn đề: Props Drilling là gì?<a class="headerlink" href="#1-van-e-props-drilling-la-gi" title="Permanent link">&para;</a></h2>
+<p><strong>Props drilling</strong> xảy ra khi bạn cần truyền dữ liệu qua nhiều cấp component, ngay cả khi một số component trung gian <strong>không cần dùng dữ liệu đó</strong>.</p>
+<p>Ví dụ:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">function</span><span class="w"> </span><span class="nx">App</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">user</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Tam&quot;</span><span class="w"> </span><span class="p">};</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">&lt;</span><span class="nt">Layout</span><span class="w"> </span><span class="na">user</span><span class="o">=</span><span class="p">{</span><span class="nx">user</span><span class="p">}</span><span class="w"> </span><span class="p">/&gt;;</span>
 <span class="p">}</span>
 
-<span class="c1">// Dùng</span>
-<span class="p">&lt;</span><span class="nt">UserCard</span><span class="w"> </span><span class="na">name</span><span class="o">=</span><span class="s">&quot;An&quot;</span><span class="w"> </span><span class="na">age</span><span class="o">=</span><span class="p">{</span><span class="mf">25</span><span class="p">}</span><span class="w"> </span><span class="p">/&gt;;</span>
+<span class="kd">function</span><span class="w"> </span><span class="nx">Layout</span><span class="p">({</span><span class="w"> </span><span class="nx">user</span><span class="w"> </span><span class="p">})</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">&lt;</span><span class="nt">Header</span><span class="w"> </span><span class="na">user</span><span class="o">=</span><span class="p">{</span><span class="nx">user</span><span class="p">}</span><span class="w"> </span><span class="p">/&gt;;</span>
+<span class="p">}</span>
+
+<span class="kd">function</span><span class="w"> </span><span class="nx">Header</span><span class="p">({</span><span class="w"> </span><span class="nx">user</span><span class="w"> </span><span class="p">})</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">&lt;</span><span class="nt">UserInfo</span><span class="w"> </span><span class="na">user</span><span class="o">=</span><span class="p">{</span><span class="nx">user</span><span class="p">}</span><span class="w"> </span><span class="p">/&gt;;</span>
+<span class="p">}</span>
+
+<span class="kd">function</span><span class="w"> </span><span class="nx">UserInfo</span><span class="p">({</span><span class="w"> </span><span class="nx">user</span><span class="w"> </span><span class="p">})</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span><span class="nx">Xin</span><span class="w"> </span><span class="nx">chào</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="nx">user</span><span class="p">.</span><span class="nx">name</span><span class="p">}</span><span class="o">!</span><span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;;</span>
+<span class="p">}</span>
 </code></pre></div>
+<p>🧩 Vấn đề: <code>user</code> phải được truyền qua <code>Layout</code>, <code>Header</code> chỉ để đến <code>UserInfo</code>.</p>
 <hr />
-<h2 id="5-state-trang-thai">5️⃣ State (Trạng thái)<a class="headerlink" href="#5-state-trang-thai" title="Permanent link">&para;</a></h2>
-<p><strong>State</strong> dùng để lưu trữ dữ liệu <strong>thay đổi theo thời gian</strong> bên trong component.<br />
-Dùng hook <code>useState</code> để khai báo state.</p>
+<h2 id="2-giai-phap-context-api">2️⃣ Giải pháp: Context API<a class="headerlink" href="#2-giai-phap-context-api" title="Permanent link">&para;</a></h2>
+<p><strong>Context</strong> cho phép bạn tạo một <em>“kho dữ liệu toàn cục”</em> mà bất kỳ component nào trong cây có thể truy cập, <strong>mà không cần props drilling</strong>.</p>
+<hr />
+<h2 id="3-tao-va-su-dung-context">3️⃣ Tạo và sử dụng Context<a class="headerlink" href="#3-tao-va-su-dung-context" title="Permanent link">&para;</a></h2>
+<h3 id="buoc-1-tao-context">🔹 Bước 1: Tạo Context<a class="headerlink" href="#buoc-1-tao-context" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">createContext</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;react&quot;</span><span class="p">;</span>
+
+<span class="k">export</span><span class="w"> </span><span class="kd">const</span><span class="w"> </span><span class="nx">UserContext</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">createContext</span><span class="p">(</span><span class="kc">null</span><span class="p">);</span>
+</code></pre></div>
+<h3 id="buoc-2-tao-provider">🔹 Bước 2: Tạo Provider<a class="headerlink" href="#buoc-2-tao-provider" title="Permanent link">&para;</a></h3>
+<p>Provider bao bọc các component con, cung cấp dữ liệu toàn cục.</p>
 <div class="highlight"><pre><span></span><code><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">useState</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;react&quot;</span><span class="p">;</span>
+<span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">UserContext</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;./UserContext&quot;</span><span class="p">;</span>
+<span class="k">import</span><span class="w"> </span><span class="nx">Dashboard</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;./Dashboard&quot;</span><span class="p">;</span>
 
-<span class="kd">function</span><span class="w"> </span><span class="nx">Counter</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="p">[</span><span class="nx">count</span><span class="p">,</span><span class="w"> </span><span class="nx">setCount</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">useState</span><span class="p">(</span><span class="mf">0</span><span class="p">);</span>
+<span class="kd">function</span><span class="w"> </span><span class="nx">App</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="p">[</span><span class="nx">user</span><span class="p">,</span><span class="w"> </span><span class="nx">setUser</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">useState</span><span class="p">({</span><span class="w"> </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Tam&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">role</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Admin&quot;</span><span class="w"> </span><span class="p">});</span>
+
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="p">&lt;</span><span class="nt">UserContext</span><span class="p">.</span><span class="na">Provider</span><span class="w"> </span><span class="na">value</span><span class="o">=</span><span class="p">{{</span><span class="w"> </span><span class="nx">user</span><span class="p">,</span><span class="w"> </span><span class="nx">setUser</span><span class="w"> </span><span class="p">}}&gt;</span>
+<span class="w">      </span><span class="p">&lt;</span><span class="nt">Dashboard</span><span class="w"> </span><span class="p">/&gt;</span>
+<span class="w">    </span><span class="p">&lt;/</span><span class="nt">UserContext</span><span class="p">.</span><span class="na">Provider</span><span class="p">&gt;</span>
+<span class="w">  </span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="buoc-3-su-dung-du-lieu-trong-component-con">🔹 Bước 3: Sử dụng dữ liệu trong component con<a class="headerlink" href="#buoc-3-su-dung-du-lieu-trong-component-con" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">useContext</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;react&quot;</span><span class="p">;</span>
+<span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">UserContext</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;./UserContext&quot;</span><span class="p">;</span>
+
+<span class="kd">function</span><span class="w"> </span><span class="nx">UserProfile</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">user</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">useContext</span><span class="p">(</span><span class="nx">UserContext</span><span class="p">);</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;</span><span class="nx">Xin</span><span class="w"> </span><span class="nx">chào</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="nx">user</span><span class="p">.</span><span class="nx">name</span><span class="p">}&lt;/</span><span class="nt">h2</span><span class="p">&gt;;</span>
+<span class="p">}</span>
+</code></pre></div>
+<hr />
+<h2 id="4-cap-nhat-du-lieu-trong-context">4️⃣ Cập nhật dữ liệu trong Context<a class="headerlink" href="#4-cap-nhat-du-lieu-trong-context" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><span class="kd">function</span><span class="w"> </span><span class="nx">UserProfile</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">user</span><span class="p">,</span><span class="w"> </span><span class="nx">setUser</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">useContext</span><span class="p">(</span><span class="nx">UserContext</span><span class="p">);</span>
+
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">changeName</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">setUser</span><span class="p">({</span><span class="w"> </span><span class="p">...</span><span class="nx">user</span><span class="p">,</span><span class="w"> </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Minh&quot;</span><span class="w"> </span><span class="p">});</span>
 
 <span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">(</span>
 <span class="w">    </span><span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
-<span class="w">      </span><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span><span class="nx">Bạn</span><span class="w"> </span><span class="nx">đã</span><span class="w"> </span><span class="nx">bấm</span><span class="w"> </span><span class="p">{</span><span class="nx">count</span><span class="p">}</span><span class="w"> </span><span class="nx">lần</span><span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
-<span class="w">      </span><span class="p">&lt;</span><span class="nt">button</span><span class="w"> </span><span class="na">onClick</span><span class="o">=</span><span class="p">{()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">setCount</span><span class="p">(</span><span class="nx">count</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mf">1</span><span class="p">)}&gt;</span><span class="nx">Bấm</span><span class="w"> </span><span class="nx">tôi</span><span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+<span class="w">      </span><span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;</span><span class="nx">Xin</span><span class="w"> </span><span class="nx">chào</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="nx">user</span><span class="p">.</span><span class="nx">name</span><span class="p">}&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
+<span class="w">      </span><span class="p">&lt;</span><span class="nt">button</span><span class="w"> </span><span class="na">onClick</span><span class="o">=</span><span class="p">{</span><span class="nx">changeName</span><span class="p">}&gt;</span><span class="nx">Đổi</span><span class="w"> </span><span class="nx">tên</span><span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
 <span class="w">    </span><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
 <span class="w">  </span><span class="p">);</span>
 <span class="p">}</span>
 </code></pre></div>
+<blockquote>
+<p>✅ Tất cả component dùng Context đều cập nhật theo.</p>
+</blockquote>
 <hr />
-<h2 id="6-event-handling-xu-ly-su-kien">6️⃣ Event Handling (Xử lý sự kiện)<a class="headerlink" href="#6-event-handling-xu-ly-su-kien" title="Permanent link">&para;</a></h2>
-<p>React xử lý sự kiện tương tự HTML, nhưng dùng <strong>camelCase</strong>:</p>
-<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">button</span><span class="w"> </span><span class="na">onClick</span><span class="o">=</span><span class="p">{</span><span class="nx">handleClick</span><span class="p">}&gt;</span><span class="nx">Bấm</span><span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;;</span>
+<h2 id="5-tach-rieng-provider-cho-gon-code">5️⃣ Tách riêng Provider cho gọn code<a class="headerlink" href="#5-tach-rieng-provider-cho-gon-code" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">createContext</span><span class="p">,</span><span class="w"> </span><span class="nx">useState</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;react&quot;</span><span class="p">;</span>
 
-<span class="kd">function</span><span class="w"> </span><span class="nx">handleClick</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="nx">alert</span><span class="p">(</span><span class="s2">&quot;Đã bấm!&quot;</span><span class="p">);</span>
+<span class="k">export</span><span class="w"> </span><span class="kd">const</span><span class="w"> </span><span class="nx">UserContext</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">createContext</span><span class="p">();</span>
+
+<span class="k">export</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">UserProvider</span><span class="p">({</span><span class="w"> </span><span class="nx">children</span><span class="w"> </span><span class="p">})</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="p">[</span><span class="nx">user</span><span class="p">,</span><span class="w"> </span><span class="nx">setUser</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">useState</span><span class="p">({</span><span class="w"> </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Tam&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">role</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Admin&quot;</span><span class="w"> </span><span class="p">});</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="p">&lt;</span><span class="nt">UserContext</span><span class="p">.</span><span class="na">Provider</span><span class="w"> </span><span class="na">value</span><span class="o">=</span><span class="p">{{</span><span class="w"> </span><span class="nx">user</span><span class="p">,</span><span class="w"> </span><span class="nx">setUser</span><span class="w"> </span><span class="p">}}&gt;</span>
+<span class="w">      </span><span class="p">{</span><span class="nx">children</span><span class="p">}</span>
+<span class="w">    </span><span class="p">&lt;/</span><span class="nt">UserContext</span><span class="p">.</span><span class="na">Provider</span><span class="p">&gt;</span>
+<span class="w">  </span><span class="p">);</span>
 <span class="p">}</span>
 </code></pre></div>
-<p>Truyền tham số vào handler:</p>
-<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">button</span><span class="w"> </span><span class="na">onClick</span><span class="o">=</span><span class="p">{()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">handleClick</span><span class="p">(</span><span class="s2">&quot;Xin chào!&quot;</span><span class="p">)}&gt;</span><span class="nx">Bấm</span><span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+<p>Sử dụng trong <code>App.js</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">UserProvider</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;./UserProvider&quot;</span><span class="p">;</span>
+<span class="k">import</span><span class="w"> </span><span class="nx">Dashboard</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;./Dashboard&quot;</span><span class="p">;</span>
+
+<span class="kd">function</span><span class="w"> </span><span class="nx">App</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="p">&lt;</span><span class="nt">UserProvider</span><span class="p">&gt;</span>
+<span class="w">      </span><span class="p">&lt;</span><span class="nt">Dashboard</span><span class="w"> </span><span class="p">/&gt;</span>
+<span class="w">    </span><span class="p">&lt;/</span><span class="nt">UserProvider</span><span class="p">&gt;</span>
+<span class="w">  </span><span class="p">);</span>
+<span class="p">}</span>
 </code></pre></div>
 <hr />
-<h2 id="7-lifecycle-co-ban-voi-useeffect">7️⃣ Lifecycle cơ bản với <code>useEffect</code><a class="headerlink" href="#7-lifecycle-co-ban-voi-useeffect" title="Permanent link">&para;</a></h2>
-<p><code>useEffect</code> giúp chạy <strong>side effect</strong> (gọi API, thay đổi DOM, setInterval, v.v.)</p>
-<h3 id="a-chay-moi-lan-render">a. Chạy mỗi lần render<a class="headerlink" href="#a-chay-moi-lan-render" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><span class="nx">useEffect</span><span class="p">(()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Component render lại!&quot;</span><span class="p">);</span>
-<span class="p">});</span>
-</code></pre></div>
-<h3 id="b-chay-1-lan-khi-component-mount">b. Chạy 1 lần khi component mount<a class="headerlink" href="#b-chay-1-lan-khi-component-mount" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><span class="nx">useEffect</span><span class="p">(()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Chạy 1 lần khi load&quot;</span><span class="p">);</span>
-<span class="p">},</span><span class="w"> </span><span class="p">[]);</span>
-</code></pre></div>
-<h3 id="c-chay-khi-gia-tri-phu-thuoc-thay-oi">c. Chạy khi giá trị phụ thuộc thay đổi<a class="headerlink" href="#c-chay-khi-gia-tri-phu-thuoc-thay-oi" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><span class="nx">useEffect</span><span class="p">(()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Count thay đổi&quot;</span><span class="p">);</span>
-<span class="p">},</span><span class="w"> </span><span class="p">[</span><span class="nx">count</span><span class="p">]);</span>
-</code></pre></div>
-<hr />
-<h2 id="8-tong-ket">8️⃣ Tổng kết<a class="headerlink" href="#8-tong-ket" title="Permanent link">&para;</a></h2>
+<h2 id="6-khi-nao-nen-dung-context-api">6️⃣ Khi nào nên dùng Context API?<a class="headerlink" href="#6-khi-nao-nen-dung-context-api" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
 <tr>
-<th>Khái niệm</th>
-<th>Mô tả ngắn</th>
+<th>Tình huống</th>
+<th>Có nên dùng Context không?</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><strong>Component</strong></td>
-<td>Khối UI độc lập có thể tái sử dụng</td>
+<td>Truyền theme (dark/light)</td>
+<td>✅ Có</td>
 </tr>
 <tr>
-<td><strong>Props</strong></td>
-<td>Dữ liệu truyền từ cha xuống con</td>
+<td>Ngôn ngữ / i18n</td>
+<td>✅ Có</td>
 </tr>
 <tr>
-<td><strong>State</strong></td>
-<td>Dữ liệu nội bộ có thể thay đổi</td>
+<td>Dữ liệu đăng nhập user</td>
+<td>✅ Có</td>
 </tr>
 <tr>
-<td><strong>JSX</strong></td>
-<td>Cú pháp kết hợp HTML và JS</td>
+<td>Danh sách sản phẩm nhỏ</td>
+<td>✅ Có</td>
 </tr>
 <tr>
-<td><strong>useEffect</strong></td>
-<td>Hook cho lifecycle (mount/update/unmount)</td>
+<td>Dữ liệu phức tạp, cache</td>
+<td>❌ Dùng Redux hoặc Zustand</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="7-usecontext-vs-reduxzustand">7️⃣ useContext vs. Redux/Zustand<a class="headerlink" href="#7-usecontext-vs-reduxzustand" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Tiêu chí</th>
+<th>Context API</th>
+<th>Redux / Zustand</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Cấu hình</td>
+<td>Đơn giản, có sẵn trong React</td>
+<td>Cần thêm thư viện</td>
+</tr>
+<tr>
+<td>Phù hợp</td>
+<td>Ứng dụng nhỏ / trung bình</td>
+<td>Ứng dụng lớn</td>
+</tr>
+<tr>
+<td>Performance</td>
+<td>Re-render nhiều nếu không tách Provider</td>
+<td>Tối ưu hơn</td>
+</tr>
+<tr>
+<td>Learning curve</td>
+<td>Dễ học</td>
+<td>Phức tạp hơn</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="8-toi-uu-context-e-tranh-re-render">8️⃣ Tối ưu Context để tránh re-render<a class="headerlink" href="#8-toi-uu-context-e-tranh-re-render" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Tách Context theo chức năng (UserContext, ThemeContext...).</li>
+<li>Dùng <strong>useMemo</strong> và <strong>useCallback</strong> để ổn định giá trị.</li>
+<li>Không bao <code>Provider</code> quá rộng.</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">useMemo</span><span class="p">(()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">({</span><span class="w"> </span><span class="nx">user</span><span class="p">,</span><span class="w"> </span><span class="nx">setUser</span><span class="w"> </span><span class="p">}),</span><span class="w"> </span><span class="p">[</span><span class="nx">user</span><span class="p">]);</span>
+<span class="p">&lt;</span><span class="nt">UserContext</span><span class="p">.</span><span class="na">Provider</span><span class="w"> </span><span class="na">value</span><span class="o">=</span><span class="p">{</span><span class="nx">value</span><span class="p">}&gt;...&lt;/</span><span class="nt">UserContext</span><span class="p">.</span><span class="na">Provider</span><span class="p">&gt;;</span>
+</code></pre></div>
+<hr />
+<h2 id="tong-ket">🧠 Tổng kết<a class="headerlink" href="#tong-ket" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Kiến thức</th>
+<th>Mục tiêu</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Props Drilling</strong></td>
+<td>Hiểu vấn đề truyền dữ liệu qua nhiều cấp</td>
+</tr>
+<tr>
+<td><strong>Context API</strong></td>
+<td>Tạo state toàn cục</td>
+</tr>
+<tr>
+<td><strong>useContext</strong></td>
+<td>Truy cập dữ liệu từ bất kỳ component</td>
+</tr>
+<tr>
+<td><strong>Update Context</strong></td>
+<td>Cho phép thay đổi dữ liệu toàn cục</td>
+</tr>
+<tr>
+<td><strong>Tối ưu Context</strong></td>
+<td>Tránh re-render và chia nhỏ Provider</td>
 </tr>
 </tbody>
 </table>
