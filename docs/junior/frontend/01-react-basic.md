@@ -1,6 +1,6 @@
 # 🧩 React Foundation (Cơ bản)
 
-**Mục tiêu:** Hiểu cách React hoạt động, component, props, state, và các hooks cơ bản (như `useState`, `useEffect`).
+**🎯 Mục tiêu:** Hiểu cách React hoạt động, component, props, state, và các hooks cơ bản (như `useState`, `useEffect`).
 
 ---
 
