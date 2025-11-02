@@ -8,13 +8,13 @@
       
       
       
-        <link rel="canonical" href="https://alphadev14.github.io/digitaldocs/junior/frontend/03-context-api/">
+        <link rel="canonical" href="https://alphadev14.github.io/digitaldocs/junior/frontend/05-react-router/">
       
       
-        <link rel="prev" href="../02-react-hooks/">
+        <link rel="prev" href="../04-state-management/">
       
       
-        <link rel="next" href="../04-state-management/">
+        <link rel="next" href="../../database/01-postgresql-basic/">
       
       
       <link rel="icon" href="../../../assets/logo.png">
@@ -22,7 +22,7 @@
     
     
       
-        <title>Context API - P&T | Digital Docs</title>
+        <title>React Router - P&T | Digital Docs</title>
       
     
     
@@ -78,7 +78,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#context-api-quan-ly-du-lieu-toan-cuc-trong-react" class="md-skip">
+        <a href="#react-router-routing-navigation" class="md-skip">
           Skip to content
         </a>
       
@@ -113,7 +113,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Context API
+              React Router
             
           </span>
         </div>
@@ -569,32 +569,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    Context API
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../03-context-api/" class="md-nav__link">
         
   
   
@@ -605,140 +583,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#1-van-e-props-drilling-la-gi" class="md-nav__link">
-    <span class="md-ellipsis">
-      1️⃣ Vấn đề: Props Drilling là gì?
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#2-giai-phap-context-api" class="md-nav__link">
-    <span class="md-ellipsis">
-      2️⃣ Giải pháp: Context API
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#3-tao-va-su-dung-context" class="md-nav__link">
-    <span class="md-ellipsis">
-      3️⃣ Tạo và sử dụng Context
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="3️⃣ Tạo và sử dụng Context">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#buoc-1-tao-context" class="md-nav__link">
-    <span class="md-ellipsis">
-      🔹 Bước 1: Tạo Context
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#buoc-2-tao-provider" class="md-nav__link">
-    <span class="md-ellipsis">
-      🔹 Bước 2: Tạo Provider
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#buoc-3-su-dung-du-lieu-trong-component-con" class="md-nav__link">
-    <span class="md-ellipsis">
-      🔹 Bước 3: Sử dụng dữ liệu trong component con
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#4-cap-nhat-du-lieu-trong-context" class="md-nav__link">
-    <span class="md-ellipsis">
-      4️⃣ Cập nhật dữ liệu trong Context
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#5-tach-rieng-provider-cho-gon-code" class="md-nav__link">
-    <span class="md-ellipsis">
-      5️⃣ Tách riêng Provider cho gọn code
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#6-khi-nao-nen-dung-context-api" class="md-nav__link">
-    <span class="md-ellipsis">
-      6️⃣ Khi nào nên dùng Context API?
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#7-usecontext-vs-reduxzustand" class="md-nav__link">
-    <span class="md-ellipsis">
-      7️⃣ useContext vs. Redux/Zustand
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#8-toi-uu-context-e-tranh-re-render" class="md-nav__link">
-    <span class="md-ellipsis">
-      8️⃣ Tối ưu Context để tránh re-render
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#tong-ket" class="md-nav__link">
-    <span class="md-ellipsis">
-      🧠 Tổng kết
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -771,10 +615,32 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../05-react-router/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    React Router
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -785,6 +651,125 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#muc-tieu-hoc-tap" class="md-nav__link">
+    <span class="md-ellipsis">
+      🎯 Mục tiêu học tập
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-cai-at" class="md-nav__link">
+    <span class="md-ellipsis">
+      1️⃣ Cài đặt
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-cau-truc-co-ban-cua-react-router" class="md-nav__link">
+    <span class="md-ellipsis">
+      2️⃣ Cấu trúc cơ bản của React Router
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-nested-routes-long-route-con" class="md-nav__link">
+    <span class="md-ellipsis">
+      3️⃣ Nested Routes (Lồng route con)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-usenavigate-ieu-huong-bang-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      4️⃣ useNavigate – Điều hướng bằng code
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-useparams-lay-tham-so-tu-url" class="md-nav__link">
+    <span class="md-ellipsis">
+      5️⃣ useParams – Lấy tham số từ URL
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-protected-route-route-bao-ve" class="md-nav__link">
+    <span class="md-ellipsis">
+      6️⃣ Protected Route (Route bảo vệ)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-lazy-loading-routes" class="md-nav__link">
+    <span class="md-ellipsis">
+      7️⃣ Lazy Loading Routes
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-layout-route-chung-layout-cho-nhieu-trang" class="md-nav__link">
+    <span class="md-ellipsis">
+      8️⃣ Layout Route (Chung layout cho nhiều trang)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-navigate-component-redirect" class="md-nav__link">
+    <span class="md-ellipsis">
+      9️⃣ Navigate component (Redirect)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tong-ket" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔟 Tổng kết
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1497,105 +1482,90 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#1-van-e-props-drilling-la-gi" class="md-nav__link">
+  <a href="#muc-tieu-hoc-tap" class="md-nav__link">
     <span class="md-ellipsis">
-      1️⃣ Vấn đề: Props Drilling là gì?
+      🎯 Mục tiêu học tập
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#2-giai-phap-context-api" class="md-nav__link">
+  <a href="#1-cai-at" class="md-nav__link">
     <span class="md-ellipsis">
-      2️⃣ Giải pháp: Context API
+      1️⃣ Cài đặt
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#3-tao-va-su-dung-context" class="md-nav__link">
+  <a href="#2-cau-truc-co-ban-cua-react-router" class="md-nav__link">
     <span class="md-ellipsis">
-      3️⃣ Tạo và sử dụng Context
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="3️⃣ Tạo và sử dụng Context">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#buoc-1-tao-context" class="md-nav__link">
-    <span class="md-ellipsis">
-      🔹 Bước 1: Tạo Context
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#buoc-2-tao-provider" class="md-nav__link">
-    <span class="md-ellipsis">
-      🔹 Bước 2: Tạo Provider
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#buoc-3-su-dung-du-lieu-trong-component-con" class="md-nav__link">
-    <span class="md-ellipsis">
-      🔹 Bước 3: Sử dụng dữ liệu trong component con
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#4-cap-nhat-du-lieu-trong-context" class="md-nav__link">
-    <span class="md-ellipsis">
-      4️⃣ Cập nhật dữ liệu trong Context
+      2️⃣ Cấu trúc cơ bản của React Router
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#5-tach-rieng-provider-cho-gon-code" class="md-nav__link">
+  <a href="#3-nested-routes-long-route-con" class="md-nav__link">
     <span class="md-ellipsis">
-      5️⃣ Tách riêng Provider cho gọn code
+      3️⃣ Nested Routes (Lồng route con)
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#6-khi-nao-nen-dung-context-api" class="md-nav__link">
+  <a href="#4-usenavigate-ieu-huong-bang-code" class="md-nav__link">
     <span class="md-ellipsis">
-      6️⃣ Khi nào nên dùng Context API?
+      4️⃣ useNavigate – Điều hướng bằng code
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#7-usecontext-vs-reduxzustand" class="md-nav__link">
+  <a href="#5-useparams-lay-tham-so-tu-url" class="md-nav__link">
     <span class="md-ellipsis">
-      7️⃣ useContext vs. Redux/Zustand
+      5️⃣ useParams – Lấy tham số từ URL
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#8-toi-uu-context-e-tranh-re-render" class="md-nav__link">
+  <a href="#6-protected-route-route-bao-ve" class="md-nav__link">
     <span class="md-ellipsis">
-      8️⃣ Tối ưu Context để tránh re-render
+      6️⃣ Protected Route (Route bảo vệ)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-lazy-loading-routes" class="md-nav__link">
+    <span class="md-ellipsis">
+      7️⃣ Lazy Loading Routes
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-layout-route-chung-layout-cho-nhieu-trang" class="md-nav__link">
+    <span class="md-ellipsis">
+      8️⃣ Layout Route (Chung layout cho nhiều trang)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-navigate-component-redirect" class="md-nav__link">
+    <span class="md-ellipsis">
+      9️⃣ Navigate component (Redirect)
     </span>
   </a>
   
@@ -1604,7 +1574,7 @@
         <li class="md-nav__item">
   <a href="#tong-ket" class="md-nav__link">
     <span class="md-ellipsis">
-      🧠 Tổng kết
+      🔟 Tổng kết
     </span>
   </a>
   
@@ -1626,221 +1596,198 @@
 
 
 
-<h1 id="context-api-quan-ly-du-lieu-toan-cuc-trong-react">Context API — Quản lý dữ liệu toàn cục trong React<a class="headerlink" href="#context-api-quan-ly-du-lieu-toan-cuc-trong-react" title="Permanent link">&para;</a></h1>
-<p><strong>🎯 Mục tiêu:</strong></p>
+<h1 id="react-router-routing-navigation">React Router – Routing &amp; Navigation<a class="headerlink" href="#react-router-routing-navigation" title="Permanent link">&para;</a></h1>
+<h2 id="muc-tieu-hoc-tap">🎯 Mục tiêu học tập<a class="headerlink" href="#muc-tieu-hoc-tap" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Hiểu cách <strong>chia sẻ dữ liệu giữa nhiều component</strong> trong React <strong>mà không cần truyền props qua nhiều cấp (props drilling)</strong>.</li>
-<li>Nắm vững cách tạo, cung cấp, và sử dụng <strong>React Context API</strong>.</li>
+<li>Hiểu cách React Router hoạt động.</li>
+<li>Tạo ứng dụng nhiều trang với nested routes.</li>
+<li>Sử dụng <code>useNavigate</code>, <code>useParams</code>, <code>Outlet</code>.</li>
+<li>Tạo <strong>Protected Route</strong> (route bảo vệ người dùng chưa đăng nhập).</li>
+<li>Tối ưu hiệu năng với <strong>lazy loading</strong> routes.</li>
 </ul>
 <hr />
-<h2 id="1-van-e-props-drilling-la-gi">1️⃣ Vấn đề: Props Drilling là gì?<a class="headerlink" href="#1-van-e-props-drilling-la-gi" title="Permanent link">&para;</a></h2>
-<p><strong>Props drilling</strong> xảy ra khi bạn cần truyền dữ liệu qua nhiều cấp component, ngay cả khi một số component trung gian <strong>không cần dùng dữ liệu đó</strong>.</p>
-<p>Ví dụ:</p>
-<div class="highlight"><pre><span></span><code><span class="kd">function</span><span class="w"> </span><span class="nx">App</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">user</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Tam&quot;</span><span class="w"> </span><span class="p">};</span>
-<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">&lt;</span><span class="nt">Layout</span><span class="w"> </span><span class="na">user</span><span class="o">=</span><span class="p">{</span><span class="nx">user</span><span class="p">}</span><span class="w"> </span><span class="p">/&gt;;</span>
-<span class="p">}</span>
-
-<span class="kd">function</span><span class="w"> </span><span class="nx">Layout</span><span class="p">({</span><span class="w"> </span><span class="nx">user</span><span class="w"> </span><span class="p">})</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">&lt;</span><span class="nt">Header</span><span class="w"> </span><span class="na">user</span><span class="o">=</span><span class="p">{</span><span class="nx">user</span><span class="p">}</span><span class="w"> </span><span class="p">/&gt;;</span>
-<span class="p">}</span>
-
-<span class="kd">function</span><span class="w"> </span><span class="nx">Header</span><span class="p">({</span><span class="w"> </span><span class="nx">user</span><span class="w"> </span><span class="p">})</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">&lt;</span><span class="nt">UserInfo</span><span class="w"> </span><span class="na">user</span><span class="o">=</span><span class="p">{</span><span class="nx">user</span><span class="p">}</span><span class="w"> </span><span class="p">/&gt;;</span>
-<span class="p">}</span>
-
-<span class="kd">function</span><span class="w"> </span><span class="nx">UserInfo</span><span class="p">({</span><span class="w"> </span><span class="nx">user</span><span class="w"> </span><span class="p">})</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span><span class="nx">Xin</span><span class="w"> </span><span class="nx">chào</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="nx">user</span><span class="p">.</span><span class="nx">name</span><span class="p">}</span><span class="o">!</span><span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;;</span>
-<span class="p">}</span>
+<h2 id="1-cai-at">1️⃣ Cài đặt<a class="headerlink" href="#1-cai-at" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code>npm<span class="w"> </span>install<span class="w"> </span>react-router-dom
 </code></pre></div>
-<p>🧩 Vấn đề: <code>user</code> phải được truyền qua <code>Layout</code>, <code>Header</code> chỉ để đến <code>UserInfo</code>.</p>
 <hr />
-<h2 id="2-giai-phap-context-api">2️⃣ Giải pháp: Context API<a class="headerlink" href="#2-giai-phap-context-api" title="Permanent link">&para;</a></h2>
-<p><strong>Context</strong> cho phép bạn tạo một <em>“kho dữ liệu toàn cục”</em> mà bất kỳ component nào trong cây có thể truy cập, <strong>mà không cần props drilling</strong>.</p>
-<hr />
-<h2 id="3-tao-va-su-dung-context">3️⃣ Tạo và sử dụng Context<a class="headerlink" href="#3-tao-va-su-dung-context" title="Permanent link">&para;</a></h2>
-<h3 id="buoc-1-tao-context">🔹 Bước 1: Tạo Context<a class="headerlink" href="#buoc-1-tao-context" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">createContext</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;react&quot;</span><span class="p">;</span>
-
-<span class="k">export</span><span class="w"> </span><span class="kd">const</span><span class="w"> </span><span class="nx">UserContext</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">createContext</span><span class="p">(</span><span class="kc">null</span><span class="p">);</span>
-</code></pre></div>
-<h3 id="buoc-2-tao-provider">🔹 Bước 2: Tạo Provider<a class="headerlink" href="#buoc-2-tao-provider" title="Permanent link">&para;</a></h3>
-<p>Provider bao bọc các component con, cung cấp dữ liệu toàn cục.</p>
-<div class="highlight"><pre><span></span><code><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">useState</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;react&quot;</span><span class="p">;</span>
-<span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">UserContext</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;./UserContext&quot;</span><span class="p">;</span>
-<span class="k">import</span><span class="w"> </span><span class="nx">Dashboard</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;./Dashboard&quot;</span><span class="p">;</span>
+<h2 id="2-cau-truc-co-ban-cua-react-router">2️⃣ Cấu trúc cơ bản của React Router<a class="headerlink" href="#2-cau-truc-co-ban-cua-react-router" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">BrowserRouter</span><span class="w"> </span><span class="kr">as</span><span class="w"> </span><span class="nx">Router</span><span class="p">,</span><span class="w"> </span><span class="nx">Routes</span><span class="p">,</span><span class="w"> </span><span class="nx">Route</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;react-router-dom&quot;</span><span class="p">;</span>
+<span class="k">import</span><span class="w"> </span><span class="nx">Home</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;./pages/Home&quot;</span><span class="p">;</span>
+<span class="k">import</span><span class="w"> </span><span class="nx">About</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;./pages/About&quot;</span><span class="p">;</span>
+<span class="k">import</span><span class="w"> </span><span class="nx">NotFound</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;./pages/NotFound&quot;</span><span class="p">;</span>
 
 <span class="kd">function</span><span class="w"> </span><span class="nx">App</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="p">[</span><span class="nx">user</span><span class="p">,</span><span class="w"> </span><span class="nx">setUser</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">useState</span><span class="p">({</span><span class="w"> </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Tam&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">role</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Admin&quot;</span><span class="w"> </span><span class="p">});</span>
-
 <span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">(</span>
-<span class="w">    </span><span class="p">&lt;</span><span class="nt">UserContext</span><span class="p">.</span><span class="na">Provider</span><span class="w"> </span><span class="na">value</span><span class="o">=</span><span class="p">{{</span><span class="w"> </span><span class="nx">user</span><span class="p">,</span><span class="w"> </span><span class="nx">setUser</span><span class="w"> </span><span class="p">}}&gt;</span>
-<span class="w">      </span><span class="p">&lt;</span><span class="nt">Dashboard</span><span class="w"> </span><span class="p">/&gt;</span>
-<span class="w">    </span><span class="p">&lt;/</span><span class="nt">UserContext</span><span class="p">.</span><span class="na">Provider</span><span class="p">&gt;</span>
+<span class="w">    </span><span class="p">&lt;</span><span class="nt">Router</span><span class="p">&gt;</span>
+<span class="w">      </span><span class="p">&lt;</span><span class="nt">Routes</span><span class="p">&gt;</span>
+<span class="w">        </span><span class="p">&lt;</span><span class="nt">Route</span><span class="w"> </span><span class="na">path</span><span class="o">=</span><span class="s">&quot;/&quot;</span><span class="w"> </span><span class="na">element</span><span class="o">=</span><span class="p">{&lt;</span><span class="nt">Home</span><span class="w"> </span><span class="p">/&gt;}</span><span class="w"> </span><span class="p">/&gt;</span>
+<span class="w">        </span><span class="p">&lt;</span><span class="nt">Route</span><span class="w"> </span><span class="na">path</span><span class="o">=</span><span class="s">&quot;/about&quot;</span><span class="w"> </span><span class="na">element</span><span class="o">=</span><span class="p">{&lt;</span><span class="nt">About</span><span class="w"> </span><span class="p">/&gt;}</span><span class="w"> </span><span class="p">/&gt;</span>
+<span class="w">        </span><span class="p">&lt;</span><span class="nt">Route</span><span class="w"> </span><span class="na">path</span><span class="o">=</span><span class="s">&quot;*&quot;</span><span class="w"> </span><span class="na">element</span><span class="o">=</span><span class="p">{&lt;</span><span class="nt">NotFound</span><span class="w"> </span><span class="p">/&gt;}</span><span class="w"> </span><span class="p">/&gt;</span>
+<span class="w">      </span><span class="p">&lt;/</span><span class="nt">Routes</span><span class="p">&gt;</span>
+<span class="w">    </span><span class="p">&lt;/</span><span class="nt">Router</span><span class="p">&gt;</span>
 <span class="w">  </span><span class="p">);</span>
 <span class="p">}</span>
-</code></pre></div>
-<h3 id="buoc-3-su-dung-du-lieu-trong-component-con">🔹 Bước 3: Sử dụng dữ liệu trong component con<a class="headerlink" href="#buoc-3-su-dung-du-lieu-trong-component-con" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">useContext</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;react&quot;</span><span class="p">;</span>
-<span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">UserContext</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;./UserContext&quot;</span><span class="p">;</span>
 
-<span class="kd">function</span><span class="w"> </span><span class="nx">UserProfile</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">user</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">useContext</span><span class="p">(</span><span class="nx">UserContext</span><span class="p">);</span>
-<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;</span><span class="nx">Xin</span><span class="w"> </span><span class="nx">chào</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="nx">user</span><span class="p">.</span><span class="nx">name</span><span class="p">}&lt;/</span><span class="nt">h2</span><span class="p">&gt;;</span>
-<span class="p">}</span>
+<span class="k">export</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="nx">App</span><span class="p">;</span>
 </code></pre></div>
+<p>✅ <code>path="*"</code> dùng để xử lý route không tồn tại (404 page).</p>
 <hr />
-<h2 id="4-cap-nhat-du-lieu-trong-context">4️⃣ Cập nhật dữ liệu trong Context<a class="headerlink" href="#4-cap-nhat-du-lieu-trong-context" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code><span class="kd">function</span><span class="w"> </span><span class="nx">UserProfile</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">user</span><span class="p">,</span><span class="w"> </span><span class="nx">setUser</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">useContext</span><span class="p">(</span><span class="nx">UserContext</span><span class="p">);</span>
+<h2 id="3-nested-routes-long-route-con">3️⃣ Nested Routes (Lồng route con)<a class="headerlink" href="#3-nested-routes-long-route-con" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">Routes</span><span class="p">,</span><span class="w"> </span><span class="nx">Route</span><span class="p">,</span><span class="w"> </span><span class="nx">Outlet</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;react-router-dom&quot;</span><span class="p">;</span>
 
-<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">changeName</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">setUser</span><span class="p">({</span><span class="w"> </span><span class="p">...</span><span class="nx">user</span><span class="p">,</span><span class="w"> </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Minh&quot;</span><span class="w"> </span><span class="p">});</span>
-
+<span class="kd">function</span><span class="w"> </span><span class="nx">Dashboard</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
 <span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">(</span>
 <span class="w">    </span><span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
-<span class="w">      </span><span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;</span><span class="nx">Xin</span><span class="w"> </span><span class="nx">chào</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="nx">user</span><span class="p">.</span><span class="nx">name</span><span class="p">}&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
-<span class="w">      </span><span class="p">&lt;</span><span class="nt">button</span><span class="w"> </span><span class="na">onClick</span><span class="o">=</span><span class="p">{</span><span class="nx">changeName</span><span class="p">}&gt;</span><span class="nx">Đổi</span><span class="w"> </span><span class="nx">tên</span><span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+<span class="w">      </span><span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;</span><span class="nx">Dashboard</span><span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
+<span class="w">      </span><span class="p">&lt;</span><span class="nt">Outlet</span><span class="w"> </span><span class="p">/&gt;</span>
 <span class="w">    </span><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
 <span class="w">  </span><span class="p">);</span>
 <span class="p">}</span>
-</code></pre></div>
-<blockquote>
-<p>✅ Tất cả component dùng Context đều cập nhật theo.</p>
-</blockquote>
-<hr />
-<h2 id="5-tach-rieng-provider-cho-gon-code">5️⃣ Tách riêng Provider cho gọn code<a class="headerlink" href="#5-tach-rieng-provider-cho-gon-code" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">createContext</span><span class="p">,</span><span class="w"> </span><span class="nx">useState</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;react&quot;</span><span class="p">;</span>
 
-<span class="k">export</span><span class="w"> </span><span class="kd">const</span><span class="w"> </span><span class="nx">UserContext</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">createContext</span><span class="p">();</span>
-
-<span class="k">export</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">UserProvider</span><span class="p">({</span><span class="w"> </span><span class="nx">children</span><span class="w"> </span><span class="p">})</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="p">[</span><span class="nx">user</span><span class="p">,</span><span class="w"> </span><span class="nx">setUser</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">useState</span><span class="p">({</span><span class="w"> </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Tam&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">role</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Admin&quot;</span><span class="w"> </span><span class="p">});</span>
-<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">(</span>
-<span class="w">    </span><span class="p">&lt;</span><span class="nt">UserContext</span><span class="p">.</span><span class="na">Provider</span><span class="w"> </span><span class="na">value</span><span class="o">=</span><span class="p">{{</span><span class="w"> </span><span class="nx">user</span><span class="p">,</span><span class="w"> </span><span class="nx">setUser</span><span class="w"> </span><span class="p">}}&gt;</span>
-<span class="w">      </span><span class="p">{</span><span class="nx">children</span><span class="p">}</span>
-<span class="w">    </span><span class="p">&lt;/</span><span class="nt">UserContext</span><span class="p">.</span><span class="na">Provider</span><span class="p">&gt;</span>
-<span class="w">  </span><span class="p">);</span>
+<span class="kd">function</span><span class="w"> </span><span class="nx">Users</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span><span class="nx">User</span><span class="w"> </span><span class="nx">Management</span><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;;</span>
 <span class="p">}</span>
-</code></pre></div>
-<p>Sử dụng trong <code>App.js</code>:</p>
-<div class="highlight"><pre><span></span><code><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">UserProvider</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;./UserProvider&quot;</span><span class="p">;</span>
-<span class="k">import</span><span class="w"> </span><span class="nx">Dashboard</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;./Dashboard&quot;</span><span class="p">;</span>
+
+<span class="kd">function</span><span class="w"> </span><span class="nx">Settings</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span><span class="nx">Settings</span><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;;</span>
+<span class="p">}</span>
 
 <span class="kd">function</span><span class="w"> </span><span class="nx">App</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
 <span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">(</span>
-<span class="w">    </span><span class="p">&lt;</span><span class="nt">UserProvider</span><span class="p">&gt;</span>
-<span class="w">      </span><span class="p">&lt;</span><span class="nt">Dashboard</span><span class="w"> </span><span class="p">/&gt;</span>
-<span class="w">    </span><span class="p">&lt;/</span><span class="nt">UserProvider</span><span class="p">&gt;</span>
+<span class="w">    </span><span class="p">&lt;</span><span class="nt">Routes</span><span class="p">&gt;</span>
+<span class="w">      </span><span class="p">&lt;</span><span class="nt">Route</span><span class="w"> </span><span class="na">path</span><span class="o">=</span><span class="s">&quot;dashboard&quot;</span><span class="w"> </span><span class="na">element</span><span class="o">=</span><span class="p">{&lt;</span><span class="nt">Dashboard</span><span class="w"> </span><span class="p">/&gt;}&gt;</span>
+<span class="w">        </span><span class="p">&lt;</span><span class="nt">Route</span><span class="w"> </span><span class="na">path</span><span class="o">=</span><span class="s">&quot;users&quot;</span><span class="w"> </span><span class="na">element</span><span class="o">=</span><span class="p">{&lt;</span><span class="nt">Users</span><span class="w"> </span><span class="p">/&gt;}</span><span class="w"> </span><span class="p">/&gt;</span>
+<span class="w">        </span><span class="p">&lt;</span><span class="nt">Route</span><span class="w"> </span><span class="na">path</span><span class="o">=</span><span class="s">&quot;settings&quot;</span><span class="w"> </span><span class="na">element</span><span class="o">=</span><span class="p">{&lt;</span><span class="nt">Settings</span><span class="w"> </span><span class="p">/&gt;}</span><span class="w"> </span><span class="p">/&gt;</span>
+<span class="w">      </span><span class="p">&lt;/</span><span class="nt">Route</span><span class="p">&gt;</span>
+<span class="w">    </span><span class="p">&lt;/</span><span class="nt">Routes</span><span class="p">&gt;</span>
 <span class="w">  </span><span class="p">);</span>
 <span class="p">}</span>
 </code></pre></div>
 <hr />
-<h2 id="6-khi-nao-nen-dung-context-api">6️⃣ Khi nào nên dùng Context API?<a class="headerlink" href="#6-khi-nao-nen-dung-context-api" title="Permanent link">&para;</a></h2>
-<table>
-<thead>
-<tr>
-<th>Tình huống</th>
-<th>Có nên dùng Context không?</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Truyền theme (dark/light)</td>
-<td>✅ Có</td>
-</tr>
-<tr>
-<td>Ngôn ngữ / i18n</td>
-<td>✅ Có</td>
-</tr>
-<tr>
-<td>Dữ liệu đăng nhập user</td>
-<td>✅ Có</td>
-</tr>
-<tr>
-<td>Danh sách sản phẩm nhỏ</td>
-<td>✅ Có</td>
-</tr>
-<tr>
-<td>Dữ liệu phức tạp, cache</td>
-<td>❌ Dùng Redux hoặc Zustand</td>
-</tr>
-</tbody>
-</table>
-<hr />
-<h2 id="7-usecontext-vs-reduxzustand">7️⃣ useContext vs. Redux/Zustand<a class="headerlink" href="#7-usecontext-vs-reduxzustand" title="Permanent link">&para;</a></h2>
-<table>
-<thead>
-<tr>
-<th>Tiêu chí</th>
-<th>Context API</th>
-<th>Redux / Zustand</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Cấu hình</td>
-<td>Đơn giản, có sẵn trong React</td>
-<td>Cần thêm thư viện</td>
-</tr>
-<tr>
-<td>Phù hợp</td>
-<td>Ứng dụng nhỏ / trung bình</td>
-<td>Ứng dụng lớn</td>
-</tr>
-<tr>
-<td>Performance</td>
-<td>Re-render nhiều nếu không tách Provider</td>
-<td>Tối ưu hơn</td>
-</tr>
-<tr>
-<td>Learning curve</td>
-<td>Dễ học</td>
-<td>Phức tạp hơn</td>
-</tr>
-</tbody>
-</table>
-<hr />
-<h2 id="8-toi-uu-context-e-tranh-re-render">8️⃣ Tối ưu Context để tránh re-render<a class="headerlink" href="#8-toi-uu-context-e-tranh-re-render" title="Permanent link">&para;</a></h2>
-<ul>
-<li>Tách Context theo chức năng (UserContext, ThemeContext...).</li>
-<li>Dùng <strong>useMemo</strong> và <strong>useCallback</strong> để ổn định giá trị.</li>
-<li>Không bao <code>Provider</code> quá rộng.</li>
-</ul>
-<div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">useMemo</span><span class="p">(()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">({</span><span class="w"> </span><span class="nx">user</span><span class="p">,</span><span class="w"> </span><span class="nx">setUser</span><span class="w"> </span><span class="p">}),</span><span class="w"> </span><span class="p">[</span><span class="nx">user</span><span class="p">]);</span>
-<span class="p">&lt;</span><span class="nt">UserContext</span><span class="p">.</span><span class="na">Provider</span><span class="w"> </span><span class="na">value</span><span class="o">=</span><span class="p">{</span><span class="nx">value</span><span class="p">}&gt;...&lt;/</span><span class="nt">UserContext</span><span class="p">.</span><span class="na">Provider</span><span class="p">&gt;;</span>
+<h2 id="4-usenavigate-ieu-huong-bang-code">4️⃣ useNavigate – Điều hướng bằng code<a class="headerlink" href="#4-usenavigate-ieu-huong-bang-code" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">useNavigate</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;react-router-dom&quot;</span><span class="p">;</span>
+
+<span class="kd">function</span><span class="w"> </span><span class="nx">Login</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">navigate</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">useNavigate</span><span class="p">();</span>
+
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">handleLogin</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">navigate</span><span class="p">(</span><span class="s2">&quot;/dashboard&quot;</span><span class="p">);</span>
+<span class="w">  </span><span class="p">};</span>
+
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">&lt;</span><span class="nt">button</span><span class="w"> </span><span class="na">onClick</span><span class="o">=</span><span class="p">{</span><span class="nx">handleLogin</span><span class="p">}&gt;</span><span class="nx">Đăng</span><span class="w"> </span><span class="nx">nhập</span><span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;;</span>
+<span class="p">}</span>
 </code></pre></div>
 <hr />
-<h2 id="tong-ket">🧠 Tổng kết<a class="headerlink" href="#tong-ket" title="Permanent link">&para;</a></h2>
+<h2 id="5-useparams-lay-tham-so-tu-url">5️⃣ useParams – Lấy tham số từ URL<a class="headerlink" href="#5-useparams-lay-tham-so-tu-url" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">useParams</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;react-router-dom&quot;</span><span class="p">;</span>
+
+<span class="kd">function</span><span class="w"> </span><span class="nx">ProductDetail</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">id</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">useParams</span><span class="p">();</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">&lt;</span><span class="nt">h3</span><span class="p">&gt;</span><span class="nx">Chi</span><span class="w"> </span><span class="nx">tiết</span><span class="w"> </span><span class="nx">sản</span><span class="w"> </span><span class="nx">phẩm</span><span class="w"> </span><span class="nx">ID</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="nx">id</span><span class="p">}&lt;/</span><span class="nt">h3</span><span class="p">&gt;;</span>
+<span class="p">}</span>
+</code></pre></div>
+<hr />
+<h2 id="6-protected-route-route-bao-ve">6️⃣ Protected Route (Route bảo vệ)<a class="headerlink" href="#6-protected-route-route-bao-ve" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">Navigate</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;react-router-dom&quot;</span><span class="p">;</span>
+
+<span class="kd">function</span><span class="w"> </span><span class="nx">ProtectedRoute</span><span class="p">({</span><span class="w"> </span><span class="nx">children</span><span class="w"> </span><span class="p">})</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">isAuthenticated</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">localStorage</span><span class="p">.</span><span class="nx">getItem</span><span class="p">(</span><span class="s2">&quot;token&quot;</span><span class="p">);</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="nx">isAuthenticated</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="nx">children</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="p">&lt;</span><span class="nt">Navigate</span><span class="w"> </span><span class="na">to</span><span class="o">=</span><span class="s">&quot;/login&quot;</span><span class="w"> </span><span class="p">/&gt;;</span>
+<span class="p">}</span>
+</code></pre></div>
+<p><strong>Sử dụng:</strong></p>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">Route</span>
+<span class="w">  </span><span class="na">path</span><span class="o">=</span><span class="s">&quot;/dashboard&quot;</span>
+<span class="w">  </span><span class="na">element</span><span class="o">=</span><span class="p">{</span>
+<span class="w">    </span><span class="p">&lt;</span><span class="nt">ProtectedRoute</span><span class="p">&gt;</span>
+<span class="w">      </span><span class="p">&lt;</span><span class="nt">Dashboard</span><span class="w"> </span><span class="p">/&gt;</span>
+<span class="w">    </span><span class="p">&lt;/</span><span class="nt">ProtectedRoute</span><span class="p">&gt;</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">/&gt;</span>
+</code></pre></div>
+<hr />
+<h2 id="7-lazy-loading-routes">7️⃣ Lazy Loading Routes<a class="headerlink" href="#7-lazy-loading-routes" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><span class="k">import</span><span class="w"> </span><span class="nx">React</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">lazy</span><span class="p">,</span><span class="w"> </span><span class="nx">Suspense</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;react&quot;</span><span class="p">;</span>
+<span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">Routes</span><span class="p">,</span><span class="w"> </span><span class="nx">Route</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;react-router-dom&quot;</span><span class="p">;</span>
+
+<span class="kd">const</span><span class="w"> </span><span class="nx">Home</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">lazy</span><span class="p">(()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="k">import</span><span class="p">(</span><span class="s2">&quot;./pages/Home&quot;</span><span class="p">));</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">About</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">lazy</span><span class="p">(()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="k">import</span><span class="p">(</span><span class="s2">&quot;./pages/About&quot;</span><span class="p">));</span>
+
+<span class="kd">function</span><span class="w"> </span><span class="nx">App</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="p">&lt;</span><span class="nt">Suspense</span><span class="w"> </span><span class="na">fallback</span><span class="o">=</span><span class="p">{&lt;</span><span class="nt">div</span><span class="p">&gt;</span><span class="nx">Loading</span><span class="p">...&lt;/</span><span class="nt">div</span><span class="p">&gt;}&gt;</span>
+<span class="w">      </span><span class="p">&lt;</span><span class="nt">Routes</span><span class="p">&gt;</span>
+<span class="w">        </span><span class="p">&lt;</span><span class="nt">Route</span><span class="w"> </span><span class="na">path</span><span class="o">=</span><span class="s">&quot;/&quot;</span><span class="w"> </span><span class="na">element</span><span class="o">=</span><span class="p">{&lt;</span><span class="nt">Home</span><span class="w"> </span><span class="p">/&gt;}</span><span class="w"> </span><span class="p">/&gt;</span>
+<span class="w">        </span><span class="p">&lt;</span><span class="nt">Route</span><span class="w"> </span><span class="na">path</span><span class="o">=</span><span class="s">&quot;/about&quot;</span><span class="w"> </span><span class="na">element</span><span class="o">=</span><span class="p">{&lt;</span><span class="nt">About</span><span class="w"> </span><span class="p">/&gt;}</span><span class="w"> </span><span class="p">/&gt;</span>
+<span class="w">      </span><span class="p">&lt;/</span><span class="nt">Routes</span><span class="p">&gt;</span>
+<span class="w">    </span><span class="p">&lt;/</span><span class="nt">Suspense</span><span class="p">&gt;</span>
+<span class="w">  </span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+<hr />
+<h2 id="8-layout-route-chung-layout-cho-nhieu-trang">8️⃣ Layout Route (Chung layout cho nhiều trang)<a class="headerlink" href="#8-layout-route-chung-layout-cho-nhieu-trang" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><span class="kd">function</span><span class="w"> </span><span class="nx">Layout</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="w">      </span><span class="p">&lt;</span><span class="nt">header</span><span class="p">&gt;</span><span class="nx">Header</span><span class="p">&lt;/</span><span class="nt">header</span><span class="p">&gt;</span>
+<span class="w">      </span><span class="p">&lt;</span><span class="nt">Outlet</span><span class="w"> </span><span class="p">/&gt;</span>
+<span class="w">      </span><span class="p">&lt;</span><span class="nt">footer</span><span class="p">&gt;</span><span class="nx">Footer</span><span class="p">&lt;/</span><span class="nt">footer</span><span class="p">&gt;</span>
+<span class="w">    </span><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="w">  </span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="p">&lt;</span><span class="nt">Route</span><span class="w"> </span><span class="na">path</span><span class="o">=</span><span class="s">&quot;/&quot;</span><span class="w"> </span><span class="na">element</span><span class="o">=</span><span class="p">{&lt;</span><span class="nt">Layout</span><span class="w"> </span><span class="p">/&gt;}&gt;</span>
+<span class="w">  </span><span class="p">&lt;</span><span class="nt">Route</span><span class="w"> </span><span class="na">index</span><span class="w"> </span><span class="na">element</span><span class="o">=</span><span class="p">{&lt;</span><span class="nt">Home</span><span class="w"> </span><span class="p">/&gt;}</span><span class="w"> </span><span class="p">/&gt;</span>
+<span class="w">  </span><span class="p">&lt;</span><span class="nt">Route</span><span class="w"> </span><span class="na">path</span><span class="o">=</span><span class="s">&quot;about&quot;</span><span class="w"> </span><span class="na">element</span><span class="o">=</span><span class="p">{&lt;</span><span class="nt">About</span><span class="w"> </span><span class="p">/&gt;}</span><span class="w"> </span><span class="p">/&gt;</span>
+<span class="p">&lt;/</span><span class="nt">Route</span><span class="p">&gt;;</span>
+</code></pre></div>
+<hr />
+<h2 id="9-navigate-component-redirect">9️⃣ Navigate component (Redirect)<a class="headerlink" href="#9-navigate-component-redirect" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">Navigate</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;react-router-dom&quot;</span><span class="p">;</span>
+
+<span class="p">&lt;</span><span class="nt">Route</span><span class="w"> </span><span class="na">path</span><span class="o">=</span><span class="s">&quot;/old-home&quot;</span><span class="w"> </span><span class="na">element</span><span class="o">=</span><span class="p">{&lt;</span><span class="nt">Navigate</span><span class="w"> </span><span class="na">to</span><span class="o">=</span><span class="s">&quot;/&quot;</span><span class="w"> </span><span class="na">replace</span><span class="w"> </span><span class="p">/&gt;}</span><span class="w"> </span><span class="p">/&gt;;</span>
+</code></pre></div>
+<hr />
+<h2 id="tong-ket">🔟 Tổng kết<a class="headerlink" href="#tong-ket" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
 <tr>
-<th>Kiến thức</th>
-<th>Mục tiêu</th>
+<th>Kiến thức chính</th>
+<th>Ý nghĩa</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><strong>Props Drilling</strong></td>
-<td>Hiểu vấn đề truyền dữ liệu qua nhiều cấp</td>
+<td><code>BrowserRouter</code></td>
+<td>Bọc toàn bộ ứng dụng</td>
 </tr>
 <tr>
-<td><strong>Context API</strong></td>
-<td>Tạo state toàn cục</td>
+<td><code>Routes</code> &amp; <code>Route</code></td>
+<td>Khai báo route</td>
 </tr>
 <tr>
-<td><strong>useContext</strong></td>
-<td>Truy cập dữ liệu từ bất kỳ component</td>
+<td><code>Outlet</code></td>
+<td>Render route con</td>
 </tr>
 <tr>
-<td><strong>Update Context</strong></td>
-<td>Cho phép thay đổi dữ liệu toàn cục</td>
+<td><code>useNavigate</code></td>
+<td>Điều hướng bằng code</td>
 </tr>
 <tr>
-<td><strong>Tối ưu Context</strong></td>
-<td>Tránh re-render và chia nhỏ Provider</td>
+<td><code>useParams</code></td>
+<td>Lấy param động từ URL</td>
+</tr>
+<tr>
+<td><code>ProtectedRoute</code></td>
+<td>Bảo vệ route cần đăng nhập</td>
+</tr>
+<tr>
+<td><code>lazy</code> + <code>Suspense</code></td>
+<td>Tải component khi cần để tối ưu</td>
 </tr>
 </tbody>
 </table>
+<hr />
 
 
 
