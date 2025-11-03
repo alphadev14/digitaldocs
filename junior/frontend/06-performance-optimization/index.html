@@ -8,13 +8,13 @@
       
       
       
-        <link rel="canonical" href="https://alphadev14.github.io/digitaldocs/junior/frontend/04-state-management/">
+        <link rel="canonical" href="https://alphadev14.github.io/digitaldocs/junior/frontend/06-performance-optimization/">
       
       
-        <link rel="prev" href="../03-context-api/">
+        <link rel="prev" href="../05-react-router/">
       
       
-        <link rel="next" href="../05-react-router/">
+        <link rel="next" href="../../database/01-postgresql-basic/">
       
       
       <link rel="icon" href="../../../assets/logo.png">
@@ -22,7 +22,7 @@
     
     
       
-        <title>State Management - P&T | Digital Docs</title>
+        <title>Performance Optimization - P&T | Digital Docs</title>
       
     
     
@@ -78,7 +78,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#state-management-trong-react" class="md-skip">
+        <a href="#react-performance-optimization" class="md-skip">
           Skip to content
         </a>
       
@@ -113,7 +113,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              State Management
+              Performance Optimization
             
           </span>
         </div>
@@ -592,32 +592,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    State Management
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../04-state-management/" class="md-nav__link">
         
   
   
@@ -628,224 +606,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#muc-tieu" class="md-nav__link">
-    <span class="md-ellipsis">
-      🎯 Mục tiêu
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#1-gioi-thieu-ve-state-management" class="md-nav__link">
-    <span class="md-ellipsis">
-      1️⃣ Giới thiệu về State Management
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="1️⃣ Giới thiệu về State Management">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#ba-cap-o-quan-ly-state" class="md-nav__link">
-    <span class="md-ellipsis">
-      🔹 Ba cấp độ quản lý state:
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#2-redux-state-management-truyen-thong-va-manh-me" class="md-nav__link">
-    <span class="md-ellipsis">
-      2️⃣ Redux – State Management Truyền Thống và Mạnh Mẽ
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="2️⃣ Redux – State Management Truyền Thống và Mạnh Mẽ">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#gioi-thieu" class="md-nav__link">
-    <span class="md-ellipsis">
-      💡 Giới thiệu
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#cau-truc-redux-co-ban" class="md-nav__link">
-    <span class="md-ellipsis">
-      🔧 Cấu trúc Redux cơ bản
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#nguyen-tac-hoat-ong" class="md-nav__link">
-    <span class="md-ellipsis">
-      🧩 Nguyên tắc hoạt động
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#cai-at-redux-toolkit" class="md-nav__link">
-    <span class="md-ellipsis">
-      ⚙️ Cài đặt Redux Toolkit
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#vi-du-co-ban" class="md-nav__link">
-    <span class="md-ellipsis">
-      ✍️ Ví dụ cơ bản
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#uu-iem" class="md-nav__link">
-    <span class="md-ellipsis">
-      ⚡ Ưu điểm
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#nhuoc-iem" class="md-nav__link">
-    <span class="md-ellipsis">
-      ⚠️ Nhược điểm
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#3-zustand-state-management-nhe-hien-ai" class="md-nav__link">
-    <span class="md-ellipsis">
-      3️⃣ Zustand – State Management Nhẹ, Hiện Đại
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="3️⃣ Zustand – State Management Nhẹ, Hiện Đại">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#gioi-thieu_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      💡 Giới thiệu
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#cai-at" class="md-nav__link">
-    <span class="md-ellipsis">
-      ⚙️ Cài đặt
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#vi-du" class="md-nav__link">
-    <span class="md-ellipsis">
-      ✍️ Ví dụ
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#uu-iem_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      ⚡ Ưu điểm
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#nhuoc-iem_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      ⚠️ Nhược điểm
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#4-so-sanh-redux-va-zustand" class="md-nav__link">
-    <span class="md-ellipsis">
-      4️⃣ So sánh Redux và Zustand
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#5-khi-nao-dung-cai-nao" class="md-nav__link">
-    <span class="md-ellipsis">
-      5️⃣ Khi nào dùng cái nào?
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#ket-luan" class="md-nav__link">
-    <span class="md-ellipsis">
-      ✅ Kết luận
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -878,10 +638,32 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../06-performance-optimization/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Performance Optimization
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -892,6 +674,125 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#muc-tieu" class="md-nav__link">
+    <span class="md-ellipsis">
+      🎯 Mục tiêu
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-hieu-ro-co-che-re-render-trong-react" class="md-nav__link">
+    <span class="md-ellipsis">
+      1️⃣ Hiểu rõ cơ chế re-render trong React
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-su-dung-reactmemo-toi-uu-component-con" class="md-nav__link">
+    <span class="md-ellipsis">
+      2️⃣ Sử dụng React.memo() – Tối ưu component con
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-usecallback-ghi-nho-ham-callback" class="md-nav__link">
+    <span class="md-ellipsis">
+      3️⃣ useCallback() – Ghi nhớ hàm callback
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-usememo-ghi-nho-gia-tri-tinh-toan-nang" class="md-nav__link">
+    <span class="md-ellipsis">
+      4️⃣ useMemo() – Ghi nhớ giá trị tính toán nặng
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-code-splitting-chia-nho-bundle" class="md-nav__link">
+    <span class="md-ellipsis">
+      5️⃣ code Splitting - Chia nhỏ bundle
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-lazy-loading-hinh-anh-component" class="md-nav__link">
+    <span class="md-ellipsis">
+      6️⃣ Lazy Loading hình ảnh, component
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-virtualization-hien-thi-danh-sach-lon" class="md-nav__link">
+    <span class="md-ellipsis">
+      7️⃣ Virtualization – Hiển thị danh sách lớn
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-profiling-o-luong-hieu-suat" class="md-nav__link">
+    <span class="md-ellipsis">
+      8️⃣ Profiling – Đo lường hiệu suất
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-tranh-tao-objectarray-inline-trong-jsx" class="md-nav__link">
+    <span class="md-ellipsis">
+      9️⃣ Tránh tạo object/array inline trong JSX
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#toi-uu-build-deploy" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔟 Tối ưu build &amp; deploy
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1521,189 +1422,90 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#1-gioi-thieu-ve-state-management" class="md-nav__link">
+  <a href="#1-hieu-ro-co-che-re-render-trong-react" class="md-nav__link">
     <span class="md-ellipsis">
-      1️⃣ Giới thiệu về State Management
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="1️⃣ Giới thiệu về State Management">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#ba-cap-o-quan-ly-state" class="md-nav__link">
-    <span class="md-ellipsis">
-      🔹 Ba cấp độ quản lý state:
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#2-redux-state-management-truyen-thong-va-manh-me" class="md-nav__link">
-    <span class="md-ellipsis">
-      2️⃣ Redux – State Management Truyền Thống và Mạnh Mẽ
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="2️⃣ Redux – State Management Truyền Thống và Mạnh Mẽ">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#gioi-thieu" class="md-nav__link">
-    <span class="md-ellipsis">
-      💡 Giới thiệu
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#cau-truc-redux-co-ban" class="md-nav__link">
-    <span class="md-ellipsis">
-      🔧 Cấu trúc Redux cơ bản
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#nguyen-tac-hoat-ong" class="md-nav__link">
-    <span class="md-ellipsis">
-      🧩 Nguyên tắc hoạt động
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#cai-at-redux-toolkit" class="md-nav__link">
-    <span class="md-ellipsis">
-      ⚙️ Cài đặt Redux Toolkit
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#vi-du-co-ban" class="md-nav__link">
-    <span class="md-ellipsis">
-      ✍️ Ví dụ cơ bản
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#uu-iem" class="md-nav__link">
-    <span class="md-ellipsis">
-      ⚡ Ưu điểm
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#nhuoc-iem" class="md-nav__link">
-    <span class="md-ellipsis">
-      ⚠️ Nhược điểm
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#3-zustand-state-management-nhe-hien-ai" class="md-nav__link">
-    <span class="md-ellipsis">
-      3️⃣ Zustand – State Management Nhẹ, Hiện Đại
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="3️⃣ Zustand – State Management Nhẹ, Hiện Đại">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#gioi-thieu_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      💡 Giới thiệu
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#cai-at" class="md-nav__link">
-    <span class="md-ellipsis">
-      ⚙️ Cài đặt
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#vi-du" class="md-nav__link">
-    <span class="md-ellipsis">
-      ✍️ Ví dụ
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#uu-iem_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      ⚡ Ưu điểm
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#nhuoc-iem_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      ⚠️ Nhược điểm
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#4-so-sanh-redux-va-zustand" class="md-nav__link">
-    <span class="md-ellipsis">
-      4️⃣ So sánh Redux và Zustand
+      1️⃣ Hiểu rõ cơ chế re-render trong React
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#5-khi-nao-dung-cai-nao" class="md-nav__link">
+  <a href="#2-su-dung-reactmemo-toi-uu-component-con" class="md-nav__link">
     <span class="md-ellipsis">
-      5️⃣ Khi nào dùng cái nào?
+      2️⃣ Sử dụng React.memo() – Tối ưu component con
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#ket-luan" class="md-nav__link">
+  <a href="#3-usecallback-ghi-nho-ham-callback" class="md-nav__link">
     <span class="md-ellipsis">
-      ✅ Kết luận
+      3️⃣ useCallback() – Ghi nhớ hàm callback
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-usememo-ghi-nho-gia-tri-tinh-toan-nang" class="md-nav__link">
+    <span class="md-ellipsis">
+      4️⃣ useMemo() – Ghi nhớ giá trị tính toán nặng
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-code-splitting-chia-nho-bundle" class="md-nav__link">
+    <span class="md-ellipsis">
+      5️⃣ code Splitting - Chia nhỏ bundle
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-lazy-loading-hinh-anh-component" class="md-nav__link">
+    <span class="md-ellipsis">
+      6️⃣ Lazy Loading hình ảnh, component
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-virtualization-hien-thi-danh-sach-lon" class="md-nav__link">
+    <span class="md-ellipsis">
+      7️⃣ Virtualization – Hiển thị danh sách lớn
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-profiling-o-luong-hieu-suat" class="md-nav__link">
+    <span class="md-ellipsis">
+      8️⃣ Profiling – Đo lường hiệu suất
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-tranh-tao-objectarray-inline-trong-jsx" class="md-nav__link">
+    <span class="md-ellipsis">
+      9️⃣ Tránh tạo object/array inline trong JSX
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#toi-uu-build-deploy" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔟 Tối ưu build &amp; deploy
     </span>
   </a>
   
@@ -1725,197 +1527,197 @@
 
 
 
-<h1 id="state-management-trong-react">🧠 State Management trong React<a class="headerlink" href="#state-management-trong-react" title="Permanent link">&para;</a></h1>
+<h1 id="react-performance-optimization">⚡ React Performance Optimization<a class="headerlink" href="#react-performance-optimization" title="Permanent link">&para;</a></h1>
 <h2 id="muc-tieu">🎯 Mục tiêu<a class="headerlink" href="#muc-tieu" title="Permanent link">&para;</a></h2>
-<p>Hiểu cách quản lý và chia sẻ state trong ứng dụng React, từ cơ bản đến nâng cao, sử dụng Context API, Redux và Zustand.</p>
+<p>Hiểu và áp dụng các kỹ thuật tối ưu hiệu suất trong React</p>
+<ul>
+<li>Giảm số lần re-render không cần thiết</li>
+<li>Cải thiện tốc độ tải trang (load time).</li>
+<li>Tăng trải nghiệm người dùng.</li>
+</ul>
 <hr />
-<h2 id="1-gioi-thieu-ve-state-management">1️⃣ Giới thiệu về State Management<a class="headerlink" href="#1-gioi-thieu-ve-state-management" title="Permanent link">&para;</a></h2>
-<p>Trong React, <strong>state</strong> là dữ liệu quyết định giao diện được hiển thị.<br />
-Khi ứng dụng mở rộng, việc chia sẻ state giữa nhiều component trở nên phức tạp — đây là lúc cần <strong>state management</strong>.</p>
-<h3 id="ba-cap-o-quan-ly-state">🔹 Ba cấp độ quản lý state:<a class="headerlink" href="#ba-cap-o-quan-ly-state" title="Permanent link">&para;</a></h3>
-<ol>
-<li><strong>Local State</strong> – sử dụng <code>useState</code>, <code>useReducer</code>.</li>
-<li><strong>Shared State</strong> – chia sẻ qua Context API.</li>
-<li><strong>Global State</strong> – sử dụng thư viện quản lý state chuyên dụng (Redux, Zustand).</li>
-</ol>
+<h2 id="1-hieu-ro-co-che-re-render-trong-react">1️⃣ Hiểu rõ cơ chế re-render trong React<a class="headerlink" href="#1-hieu-ro-co-che-re-render-trong-react" title="Permanent link">&para;</a></h2>
+<p>React render lại component khi:</p>
+<ul>
+<li><strong>Prop</strong> hoặc <strong>State</strong> thay đổi.</li>
+<li><strong>Context</strong> thay đổi.</li>
+<li><strong>Parent component</strong> render lại.</li>
+</ul>
+<blockquote>
+<p>✅ Mục tiêu: tránh những re-render không cần thiết.</p>
+</blockquote>
 <hr />
-<h2 id="2-redux-state-management-truyen-thong-va-manh-me">2️⃣ Redux – State Management Truyền Thống và Mạnh Mẽ<a class="headerlink" href="#2-redux-state-management-truyen-thong-va-manh-me" title="Permanent link">&para;</a></h2>
-<h3 id="gioi-thieu">💡 Giới thiệu<a class="headerlink" href="#gioi-thieu" title="Permanent link">&para;</a></h3>
-<p>Redux là thư viện giúp quản lý state tập trung (Centralized Store).<br />
-Dữ liệu chỉ có thể được thay đổi thông qua <strong>actions</strong> và <strong>reducers</strong>, đảm bảo tính nhất quán.</p>
-<h3 id="cau-truc-redux-co-ban">🔧 Cấu trúc Redux cơ bản<a class="headerlink" href="#cau-truc-redux-co-ban" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code>src/
-├── store/
-│   ├── index.js
-│   ├── actions.js
-│   ├── reducers.js
-│   └── slice.js (với Redux Toolkit)
-</code></pre></div>
-<h3 id="nguyen-tac-hoat-ong">🧩 Nguyên tắc hoạt động<a class="headerlink" href="#nguyen-tac-hoat-ong" title="Permanent link">&para;</a></h3>
-<ol>
-<li>Component gửi <strong>action</strong> →</li>
-<li><strong>Reducer</strong> xử lý action và cập nhật state →</li>
-<li><strong>Store</strong> phát (dispatch) state mới đến tất cả component.</li>
-</ol>
-<h3 id="cai-at-redux-toolkit">⚙️ Cài đặt Redux Toolkit<a class="headerlink" href="#cai-at-redux-toolkit" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code>npm<span class="w"> </span>install<span class="w"> </span>@reduxjs/toolkit<span class="w"> </span>react-redux
-</code></pre></div>
-<h3 id="vi-du-co-ban">✍️ Ví dụ cơ bản<a class="headerlink" href="#vi-du-co-ban" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><span class="c1">// store.js</span>
-<span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">configureStore</span><span class="p">,</span><span class="w"> </span><span class="nx">createSlice</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;@reduxjs/toolkit&quot;</span><span class="p">;</span>
+<h2 id="2-su-dung-reactmemo-toi-uu-component-con">2️⃣ Sử dụng React.memo() – Tối ưu component con<a class="headerlink" href="#2-su-dung-reactmemo-toi-uu-component-con" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><span class="k">import</span><span class="w"> </span><span class="nx">React</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;react&quot;</span><span class="p">;</span>
 
-<span class="kd">const</span><span class="w"> </span><span class="nx">counterSlice</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">createSlice</span><span class="p">({</span>
-<span class="w">  </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;counter&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nx">initialState</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">value</span><span class="o">:</span><span class="w"> </span><span class="mf">0</span><span class="w"> </span><span class="p">},</span>
-<span class="w">  </span><span class="nx">reducers</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nx">increment</span><span class="o">:</span><span class="w"> </span><span class="p">(</span><span class="nx">state</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
-<span class="w">      </span><span class="nx">state</span><span class="p">.</span><span class="nx">value</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="mf">1</span><span class="p">;</span>
-<span class="w">    </span><span class="p">},</span>
-<span class="w">    </span><span class="nx">decrement</span><span class="o">:</span><span class="w"> </span><span class="p">(</span><span class="nx">state</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
-<span class="w">      </span><span class="nx">state</span><span class="p">.</span><span class="nx">value</span><span class="w"> </span><span class="o">-=</span><span class="w"> </span><span class="mf">1</span><span class="p">;</span>
-<span class="w">    </span><span class="p">},</span>
-<span class="w">  </span><span class="p">},</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">Child</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">React</span><span class="p">.</span><span class="nx">memo</span><span class="p">(({</span><span class="w"> </span><span class="nx">name</span><span class="w"> </span><span class="p">})</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Child render:&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">name</span><span class="p">);</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;{</span><span class="nx">name</span><span class="p">}&lt;/</span><span class="nt">div</span><span class="p">&gt;;</span>
 <span class="p">});</span>
 
-<span class="k">export</span><span class="w"> </span><span class="kd">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">increment</span><span class="p">,</span><span class="w"> </span><span class="nx">decrement</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">counterSlice</span><span class="p">.</span><span class="nx">actions</span><span class="p">;</span>
-<span class="k">export</span><span class="w"> </span><span class="kd">const</span><span class="w"> </span><span class="nx">store</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">configureStore</span><span class="p">({</span>
-<span class="w">  </span><span class="nx">reducer</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">counter</span><span class="o">:</span><span class="w"> </span><span class="nx">counterSlice</span><span class="p">.</span><span class="nx">reducer</span><span class="w"> </span><span class="p">},</span>
-<span class="p">});</span>
+<span class="k">export</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="nx">Child</span><span class="p">;</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="c1">// App.js</span>
-<span class="k">import</span><span class="w"> </span><span class="nx">React</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;react&quot;</span><span class="p">;</span>
-<span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">Provider</span><span class="p">,</span><span class="w"> </span><span class="nx">useDispatch</span><span class="p">,</span><span class="w"> </span><span class="nx">useSelector</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;react-redux&quot;</span><span class="p">;</span>
-<span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">store</span><span class="p">,</span><span class="w"> </span><span class="nx">increment</span><span class="p">,</span><span class="w"> </span><span class="nx">decrement</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;./store&quot;</span><span class="p">;</span>
+<p><code>React.memo()</code>giúp component chỉ render lại khi props thay đổi, tránh render thừa.</p>
+<p>📌 Lưu ý: Nếu props là object/array/function — cần useCallback hoặc useMemo để giữ tham chiếu.</p>
+<hr />
+<h2 id="3-usecallback-ghi-nho-ham-callback">3️⃣ useCallback() – Ghi nhớ hàm callback<a class="headerlink" href="#3-usecallback-ghi-nho-ham-callback" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><span class="k">import</span><span class="w"> </span><span class="nx">React</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">useState</span><span class="p">,</span><span class="w"> </span><span class="nx">useCallback</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;react&quot;</span><span class="p">;</span>
+<span class="k">import</span><span class="w"> </span><span class="nx">Child</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;./Child&quot;</span><span class="p">;</span>
 
-<span class="kd">function</span><span class="w"> </span><span class="nx">Counter</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">count</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">useSelector</span><span class="p">((</span><span class="nx">state</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">state</span><span class="p">.</span><span class="nx">counter</span><span class="p">.</span><span class="nx">value</span><span class="p">);</span>
-<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">dispatch</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">useDispatch</span><span class="p">();</span>
+<span class="k">export</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">Parent</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="p">[</span><span class="nx">count</span><span class="p">,</span><span class="w"> </span><span class="nx">setCount</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">useState</span><span class="p">(</span><span class="mf">0</span><span class="p">);</span>
+
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">handleClick</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">useCallback</span><span class="p">(()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Clicked!&quot;</span><span class="p">);</span>
+<span class="w">  </span><span class="p">},</span><span class="w"> </span><span class="p">[]);</span>
 
 <span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">(</span>
-<span class="w">    </span><span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
-<span class="w">      </span><span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;</span><span class="nx">Count</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="nx">count</span><span class="p">}&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
-<span class="w">      </span><span class="p">&lt;</span><span class="nt">button</span><span class="w"> </span><span class="na">onClick</span><span class="o">=</span><span class="p">{()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">dispatch</span><span class="p">(</span><span class="nx">increment</span><span class="p">())}&gt;</span><span class="o">+</span><span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
-<span class="w">      </span><span class="p">&lt;</span><span class="nt">button</span><span class="w"> </span><span class="na">onClick</span><span class="o">=</span><span class="p">{()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">dispatch</span><span class="p">(</span><span class="nx">decrement</span><span class="p">())}&gt;</span><span class="o">-</span><span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
-<span class="w">    </span><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-<span class="w">  </span><span class="p">);</span>
-<span class="p">}</span>
-
-<span class="k">export</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">App</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">(</span>
-<span class="w">    </span><span class="p">&lt;</span><span class="nt">Provider</span><span class="w"> </span><span class="na">store</span><span class="o">=</span><span class="p">{</span><span class="nx">store</span><span class="p">}&gt;</span>
-<span class="w">      </span><span class="p">&lt;</span><span class="nt">Counter</span><span class="w"> </span><span class="p">/&gt;</span>
-<span class="w">    </span><span class="p">&lt;/</span><span class="nt">Provider</span><span class="p">&gt;</span>
+<span class="w">    </span><span class="p">&lt;&gt;</span>
+<span class="w">      </span><span class="p">&lt;</span><span class="nt">button</span><span class="w"> </span><span class="na">onClick</span><span class="o">=</span><span class="p">{()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">setCount</span><span class="p">(</span><span class="nx">count</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mf">1</span><span class="p">)}&gt;</span><span class="nx">Tăng</span><span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+<span class="w">      </span><span class="p">&lt;</span><span class="nt">Child</span><span class="w"> </span><span class="na">onClick</span><span class="o">=</span><span class="p">{</span><span class="nx">handleClick</span><span class="p">}</span><span class="w"> </span><span class="p">/&gt;</span>
+<span class="w">    </span><span class="p">&lt;/&gt;</span>
 <span class="w">  </span><span class="p">);</span>
 <span class="p">}</span>
 </code></pre></div>
-<h3 id="uu-iem">⚡ Ưu điểm<a class="headerlink" href="#uu-iem" title="Permanent link">&para;</a></h3>
 <ul>
-<li>Dễ debug, dễ kiểm soát luồng dữ liệu.</li>
-<li>Redux DevTools hỗ trợ mạnh mẽ.</li>
-<li>Phù hợp với dự án lớn, nhiều logic state.</li>
-</ul>
-<h3 id="nhuoc-iem">⚠️ Nhược điểm<a class="headerlink" href="#nhuoc-iem" title="Permanent link">&para;</a></h3>
-<ul>
-<li>Boilerplate code nhiều (đã cải thiện với Redux Toolkit).</li>
-<li>Hơi nặng cho ứng dụng nhỏ.</li>
+<li>Nếu không dùng <code>useCallback</code>, mỗi lần parent render, <code>onClick</code> là hàm mới - Child render lại.</li>
+<li><code>useCallback</code> giúp giữ cùng một tham chiếu hàm - tránh render lại.</li>
 </ul>
 <hr />
-<h2 id="3-zustand-state-management-nhe-hien-ai">3️⃣ Zustand – State Management Nhẹ, Hiện Đại<a class="headerlink" href="#3-zustand-state-management-nhe-hien-ai" title="Permanent link">&para;</a></h2>
-<h3 id="gioi-thieu_1">💡 Giới thiệu<a class="headerlink" href="#gioi-thieu_1" title="Permanent link">&para;</a></h3>
-<p><strong>Zustand</strong> là thư viện quản lý state nhẹ và đơn giản hơn Redux, được phát triển bởi team của React Three Fiber.</p>
-<h3 id="cai-at">⚙️ Cài đặt<a class="headerlink" href="#cai-at" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code>npm<span class="w"> </span>install<span class="w"> </span>zustand
-</code></pre></div>
-<h3 id="vi-du">✍️ Ví dụ<a class="headerlink" href="#vi-du" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">create</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;zustand&quot;</span><span class="p">;</span>
+<h2 id="4-usememo-ghi-nho-gia-tri-tinh-toan-nang">4️⃣ useMemo() – Ghi nhớ giá trị tính toán nặng<a class="headerlink" href="#4-usememo-ghi-nho-gia-tri-tinh-toan-nang" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><span class="k">import</span><span class="w"> </span><span class="nx">React</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">useMemo</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;react&quot;</span><span class="p">;</span>
 
-<span class="kd">const</span><span class="w"> </span><span class="nx">useCounterStore</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">create</span><span class="p">((</span><span class="nx">set</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">({</span>
-<span class="w">  </span><span class="nx">count</span><span class="o">:</span><span class="w"> </span><span class="mf">0</span><span class="p">,</span>
-<span class="w">  </span><span class="nx">increment</span><span class="o">:</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">set</span><span class="p">((</span><span class="nx">state</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">({</span><span class="w"> </span><span class="nx">count</span><span class="o">:</span><span class="w"> </span><span class="nx">state</span><span class="p">.</span><span class="nx">count</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mf">1</span><span class="w"> </span><span class="p">})),</span>
-<span class="w">  </span><span class="nx">decrement</span><span class="o">:</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">set</span><span class="p">((</span><span class="nx">state</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">({</span><span class="w"> </span><span class="nx">count</span><span class="o">:</span><span class="w"> </span><span class="nx">state</span><span class="p">.</span><span class="nx">count</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mf">1</span><span class="w"> </span><span class="p">})),</span>
-<span class="p">}));</span>
+<span class="kd">function</span><span class="w"> </span><span class="nx">ExpensiveCalculation</span><span class="p">({</span><span class="w"> </span><span class="nx">num</span><span class="w"> </span><span class="p">})</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">useMemo</span><span class="p">(()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Calculating...&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">num</span><span class="w"> </span><span class="o">**</span><span class="w"> </span><span class="mf">2</span><span class="p">;</span>
+<span class="w">  </span><span class="p">},</span><span class="w"> </span><span class="p">[</span><span class="nx">num</span><span class="p">]);</span>
 
-<span class="kd">function</span><span class="w"> </span><span class="nx">Counter</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">count</span><span class="p">,</span><span class="w"> </span><span class="nx">increment</span><span class="p">,</span><span class="w"> </span><span class="nx">decrement</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">useCounterStore</span><span class="p">();</span>
-<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">(</span>
-<span class="w">    </span><span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
-<span class="w">      </span><span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;{</span><span class="nx">count</span><span class="p">}&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
-<span class="w">      </span><span class="p">&lt;</span><span class="nt">button</span><span class="w"> </span><span class="na">onClick</span><span class="o">=</span><span class="p">{</span><span class="nx">increment</span><span class="p">}&gt;</span><span class="o">+</span><span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
-<span class="w">      </span><span class="p">&lt;</span><span class="nt">button</span><span class="w"> </span><span class="na">onClick</span><span class="o">=</span><span class="p">{</span><span class="nx">decrement</span><span class="p">}&gt;</span><span class="o">-</span><span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
-<span class="w">    </span><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-<span class="w">  </span><span class="p">);</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span><span class="nx">Kết</span><span class="w"> </span><span class="nx">quả</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="nx">result</span><span class="p">}&lt;/</span><span class="nt">p</span><span class="p">&gt;;</span>
 <span class="p">}</span>
-
-<span class="k">export</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="nx">Counter</span><span class="p">;</span>
 </code></pre></div>
-<h3 id="uu-iem_1">⚡ Ưu điểm<a class="headerlink" href="#uu-iem_1" title="Permanent link">&para;</a></h3>
+<p>Dùng khi:</p>
 <ul>
-<li>Cực kỳ nhẹ và dễ dùng.</li>
-<li>Không cần boilerplate (actions, reducers).</li>
-<li>Tích hợp tốt với TypeScript.</li>
-<li>Hỗ trợ server-side rendering (Next.js).</li>
-</ul>
-<h3 id="nhuoc-iem_1">⚠️ Nhược điểm<a class="headerlink" href="#nhuoc-iem_1" title="Permanent link">&para;</a></h3>
-<ul>
-<li>Không có DevTools mạnh như Redux (nhưng có plugin riêng).</li>
-<li>Khó kiểm soát nếu state quá phức tạp.</li>
+<li>Tính toán phức tạp hoặc dữ liệu lớn.</li>
+<li>Tránh chạy lại logic nặng không cần thiết.</li>
 </ul>
 <hr />
-<h2 id="4-so-sanh-redux-va-zustand">4️⃣ So sánh Redux và Zustand<a class="headerlink" href="#4-so-sanh-redux-va-zustand" title="Permanent link">&para;</a></h2>
+<h2 id="5-code-splitting-chia-nho-bundle">5️⃣ code Splitting - Chia nhỏ bundle<a class="headerlink" href="#5-code-splitting-chia-nho-bundle" title="Permanent link">&para;</a></h2>
+<p>React hỗ trợ <strong>dynamic import</strong> để tải code chỉ khi cần.</p>
+<div class="highlight"><pre><span></span><code><span class="k">import</span><span class="w"> </span><span class="nx">React</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">Suspense</span><span class="p">,</span><span class="w"> </span><span class="nx">lazy</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;react&quot;</span><span class="p">;</span>
+
+<span class="kd">const</span><span class="w"> </span><span class="nx">About</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">lazy</span><span class="p">(()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="k">import</span><span class="p">(</span><span class="s2">&quot;./About&quot;</span><span class="p">));</span>
+
+<span class="kd">function</span><span class="w"> </span><span class="nx">App</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="p">&lt;</span><span class="nt">Suspense</span><span class="w"> </span><span class="na">fallback</span><span class="o">=</span><span class="p">{&lt;</span><span class="nt">div</span><span class="p">&gt;</span><span class="nx">Loading</span><span class="p">...&lt;/</span><span class="nt">div</span><span class="p">&gt;}&gt;</span>
+<span class="w">      </span><span class="p">&lt;</span><span class="nt">About</span><span class="w"> </span><span class="p">/&gt;</span>
+<span class="w">    </span><span class="p">&lt;/</span><span class="nt">Suspense</span><span class="p">&gt;</span>
+<span class="w">  </span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>✅ Giúp giảm bundle size ban đầu → tải nhanh hơn.
+📦 Áp dụng cho:</p>
+<ul>
+<li>Trang hoặc module ít dùng.</li>
+<li>Component load route</li>
+</ul>
+<hr />
+<h2 id="6-lazy-loading-hinh-anh-component">6️⃣ Lazy Loading hình ảnh, component<a class="headerlink" href="#6-lazy-loading-hinh-anh-component" title="Permanent link">&para;</a></h2>
+<p>Lazy load image:</p>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">img</span><span class="w"> </span><span class="na">src</span><span class="o">=</span><span class="s">&quot;placeholder.jpg&quot;</span><span class="w"> </span><span class="na">loading</span><span class="o">=</span><span class="s">&quot;lazy&quot;</span><span class="w"> </span><span class="na">alt</span><span class="o">=</span><span class="s">&quot;demo&quot;</span><span class="w"> </span><span class="p">/&gt;</span>
+</code></pre></div>
+<p><strong>Lazy load component:</strong></p>
+<p>Kết hợp <code>React.lazy</code> và <code>Suspense</code> như phần trên.</p>
+<hr />
+<h2 id="7-virtualization-hien-thi-danh-sach-lon">7️⃣ Virtualization – Hiển thị danh sách lớn<a class="headerlink" href="#7-virtualization-hien-thi-danh-sach-lon" title="Permanent link">&para;</a></h2>
+<p>Dùng thư viện như:</p>
+<ul>
+<li>react-window</li>
+<li>react-virtualized</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">FixedSizeList</span><span class="w"> </span><span class="kr">as</span><span class="w"> </span><span class="nx">List</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;react-window&quot;</span><span class="p">;</span>
+
+<span class="kd">function</span><span class="w"> </span><span class="nx">MyList</span><span class="p">({</span><span class="w"> </span><span class="nx">items</span><span class="w"> </span><span class="p">})</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="p">&lt;</span><span class="nt">List</span><span class="w"> </span><span class="na">height</span><span class="o">=</span><span class="p">{</span><span class="mf">400</span><span class="p">}</span><span class="w"> </span><span class="na">itemCount</span><span class="o">=</span><span class="p">{</span><span class="nx">items</span><span class="p">.</span><span class="nx">length</span><span class="p">}</span><span class="w"> </span><span class="na">itemSize</span><span class="o">=</span><span class="p">{</span><span class="mf">35</span><span class="p">}</span><span class="w"> </span><span class="na">width</span><span class="o">=</span><span class="p">{</span><span class="mf">300</span><span class="p">}&gt;</span>
+<span class="w">      </span><span class="p">{({</span><span class="w"> </span><span class="nx">index</span><span class="p">,</span><span class="w"> </span><span class="nx">style</span><span class="w"> </span><span class="p">})</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">&lt;</span><span class="nt">div</span><span class="w"> </span><span class="na">style</span><span class="o">=</span><span class="p">{</span><span class="nx">style</span><span class="p">}&gt;{</span><span class="nx">items</span><span class="p">[</span><span class="nx">index</span><span class="p">]}&lt;/</span><span class="nt">div</span><span class="p">&gt;}</span>
+<span class="w">    </span><span class="p">&lt;/</span><span class="nt">List</span><span class="p">&gt;</span>
+<span class="w">  </span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>✅ Chỉ render item hiển thị trên màn hình → siêu nhanh.</p>
+<hr />
+<h2 id="8-profiling-o-luong-hieu-suat">8️⃣ Profiling – Đo lường hiệu suất<a class="headerlink" href="#8-profiling-o-luong-hieu-suat" title="Permanent link">&para;</a></h2>
+<p><strong>🧭 Dùng React Profiler (DevTools)</strong></p>
+<ul>
+<li>Mở tab Profiler trong React DevTools</li>
+<li>Ghi lại quá trình render - xem component nào tốn thời gian.</li>
+<li>Phát hiện "render thừa".</li>
+</ul>
+<p><strong>🧰 Dùng Performance tab (Chrome)</strong></p>
+<ul>
+<li>Kiểm tra FPS, CPU, memory leak, repaint.</li>
+</ul>
+<hr />
+<h2 id="9-tranh-tao-objectarray-inline-trong-jsx">9️⃣ Tránh tạo object/array inline trong JSX<a class="headerlink" href="#9-tranh-tao-objectarray-inline-trong-jsx" title="Permanent link">&para;</a></h2>
+<p>❌ Sai:</p>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">Child</span><span class="w"> </span><span class="na">data</span><span class="o">=</span><span class="p">{{</span><span class="w"> </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Tam&quot;</span><span class="w"> </span><span class="p">}}</span><span class="w"> </span><span class="p">/&gt;</span>
+</code></pre></div>
+<p>✅ Đúng:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">useMemo</span><span class="p">(()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">({</span><span class="w"> </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Tam&quot;</span><span class="w"> </span><span class="p">}),</span><span class="w"> </span><span class="p">[]);</span>
+<span class="p">&lt;</span><span class="nt">Child</span><span class="w"> </span><span class="na">data</span><span class="o">=</span><span class="p">{</span><span class="nx">data</span><span class="p">}</span><span class="w"> </span><span class="p">/&gt;;</span>
+</code></pre></div>
+<blockquote>
+<p>Vì { name: "Tam" } tạo object mới mỗi lần render → Child render lại.</p>
+</blockquote>
+<hr />
+<h2 id="toi-uu-build-deploy">🔟 Tối ưu build &amp; deploy<a class="headerlink" href="#toi-uu-build-deploy" title="Permanent link">&para;</a></h2>
+<p>🧱 <strong>Sử dụng production build:</strong></p>
+<div class="highlight"><pre><span></span><code>npm<span class="w"> </span>run<span class="w"> </span>build
+</code></pre></div>
+<p>🧹 <strong>Bật tree-shaking:</strong>
+Webpack, Vite, CRA đều hỗ trợ → loại bỏ code không dùng.</p>
+<p>🚀 <strong>Dùng CDN hoặc caching:</strong></p>
+<ul>
+<li>Cache ảnh, JS, CSS.</li>
+<li>Dùng HTTP/2 hoặc CDN để giảm độ trễ.</li>
+</ul>
+<hr />
+<p>✅<strong> Checklist Tối ưu Hiệu Suất</strong></p>
 <table>
 <thead>
 <tr>
-<th>Tiêu chí</th>
-<th>Redux Toolkit</th>
-<th>Zustand</th>
+<th>Mục tiêu</th>
+<th>Kỹ thuật</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Cấu trúc</td>
-<td>Cứng nhắc, có quy ước rõ</td>
-<td>Linh hoạt, tùy theo lập trình viên</td>
+<td>Giảm re-render</td>
+<td>React.memo, useCallback, useMemo</td>
 </tr>
 <tr>
-<td>Dễ dùng</td>
-<td>Trung bình</td>
-<td>Dễ</td>
+<td>Tối ưu load ban đầu</td>
+<td>Code splitting, lazy loading</td>
 </tr>
 <tr>
-<td>Performance</td>
-<td>Rất tốt</td>
-<td>Rất tốt</td>
+<td>Danh sách lớn</td>
+<td>react-window, react-virtualized</td>
 </tr>
 <tr>
-<td>Debug tools</td>
-<td>Có sẵn (Redux DevTools)</td>
-<td>Có (nhưng giới hạn)</td>
+<td>Theo dõi hiệu suất</td>
+<td>React Profiler, Chrome DevTools</td>
 </tr>
 <tr>
-<td>Tích hợp TypeScript</td>
-<td>Tốt</td>
-<td>Tốt</td>
-</tr>
-<tr>
-<td>Dự án phù hợp</td>
-<td>Lớn, nhiều module</td>
-<td>Nhỏ &amp; trung bình</td>
+<td>Giảm bundle size</td>
+<td>Tree-shaking, CDN, compression</td>
 </tr>
 </tbody>
 </table>
-<hr />
-<h2 id="5-khi-nao-dung-cai-nao">5️⃣ Khi nào dùng cái nào?<a class="headerlink" href="#5-khi-nao-dung-cai-nao" title="Permanent link">&para;</a></h2>
-<ul>
-<li><strong>Redux</strong>: khi ứng dụng lớn, nhiều state phức tạp, cần log, undo, hoặc history.</li>
-<li><strong>Zustand</strong>: khi ứng dụng nhỏ hoặc trung bình, cần tốc độ và code gọn gàng.</li>
-<li><strong>Context API</strong>: khi chỉ cần chia sẻ state đơn giản.</li>
-</ul>
-<hr />
-<h2 id="ket-luan">✅ Kết luận<a class="headerlink" href="#ket-luan" title="Permanent link">&para;</a></h2>
-<p>Hiểu và chọn đúng công cụ quản lý state là chìa khóa để giữ cho ứng dụng React <strong>ổn định, dễ bảo trì và mở rộng</strong>.</p>
+<p>💡 <strong>Kết luận</strong></p>
 <blockquote>
-<p>🔖 Tip: Nếu bạn chỉ có vài component cần chia sẻ state — dùng Context.<br />
-Nếu dự án phát triển lớn — chuyển sang Redux hoặc Zustand.</p>
+<p>Hiệu suất tốt không chỉ đến từ tối ưu code mà còn từ thiết kế component hợp lý và quản lý state thông minh.</p>
 </blockquote>
 
 
