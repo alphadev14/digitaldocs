@@ -1,6 +1,6 @@
 # React Router – Routing & Navigation
 
-## 🎯 Mục tiêu học tập
+## 🎯 Mục tiêu
 
 - Hiểu cách React Router hoạt động.
 - Tạo ứng dụng nhiều trang với nested routes.

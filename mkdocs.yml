@@ -24,7 +24,7 @@ theme:
 nav:
   - Home: index.md
   - Junior:
-      - Backend:
+      - 🧠 Backend:
           - ASP.NET Core WebAPI: junior/backend/01-aspnet-core-webapi.md
           - Middleware & Dependency Injection: junior/backend/02-middleware-dependency-injection.md
           - Entity Framework Core: junior/backend/03-entity-framework-core.md
@@ -33,19 +33,16 @@ nav:
           - Clean Architecture & SOLID: junior/backend/06-clean-architecture-solid.md
           - Async / Await: junior/backend/07-async-await.md
           - Async / Await 2: junior/backend/08-async-await-2.md
-          
-      - Frontend:
+
+      - ⚛️ Frontend:
           - React Basic: junior/frontend/01-react-basic.md
           - React Hooks: junior/frontend/02-react-hooks.md
           - Context API: junior/frontend/03-context-api.md
           - State Management: junior/frontend/04-state-management.md
           - React Router: junior/frontend/05-react-router.md
-          - UI (AntD + Tailwind): junior/frontend/06-ui-antd-tailwind.md
-          - Responsive & Accessibility: junior/frontend/07-responsive-accessibility.md
-          - Testing React: junior/frontend/08-testing-react.md
-          - Performance Optimization: junior/frontend/09-performance-optimization.md
+          - Performance Optimization: junior/frontend/06-performance-optimization.md
 
-      - Database (PostgreSQL):
+      - 🗄️ Database (PostgreSQL):
           - PostgreSQL Basic: junior/database/01-postgresql-basic.md
           - Transactions: junior/database/02-transactions.md
           - Isolation Levels: junior/database/03-isolation-levels.md
@@ -53,8 +50,8 @@ nav:
           - JSONB in PostgreSQL: junior/database/05-jsonb-postgresql.md
           - Query Optimization: junior/database/06-query-optimization.md
           - PostgreSQL Advanced: junior/database/07-postgresql-advanced.md
-      - Testing & Deployment: Testing & Deployment/index.md
-      - Project:
+      - 🧪  Testing & Deployment: Testing & Deployment/index.md
+      - 🚀 Project:
           - Todos:
               - Deploy Frontend:
                   - Deploy FE lên Vercel: junior/project/todos/05-deploy-fe.md
