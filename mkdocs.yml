@@ -59,7 +59,13 @@ nav:
                   - Deploy BE lên Render: junior/project/todos/06-deploy-be.md
               - Deploy Database:
                   - Deploy Databae lên Render: junior/project/todos/07-deploy-db.md
-  - Mid-Level: mid-level/index.md
+  - Mid-Level:
+      - 🧠 Backend: mid-level/backend/index.md
+      - ⚛️ Frontend: mid-level/frontend/index.md
+      - 🗄️ Database: mid-level/database/index.md
+      - 🖥️ System Design:
+          - System Design Introduction: mid-level/system-design/01-system-design-introduction.md
+      - 🌐 DevOps: mid-level/devops/index.md
   - Senior: senior/index.md
 
 plugins: []
