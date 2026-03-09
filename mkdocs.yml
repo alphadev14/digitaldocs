@@ -62,12 +62,14 @@ nav:
   - Mid-Level:
       - 🧠 Backend: mid-level/backend/index.md
       - ⚛️ Frontend: mid-level/frontend/index.md
-      - 🗄️ Database: mid-level/database/index.md
+      - 🗄️ Database: /database/index.md
       - 🖥️ System Design:
           - System Design Introduction: mid-level/system-design/01-system-design-introduction.md
           - System Design Life Cycle: mid-level/system-design/02-system-design-life-cycle.md
           - Component of System Design: mid-level/system-design/03-component-of-system-design.md
-      - 🌐 DevOps: mid-level/devops/index.md
+      - 🌐 DevOps:
+          - Labs:
+              - Nginx: mid-level/devops/labs/react-nginx-deploy.md
   - Senior: senior/index.md
 
 plugins: []
