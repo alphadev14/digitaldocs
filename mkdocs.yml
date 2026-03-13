@@ -69,7 +69,8 @@ nav:
           - Component of System Design: mid-level/system-design/03-component-of-system-design.md
       - 🌐 DevOps:
           - Labs:
-              - Nginx: mid-level/devops/labs/react-nginx-deploy.md
+              - React + Nginx: mid-level/devops/labs/react-nginx-deploy.md
+              - NextJS + Nginx: mid-level/devops/labs/nextjs-nginx-deploy.md
   - Senior: senior/index.md
 
 plugins: []

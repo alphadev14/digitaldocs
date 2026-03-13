@@ -1,4 +1,4 @@
-# 🚀 Lab: Deploy ReactJS Frontend trên Ubuntu Server với Nginx
+# 🚀 Lab 01: Deploy ReactJS Frontend trên Ubuntu Server với Nginx
 
 Ghi lại các bước thực hiện **deploy một dự án ReactJS lên
 Ubuntu Server và chạy bằng Nginx**.
