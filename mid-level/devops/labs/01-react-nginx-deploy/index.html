@@ -8,13 +8,13 @@
       
       
       
-        <link rel="canonical" href="https://alphadev14.github.io/digitaldocs/mid-level/devops/labs/nextjs-nginx-deploy/">
+        <link rel="canonical" href="https://alphadev14.github.io/digitaldocs/mid-level/devops/labs/01-react-nginx-deploy/">
       
       
-        <link rel="prev" href="../react-nginx-deploy/">
+        <link rel="prev" href="../../../system-design/03-component-of-system-design/">
       
       
-        <link rel="next" href="../../../../senior/">
+        <link rel="next" href="../02-nextjs-nginx-deploy/">
       
       
         
@@ -25,7 +25,7 @@
     
     
       
-        <title>NextJS + Nginx - P&T | Digital Docs</title>
+        <title>React + Nginx - P&T | Digital Docs</title>
       
     
     
@@ -80,7 +80,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#lab-02-deploy-nextjs-frontend-tren-ubuntu-server-voi-nginx-pm2-ubuntu" class="md-skip">
+        <a href="#lab-01-deploy-reactjs-frontend-tren-ubuntu-server-voi-nginx" class="md-skip">
           Skip to content
         </a>
       
@@ -115,7 +115,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              NextJS + Nginx
+              React + Nginx
             
           </span>
         </div>
@@ -1784,10 +1784,37 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../react-nginx-deploy/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    React + Nginx
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -1795,6 +1822,65 @@
     
   
     React + Nginx
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#muc-tieu" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mục tiêu
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02-nextjs-nginx-deploy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    NextJS + Nginx
   
 
     
@@ -1812,26 +1898,17 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../03-gitlab-ci-cd-setup/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    NextJS + Nginx
+    Gitlab CI/CD
   
 
     
@@ -1840,7 +1917,6 @@
   
 
       </a>
-      
     </li>
   
 
@@ -1916,6 +1992,25 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#muc-tieu" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mục tiêu
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1931,165 +2026,214 @@
 
 
 
-<h1 id="lab-02-deploy-nextjs-frontend-tren-ubuntu-server-voi-nginx-pm2-ubuntu">🚀 Lab 02: Deploy NextJS Frontend trên Ubuntu Server với Nginx + PM2 (Ubuntu)<a class="headerlink" href="#lab-02-deploy-nextjs-frontend-tren-ubuntu-server-voi-nginx-pm2-ubuntu" title="Permanent link">&para;</a></h1>
-<p><strong>Server sử dụng</strong>:</p>
+<h1 id="lab-01-deploy-reactjs-frontend-tren-ubuntu-server-voi-nginx">🚀 Lab 01: Deploy ReactJS Frontend trên Ubuntu Server với Nginx<a class="headerlink" href="#lab-01-deploy-reactjs-frontend-tren-ubuntu-server-voi-nginx" title="Permanent link">&para;</a></h1>
+<p>Ghi lại các bước thực hiện <strong>deploy một dự án ReactJS lên
+Ubuntu Server và chạy bằng Nginx</strong>.</p>
+<h2 id="muc-tieu">Mục tiêu<a class="headerlink" href="#muc-tieu" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Node.js -- chạy ứng dụng Next.js</li>
-<li>PM2 -- quản lý process Node chạy nền</li>
-<li>Nginx -- reverse proxy và expose domain ra internet</li>
+<li>Cài NodeJS</li>
+<li>Build React project</li>
+<li>Cài đặt và cấu hình Nginx</li>
+<li>Deploy React build lên server</li>
+<li>Truy cập website bằng IP server</li>
 </ul>
 <hr />
-<h1 id="architecture">Architecture<a class="headerlink" href="#architecture" title="Permanent link">&para;</a></h1>
-<div class="highlight"><pre><span></span><code>Internet
-↓
-Nginx<span class="w"> </span><span class="o">(</span>Reverse<span class="w"> </span>Proxy<span class="o">)</span>
-↓
-Next.js<span class="w"> </span>App<span class="w"> </span><span class="o">(</span>PM2<span class="o">)</span>
-↓
-Node.js<span class="w"> </span><span class="o">(</span>localhost:3000<span class="o">)</span>
+<h1 id="1-chuan-bi-moi-truong">1. Chuẩn bị môi trường<a class="headerlink" href="#1-chuan-bi-moi-truong" title="Permanent link">&para;</a></h1>
+<p>Server sử dụng:</p>
+<ul>
+<li>Ubuntu 20.04 / 22.04</li>
+<li>Có quyền sudo</li>
+<li>Có kết nối internet</li>
+</ul>
+<p>Update server:</p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>apt<span class="w"> </span>update
+sudo<span class="w"> </span>apt<span class="w"> </span>upgrade<span class="w"> </span>-y
 </code></pre></div>
 <hr />
-<h1 id="1-update-server">1. Update Server<a class="headerlink" href="#1-update-server" title="Permanent link">&para;</a></h1>
-<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>apt<span class="w"> </span>update<span class="w"> </span>sudo<span class="w"> </span>apt<span class="w"> </span>upgrade<span class="w"> </span>-y
+<h1 id="2-cai-nodejs-version-moi">2. Cài NodeJS (version mới)<a class="headerlink" href="#2-cai-nodejs-version-moi" title="Permanent link">&para;</a></h1>
+<p>Ubuntu mặc định cài Node khá cũ nên dùng <strong>NodeSource</strong>.</p>
+<h3 id="them-repository-nodesource">Thêm repository NodeSource<a class="headerlink" href="#them-repository-nodesource" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-fsSL<span class="w"> </span>https://deb.nodesource.com/setup_20.x<span class="w"> </span><span class="p">|</span><span class="w"> </span>sudo<span class="w"> </span>-E<span class="w"> </span>bash<span class="w"> </span>-
 </code></pre></div>
-<hr />
-<h1 id="2-install-nodejs">2. Install Node.js<a class="headerlink" href="#2-install-nodejs" title="Permanent link">&para;</a></h1>
-<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-fsSL<span class="w"> </span>https://deb.nodesource.com/setup_20.x<span class="w"> </span><span class="se">\|</span><span class="w"> </span>sudo<span class="w"> </span>-E<span class="w"> </span>bash<span class="w"> </span>-<span class="se">\</span>
-sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>nodejs
-
-<span class="c1"># Check version:</span>
-
-node<span class="w"> </span>-v<span class="se">\</span>
+<h3 id="cai-nodejs">Cài NodeJS<a class="headerlink" href="#cai-nodejs" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>nodejs<span class="w"> </span>-y
+</code></pre></div>
+<h3 id="kiem-tra">Kiểm tra<a class="headerlink" href="#kiem-tra" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>node<span class="w"> </span>-v
 npm<span class="w"> </span>-v
 </code></pre></div>
 <hr />
-<h1 id="3-install-pm2">3. Install PM2<a class="headerlink" href="#3-install-pm2" title="Permanent link">&para;</a></h1>
-<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>npm<span class="w"> </span>install<span class="w"> </span>-g<span class="w"> </span>pm2
-
-<span class="c1"># Check:</span>
-
-pm2<span class="w"> </span>-v
+<h1 id="3-clone-react-project-len-server">3. Clone React Project lên Server<a class="headerlink" href="#3-clone-react-project-len-server" title="Permanent link">&para;</a></h1>
+<div class="highlight"><pre><span></span><code>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/your-repo/react-project.git
+<span class="nb">cd</span><span class="w"> </span>react-project
 </code></pre></div>
 <hr />
-<h1 id="4-go-to-nextjs-project">4. Go to Next.js project<a class="headerlink" href="#4-go-to-nextjs-project" title="Permanent link">&para;</a></h1>
-<p>Example:</p>
-<div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span><span class="se">\~</span>/tools/next-blog
-</code></pre></div>
-<hr />
-<h1 id="5-install-dependencies">5. Install dependencies<a class="headerlink" href="#5-install-dependencies" title="Permanent link">&para;</a></h1>
+<h1 id="4-cai-dependencies">4. Cài Dependencies<a class="headerlink" href="#4-cai-dependencies" title="Permanent link">&para;</a></h1>
 <div class="highlight"><pre><span></span><code>npm<span class="w"> </span>install
 </code></pre></div>
 <hr />
-<h1 id="6-build-project">6. Build project<a class="headerlink" href="#6-build-project" title="Permanent link">&para;</a></h1>
+<h1 id="5-build-react-project">5. Build React Project<a class="headerlink" href="#5-build-react-project" title="Permanent link">&para;</a></h1>
 <div class="highlight"><pre><span></span><code>npm<span class="w"> </span>run<span class="w"> </span>build
 </code></pre></div>
+<p>Sau khi build sẽ có thư mục:</p>
+<div class="codehilite"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code>build/
+ ├── index.html
+ ├── static/
+</code></pre></div></td></tr></table></div>
+
+<p>Đây là <strong>static files để Nginx serve</strong>.</p>
 <hr />
-<h1 id="7-run-nextjs-with-pm2">7. Run Next.js with PM2<a class="headerlink" href="#7-run-nextjs-with-pm2" title="Permanent link">&para;</a></h1>
-<div class="highlight"><pre><span></span><code>pm2<span class="w"> </span>start<span class="w"> </span>npm<span class="w"> </span>--name<span class="w"> </span>next-blog<span class="w"> </span>--<span class="w"> </span>start
-<span class="c1"># Check:</span>
-pm2<span class="w"> </span>list
-</code></pre></div>
-<hr />
-<h1 id="8-test-application">8. Test application<a class="headerlink" href="#8-test-application" title="Permanent link">&para;</a></h1>
-<p>Next.js runs at:</p>
-<div class="highlight"><pre><span></span><code>http://localhost:3000
-</code></pre></div>
-<p>Test:</p>
-<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>http://localhost:3000
-</code></pre></div>
-<hr />
-<h1 id="9-install-nginx">9. Install Nginx<a class="headerlink" href="#9-install-nginx" title="Permanent link">&para;</a></h1>
+<h1 id="6-cai-at-nginx">6. Cài đặt Nginx<a class="headerlink" href="#6-cai-at-nginx" title="Permanent link">&para;</a></h1>
 <div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>nginx<span class="w"> </span>-y
-<span class="c1"># Check:</span>
-nginx<span class="w"> </span>-v
+</code></pre></div>
+<p>Kiểm tra trạng thái:</p>
+<div class="highlight"><pre><span></span><code>systemctl<span class="w"> </span>status<span class="w"> </span>nginx
 </code></pre></div>
 <hr />
-<h1 id="10-create-nginx-config">10. Create Nginx config<a class="headerlink" href="#10-create-nginx-config" title="Permanent link">&para;</a></h1>
-<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>nano<span class="w"> </span>/etc/nginx/sites-available/dev.tampv.pro.com
-
-Example<span class="w"> </span>config:
-
-server<span class="w"> </span><span class="o">{</span><span class="w"> </span>listen<span class="w"> </span><span class="m">80</span><span class="p">;</span><span class="w"> </span>server_name<span class="w"> </span>dev.tampv.pro.com<span class="p">;</span>
-
-<span class="w">    </span>location<span class="w"> </span>/<span class="w"> </span><span class="o">{</span>
-<span class="w">        </span>proxy_pass<span class="w"> </span>http://localhost:3000<span class="p">;</span>
-<span class="w">        </span>proxy_http_version<span class="w"> </span><span class="m">1</span>.1<span class="p">;</span>
-
-<span class="w">        </span>proxy_set_header<span class="w"> </span>Upgrade<span class="w"> </span><span class="nv">$http_upgrade</span><span class="p">;</span>
-<span class="w">        </span>proxy_set_header<span class="w"> </span>Connection<span class="w"> </span><span class="s1">&#39;upgrade&#39;</span><span class="p">;</span>
-<span class="w">        </span>proxy_set_header<span class="w"> </span>Host<span class="w"> </span><span class="nv">$host</span><span class="p">;</span>
-
-<span class="w">        </span>proxy_cache_bypass<span class="w"> </span><span class="nv">$http_upgrade</span><span class="p">;</span>
-<span class="w">    </span><span class="o">}</span>
-
-<span class="o">}</span>
+<h1 id="7-tao-thu-muc-chua-website">7. Tạo thư mục chứa website<a class="headerlink" href="#7-tao-thu-muc-chua-website" title="Permanent link">&para;</a></h1>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>mkdir<span class="w"> </span>-p<span class="w"> </span>/var/www/react-app
 </code></pre></div>
 <hr />
-<h1 id="11-enable-site">11. Enable site<a class="headerlink" href="#11-enable-site" title="Permanent link">&para;</a></h1>
-<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>ln<span class="w"> </span>-s<span class="w"> </span>/etc/nginx/sites-available/dev.tampv.pro.com
-/etc/nginx/sites-enabled/
+<h1 id="8-copy-react-build-vao-nginx">8. Copy React Build vào Nginx<a class="headerlink" href="#8-copy-react-build-vao-nginx" title="Permanent link">&para;</a></h1>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>cp<span class="w"> </span>-r<span class="w"> </span>build/*<span class="w"> </span>/var/www/react-app
+</code></pre></div>
+<p>Kiểm tra:</p>
+<div class="highlight"><pre><span></span><code>ls<span class="w"> </span>/var/www/react-app
+</code></pre></div>
+<p>Kết quả:</p>
+<div class="codehilite"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>index.html
+static/
+</code></pre></div></td></tr></table></div>
+
+<hr />
+<h1 id="9-cau-hinh-nginx">9. Cấu hình Nginx<a class="headerlink" href="#9-cau-hinh-nginx" title="Permanent link">&para;</a></h1>
+<p>Tạo file config:</p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>nano<span class="w"> </span>/etc/nginx/sites-available/react-app
+</code></pre></div>
+<p>Nội dung:</p>
+<div class="highlight"><pre><span></span><code><span class="k">server</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kn">listen</span><span class="w"> </span><span class="mi">80</span><span class="p">;</span>
+<span class="w">    </span><span class="kn">server_name</span><span class="w"> </span><span class="s">SERVER_IP</span><span class="w"> </span><span class="s">||</span><span class="w"> </span><span class="s">DOMAIN_NAME</span><span class="p">;</span>
+
+<span class="w">    </span><span class="kn">root</span><span class="w"> </span><span class="s">/var/www/react-app</span><span class="p">;</span>
+<span class="w">    </span><span class="kn">index</span><span class="w"> </span><span class="s">index.html</span><span class="p">;</span>
+
+<span class="w">    </span><span class="kn">location</span><span class="w"> </span><span class="s">/</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="kn">try_files</span><span class="w"> </span><span class="nv">$uri</span><span class="w"> </span><span class="s">/index.html</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Dòng quan trọng:</p>
+<div class="codehilite"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>try_files $uri /index.html;
+</code></pre></div></td></tr></table></div>
+
+<p>Giúp React Router không bị lỗi <strong>404 khi refresh trang</strong>.</p>
+<hr />
+<h1 id="10-enable-website">10. Enable Website<a class="headerlink" href="#10-enable-website" title="Permanent link">&para;</a></h1>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>ln<span class="w"> </span>-s<span class="w"> </span>/etc/nginx/sites-available/react-app<span class="w"> </span>/etc/nginx/sites-enabled/
 </code></pre></div>
 <hr />
-<h1 id="12-test-nginx-config">12. Test Nginx config<a class="headerlink" href="#12-test-nginx-config" title="Permanent link">&para;</a></h1>
+<h1 id="11-kiem-tra-cau-hinh-nginx">11. Kiểm tra cấu hình Nginx<a class="headerlink" href="#11-kiem-tra-cau-hinh-nginx" title="Permanent link">&para;</a></h1>
 <div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>nginx<span class="w"> </span>-t
-
-Expected:
-
-syntax<span class="w"> </span>is<span class="w"> </span>ok<span class="se">\</span>
-<span class="nb">test</span><span class="w"> </span>is<span class="w"> </span>successful
 </code></pre></div>
 <hr />
-<h1 id="13-reload-nginx">13. Reload Nginx<a class="headerlink" href="#13-reload-nginx" title="Permanent link">&para;</a></h1>
-<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>systemctl<span class="w"> </span>reload<span class="w"> </span>nginx
+<h1 id="12-restart-nginx">12. Restart Nginx<a class="headerlink" href="#12-restart-nginx" title="Permanent link">&para;</a></h1>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>systemctl<span class="w"> </span>restart<span class="w"> </span>nginx
 </code></pre></div>
 <hr />
-<h1 id="14-access-website">14. Access website<a class="headerlink" href="#14-access-website" title="Permanent link">&para;</a></h1>
-<div class="highlight"><pre><span></span><code>http://dev.tampv.pro.com
-
-Nginx<span class="w"> </span>will<span class="w"> </span>proxy<span class="w"> </span>request<span class="w"> </span>to:
-
-localhost:3000
+<h1 id="13-mo-firewall-neu-can">13. Mở Firewall (nếu cần)<a class="headerlink" href="#13-mo-firewall-neu-can" title="Permanent link">&para;</a></h1>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>ufw<span class="w"> </span>allow<span class="w"> </span><span class="s1">&#39;Nginx Full&#39;</span>
+</code></pre></div>
+<p>hoặc</p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>ufw<span class="w"> </span>allow<span class="w"> </span><span class="m">80</span>
 </code></pre></div>
 <hr />
-<h1 id="15-pm2-commands">15. PM2 commands<a class="headerlink" href="#15-pm2-commands" title="Permanent link">&para;</a></h1>
-<div class="highlight"><pre><span></span><code>Show<span class="w"> </span>processes:
+<h1 id="14-truy-cap-website">14. Truy cập Website<a class="headerlink" href="#14-truy-cap-website" title="Permanent link">&para;</a></h1>
+<p>Mở trình duyệt:</p>
+<div class="codehilite"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>http://SERVER_IP
+</code></pre></div></td></tr></table></div>
 
-pm2<span class="w"> </span>list
+<p>Ví dụ:</p>
+<div class="codehilite"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>http://192.168.229.102
+</code></pre></div></td></tr></table></div>
 
-Logs:
-
-pm2<span class="w"> </span>logs<span class="w"> </span>next-blog
-
-Restart:
-
-pm2<span class="w"> </span>restart<span class="w"> </span>next-blog
-
-Stop:
-
-pm2<span class="w"> </span>stop<span class="w"> </span>next-blog
-</code></pre></div>
+<p>Nếu thấy React app chạy là deploy thành công 🎉</p>
 <hr />
-<h1 id="16-auto-start-after-reboot">16. Auto start after reboot<a class="headerlink" href="#16-auto-start-after-reboot" title="Permanent link">&para;</a></h1>
-<div class="highlight"><pre><span></span><code>pm2<span class="w"> </span>startup<span class="se">\</span>
-pm2<span class="w"> </span>save
+<h1 id="15-cau-truc-server-sau-khi-deploy">15. Cấu trúc Server Sau Khi Deploy<a class="headerlink" href="#15-cau-truc-server-sau-khi-deploy" title="Permanent link">&para;</a></h1>
+<div class="codehilite"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code>/var/www/
+   └── react-app
+        ├── index.html
+        ├── static/
+</code></pre></div></td></tr></table></div>
 
-Follow<span class="w"> </span>the<span class="w"> </span><span class="nb">command</span><span class="w"> </span>printed<span class="w"> </span>by<span class="w"> </span>pm2.
-</code></pre></div>
-<hr />
-<h1 id="17-deploy-workflow">17. Deploy workflow<a class="headerlink" href="#17-deploy-workflow" title="Permanent link">&para;</a></h1>
-<div class="highlight"><pre><span></span><code>git<span class="w"> </span>pull<span class="se">\</span>
-npm<span class="w"> </span>install<span class="se">\</span>
-npm<span class="w"> </span>run<span class="w"> </span>build<span class="se">\</span>
-pm2<span class="w"> </span>restart<span class="w"> </span>next-blog
-</code></pre></div>
-<hr />
-<h1 id="18-debug-502-bad-gateway">18. Debug 502 Bad Gateway<a class="headerlink" href="#18-debug-502-bad-gateway" title="Permanent link">&para;</a></h1>
-<div class="highlight"><pre><span></span><code>Common<span class="w"> </span>checks:
+<p>Nginx config:</p>
+<div class="codehilite"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>/etc/nginx/sites-available/react-app
+</code></pre></div></td></tr></table></div>
 
-pm2<span class="w"> </span>list<span class="se">\</span>
-lsof<span class="w"> </span>-i<span class="w"> </span>:3000<span class="se">\</span>
-pm2<span class="w"> </span>logs<span class="w"> </span>next-blog
+<hr />
+<h1 id="16-flow-deploy-react-nginx">16. Flow Deploy React + Nginx<a class="headerlink" href="#16-flow-deploy-react-nginx" title="Permanent link">&para;</a></h1>
+<div class="codehilite"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span></pre></div></td><td class="code"><div><pre><span></span><code>React Source Code
+       ↓
+npm install
+       ↓
+npm run build
+       ↓
+copy build → /var/www/react-app
+       ↓
+nginx serve static files
+       ↓
+Browser truy cập
+</code></pre></div></td></tr></table></div>
+
+<hr />
+<h1 id="17-luu-y-quan-trong">17. Lưu ý quan trọng<a class="headerlink" href="#17-luu-y-quan-trong" title="Permanent link">&para;</a></h1>
+<ol>
+<li>Nginx chỉ serve <strong>static files</strong></li>
+<li>Sau khi build xong, server <strong>không cần chạy NodeJS runtime</strong></li>
+<li>Nếu refresh bị lỗi 404 → kiểm tra dòng:</li>
+</ol>
+<div class="highlight"><pre><span></span><code>&lt;!-- --&gt;
 </code></pre></div>
+<div class="codehilite"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>try_files $uri /index.html;
+</code></pre></div></td></tr></table></div>
+
+<hr />
+<h1 id="18-dev-mode-chi-e-test">18. Dev Mode (chỉ để test)<a class="headerlink" href="#18-dev-mode-chi-e-test" title="Permanent link">&para;</a></h1>
+<div class="highlight"><pre><span></span><code>npm<span class="w"> </span>run<span class="w"> </span>dev<span class="w"> </span>--<span class="w"> </span>--host
+</code></pre></div>
+<p>Truy cập:</p>
+<div class="codehilite"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>http://SERVER_IP:5173
+</code></pre></div></td></tr></table></div>
+
+<p>⚠️ Chỉ dùng cho <strong>development</strong>, không dùng production.</p>
+<hr />
+<h1 id="19-kien-truc-he-thong">19. Kiến trúc hệ thống<a class="headerlink" href="#19-kien-truc-he-thong" title="Permanent link">&para;</a></h1>
+<div class="codehilite"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code>Browser
+   ↓
+Nginx (port 80)
+   ↓
+React Static Files
+</code></pre></div></td></tr></table></div>
 
 
 
