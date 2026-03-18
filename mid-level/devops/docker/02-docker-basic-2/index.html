@@ -8,29 +8,31 @@
       
       
       
-        <link rel="canonical" href="https://alphadev14.github.io/digitaldocs/senior/">
+        <link rel="canonical" href="https://alphadev14.github.io/digitaldocs/mid-level/devops/docker/02-docker-basic-2/">
       
       
-        <link rel="prev" href="../mid-level/devops/labs/03-gitlab-ci-cd-setup/">
+        <link rel="prev" href="../01-docker-basic/">
       
+      
+        <link rel="next" href="../../labs/01-react-nginx-deploy/">
       
       
         
       
       
-      <link rel="icon" href="../assets/logo.png">
+      <link rel="icon" href="../../../../assets/logo.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.5">
     
     
       
-        <title>Senior - P&T | Digital Docs</title>
+        <title>Docker Basic 2 - P&T | Digital Docs</title>
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.484c7ddc.min.css">
       
         
-        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.ab4e12ef.min.css">
       
       
 
@@ -49,11 +51,11 @@
       
     
     
-      <link rel="stylesheet" href="../extra.css">
+      <link rel="stylesheet" href="../../../../extra.css">
     
-      <link rel="stylesheet" href="../stylesheets/extra.css">
+      <link rel="stylesheet" href="../../../../stylesheets/extra.css">
     
-    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -77,6 +79,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#docker-co-ban-phan-2" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -89,9 +96,9 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href=".." title="P&amp;T | Digital Docs" class="md-header__button md-logo" aria-label="P&T | Digital Docs" data-md-component="logo">
+    <a href="../../../.." title="P&amp;T | Digital Docs" class="md-header__button md-logo" aria-label="P&T | Digital Docs" data-md-component="logo">
       
-  <img src="../assets/logo.png" alt="logo">
+  <img src="../../../../assets/logo.png" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -108,7 +115,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Senior
+              Docker Basic 2
             
           </span>
         </div>
@@ -172,9 +179,9 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href=".." title="P&amp;T | Digital Docs" class="md-nav__button md-logo" aria-label="P&T | Digital Docs" data-md-component="logo">
+    <a href="../../../.." title="P&amp;T | Digital Docs" class="md-nav__button md-logo" aria-label="P&T | Digital Docs" data-md-component="logo">
       
-  <img src="../assets/logo.png" alt="logo">
+  <img src="../../../../assets/logo.png" alt="logo">
 
     </a>
     P&T | Digital Docs
@@ -189,7 +196,7 @@
   
   
     <li class="md-nav__item">
-      <a href=".." class="md-nav__link">
+      <a href="../../../.." class="md-nav__link">
         
   
   
@@ -310,7 +317,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../junior/backend/01-aspnet-core-webapi/" class="md-nav__link">
+      <a href="../../../../junior/backend/01-aspnet-core-webapi/" class="md-nav__link">
         
   
   
@@ -338,7 +345,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../junior/backend/02-middleware-dependency-injection/" class="md-nav__link">
+      <a href="../../../../junior/backend/02-middleware-dependency-injection/" class="md-nav__link">
         
   
   
@@ -366,7 +373,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../junior/backend/03-entity-framework-core/" class="md-nav__link">
+      <a href="../../../../junior/backend/03-entity-framework-core/" class="md-nav__link">
         
   
   
@@ -394,7 +401,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../junior/backend/04-linq/" class="md-nav__link">
+      <a href="../../../../junior/backend/04-linq/" class="md-nav__link">
         
   
   
@@ -422,7 +429,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../junior/backend/05-authentication-jwt/" class="md-nav__link">
+      <a href="../../../../junior/backend/05-authentication-jwt/" class="md-nav__link">
         
   
   
@@ -450,7 +457,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../junior/backend/06-clean-architecture-solid/" class="md-nav__link">
+      <a href="../../../../junior/backend/06-clean-architecture-solid/" class="md-nav__link">
         
   
   
@@ -478,7 +485,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../junior/backend/07-async-await/" class="md-nav__link">
+      <a href="../../../../junior/backend/07-async-await/" class="md-nav__link">
         
   
   
@@ -506,7 +513,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../junior/backend/08-async-await-2/" class="md-nav__link">
+      <a href="../../../../junior/backend/08-async-await-2/" class="md-nav__link">
         
   
   
@@ -589,7 +596,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../junior/frontend/01-react-basic/" class="md-nav__link">
+      <a href="../../../../junior/frontend/01-react-basic/" class="md-nav__link">
         
   
   
@@ -617,7 +624,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../junior/frontend/02-react-hooks/" class="md-nav__link">
+      <a href="../../../../junior/frontend/02-react-hooks/" class="md-nav__link">
         
   
   
@@ -645,7 +652,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../junior/frontend/03-context-api/" class="md-nav__link">
+      <a href="../../../../junior/frontend/03-context-api/" class="md-nav__link">
         
   
   
@@ -673,7 +680,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../junior/frontend/04-state-management/" class="md-nav__link">
+      <a href="../../../../junior/frontend/04-state-management/" class="md-nav__link">
         
   
   
@@ -701,7 +708,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../junior/frontend/05-react-router/" class="md-nav__link">
+      <a href="../../../../junior/frontend/05-react-router/" class="md-nav__link">
         
   
   
@@ -729,7 +736,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../junior/frontend/06-performance-optimization/" class="md-nav__link">
+      <a href="../../../../junior/frontend/06-performance-optimization/" class="md-nav__link">
         
   
   
@@ -812,7 +819,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../junior/database/01-postgresql-basic/" class="md-nav__link">
+      <a href="../../../../junior/database/01-postgresql-basic/" class="md-nav__link">
         
   
   
@@ -840,7 +847,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../junior/database/02-transactions/" class="md-nav__link">
+      <a href="../../../../junior/database/02-transactions/" class="md-nav__link">
         
   
   
@@ -868,7 +875,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../junior/database/03-isolation-levels/" class="md-nav__link">
+      <a href="../../../../junior/database/03-isolation-levels/" class="md-nav__link">
         
   
   
@@ -896,7 +903,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../junior/database/04-index-partitioning/" class="md-nav__link">
+      <a href="../../../../junior/database/04-index-partitioning/" class="md-nav__link">
         
   
   
@@ -924,7 +931,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../junior/database/05-jsonb-postgresql/" class="md-nav__link">
+      <a href="../../../../junior/database/05-jsonb-postgresql/" class="md-nav__link">
         
   
   
@@ -952,7 +959,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../junior/database/06-query-optimization/" class="md-nav__link">
+      <a href="../../../../junior/database/06-query-optimization/" class="md-nav__link">
         
   
   
@@ -980,7 +987,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../junior/database/07-postgresql-advanced/" class="md-nav__link">
+      <a href="../../../../junior/database/07-postgresql-advanced/" class="md-nav__link">
         
   
   
@@ -1016,7 +1023,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Testing & Deployment/index.md" class="md-nav__link">
+      <a href="../../../../Testing & Deployment/index.md" class="md-nav__link">
         
   
   
@@ -1185,7 +1192,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../junior/project/todos/05-deploy-fe/" class="md-nav__link">
+      <a href="../../../../junior/project/todos/05-deploy-fe/" class="md-nav__link">
         
   
   
@@ -1268,7 +1275,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../junior/project/todos/06-deploy-be/" class="md-nav__link">
+      <a href="../../../../junior/project/todos/06-deploy-be/" class="md-nav__link">
         
   
   
@@ -1351,7 +1358,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../junior/project/todos/07-deploy-db/" class="md-nav__link">
+      <a href="../../../../junior/project/todos/07-deploy-db/" class="md-nav__link">
         
   
   
@@ -1407,18 +1414,20 @@
       
   
   
+    
   
   
+  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
         
           
           <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
@@ -1439,7 +1448,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             
@@ -1457,7 +1466,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../mid-level/backend/index.md" class="md-nav__link">
+      <a href="../../../backend/index.md" class="md-nav__link">
         
   
   
@@ -1485,7 +1494,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../mid-level/frontend/index.md" class="md-nav__link">
+      <a href="../../../frontend/index.md" class="md-nav__link">
         
   
   
@@ -1588,7 +1597,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../mid-level/system-design/01-system-design-introduction/" class="md-nav__link">
+      <a href="../../../system-design/01-system-design-introduction/" class="md-nav__link">
         
   
   
@@ -1616,7 +1625,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../mid-level/system-design/02-system-design-life-cycle/" class="md-nav__link">
+      <a href="../../../system-design/02-system-design-life-cycle/" class="md-nav__link">
         
   
   
@@ -1644,7 +1653,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../mid-level/system-design/03-component-of-system-design/" class="md-nav__link">
+      <a href="../../../system-design/03-component-of-system-design/" class="md-nav__link">
         
   
   
@@ -1677,18 +1686,20 @@
                 
   
   
+    
   
   
+  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_5" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_5" checked>
         
           
           <label class="md-nav__link" for="__nav_3_5" id="__nav_3_5_label" tabindex="0">
@@ -1709,7 +1720,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_5_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_5_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3_5">
             <span class="md-nav__icon md-icon"></span>
             
@@ -1724,18 +1735,20 @@
                 
   
   
+    
   
   
+  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_5_1" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_5_1" checked>
         
           
           <label class="md-nav__link" for="__nav_3_5_1" id="__nav_3_5_1_label" tabindex="0">
@@ -1756,7 +1769,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_5_1_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_5_1_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3_5_1">
             <span class="md-nav__icon md-icon"></span>
             
@@ -1774,7 +1787,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../mid-level/devops/docker/01-docker-basic/" class="md-nav__link">
+      <a href="../01-docker-basic/" class="md-nav__link">
         
   
   
@@ -1799,10 +1812,37 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../mid-level/devops/docker/02-docker-basic-2/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Docker Basic 2
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -1818,6 +1858,37 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#muc-tieu" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🎯 Mục tiêu
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1885,7 +1956,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../mid-level/devops/labs/01-react-nginx-deploy/" class="md-nav__link">
+      <a href="../../labs/01-react-nginx-deploy/" class="md-nav__link">
         
   
   
@@ -1913,7 +1984,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../mid-level/devops/labs/02-nextjs-nginx-deploy/" class="md-nav__link">
+      <a href="../../labs/02-nextjs-nginx-deploy/" class="md-nav__link">
         
   
   
@@ -1941,7 +2012,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../mid-level/devops/labs/03-gitlab-ci-cd-setup/" class="md-nav__link">
+      <a href="../../labs/03-gitlab-ci-cd-setup/" class="md-nav__link">
         
   
   
@@ -1989,17 +2060,10 @@
       
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../../../senior/" class="md-nav__link">
         
   
   
@@ -2015,7 +2079,6 @@
   
 
       </a>
-      
     </li>
   
 
@@ -2037,6 +2100,27 @@
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#muc-tieu" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🎯 Mục tiêu
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -2053,9 +2137,101 @@
 
 
 
-  <h1>Senior</h1>
+<h1 id="docker-co-ban-phan-2">⚙️ Docker cơ bản phần 2<a class="headerlink" href="#docker-co-ban-phan-2" title="Permanent link">&para;</a></h1>
+<h2 id="muc-tieu">🎯 Mục tiêu<a class="headerlink" href="#muc-tieu" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Biết viết Dockerfile</li>
+<li>Biết build image</li>
+<li>Biết run container</li>
+<li>Hiểu các lệnh cơ bản trong Dockerfile</li>
+</ul>
+<hr />
+<h1 id="1-dockerfile-la-gi">🧱 1. Dockerfile là gì?<a class="headerlink" href="#1-dockerfile-la-gi" title="Permanent link">&para;</a></h1>
+<p>Dockerfile là file chứa các bước để build ra một Docker Image.</p>
+<p>👉 Hiểu đơn giản: Dockerfile = script build môi trường + app</p>
+<hr />
+<h1 id="2-flow-hoat-ong">🧠 2. Flow hoạt động<a class="headerlink" href="#2-flow-hoat-ong" title="Permanent link">&para;</a></h1>
+<blockquote>
+<p>Dockerfile → Build → Image → Run → Container</p>
+</blockquote>
+<hr />
+<h1 id="3-cac-lenh-co-ban-trong-dockerfile">🔥 3. Các lệnh cơ bản trong Dockerfile<a class="headerlink" href="#3-cac-lenh-co-ban-trong-dockerfile" title="Permanent link">&para;</a></h1>
+<h2 id="from">🧱 FROM<a class="headerlink" href="#from" title="Permanent link">&para;</a></h2>
+<p>FROM node:18<br />
+→ Chọn base image, bắt buộc phải có</p>
+<h2 id="workdir">⚙️ WORKDIR<a class="headerlink" href="#workdir" title="Permanent link">&para;</a></h2>
+<p>WORKDIR /app<br />
+→ Set thư mục làm việc trong container</p>
+<h2 id="copy">📂 COPY<a class="headerlink" href="#copy" title="Permanent link">&para;</a></h2>
+<p>COPY package.json .<br />
+→ Copy file từ máy local vào container</p>
+<h2 id="run">🔧 RUN<a class="headerlink" href="#run" title="Permanent link">&para;</a></h2>
+<p>RUN npm install<br />
+→ Chạy command khi build image</p>
+<h2 id="cmd">🚀 CMD<a class="headerlink" href="#cmd" title="Permanent link">&para;</a></h2>
+<p>CMD ["npm", "start"]<br />
+→ Command chạy khi container start</p>
+<h2 id="expose">🌐 EXPOSE<a class="headerlink" href="#expose" title="Permanent link">&para;</a></h2>
+<p>EXPOSE 3000<br />
+→ Khai báo port app sử dụng</p>
+<hr />
+<h1 id="4-thuc-hanh-nodejs">🧪 4. Thực hành NodeJS<a class="headerlink" href="#4-thuc-hanh-nodejs" title="Permanent link">&para;</a></h1>
+<h2 id="indexjs">index.js<a class="headerlink" href="#indexjs" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code>const express = require(&#39;express&#39;);
+const app = express();
 
+app.get(&#39;/&#39;, (req, res) =&gt; {
+res.send(&#39;Hello Docker!&#39;);
+});
 
+app.listen(3000, () =&gt; {
+console.log(&#39;Server running&#39;);
+});
+</code></pre></div>
+<hr />
+<div class="highlight"><pre><span></span><code><span class="c">## Dockerfile</span>
+
+<span class="k">FROM</span><span class="w"> </span><span class="s">node:18</span>
+<span class="k">WORKDIR</span><span class="w"> </span><span class="s">/app</span>
+<span class="k">COPY</span><span class="w"> </span>package.json<span class="w"> </span>.
+<span class="k">RUN</span><span class="w"> </span>npm<span class="w"> </span>install
+<span class="k">COPY</span><span class="w"> </span>.<span class="w"> </span>.
+<span class="k">EXPOSE</span><span class="w"> </span><span class="s">3000</span>
+<span class="k">CMD</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;node&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;index.js&quot;</span><span class="p">]</span>
+</code></pre></div>
+<hr />
+<h1 id="5-build-image">⚡ 5. Build Image<a class="headerlink" href="#5-build-image" title="Permanent link">&para;</a></h1>
+<div class="highlight"><pre><span></span><code>docker<span class="w"> </span>build<span class="w"> </span>-t<span class="w"> </span>my-app<span class="w"> </span>.
+</code></pre></div>
+<hr />
+<h1 id="6-run-container">▶️ 6. Run Container<a class="headerlink" href="#6-run-container" title="Permanent link">&para;</a></h1>
+<div class="highlight"><pre><span></span><code>docker<span class="w"> </span>run<span class="w"> </span>-p<span class="w"> </span><span class="m">3000</span>:3000<span class="w"> </span>my-app
+</code></pre></div>
+<p>→ http://localhost:3000</p>
+<hr />
+<h1 id="7-debug">💥 7. Debug<a class="headerlink" href="#7-debug" title="Permanent link">&para;</a></h1>
+<blockquote>
+<p>📋 Xem container</p>
+</blockquote>
+<div class="highlight"><pre><span></span><code>docker<span class="w"> </span>ps
+</code></pre></div>
+<blockquote>
+<p>🛑 Stop container</p>
+</blockquote>
+<div class="highlight"><pre><span></span><code>docker<span class="w"> </span>stop<span class="w"> </span>&lt;container_id&gt;
+</code></pre></div>
+<blockquote>
+<p>🧹 Xóa container</p>
+</blockquote>
+<div class="highlight"><pre><span></span><code><span class="w"> </span>docker<span class="w"> </span>rm<span class="w"> </span>&lt;container_id&gt;
+</code></pre></div>
+<hr />
+<h1 id="8-best-practices">🧠 8. Best Practices<a class="headerlink" href="#8-best-practices" title="Permanent link">&para;</a></h1>
+<ul>
+<li>Dùng layer cache hợp lý</li>
+<li>Tránh COPY . . trước khi install</li>
+<li>Dùng .dockerignore</li>
+</ul>
 
 
 
@@ -2100,10 +2276,10 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.footer"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../../..", "features": ["navigation.footer"], "search": "../../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../../../../assets/javascripts/bundle.79ae519e.min.js"></script>
       
     
   </body>
