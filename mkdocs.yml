@@ -71,6 +71,9 @@ nav:
           - 🐋 Docker:
               - Docker Basic: mid-level/devops/docker/01-docker-basic.md
               - Docker Basic 2: mid-level/devops/docker/02-docker-basic-2.md
+              - Containers: mid-level/devops/docker/03-containers.md
+              - Volume And Data: mid-level/devops/docker/04-volume-and-data copy.md
+              - Network: mid-level/devops/docker/05-network.md
           - 🧫 Labs:
               - React + Nginx: mid-level/devops/labs/01-react-nginx-deploy.md
               - NextJS + Nginx: mid-level/devops/labs/02-nextjs-nginx-deploy.md
