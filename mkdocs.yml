@@ -68,7 +68,9 @@ nav:
           - System Design Life Cycle: mid-level/system-design/02-system-design-life-cycle.md
           - Component of System Design: mid-level/system-design/03-component-of-system-design.md
       - 🌐 DevOps:
-          - Labs:
+          - 🐋 Docker:
+              - Docker Basic: mid-level/devops/docker/01-docker-basic.md
+          - 🧫 Labs:
               - React + Nginx: mid-level/devops/labs/01-react-nginx-deploy.md
               - NextJS + Nginx: mid-level/devops/labs/02-nextjs-nginx-deploy.md
               - Gitlab CI/CD: mid-level/devops/labs/03-gitlab-ci-cd-setup.md
