@@ -8,31 +8,31 @@
       
       
       
-        <link rel="canonical" href="https://alphadev14.github.io/digitaldocs/junior/backend/04-linq/">
+        <link rel="canonical" href="https://alphadev14.github.io/digitaldocs/mid-level/devops/docker/01-docker-basic/">
       
       
-        <link rel="prev" href="../03-entity-framework-core/">
+        <link rel="prev" href="../../../system-design/03-component-of-system-design/">
       
       
-        <link rel="next" href="../05-authentication-jwt/">
+        <link rel="next" href="../../labs/01-react-nginx-deploy/">
       
       
         
       
       
-      <link rel="icon" href="../../../assets/logo.png">
+      <link rel="icon" href="../../../../assets/logo.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.5">
     
     
       
-        <title>LINQ - P&T | Digital Docs</title>
+        <title>Docker Basic - P&T | Digital Docs</title>
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.484c7ddc.min.css">
       
         
-        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.ab4e12ef.min.css">
       
       
 
@@ -51,11 +51,11 @@
       
     
     
-      <link rel="stylesheet" href="../../../extra.css">
+      <link rel="stylesheet" href="../../../../extra.css">
     
-      <link rel="stylesheet" href="../../../stylesheets/extra.css">
+      <link rel="stylesheet" href="../../../../stylesheets/extra.css">
     
-    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -80,7 +80,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#linq-language-integrated-query" class="md-skip">
+        <a href="#kien-thuc-co-ban-ve-docker" class="md-skip">
           Skip to content
         </a>
       
@@ -96,9 +96,9 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../../.." title="P&amp;T | Digital Docs" class="md-header__button md-logo" aria-label="P&T | Digital Docs" data-md-component="logo">
+    <a href="../../../.." title="P&amp;T | Digital Docs" class="md-header__button md-logo" aria-label="P&T | Digital Docs" data-md-component="logo">
       
-  <img src="../../../assets/logo.png" alt="logo">
+  <img src="../../../../assets/logo.png" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -115,7 +115,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              LINQ
+              Docker Basic
             
           </span>
         </div>
@@ -179,9 +179,9 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../.." title="P&amp;T | Digital Docs" class="md-nav__button md-logo" aria-label="P&T | Digital Docs" data-md-component="logo">
+    <a href="../../../.." title="P&amp;T | Digital Docs" class="md-nav__button md-logo" aria-label="P&T | Digital Docs" data-md-component="logo">
       
-  <img src="../../../assets/logo.png" alt="logo">
+  <img src="../../../../assets/logo.png" alt="logo">
 
     </a>
     P&T | Digital Docs
@@ -196,7 +196,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../.." class="md-nav__link">
+      <a href="../../../.." class="md-nav__link">
         
   
   
@@ -220,20 +220,18 @@
       
   
   
-    
   
   
-  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
         
           
           <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
@@ -254,7 +252,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             
@@ -269,20 +267,18 @@
                 
   
   
-    
   
   
-  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" >
         
           
           <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
@@ -303,7 +299,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2_1">
             <span class="md-nav__icon md-icon"></span>
             
@@ -321,7 +317,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../01-aspnet-core-webapi/" class="md-nav__link">
+      <a href="../../../../junior/backend/01-aspnet-core-webapi/" class="md-nav__link">
         
   
   
@@ -349,7 +345,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../02-middleware-dependency-injection/" class="md-nav__link">
+      <a href="../../../../junior/backend/02-middleware-dependency-injection/" class="md-nav__link">
         
   
   
@@ -377,7 +373,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../03-entity-framework-core/" class="md-nav__link">
+      <a href="../../../../junior/backend/03-entity-framework-core/" class="md-nav__link">
         
   
   
@@ -402,37 +398,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    LINQ
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../../../junior/backend/04-linq/" class="md-nav__link">
         
   
   
@@ -448,181 +417,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#1-linq-la-gi" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        1. LINQ là gì?
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="1. LINQ là gì?">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#giup-truy-van-tren-nhieu-nguon-du-lieu-khac-nhau" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Giúp truy vấn trên nhiều nguồn dữ liệu khác nhau
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#uu-iem" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Ưu điểm
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#2-cu-phap-linq" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        2. Cú pháp LINQ
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#3-cac-toan-tu-linq-quan-trong" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        3. Các toán tử LINQ quan trọng
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="3. Các toán tử LINQ quan trọng">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#a-filtering-loc-du-lieu" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        a. Filtering (lọc dữ liệu)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#b-projection-chon-du-lieu-moi" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        b. Projection (chọn dữ liệu mới)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#c-sorting-sap-xep" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        c. Sorting (sắp xếp)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#d-grouping-nhom-du-lieu" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        d. Grouping (nhóm dữ liệu)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#e-aggregation-tinh-toan" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        e. Aggregation (tính toán)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#g-distinct-set-operations" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        g. Distinct &amp; Set operations
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#4-deferred-execution" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        4. Deferred Execution
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#5-tom-tat" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        5. Tóm tắt
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -635,7 +429,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../05-authentication-jwt/" class="md-nav__link">
+      <a href="../../../../junior/backend/05-authentication-jwt/" class="md-nav__link">
         
   
   
@@ -663,7 +457,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../06-clean-architecture-solid/" class="md-nav__link">
+      <a href="../../../../junior/backend/06-clean-architecture-solid/" class="md-nav__link">
         
   
   
@@ -691,7 +485,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../07-async-await/" class="md-nav__link">
+      <a href="../../../../junior/backend/07-async-await/" class="md-nav__link">
         
   
   
@@ -719,7 +513,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../08-async-await-2/" class="md-nav__link">
+      <a href="../../../../junior/backend/08-async-await-2/" class="md-nav__link">
         
   
   
@@ -802,7 +596,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../frontend/01-react-basic/" class="md-nav__link">
+      <a href="../../../../junior/frontend/01-react-basic/" class="md-nav__link">
         
   
   
@@ -830,7 +624,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../frontend/02-react-hooks/" class="md-nav__link">
+      <a href="../../../../junior/frontend/02-react-hooks/" class="md-nav__link">
         
   
   
@@ -858,7 +652,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../frontend/03-context-api/" class="md-nav__link">
+      <a href="../../../../junior/frontend/03-context-api/" class="md-nav__link">
         
   
   
@@ -886,7 +680,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../frontend/04-state-management/" class="md-nav__link">
+      <a href="../../../../junior/frontend/04-state-management/" class="md-nav__link">
         
   
   
@@ -914,7 +708,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../frontend/05-react-router/" class="md-nav__link">
+      <a href="../../../../junior/frontend/05-react-router/" class="md-nav__link">
         
   
   
@@ -942,7 +736,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../frontend/06-performance-optimization/" class="md-nav__link">
+      <a href="../../../../junior/frontend/06-performance-optimization/" class="md-nav__link">
         
   
   
@@ -1025,7 +819,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../database/01-postgresql-basic/" class="md-nav__link">
+      <a href="../../../../junior/database/01-postgresql-basic/" class="md-nav__link">
         
   
   
@@ -1053,7 +847,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../database/02-transactions/" class="md-nav__link">
+      <a href="../../../../junior/database/02-transactions/" class="md-nav__link">
         
   
   
@@ -1081,7 +875,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../database/03-isolation-levels/" class="md-nav__link">
+      <a href="../../../../junior/database/03-isolation-levels/" class="md-nav__link">
         
   
   
@@ -1109,7 +903,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../database/04-index-partitioning/" class="md-nav__link">
+      <a href="../../../../junior/database/04-index-partitioning/" class="md-nav__link">
         
   
   
@@ -1137,7 +931,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../database/05-jsonb-postgresql/" class="md-nav__link">
+      <a href="../../../../junior/database/05-jsonb-postgresql/" class="md-nav__link">
         
   
   
@@ -1165,7 +959,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../database/06-query-optimization/" class="md-nav__link">
+      <a href="../../../../junior/database/06-query-optimization/" class="md-nav__link">
         
   
   
@@ -1193,7 +987,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../database/07-postgresql-advanced/" class="md-nav__link">
+      <a href="../../../../junior/database/07-postgresql-advanced/" class="md-nav__link">
         
   
   
@@ -1229,7 +1023,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Testing & Deployment/index.md" class="md-nav__link">
+      <a href="../../../../Testing & Deployment/index.md" class="md-nav__link">
         
   
   
@@ -1398,7 +1192,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../project/todos/05-deploy-fe/" class="md-nav__link">
+      <a href="../../../../junior/project/todos/05-deploy-fe/" class="md-nav__link">
         
   
   
@@ -1481,7 +1275,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../project/todos/06-deploy-be/" class="md-nav__link">
+      <a href="../../../../junior/project/todos/06-deploy-be/" class="md-nav__link">
         
   
   
@@ -1564,7 +1358,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../project/todos/07-deploy-db/" class="md-nav__link">
+      <a href="../../../../junior/project/todos/07-deploy-db/" class="md-nav__link">
         
   
   
@@ -1620,18 +1414,20 @@
       
   
   
+    
   
   
+  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
         
           
           <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
@@ -1652,7 +1448,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             
@@ -1670,7 +1466,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../mid-level/backend/index.md" class="md-nav__link">
+      <a href="../../../backend/index.md" class="md-nav__link">
         
   
   
@@ -1698,7 +1494,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../mid-level/frontend/index.md" class="md-nav__link">
+      <a href="../../../frontend/index.md" class="md-nav__link">
         
   
   
@@ -1801,7 +1597,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../mid-level/system-design/01-system-design-introduction/" class="md-nav__link">
+      <a href="../../../system-design/01-system-design-introduction/" class="md-nav__link">
         
   
   
@@ -1829,7 +1625,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../mid-level/system-design/02-system-design-life-cycle/" class="md-nav__link">
+      <a href="../../../system-design/02-system-design-life-cycle/" class="md-nav__link">
         
   
   
@@ -1857,7 +1653,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../mid-level/system-design/03-component-of-system-design/" class="md-nav__link">
+      <a href="../../../system-design/03-component-of-system-design/" class="md-nav__link">
         
   
   
@@ -1890,18 +1686,20 @@
                 
   
   
+    
   
   
+  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_5" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_5" checked>
         
           
           <label class="md-nav__link" for="__nav_3_5" id="__nav_3_5_label" tabindex="0">
@@ -1922,7 +1720,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_5_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_5_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3_5">
             <span class="md-nav__icon md-icon"></span>
             
@@ -1937,18 +1735,20 @@
                 
   
   
+    
   
   
+  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_5_1" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_5_1" checked>
         
           
           <label class="md-nav__link" for="__nav_3_5_1" id="__nav_3_5_1_label" tabindex="0">
@@ -1969,7 +1769,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_5_1_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_5_1_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3_5_1">
             <span class="md-nav__icon md-icon"></span>
             
@@ -1984,10 +1784,37 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../../mid-level/devops/docker/01-docker-basic/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Docker Basic
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -2003,6 +1830,37 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#muc-tieu" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🎯 Mục tiêu
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -2070,7 +1928,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../mid-level/devops/labs/01-react-nginx-deploy/" class="md-nav__link">
+      <a href="../../labs/01-react-nginx-deploy/" class="md-nav__link">
         
   
   
@@ -2098,7 +1956,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../mid-level/devops/labs/02-nextjs-nginx-deploy/" class="md-nav__link">
+      <a href="../../labs/02-nextjs-nginx-deploy/" class="md-nav__link">
         
   
   
@@ -2126,7 +1984,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../mid-level/devops/labs/03-gitlab-ci-cd-setup/" class="md-nav__link">
+      <a href="../../labs/03-gitlab-ci-cd-setup/" class="md-nav__link">
         
   
   
@@ -2177,7 +2035,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../senior/" class="md-nav__link">
+      <a href="../../../../senior/" class="md-nav__link">
         
   
   
@@ -2224,154 +2082,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#1-linq-la-gi" class="md-nav__link">
+  <a href="#muc-tieu" class="md-nav__link">
     <span class="md-ellipsis">
       
-        1. LINQ là gì?
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="1. LINQ là gì?">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#giup-truy-van-tren-nhieu-nguon-du-lieu-khac-nhau" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Giúp truy vấn trên nhiều nguồn dữ liệu khác nhau
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#uu-iem" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Ưu điểm
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#2-cu-phap-linq" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        2. Cú pháp LINQ
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#3-cac-toan-tu-linq-quan-trong" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        3. Các toán tử LINQ quan trọng
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="3. Các toán tử LINQ quan trọng">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#a-filtering-loc-du-lieu" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        a. Filtering (lọc dữ liệu)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#b-projection-chon-du-lieu-moi" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        b. Projection (chọn dữ liệu mới)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#c-sorting-sap-xep" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        c. Sorting (sắp xếp)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#d-grouping-nhom-du-lieu" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        d. Grouping (nhóm dữ liệu)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#e-aggregation-tinh-toan" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        e. Aggregation (tính toán)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#g-distinct-set-operations" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        g. Distinct &amp; Set operations
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#4-deferred-execution" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        4. Deferred Execution
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#5-tom-tat" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        5. Tóm tắt
+        🎯 Mục tiêu
       
     </span>
   </a>
@@ -2395,106 +2109,257 @@
 
 
 
-<h1 id="linq-language-integrated-query">LINQ (Language Integrated Query)<a class="headerlink" href="#linq-language-integrated-query" title="Permanent link">&para;</a></h1>
-<h2 id="1-linq-la-gi">1. LINQ là gì?<a class="headerlink" href="#1-linq-la-gi" title="Permanent link">&para;</a></h2>
+<h1 id="kien-thuc-co-ban-ve-docker">🧱 Kiến thức cơ bản về docker<a class="headerlink" href="#kien-thuc-co-ban-ve-docker" title="Permanent link">&para;</a></h1>
+<h2 id="muc-tieu">🎯 Mục tiêu<a class="headerlink" href="#muc-tieu" title="Permanent link">&para;</a></h2>
 <ul>
-<li><strong>LINQ</strong> (Language Integrated Query) là cú pháp truy vấn dữ liệu được tích hợp trực tiếp trong C#.</li>
+<li>Hiểu Docker là gì</li>
+<li>Hiểu tại sao cần Docker</li>
+<li>Nắm các khái niệm: Image, Container, Volume, Network, Registry</li>
+<li>Hiểu bản chất: <strong>Container = Process (không phải VM)</strong></li>
 </ul>
-<h3 id="giup-truy-van-tren-nhieu-nguon-du-lieu-khac-nhau">Giúp truy vấn trên nhiều nguồn dữ liệu khác nhau<a class="headerlink" href="#giup-truy-van-tren-nhieu-nguon-du-lieu-khac-nhau" title="Permanent link">&para;</a></h3>
+<hr />
+<h1 id="1-docker-la-gi">🚀 1. Docker là gì?<a class="headerlink" href="#1-docker-la-gi" title="Permanent link">&para;</a></h1>
+<p>Docker là nền tảng giúp bạn <strong>đóng gói ứng dụng + môi trường chạy</strong> vào một đơn vị gọi là <strong>container</strong>.</p>
+<p>👉 Điều này đảm bảo:</p>
+<blockquote>
+<p>"Chạy ở máy dev → chạy y chang trên server"</p>
+</blockquote>
+<hr />
+<h2 id="van-e-truoc-docker">💥 Vấn đề trước Docker<a class="headerlink" href="#van-e-truoc-docker" title="Permanent link">&para;</a></h2>
 <ul>
-<li><strong>LINQ to Objects</strong> → collection, array, list</li>
-<li><strong>LINQ to Entities</strong> → Entity Framework (database)</li>
-<li><strong>LINQ to XML</strong>, <strong>LINQ to SQL</strong>, v.v.</li>
+<li>Máy dev: Node 18, .NET 8</li>
+<li>Server: Node 16, thiếu thư viện</li>
 </ul>
-<h3 id="uu-iem">Ưu điểm<a class="headerlink" href="#uu-iem" title="Permanent link">&para;</a></h3>
+<p>👉 Kết quả:</p>
 <ul>
-<li>Code ngắn gọn, dễ đọc</li>
-<li><strong>Type-safe</strong> (có kiểm tra kiểu dữ liệu lúc compile)</li>
-<li>Hỗ trợ <strong>deferred execution</strong> (chỉ chạy khi thực sự duyệt dữ liệu)</li>
+<li>Lỗi môi trường</li>
+<li>Khó deploy</li>
 </ul>
-<h2 id="2-cu-phap-linq">2. Cú pháp LINQ<a class="headerlink" href="#2-cu-phap-linq" title="Permanent link">&para;</a></h2>
-<p>Có 2 kiểu chính:</p>
+<hr />
+<h2 id="docker-giai-quyet">✅ Docker giải quyết<a class="headerlink" href="#docker-giai-quyet" title="Permanent link">&para;</a></h2>
+<p>Docker đóng gói:</p>
 <ul>
-<li>Query Syntax (Giống SQL)</li>
+<li>Source code</li>
+<li>Runtime</li>
+<li>Dependencies</li>
 </ul>
-<div class="highlight"><pre><span></span><code><span class="w"> </span><span class="kt">var</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="n">numbers</span>
-<span class="w">              </span><span class="k">where</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span>
-<span class="w">              </span><span class="k">orderby</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="k">descending</span>
-<span class="w">              </span><span class="k">select</span><span class="w"> </span><span class="n">n</span><span class="p">;</span>
+<p>👉 Ứng dụng chạy <strong>consistent ở mọi môi trường</strong></p>
+<hr />
+<h1 id="2-docker-vs-virtual-machine">⚔️ 2. Docker vs Virtual Machine<a class="headerlink" href="#2-docker-vs-virtual-machine" title="Permanent link">&para;</a></h1>
+<table>
+<thead>
+<tr>
+<th>Tiêu chí</th>
+<th>Docker</th>
+<th>VM</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>OS</td>
+<td>Dùng chung kernel</td>
+<td>Mỗi VM có OS riêng</td>
+</tr>
+<tr>
+<td>Size</td>
+<td>Nhẹ (MB)</td>
+<td>Nặng (GB)</td>
+</tr>
+<tr>
+<td>Start</td>
+<td>Nhanh (seconds)</td>
+<td>Chậm (minutes)</td>
+</tr>
+<tr>
+<td>Performance</td>
+<td>Gần native</td>
+<td>Chậm hơn</td>
+</tr>
+<tr>
+<td>Use case</td>
+<td>Microservices, CI/CD</td>
+<td>Chạy OS khác</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="kien-truc">🔥 Kiến trúc<a class="headerlink" href="#kien-truc" title="Permanent link">&para;</a></h2>
+<h3 id="vm">VM:<a class="headerlink" href="#vm" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>App
+OS (Ubuntu)
+Hypervisor
+Hardware
 </code></pre></div>
+<h3 id="docker">Docker:<a class="headerlink" href="#docker" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>App
+Docker Engine
+Host OS
+Hardware
+</code></pre></div>
+<p>👉 Docker <strong>không tạo OS mới</strong></p>
+<hr />
+<h1 id="3-cac-khai-niem-cot-loi">🧠 3. Các khái niệm cốt lõi<a class="headerlink" href="#3-cac-khai-niem-cot-loi" title="Permanent link">&para;</a></h1>
+<hr />
+<h2 id="31-image">📦 3.1 Image<a class="headerlink" href="#31-image" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Method Syntax (Dùng lambda)</li>
+<li>Là template (read-only)</li>
+<li>Dùng để tạo container</li>
 </ul>
-<div class="highlight"><pre><span></span><code><span class="kt">var</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">numbers</span>
-<span class="w">      </span><span class="p">.</span><span class="n">Where</span><span class="p">(</span><span class="n">n</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">n</span><span class="o">%</span><span class="mi">2</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span>
-<span class="w">      </span><span class="p">.</span><span class="n">OrderByDescending</span><span class="p">(</span><span class="n">m</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">m</span><span class="p">)</span>
-<span class="w">      </span><span class="p">.</span><span class="n">ToList</span><span class="p">();</span>
+<div class="highlight"><pre><span></span><code>docker<span class="w"> </span>pull<span class="w"> </span>ubuntu
 </code></pre></div>
-<p>👉 Thực tế dev thường dùng Method Syntax nhiều hơn.</p>
-<h2 id="3-cac-toan-tu-linq-quan-trong">3. Các toán tử LINQ quan trọng<a class="headerlink" href="#3-cac-toan-tu-linq-quan-trong" title="Permanent link">&para;</a></h2>
-<h4 id="a-filtering-loc-du-lieu">a. Filtering (lọc dữ liệu)<a class="headerlink" href="#a-filtering-loc-du-lieu" title="Permanent link">&para;</a></h4>
-<div class="highlight"><pre><span></span><code><span class="kt">var</span><span class="w"> </span><span class="n">evenNumber</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">numbers</span><span class="p">.</span><span class="n">Where</span><span class="p">(</span><span class="n">n</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">n</span><span class="o">%</span><span class="mi">2</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span>
-</code></pre></div>
-<h4 id="b-projection-chon-du-lieu-moi">b. Projection (chọn dữ liệu mới)<a class="headerlink" href="#b-projection-chon-du-lieu-moi" title="Permanent link">&para;</a></h4>
-<div class="highlight"><pre><span></span><code><span class="kt">var</span><span class="w"> </span><span class="n">squares</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">number</span><span class="p">.</span><span class="n">Select</span><span class="p">(</span><span class="n">n</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">n</span><span class="o">*</span><span class="n">n</span><span class="p">);</span>
-</code></pre></div>
-<h4 id="c-sorting-sap-xep">c. Sorting (sắp xếp)<a class="headerlink" href="#c-sorting-sap-xep" title="Permanent link">&para;</a></h4>
-<div class="highlight"><pre><span></span><code><span class="kt">var</span><span class="w"> </span><span class="n">sorted</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">numbers</span><span class="p">.</span><span class="n">OrderBy</span><span class="p">(</span><span class="n">n</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">n</span><span class="p">);</span><span class="w"> </span><span class="c1">// Sắp xếp tăng dần</span>
-<span class="kt">var</span><span class="w"> </span><span class="n">sortedDesc</span><span class="o">=</span><span class="w"> </span><span class="n">numbers</span><span class="p">.</span><span class="n">OrderByDescending</span><span class="p">(</span><span class="n">n</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">n</span><span class="p">);</span><span class="w"> </span><span class="c1">// Sắp xếp giảm dần</span>
-</code></pre></div>
-<h4 id="d-grouping-nhom-du-lieu">d. Grouping (nhóm dữ liệu)<a class="headerlink" href="#d-grouping-nhom-du-lieu" title="Permanent link">&para;</a></h4>
-<div class="highlight"><pre><span></span><code><span class="kt">var</span><span class="w"> </span><span class="n">grouped</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">students</span>
-<span class="p">.</span><span class="n">GroupBy</span><span class="p">(</span><span class="n">s</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">s</span><span class="p">.</span><span class="n">Class</span><span class="p">)</span>
-<span class="p">.</span><span class="n">Select</span><span class="p">(</span><span class="n">y</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">StudentCountBO</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="n">Class</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">y</span><span class="p">.</span><span class="n">Key</span><span class="p">,</span>
-<span class="w">  </span><span class="n">Count</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">y</span><span class="p">.</span><span class="n">Count</span><span class="p">()</span>
-<span class="p">}).</span><span class="n">ToList</span><span class="p">();</span>
-</code></pre></div>
-<h4 id="e-aggregation-tinh-toan">e. Aggregation (tính toán)<a class="headerlink" href="#e-aggregation-tinh-toan" title="Permanent link">&para;</a></h4>
-<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="n">count</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">numbers</span><span class="p">.</span><span class="n">Count</span><span class="p">();</span>
-<span class="kt">int</span><span class="w"> </span><span class="n">sum</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">numbers</span><span class="p">.</span><span class="n">Sum</span><span class="p">();</span>
-<span class="kt">int</span><span class="w"> </span><span class="n">max</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">number</span><span class="p">.</span><span class="n">Max</span><span class="p">();</span>
-<span class="kt">double</span><span class="w"> </span><span class="n">avg</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">numbers</span><span class="p">.</span><span class="n">Average</span><span class="p">();</span>
-</code></pre></div>
-<h4 id="g-distinct-set-operations">g. Distinct &amp; Set operations<a class="headerlink" href="#g-distinct-set-operations" title="Permanent link">&para;</a></h4>
-<div class="highlight"><pre><span></span><code><span class="kt">var</span><span class="w"> </span><span class="n">uniqueNumbers</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">number</span><span class="p">.</span><span class="n">Unique</span><span class="p">();</span>
-<span class="kt">var</span><span class="w"> </span><span class="n">common</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">list1</span><span class="p">.</span><span class="n">Intersect</span><span class="p">(</span><span class="n">list2</span><span class="p">);</span><span class="w"> </span><span class="c1">// Lấy ra các phần tử chung của 2 list (Giao của 2 tập hợp).</span>
-<span class="kt">var</span><span class="w"> </span><span class="n">all</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">list1</span><span class="p">.</span><span class="n">Union</span><span class="p">(</span><span class="n">list2</span><span class="p">);</span><span class="w"> </span><span class="c1">// Ghép cả 2 tập hợp lại và loại bỏ các phần tử trùng (Hợp của 2 tập hợp).</span>
-<span class="kt">var</span><span class="w"> </span><span class="n">except</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">list1</span><span class="p">.</span><span class="n">Except</span><span class="p">(</span><span class="n">list2</span><span class="p">);</span><span class="w"> </span><span class="c1">// Lấy những phần tử có trong list1 mà không có trong list2 (Hiệu của 2 tập hợp).</span>
-</code></pre></div>
-<h2 id="4-deferred-execution">4. Deferred Execution<a class="headerlink" href="#4-deferred-execution" title="Permanent link">&para;</a></h2>
-<p>LINQ không thực thi truy vấn ngay khi bạn định nghĩa nó. Thay vào đó, truy vấn chỉ được thực thi khi bạn <strong>duyệt/đòi kết quả</strong> (enumerate) - Ví dụ: <code>foreach</code>, <code>.ToList()</code>, <code>.ToArray()</code>, <code>Count()</code>, <code>.First()</code>...</p>
-<p>Điều này áp dụng hầu hết các toán tử LINQ (như <code>Where</code>, <code>Select</code>, <code>OrderBy</code>...), và cả với <strong>IQueryable</strong> (EF Core) - ở đó <strong>expression tree</strong> được xây dựng và <strong>dịch sang SQL</strong> chỉ khi <strong>enumerate</strong></p>
-<p>Ví dụ</p>
-<div class="highlight"><pre><span></span><code><span class="kt">var</span><span class="w"> </span><span class="n">numbers</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">List</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">};</span>
-
-<span class="c1">// Định nghĩa query chưa chạy</span>
-<span class="kt">var</span><span class="w"> </span><span class="n">q</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">numbers</span><span class="p">.</span><span class="n">Where</span><span class="p">(</span><span class="n">n</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">$&quot;Filtering {n}&quot;</span><span class="p">);</span>
-<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
-<span class="p">})</span>
-
-<span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">&quot;Before enumerate&quot;</span><span class="p">);</span>
-
-<span class="c1">// Bắt đầu enumerate =&gt; query chạy, predicate in ra khi thực thi</span>
-<span class="k">foreach</span><span class="p">(</span><span class="kt">var</span><span class="w"> </span><span class="n">number</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="n">numbers</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">$&quot;Result: {x}&quot;</span><span class="p">);</span>
-<span class="p">}</span>
-</code></pre></div>
-<p>Output:</p>
-<div class="highlight"><pre><span></span><code><span class="n">Before</span><span class="w"> </span><span class="n">enumeration</span>
-<span class="n">Filtering</span><span class="w"> </span><span class="mi">1</span>
-<span class="n">Result</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span>
-<span class="n">Filtering</span><span class="w"> </span><span class="mi">2</span>
-<span class="n">Filtering</span><span class="w"> </span><span class="mi">3</span>
-<span class="n">Result</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span>
-</code></pre></div>
-<p>=&gt; predicate chỉ được gọi khi enumerate.</p>
-<h2 id="5-tom-tat">5. Tóm tắt<a class="headerlink" href="#5-tom-tat" title="Permanent link">&para;</a></h2>
+<hr />
+<h2 id="32-container">📦 3.2 Container<a class="headerlink" href="#32-container" title="Permanent link">&para;</a></h2>
 <ul>
-<li><strong>Deferrend</strong> = <code>Where</code>, <code>Select</code>, <code>OrderBy</code>, <code>Skip</code>, <code>Take</code>, <code>Join</code>...</li>
-<li><strong>Immediate</strong> = <code>ToList()</code>, <code>ToArray()</code>, <code>Count()</code>, <code>First()</code>, <code>Any()</code>, <code>Fisrt()</code>, <code>FirstOrDefault()</code>...</li>
+<li>Là instance của image</li>
 </ul>
+<div class="highlight"><pre><span></span><code>docker<span class="w"> </span>run<span class="w"> </span>ubuntu
+</code></pre></div>
+<p>👉 Flow:</p>
+<div class="highlight"><pre><span></span><code>Image → Container → Running App
+</code></pre></div>
+<hr />
+<h2 id="33-registry-docker-hub">🏪 3.3 Registry (Docker Hub)<a class="headerlink" href="#33-registry-docker-hub" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Nơi lưu trữ image</li>
+<li>Giống npm / nuget</li>
+</ul>
+<div class="highlight"><pre><span></span><code>docker<span class="w"> </span>pull<span class="w"> </span>nginx
+</code></pre></div>
+<hr />
+<h2 id="34-volume">💾 3.4 Volume<a class="headerlink" href="#34-volume" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Lưu dữ liệu ngoài container</li>
+<li>Giữ data khi container bị xóa</li>
+</ul>
+<h3 id="sai">❌ Sai<a class="headerlink" href="#sai" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>docker<span class="w"> </span>run<span class="w"> </span>postgres
+</code></pre></div>
+<h3 id="ung">✅ Đúng<a class="headerlink" href="#ung" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>docker<span class="w"> </span>run<span class="w"> </span>-v<span class="w"> </span>mydata:/var/lib/postgresql/data<span class="w"> </span>postgres
+</code></pre></div>
+<hr />
+<h2 id="35-network">🌐 3.5 Network<a class="headerlink" href="#35-network" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Cho phép container giao tiếp với nhau</li>
+</ul>
+<p>Ví dụ:</p>
+<ul>
+<li>Backend → Database</li>
+</ul>
+<div class="highlight"><pre><span></span><code>postgres:5432
+</code></pre></div>
+<hr />
+<h1 id="4-thuc-hanh">⚡ 4. Thực hành<a class="headerlink" href="#4-thuc-hanh" title="Permanent link">&para;</a></h1>
+<hr />
+<h2 id="kiem-tra-docker">✅ Kiểm tra Docker<a class="headerlink" href="#kiem-tra-docker" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code>docker<span class="w"> </span>--version
+</code></pre></div>
+<hr />
+<h2 id="hello-world">✅ Hello World<a class="headerlink" href="#hello-world" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code>docker<span class="w"> </span>run<span class="w"> </span>hello-world
+</code></pre></div>
+<p>👉 Docker sẽ:</p>
+<ol>
+<li>Pull image nếu chưa có</li>
+<li>Tạo container</li>
+<li>Chạy và in kết quả</li>
+</ol>
+<hr />
+<h2 id="chay-ubuntu-container">✅ Chạy Ubuntu container<a class="headerlink" href="#chay-ubuntu-container" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code>docker<span class="w"> </span>run<span class="w"> </span>-it<span class="w"> </span>ubuntu<span class="w"> </span>bash
+</code></pre></div>
+<h3 id="giai-thich">Giải thích:<a class="headerlink" href="#giai-thich" title="Permanent link">&para;</a></h3>
+<ul>
+<li><code>-it</code>: interactive terminal</li>
+<li><code>ubuntu</code>: image</li>
+<li><code>bash</code>: command</li>
+</ul>
+<p>👉 Kết quả:</p>
+<div class="highlight"><pre><span></span><code>root@container:/#
+</code></pre></div>
+<hr />
+<h1 id="5-container-process">🔥 5. Container = Process<a class="headerlink" href="#5-container-process" title="Permanent link">&para;</a></h1>
+<p>Docker sử dụng:</p>
+<ul>
+<li>Linux namespaces</li>
+<li>cgroups</li>
+</ul>
+<p>👉 Để tạo:</p>
+<ul>
+<li>Isolation</li>
+<li>Resource control</li>
+</ul>
+<hr />
+<h2 id="so-sanh">So sánh<a class="headerlink" href="#so-sanh" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Container</th>
+<th>Process thường</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Isolation</td>
+<td>Cao</td>
+<td>Thấp</td>
+</tr>
+<tr>
+<td>Resource limit</td>
+<td>Có</td>
+<td>Ít</td>
+</tr>
+<tr>
+<td>Portable</td>
+<td>Có</td>
+<td>Không</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p>👉 Kết luận:</p>
+<blockquote>
+<p>Container = Process + Isolation + Packaging</p>
+</blockquote>
+<hr />
+<h1 id="6-mapping-vao-project-thuc-te">🚀 6. Mapping vào project thực tế<a class="headerlink" href="#6-mapping-vao-project-thuc-te" title="Permanent link">&para;</a></h1>
+<p>Ví dụ hệ thống:</p>
+<ul>
+<li>.NET Backend</li>
+<li>React Frontend</li>
+<li>PostgreSQL</li>
+<li>Redis</li>
+</ul>
+<p>👉 Docker hóa:</p>
+<table>
+<thead>
+<tr>
+<th>Service</th>
+<th>Container</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Backend</td>
+<td>1</td>
+</tr>
+<tr>
+<td>Frontend</td>
+<td>1</td>
+</tr>
+<tr>
+<td>Database</td>
+<td>1</td>
+</tr>
+<tr>
+<td>Redis</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p><strong>Author:</strong> Alpha DevOp</p>
 
 
 
@@ -2539,10 +2404,10 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.footer"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../../..", "features": ["navigation.footer"], "search": "../../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../../../../assets/javascripts/bundle.79ae519e.min.js"></script>
       
     
   </body>
