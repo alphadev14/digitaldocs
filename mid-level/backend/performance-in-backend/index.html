@@ -1,0 +1,3999 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://alphadev14.github.io/digitaldocs/mid-level/backend/performance-in-backend/">
+      
+      
+        <link rel="prev" href="../../../junior/project/todos/07-deploy-db/">
+      
+      
+        <link rel="next" href="../../frontend/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../assets/logo.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Performance In Backend - P&T | Digital Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../extra.css">
+    
+      <link rel="stylesheet" href="../../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="deep-purple" data-md-color-accent="lime">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#performance-trong-net-backend" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="P&amp;T | Digital Docs" class="md-header__button md-logo" aria-label="P&T | Digital Docs" data-md-component="logo">
+      
+  <img src="../../../assets/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            P&T | Digital Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Performance In Backend
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="deep-purple" data-md-color-accent="lime"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="pink"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="P&amp;T | Digital Docs" class="md-nav__button md-logo" aria-label="P&T | Digital Docs" data-md-component="logo">
+      
+  <img src="../../../assets/logo.png" alt="logo">
+
+    </a>
+    P&T | Digital Docs
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Junior
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Junior
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🧠 Backend
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    🧠 Backend
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../junior/backend/01-aspnet-core-webapi/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ASP.NET Core WebAPI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../junior/backend/02-middleware-dependency-injection/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Middleware & Dependency Injection
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../junior/backend/03-entity-framework-core/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Entity Framework Core
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../junior/backend/04-linq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    LINQ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../junior/backend/05-authentication-jwt/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Authentication (JWT)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../junior/backend/06-clean-architecture-solid/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Clean Architecture & SOLID
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../junior/backend/07-async-await/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Async / Await
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../junior/backend/08-async-await-2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Async / Await 2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ⚛️ Frontend
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    ⚛️ Frontend
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../junior/frontend/01-react-basic/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    React Basic
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../junior/frontend/02-react-hooks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    React Hooks
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../junior/frontend/03-context-api/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Context API
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../junior/frontend/04-state-management/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    State Management
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../junior/frontend/05-react-router/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    React Router
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../junior/frontend/06-performance-optimization/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Performance Optimization
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🗄️ Database (PostgreSQL)
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    🗄️ Database (PostgreSQL)
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../junior/database/01-postgresql-basic/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PostgreSQL Basic
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../junior/database/02-transactions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Transactions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../junior/database/03-isolation-levels/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Isolation Levels
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../junior/database/04-index-partitioning/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Index & Partitioning
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../junior/database/05-jsonb-postgresql/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    JSONB in PostgreSQL
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../junior/database/06-query-optimization/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Query Optimization
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../junior/database/07-postgresql-advanced/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PostgreSQL Advanced
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_4" id="__nav_2_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🧪  Testing & Deployment
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    🧪  Testing & Deployment
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../junior/Testing%20%26%20Deployment/01-unit-test-dotnet/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Unit Test .NET
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../junior/Testing%20%26%20Deployment/02-integration-test/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Integration Test
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../junior/Testing%20%26%20Deployment/03-deploy-backend/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Deploy Backend
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../junior/Testing%20%26%20Deployment/04-deploy-frontend/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Deploy Frontend
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../junior/Testing%20%26%20Deployment/05-connect-cloud-db/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Connect Cloud Database
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_5" id="__nav_2_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🚀 Project
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    🚀 Project
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_5_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_5_1" id="__nav_2_5_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Todos
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_5_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_5_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Todos
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_5_1_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_5_1_1" id="__nav_2_5_1_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Deploy Frontend
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_2_5_1_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_5_1_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Deploy Frontend
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../junior/project/todos/05-deploy-fe/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Deploy FE lên Vercel
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_5_1_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_5_1_2" id="__nav_2_5_1_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Deploy Backend
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_2_5_1_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_5_1_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Deploy Backend
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../junior/project/todos/06-deploy-be/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Deploy BE lên Render
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_5_1_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_5_1_3" id="__nav_2_5_1_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Deploy Database
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_2_5_1_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_5_1_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Deploy Database
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../junior/project/todos/07-deploy-db/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Deploy Databae lên Render
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Mid-Level
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Mid-Level
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🧠 Backend
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    🧠 Backend
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Performance In Backend
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Performance In Backend
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#0-muc-tieu" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        0. Mục tiêu
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-execution-model-trong-net" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Execution Model trong .NET
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-thread-task-va-threadpool" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Thread, Task và ThreadPool
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Thread, Task và ThreadPool">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#thread" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Thread
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#task" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Task
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#threadpool" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ThreadPool
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-asyncawait-deep-dive" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Async/Await Deep Dive
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Async/Await Deep Dive">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#van-e-block-async-bang-result-hoac-wait" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Vấn đề: block async bằng .Result hoặc .Wait()
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#van-e-chay-tuan-tu-du-cac-tac-vu-oc-lap" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Vấn đề: chạy tuần tự dù các tác vụ độc lập
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-concurrency-control" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Concurrency Control
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Concurrency Control">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#van-e" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Vấn đề
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#giai-phap-semaphoreslim" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Giải pháp: SemaphoreSlim
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#real-case" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Real case
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-memory-leak-trong-production" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Memory Leak trong Production
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Memory Leak trong Production">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#case-1-static-collection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Case 1: Static collection
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#case-2-event-khong-unsubscribe" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Case 2: Event không unsubscribe
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#case-3-cache-khong-co-ttl" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Case 3: Cache không có TTL
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#case-4-sai-lifetime-cua-dbcontext" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Case 4: Sai lifetime của DbContext
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-garbage-collector-gc" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Garbage Collector (GC)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. Garbage Collector (GC)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#generations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Generations
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#van-e-thuong-gap" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Vấn đề thường gặp
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tips" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tips
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-optimization-techniques" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Optimization Techniques
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7. Optimization Techniques">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cpu-bound-vs-io-bound" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CPU-bound vs I/O-bound
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pagination" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pagination
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ef-core" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        EF Core
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#string" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        String
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dispose-resource" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dispose resource
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-httpclient" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. HttpClient
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8. HttpClient">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sai-tao-httpclient-lien-tuc" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sai: tạo HttpClient liên tục
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ung-dung-ihttpclientfactory" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Đúng: dùng IHttpClientFactory
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-monitoring" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. Monitoring
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="9. Monitoring">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#metrics-can-theo-doi" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Metrics cần theo dõi
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tools" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tools
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-debug-performance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10. Debug Performance
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-senior-mindset" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11. Senior Mindset
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12-cau-tra-loi-phong-van" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        12. Câu trả lời phỏng vấn
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#13-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13. Summary
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../frontend/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ⚛️ Frontend
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../database/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🗄️ Database
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_4" id="__nav_3_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🖥️ System Design
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    🖥️ System Design
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../system-design/01-system-design-introduction/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    System Design Introduction
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../system-design/02-system-design-life-cycle/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    System Design Life Cycle
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../system-design/03-component-of-system-design/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Component of System Design
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_5" id="__nav_3_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🌐 DevOps
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    🌐 DevOps
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_5_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_5_1" id="__nav_3_5_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🐋 Docker
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_5_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_5_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    🐋 Docker
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../devops/docker/01-docker-basic/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Docker Basic
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../devops/docker/02-docker-basic-2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Docker Basic 2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../devops/docker/03-containers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Containers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../devops/docker/04-volume-and-data/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Volume And Data
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../devops/docker/05-network/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Network
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_5_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_5_2" id="__nav_3_5_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🧫 Labs
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_5_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_5_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    🧫 Labs
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../devops/labs/01-react-nginx-deploy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    React + Nginx
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../devops/labs/02-nextjs-nginx-deploy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    NextJS + Nginx
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../devops/labs/03-gitlab-ci-cd-setup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Gitlab CI/CD
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_5_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_5_3" id="__nav_3_5_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🐧 Linux
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_5_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_5_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    🐧 Linux
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../devops/linux/01-linux-basic/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Linux Basic
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../senior/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Senior
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#0-muc-tieu" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        0. Mục tiêu
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-execution-model-trong-net" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Execution Model trong .NET
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-thread-task-va-threadpool" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Thread, Task và ThreadPool
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Thread, Task và ThreadPool">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#thread" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Thread
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#task" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Task
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#threadpool" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ThreadPool
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-asyncawait-deep-dive" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Async/Await Deep Dive
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Async/Await Deep Dive">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#van-e-block-async-bang-result-hoac-wait" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Vấn đề: block async bằng .Result hoặc .Wait()
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#van-e-chay-tuan-tu-du-cac-tac-vu-oc-lap" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Vấn đề: chạy tuần tự dù các tác vụ độc lập
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-concurrency-control" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Concurrency Control
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Concurrency Control">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#van-e" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Vấn đề
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#giai-phap-semaphoreslim" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Giải pháp: SemaphoreSlim
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#real-case" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Real case
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-memory-leak-trong-production" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Memory Leak trong Production
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Memory Leak trong Production">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#case-1-static-collection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Case 1: Static collection
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#case-2-event-khong-unsubscribe" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Case 2: Event không unsubscribe
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#case-3-cache-khong-co-ttl" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Case 3: Cache không có TTL
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#case-4-sai-lifetime-cua-dbcontext" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Case 4: Sai lifetime của DbContext
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-garbage-collector-gc" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Garbage Collector (GC)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. Garbage Collector (GC)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#generations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Generations
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#van-e-thuong-gap" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Vấn đề thường gặp
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tips" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tips
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-optimization-techniques" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Optimization Techniques
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7. Optimization Techniques">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cpu-bound-vs-io-bound" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CPU-bound vs I/O-bound
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pagination" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pagination
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ef-core" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        EF Core
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#string" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        String
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dispose-resource" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dispose resource
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-httpclient" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. HttpClient
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8. HttpClient">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sai-tao-httpclient-lien-tuc" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sai: tạo HttpClient liên tục
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ung-dung-ihttpclientfactory" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Đúng: dùng IHttpClientFactory
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-monitoring" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. Monitoring
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="9. Monitoring">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#metrics-can-theo-doi" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Metrics cần theo dõi
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tools" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tools
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-debug-performance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10. Debug Performance
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-senior-mindset" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11. Senior Mindset
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12-cau-tra-loi-phong-van" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        12. Câu trả lời phỏng vấn
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#13-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13. Summary
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="performance-trong-net-backend">Performance trong .NET Backend<a class="headerlink" href="#performance-trong-net-backend" title="Permanent link">&para;</a></h1>
+<hr />
+<h2 id="0-muc-tieu">0. Mục tiêu<a class="headerlink" href="#0-muc-tieu" title="Permanent link">&para;</a></h2>
+<p>Tài liệu này giúp bạn:</p>
+<ul>
+<li>Hiểu bản chất performance trong .NET backend.</li>
+<li>Phân biệt đúng Thread, Task, ThreadPool và async/await.</li>
+<li>Biết cách xử lý concurrency để hệ thống scale ổn định.</li>
+<li>Nhận diện các vấn đề thường gặp về memory, GC, HttpClient, database và monitoring.</li>
+<li>Trả lời phỏng vấn theo hướng senior, không chỉ nói "code chạy nhanh" mà nói được về system stability.</li>
+</ul>
+<hr />
+<h2 id="1-execution-model-trong-net">1. Execution Model trong .NET<a class="headerlink" href="#1-execution-model-trong-net" title="Permanent link">&para;</a></h2>
+<p>Flow xử lý request thực tế:</p>
+<div class="highlight"><pre><span></span><code>Client Request
+   ↓
+Kestrel Server
+   ↓
+ThreadPool lấy thread
+   ↓
+Controller
+   ↓
+Service
+   ↓
+await DB/API
+   ↓
+Thread được release về ThreadPool
+   ↓
+DB/API xử lý xong
+   ↓
+Continuation được resume
+   ↓
+Response
+</code></pre></div>
+<p>Insight quan trọng:</p>
+<ul>
+<li>Thread không bị giữ trong lúc <code>await</code> một thao tác I/O như database, HTTP API, file, queue.</li>
+<li>Đây là lý do async/await giúp backend scale tốt hơn với workload I/O-bound.</li>
+<li>Async không làm từng request chạy nhanh hơn một cách kỳ diệu, nhưng giúp server phục vụ được nhiều request đồng thời hơn.</li>
+</ul>
+<p>Ví dụ:</p>
+<div class="highlight"><pre><span></span><code><span class="k">public</span><span class="w"> </span><span class="k">async</span><span class="w"> </span><span class="n">Task</span><span class="o">&lt;</span><span class="n">ProductDto</span><span class="o">?&gt;</span><span class="w"> </span><span class="n">GetProductAsync</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">id</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="n">_db</span><span class="p">.</span><span class="n">Products</span>
+<span class="w">        </span><span class="p">.</span><span class="n">AsNoTracking</span><span class="p">()</span>
+<span class="w">        </span><span class="p">.</span><span class="n">Where</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">x</span><span class="p">.</span><span class="n">Id</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">id</span><span class="p">)</span>
+<span class="w">        </span><span class="p">.</span><span class="n">Select</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ProductDto</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="n">Id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">x</span><span class="p">.</span><span class="n">Id</span><span class="p">,</span>
+<span class="w">            </span><span class="n">Name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">x</span><span class="p">.</span><span class="n">Name</span><span class="p">,</span>
+<span class="w">            </span><span class="n">Price</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">x</span><span class="p">.</span><span class="n">Price</span>
+<span class="w">        </span><span class="p">})</span>
+<span class="w">        </span><span class="p">.</span><span class="n">FirstOrDefaultAsync</span><span class="p">();</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Trong lúc database xử lý query, thread xử lý request có thể được trả về ThreadPool để phục vụ request khác.</p>
+<hr />
+<h2 id="2-thread-task-va-threadpool">2. Thread, Task và ThreadPool<a class="headerlink" href="#2-thread-task-va-threadpool" title="Permanent link">&para;</a></h2>
+<h3 id="thread">Thread<a class="headerlink" href="#thread" title="Permanent link">&para;</a></h3>
+<p>Thread là luồng thực thi ở mức hệ điều hành.</p>
+<div class="highlight"><pre><span></span><code><span class="kt">var</span><span class="w"> </span><span class="n">thread</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Thread</span><span class="p">(()</span><span class="w"> </span><span class="o">=&gt;</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">&quot;Run in thread&quot;</span><span class="p">);</span>
+<span class="p">});</span>
+
+<span class="n">thread</span><span class="p">.</span><span class="n">Start</span><span class="p">();</span>
+</code></pre></div>
+<p>Nhược điểm:</p>
+<ul>
+<li>Tốn tài nguyên, thường có stack riêng.</li>
+<li>Context switching có cost.</li>
+<li>Tạo quá nhiều thread làm hệ thống khó scale.</li>
+</ul>
+<h3 id="task">Task<a class="headerlink" href="#task" title="Permanent link">&para;</a></h3>
+<p>Task là một abstraction đại diện cho một đơn vị công việc bất đồng bộ.</p>
+<div class="highlight"><pre><span></span><code><span class="k">public</span><span class="w"> </span><span class="k">async</span><span class="w"> </span><span class="n">Task</span><span class="o">&lt;</span><span class="n">List</span><span class="o">&lt;</span><span class="n">ProductDto</span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">GetProductsAsync</span><span class="p">()</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="n">_repo</span><span class="p">.</span><span class="n">GetProductsAsync</span><span class="p">();</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Cần nhớ:</p>
+<ul>
+<li><code>Task</code> không đồng nghĩa với một thread mới.</li>
+<li>Một <code>Task</code> có thể chỉ đại diện cho một operation đang chờ I/O.</li>
+<li>Với I/O-bound, async/await thường hiệu quả hơn tạo thread thủ công.</li>
+</ul>
+<h3 id="threadpool">ThreadPool<a class="headerlink" href="#threadpool" title="Permanent link">&para;</a></h3>
+<p>ThreadPool là pool các thread được runtime quản lý và tái sử dụng.</p>
+<p>Lợi ích:</p>
+<ul>
+<li>Giảm overhead tạo/hủy thread.</li>
+<li>Giúp runtime điều phối lượng thread phù hợp.</li>
+<li>Là nền tảng quan trọng cho ASP.NET Core request processing.</li>
+</ul>
+<p>Senior mindset:</p>
+<blockquote>
+<p>Không tối ưu bằng cách tạo thêm thread tùy tiện. Hãy tối ưu cách sử dụng ThreadPool, tránh block thread và giới hạn concurrency hợp lý.</p>
+</blockquote>
+<hr />
+<h2 id="3-asyncawait-deep-dive">3. Async/Await Deep Dive<a class="headerlink" href="#3-asyncawait-deep-dive" title="Permanent link">&para;</a></h2>
+<h3 id="van-e-block-async-bang-result-hoac-wait">Vấn đề: block async bằng <code>.Result</code> hoặc <code>.Wait()</code><a class="headerlink" href="#van-e-block-async-bang-result-hoac-wait" title="Permanent link">&para;</a></h3>
+<p>Không nên:</p>
+<div class="highlight"><pre><span></span><code><span class="kt">var</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">GetDataAsync</span><span class="p">().</span><span class="n">Result</span><span class="p">;</span>
+</code></pre></div>
+<p>Hoặc:</p>
+<div class="highlight"><pre><span></span><code><span class="n">GetDataAsync</span><span class="p">().</span><span class="n">Wait</span><span class="p">();</span>
+</code></pre></div>
+<p>Vì sao nguy hiểm:</p>
+<ul>
+<li>Block thread hiện tại.</li>
+<li>Có thể gây deadlock trong một số context.</li>
+<li>Làm ThreadPool bị cạn thread khi traffic cao.</li>
+<li>Khi nhiều request cùng block, server có thể tăng latency rất mạnh.</li>
+</ul>
+<p>Nên dùng:</p>
+<div class="highlight"><pre><span></span><code><span class="kt">var</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="n">GetDataAsync</span><span class="p">();</span>
+</code></pre></div>
+<h3 id="van-e-chay-tuan-tu-du-cac-tac-vu-oc-lap">Vấn đề: chạy tuần tự dù các tác vụ độc lập<a class="headerlink" href="#van-e-chay-tuan-tu-du-cac-tac-vu-oc-lap" title="Permanent link">&para;</a></h3>
+<p>Không tối ưu:</p>
+<div class="highlight"><pre><span></span><code><span class="k">foreach</span><span class="w"> </span><span class="p">(</span><span class="kt">var</span><span class="w"> </span><span class="n">item</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="n">items</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">await</span><span class="w"> </span><span class="nf">CallApiAsync</span><span class="p">(</span><span class="n">item</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Đoạn trên gọi API tuần tự. Nếu mỗi call mất 200ms và có 100 item, tổng thời gian có thể rất lớn.</p>
+<p>Cải thiện với <code>Task.WhenAll</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="kt">var</span><span class="w"> </span><span class="n">tasks</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">items</span><span class="p">.</span><span class="n">Select</span><span class="p">(</span><span class="n">CallApiAsync</span><span class="p">);</span>
+<span class="k">await</span><span class="w"> </span><span class="n">Task</span><span class="p">.</span><span class="n">WhenAll</span><span class="p">(</span><span class="n">tasks</span><span class="p">);</span>
+</code></pre></div>
+<p>Lưu ý:</p>
+<ul>
+<li><code>Task.WhenAll</code> phù hợp khi các tác vụ độc lập.</li>
+<li>Không nên dùng không giới hạn nếu tác vụ gọi DB/API bên ngoài.</li>
+<li>Cần kết hợp concurrency limit khi số lượng item lớn.</li>
+</ul>
+<hr />
+<h2 id="4-concurrency-control">4. Concurrency Control<a class="headerlink" href="#4-concurrency-control" title="Permanent link">&para;</a></h2>
+<h3 id="van-e">Vấn đề<a class="headerlink" href="#van-e" title="Permanent link">&para;</a></h3>
+<p>Ví dụ:</p>
+<div class="highlight"><pre><span></span><code>1000 item cần xử lý
+   ↓
+Task.WhenAll tạo 1000 operation đồng thời
+   ↓
+1000 DB connection hoặc API call
+   ↓
+DB/API overload
+</code></pre></div>
+<p><code>Task.WhenAll</code> giúp chạy song song, nhưng không tự bảo vệ downstream service.</p>
+<h3 id="giai-phap-semaphoreslim">Giải pháp: SemaphoreSlim<a class="headerlink" href="#giai-phap-semaphoreslim" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="kt">var</span><span class="w"> </span><span class="n">semaphore</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">SemaphoreSlim</span><span class="p">(</span><span class="mi">20</span><span class="p">);</span>
+
+<span class="k">await</span><span class="w"> </span><span class="n">Task</span><span class="p">.</span><span class="n">WhenAll</span><span class="p">(</span><span class="n">items</span><span class="p">.</span><span class="n">Select</span><span class="p">(</span><span class="k">async</span><span class="w"> </span><span class="n">item</span><span class="w"> </span><span class="o">=&gt;</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">await</span><span class="w"> </span><span class="n">semaphore</span><span class="p">.</span><span class="n">WaitAsync</span><span class="p">();</span>
+
+<span class="w">    </span><span class="k">try</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">await</span><span class="w"> </span><span class="nf">ProcessAsync</span><span class="p">(</span><span class="n">item</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="k">finally</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">semaphore</span><span class="p">.</span><span class="n">Release</span><span class="p">();</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}));</span>
+</code></pre></div>
+<p>Ý nghĩa:</p>
+<ul>
+<li>Tối đa 20 tác vụ chạy đồng thời.</li>
+<li>Các tác vụ còn lại chờ đến lượt.</li>
+<li>Giảm nguy cơ overload database, HTTP API, Redis, message broker.</li>
+</ul>
+<h3 id="real-case">Real case<a class="headerlink" href="#real-case" title="Permanent link">&para;</a></h3>
+<p>Ví dụ hệ thống xử lý giá cho 3000 cửa hàng:</p>
+<ul>
+<li>Nếu không limit concurrency, hệ thống có thể bắn quá nhiều query hoặc API call cùng lúc.</li>
+<li>Database connection pool bị cạn.</li>
+<li>Latency tăng, timeout tăng, retry càng làm hệ thống nặng hơn.</li>
+</ul>
+<p>Cách xử lý tốt hơn:</p>
+<ul>
+<li>Chia batch.</li>
+<li>Giới hạn concurrency.</li>
+<li>Có timeout.</li>
+<li>Có retry với backoff.</li>
+<li>Có metric để quan sát throughput, latency và error rate.</li>
+</ul>
+<hr />
+<h2 id="5-memory-leak-trong-production">5. Memory Leak trong Production<a class="headerlink" href="#5-memory-leak-trong-production" title="Permanent link">&para;</a></h2>
+<p>Memory leak trong .NET thường không phải vì GC không chạy, mà vì object vẫn còn được reference nên GC không thể dọn.</p>
+<h3 id="case-1-static-collection">Case 1: Static collection<a class="headerlink" href="#case-1-static-collection" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="k">private</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="k">readonly</span><span class="w"> </span><span class="n">List</span><span class="o">&lt;</span><span class="kt">object</span><span class="o">&gt;</span><span class="w"> </span><span class="n">Cache</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="p">();</span>
+</code></pre></div>
+<p>Nếu collection này cứ tăng và không bao giờ xóa, RAM sẽ tăng dần theo thời gian.</p>
+<p>Cách xử lý:</p>
+<ul>
+<li>Giới hạn size.</li>
+<li>Có eviction policy.</li>
+<li>Dùng <code>IMemoryCache</code> với expiration.</li>
+<li>Theo dõi memory usage trong production.</li>
+</ul>
+<h3 id="case-2-event-khong-unsubscribe">Case 2: Event không unsubscribe<a class="headerlink" href="#case-2-event-khong-unsubscribe" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="n">publisher</span><span class="p">.</span><span class="n">OnChanged</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">handler</span><span class="p">;</span>
+</code></pre></div>
+<p>Nếu object subscribe event nhưng không unsubscribe, publisher vẫn giữ reference đến subscriber.</p>
+<p>Cách xử lý:</p>
+<div class="highlight"><pre><span></span><code><span class="n">publisher</span><span class="p">.</span><span class="n">OnChanged</span><span class="w"> </span><span class="o">-=</span><span class="w"> </span><span class="n">handler</span><span class="p">;</span>
+</code></pre></div>
+<p>Hoặc dùng pattern phù hợp với lifetime của object.</p>
+<h3 id="case-3-cache-khong-co-ttl">Case 3: Cache không có TTL<a class="headerlink" href="#case-3-cache-khong-co-ttl" title="Permanent link">&para;</a></h3>
+<p>Ví dụ với Redis:</p>
+<div class="highlight"><pre><span></span><code>SET product:1 &quot;{...}&quot;
+</code></pre></div>
+<p>Nếu key không có TTL, dữ liệu có thể tồn tại mãi và làm Redis tăng memory.</p>
+<p>Nên dùng:</p>
+<div class="highlight"><pre><span></span><code>SET product:1 &quot;{...}&quot; EX 3600
+</code></pre></div>
+<h3 id="case-4-sai-lifetime-cua-dbcontext">Case 4: Sai lifetime của DbContext<a class="headerlink" href="#case-4-sai-lifetime-cua-dbcontext" title="Permanent link">&para;</a></h3>
+<p>Không nên giữ <code>DbContext</code> trong Singleton service.</p>
+<p>Vấn đề:</p>
+<ul>
+<li><code>DbContext</code> không thiết kế để sống quá lâu.</li>
+<li>Change tracker giữ nhiều entity.</li>
+<li>Có thể gây memory tăng và lỗi concurrency.</li>
+</ul>
+<p>Nên dùng:</p>
+<ul>
+<li><code>DbContext</code> với scoped lifetime trong web request.</li>
+<li><code>IDbContextFactory&lt;TContext&gt;</code> cho background job hoặc worker cần tạo context thủ công.</li>
+</ul>
+<hr />
+<h2 id="6-garbage-collector-gc">6. Garbage Collector (GC)<a class="headerlink" href="#6-garbage-collector-gc" title="Permanent link">&para;</a></h2>
+<p>GC dọn object không còn được reference.</p>
+<h3 id="generations">Generations<a class="headerlink" href="#generations" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Generation</th>
+<th>Ý nghĩa</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Gen 0</td>
+<td>Object sống ngắn, thường được collect nhanh</td>
+</tr>
+<tr>
+<td>Gen 1</td>
+<td>Object sống lâu hơn Gen 0</td>
+</tr>
+<tr>
+<td>Gen 2</td>
+<td>Object sống lâu, collection thường đắt hơn</td>
+</tr>
+<tr>
+<td>LOH</td>
+<td>Large Object Heap, thường chứa object lớn</td>
+</tr>
+</tbody>
+</table>
+<h3 id="van-e-thuong-gap">Vấn đề thường gặp<a class="headerlink" href="#van-e-thuong-gap" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Gen 2 collection nhiều có thể tạo pause đáng kể.</li>
+<li>Object lớn hơn khoảng 85KB thường vào LOH.</li>
+<li>LOH fragmentation có thể làm memory usage tăng.</li>
+<li>Allocate quá nhiều object trong hot path làm GC chạy thường xuyên.</li>
+</ul>
+<h3 id="tips">Tips<a class="headerlink" href="#tips" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Tránh tạo object không cần thiết trong loop lớn.</li>
+<li>Dùng pagination hoặc streaming thay vì load toàn bộ dữ liệu.</li>
+<li>Tránh giữ reference lâu hơn cần thiết.</li>
+<li>Với query đọc dữ liệu, dùng <code>AsNoTracking()</code>.</li>
+<li>Với string nối nhiều lần, dùng <code>StringBuilder</code>.</li>
+</ul>
+<hr />
+<h2 id="7-optimization-techniques">7. Optimization Techniques<a class="headerlink" href="#7-optimization-techniques" title="Permanent link">&para;</a></h2>
+<h3 id="cpu-bound-vs-io-bound">CPU-bound vs I/O-bound<a class="headerlink" href="#cpu-bound-vs-io-bound" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Loại workload</th>
+<th>Ví dụ</th>
+<th>Hướng xử lý</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CPU-bound</td>
+<td>Tính toán nặng, encode, compress, xử lý ảnh</td>
+<td>Parallelism, background processing, scale CPU</td>
+</tr>
+<tr>
+<td>I/O-bound</td>
+<td>DB query, HTTP API, file, queue</td>
+<td>async/await, connection pooling, timeout</td>
+</tr>
+</tbody>
+</table>
+<p>Không nên dùng cùng một cách tối ưu cho mọi vấn đề. Trước tiên phải biết bottleneck nằm ở đâu.</p>
+<h3 id="pagination">Pagination<a class="headerlink" href="#pagination" title="Permanent link">&para;</a></h3>
+<p>Không nên:</p>
+<div class="highlight"><pre><span></span><code><span class="kt">var</span><span class="w"> </span><span class="n">products</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="n">_db</span><span class="p">.</span><span class="n">Products</span><span class="p">.</span><span class="n">ToListAsync</span><span class="p">();</span>
+</code></pre></div>
+<p>Nên:</p>
+<div class="highlight"><pre><span></span><code><span class="kt">var</span><span class="w"> </span><span class="n">products</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="n">_db</span><span class="p">.</span><span class="n">Products</span>
+<span class="w">    </span><span class="p">.</span><span class="n">AsNoTracking</span><span class="p">()</span>
+<span class="w">    </span><span class="p">.</span><span class="n">OrderBy</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">x</span><span class="p">.</span><span class="n">Id</span><span class="p">)</span>
+<span class="w">    </span><span class="p">.</span><span class="n">Skip</span><span class="p">((</span><span class="n">page</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">size</span><span class="p">)</span>
+<span class="w">    </span><span class="p">.</span><span class="n">Take</span><span class="p">(</span><span class="n">size</span><span class="p">)</span>
+<span class="w">    </span><span class="p">.</span><span class="n">ToListAsync</span><span class="p">();</span>
+</code></pre></div>
+<p>Lợi ích:</p>
+<ul>
+<li>Giảm memory.</li>
+<li>Giảm thời gian query.</li>
+<li>Giảm payload trả về client.</li>
+</ul>
+<h3 id="ef-core">EF Core<a class="headerlink" href="#ef-core" title="Permanent link">&para;</a></h3>
+<p>Với query chỉ đọc:</p>
+<div class="highlight"><pre><span></span><code><span class="kt">var</span><span class="w"> </span><span class="n">products</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="n">_db</span><span class="p">.</span><span class="n">Products</span>
+<span class="w">    </span><span class="p">.</span><span class="n">AsNoTracking</span><span class="p">()</span>
+<span class="w">    </span><span class="p">.</span><span class="n">ToListAsync</span><span class="p">();</span>
+</code></pre></div>
+<p>Lợi ích:</p>
+<ul>
+<li>Không cần change tracking.</li>
+<li>Giảm memory.</li>
+<li>Giảm CPU.</li>
+</ul>
+<p>Tránh N+1 query:</p>
+<div class="highlight"><pre><span></span><code><span class="kt">var</span><span class="w"> </span><span class="n">orders</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="n">_db</span><span class="p">.</span><span class="n">Orders</span>
+<span class="w">    </span><span class="p">.</span><span class="n">Include</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">x</span><span class="p">.</span><span class="n">Items</span><span class="p">)</span>
+<span class="w">    </span><span class="p">.</span><span class="n">AsNoTracking</span><span class="p">()</span>
+<span class="w">    </span><span class="p">.</span><span class="n">ToListAsync</span><span class="p">();</span>
+</code></pre></div>
+<p>Hoặc tốt hơn là projection:</p>
+<div class="highlight"><pre><span></span><code><span class="kt">var</span><span class="w"> </span><span class="n">orders</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="n">_db</span><span class="p">.</span><span class="n">Orders</span>
+<span class="w">    </span><span class="p">.</span><span class="n">AsNoTracking</span><span class="p">()</span>
+<span class="w">    </span><span class="p">.</span><span class="n">Select</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">OrderDto</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">Id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">x</span><span class="p">.</span><span class="n">Id</span><span class="p">,</span>
+<span class="w">        </span><span class="n">Total</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">x</span><span class="p">.</span><span class="n">Total</span><span class="p">,</span>
+<span class="w">        </span><span class="n">ItemCount</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">x</span><span class="p">.</span><span class="n">Items</span><span class="p">.</span><span class="n">Count</span>
+<span class="w">    </span><span class="p">})</span>
+<span class="w">    </span><span class="p">.</span><span class="n">ToListAsync</span><span class="p">();</span>
+</code></pre></div>
+<h3 id="string">String<a class="headerlink" href="#string" title="Permanent link">&para;</a></h3>
+<p>Không nên:</p>
+<div class="highlight"><pre><span></span><code><span class="kt">var</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="p">;</span>
+
+<span class="k">foreach</span><span class="w"> </span><span class="p">(</span><span class="kt">var</span><span class="w"> </span><span class="n">item</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="n">items</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">result</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">item</span><span class="p">.</span><span class="n">Name</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Nên:</p>
+<div class="highlight"><pre><span></span><code><span class="kt">var</span><span class="w"> </span><span class="n">builder</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">StringBuilder</span><span class="p">();</span>
+
+<span class="k">foreach</span><span class="w"> </span><span class="p">(</span><span class="kt">var</span><span class="w"> </span><span class="n">item</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="n">items</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">builder</span><span class="p">.</span><span class="n">Append</span><span class="p">(</span><span class="n">item</span><span class="p">.</span><span class="n">Name</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kt">var</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">builder</span><span class="p">.</span><span class="n">ToString</span><span class="p">();</span>
+</code></pre></div>
+<h3 id="dispose-resource">Dispose resource<a class="headerlink" href="#dispose-resource" title="Permanent link">&para;</a></h3>
+<p>Các resource như stream, file, database connection, HTTP response cần được dispose đúng cách.</p>
+<div class="highlight"><pre><span></span><code><span class="k">await</span><span class="w"> </span><span class="k">using</span><span class="w"> </span><span class="nn">var</span><span class="w"> </span><span class="n">stream</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">File</span><span class="p">.</span><span class="n">OpenRead</span><span class="p">(</span><span class="n">path</span><span class="p">);</span>
+</code></pre></div>
+<p>Hoặc:</p>
+<div class="highlight"><pre><span></span><code><span class="k">using</span><span class="w"> </span><span class="nn">var</span><span class="w"> </span><span class="n">response</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="n">httpClient</span><span class="p">.</span><span class="n">GetAsync</span><span class="p">(</span><span class="n">url</span><span class="p">);</span>
+</code></pre></div>
+<hr />
+<h2 id="8-httpclient">8. HttpClient<a class="headerlink" href="#8-httpclient" title="Permanent link">&para;</a></h2>
+<h3 id="sai-tao-httpclient-lien-tuc">Sai: tạo HttpClient liên tục<a class="headerlink" href="#sai-tao-httpclient-lien-tuc" title="Permanent link">&para;</a></h3>
+<p>Không nên:</p>
+<div class="highlight"><pre><span></span><code><span class="k">using</span><span class="w"> </span><span class="nn">var</span><span class="w"> </span><span class="n">client</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">HttpClient</span><span class="p">();</span>
+<span class="kt">var</span><span class="w"> </span><span class="n">response</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="n">client</span><span class="p">.</span><span class="n">GetAsync</span><span class="p">(</span><span class="n">url</span><span class="p">);</span>
+</code></pre></div>
+<p>Vấn đề:</p>
+<ul>
+<li>Có thể gây socket exhaustion.</li>
+<li>DNS refresh không được xử lý tối ưu.</li>
+<li>Khó quản lý timeout, retry, logging.</li>
+</ul>
+<h3 id="ung-dung-ihttpclientfactory">Đúng: dùng IHttpClientFactory<a class="headerlink" href="#ung-dung-ihttpclientfactory" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="n">builder</span><span class="p">.</span><span class="n">Services</span><span class="p">.</span><span class="n">AddHttpClient</span><span class="p">();</span>
+</code></pre></div>
+<p>Inject:</p>
+<div class="highlight"><pre><span></span><code><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">ProductApiClient</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">private</span><span class="w"> </span><span class="k">readonly</span><span class="w"> </span><span class="n">HttpClient</span><span class="w"> </span><span class="n">_httpClient</span><span class="p">;</span>
+
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="nf">ProductApiClient</span><span class="p">(</span><span class="n">HttpClient</span><span class="w"> </span><span class="n">httpClient</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">_httpClient</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">httpClient</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">async</span><span class="w"> </span><span class="n">Task</span><span class="o">&lt;</span><span class="n">ProductDto</span><span class="o">?&gt;</span><span class="w"> </span><span class="n">GetProductAsync</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">id</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="n">_httpClient</span><span class="p">.</span><span class="n">GetFromJsonAsync</span><span class="o">&lt;</span><span class="n">ProductDto</span><span class="o">&gt;</span><span class="p">(</span><span class="s">$&quot;/products/{id}&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Register typed client:</p>
+<div class="highlight"><pre><span></span><code><span class="n">builder</span><span class="p">.</span><span class="n">Services</span><span class="p">.</span><span class="n">AddHttpClient</span><span class="o">&lt;</span><span class="n">ProductApiClient</span><span class="o">&gt;</span><span class="p">(</span><span class="n">client</span><span class="w"> </span><span class="o">=&gt;</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">client</span><span class="p">.</span><span class="n">BaseAddress</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Uri</span><span class="p">(</span><span class="s">&quot;https://api.example.com&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="n">client</span><span class="p">.</span><span class="n">Timeout</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">TimeSpan</span><span class="p">.</span><span class="n">FromSeconds</span><span class="p">(</span><span class="mi">5</span><span class="p">);</span>
+<span class="p">});</span>
+</code></pre></div>
+<hr />
+<h2 id="9-monitoring">9. Monitoring<a class="headerlink" href="#9-monitoring" title="Permanent link">&para;</a></h2>
+<p>Không thể tối ưu performance chỉ bằng cảm giác. Cần đo.</p>
+<h3 id="metrics-can-theo-doi">Metrics cần theo dõi<a class="headerlink" href="#metrics-can-theo-doi" title="Permanent link">&para;</a></h3>
+<ul>
+<li>CPU usage.</li>
+<li>RAM usage.</li>
+<li>GC time và số lần Gen 2 collection.</li>
+<li>ThreadPool usage.</li>
+<li>Request latency, đặc biệt P95 và P99.</li>
+<li>Error rate.</li>
+<li>Timeout rate.</li>
+<li>Database query duration.</li>
+<li>Database connection pool.</li>
+<li>HTTP client latency.</li>
+<li>Queue length và processing time.</li>
+</ul>
+<h3 id="tools">Tools<a class="headerlink" href="#tools" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Prometheus.</li>
+<li>Grafana.</li>
+<li>OpenTelemetry.</li>
+<li>Application Insights.</li>
+<li>Seq hoặc ELK cho log.</li>
+<li>dotnet-counters, dotnet-trace, dotnet-dump khi cần debug sâu.</li>
+</ul>
+<p>Ví dụ với <code>dotnet-counters</code>:</p>
+<div class="highlight"><pre><span></span><code>dotnet-counters<span class="w"> </span>monitor<span class="w"> </span>--process-id<span class="w"> </span>&lt;pid&gt;
+</code></pre></div>
+<p>Các chỉ số đáng chú ý:</p>
+<ul>
+<li><code>cpu-usage</code>.</li>
+<li><code>working-set</code>.</li>
+<li><code>gc-heap-size</code>.</li>
+<li><code>threadpool-thread-count</code>.</li>
+<li><code>threadpool-queue-length</code>.</li>
+</ul>
+<hr />
+<h2 id="10-debug-performance">10. Debug Performance<a class="headerlink" href="#10-debug-performance" title="Permanent link">&para;</a></h2>
+<p>Checklist khi hệ thống chậm:</p>
+<div class="highlight"><pre><span></span><code>CPU có cao không?
+RAM có tăng liên tục không?
+GC pause có nhiều không?
+ThreadPool queue có tăng không?
+DB query có chậm không?
+Connection pool có bị cạn không?
+External API có timeout không?
+Network latency có bất thường không?
+Cache hit rate có thấp không?
+</code></pre></div>
+<p>Cách tiếp cận:</p>
+<ol>
+<li>Xác định symptom: latency cao, timeout, CPU cao, RAM tăng hay throughput giảm.</li>
+<li>Xem metric theo thời gian.</li>
+<li>Tìm bottleneck chính.</li>
+<li>Reproduce nếu có thể.</li>
+<li>Tối ưu điểm nghẽn lớn nhất trước.</li>
+<li>Đo lại sau khi sửa.</li>
+</ol>
+<p>Không nên tối ưu trước khi có dữ liệu, vì rất dễ tối ưu nhầm chỗ.</p>
+<hr />
+<h2 id="11-senior-mindset">11. Senior Mindset<a class="headerlink" href="#11-senior-mindset" title="Permanent link">&para;</a></h2>
+<p>Performance không chỉ là:</p>
+<div class="highlight"><pre><span></span><code>Code chạy nhanh hơn
+</code></pre></div>
+<p>Mà là:</p>
+<div class="highlight"><pre><span></span><code>System ổn định hơn, scale tốt hơn, dễ quan sát hơn và ít timeout hơn
+</code></pre></div>
+<p>Một backend engineer có mindset tốt sẽ quan tâm:</p>
+<ul>
+<li>Bottleneck nằm ở CPU, memory, database, network hay external service.</li>
+<li>Workload là CPU-bound hay I/O-bound.</li>
+<li>Có đang block thread không.</li>
+<li>Có đang tạo quá nhiều concurrency không.</li>
+<li>Có cơ chế timeout, retry, circuit breaker chưa.</li>
+<li>Có metric và log đủ để debug production không.</li>
+</ul>
+<hr />
+<h2 id="12-cau-tra-loi-phong-van">12. Câu trả lời phỏng vấn<a class="headerlink" href="#12-cau-tra-loi-phong-van" title="Permanent link">&para;</a></h2>
+<p>Gợi ý trả lời:</p>
+<blockquote>
+<p>Em tối ưu performance backend bằng cách bắt đầu từ đo đạc trước, ví dụ latency, CPU, RAM, GC, ThreadPool và database query duration. Với workload I/O-bound, em dùng async/await để tránh block thread và tận dụng ThreadPool tốt hơn. Với các tác vụ độc lập, em có thể dùng Task.WhenAll, nhưng nếu số lượng lớn thì em giới hạn concurrency bằng SemaphoreSlim để không làm quá tải database hoặc external API. Với EF Core, em dùng pagination, projection và AsNoTracking cho query chỉ đọc, đồng thời tránh N+1 query. Em cũng chú ý memory leak như static collection, event không unsubscribe, cache không TTL và sai lifetime của DbContext. Trong production, em theo dõi metric bằng OpenTelemetry, Prometheus/Grafana hoặc Application Insights để xác định bottleneck rồi tối ưu đúng điểm nghẽn.</p>
+</blockquote>
+<p>Câu ngắn hơn:</p>
+<blockquote>
+<p>Performance backend không chỉ là code nhanh, mà là hệ thống ổn định khi tải tăng. Em tập trung vào async đúng cách, không block ThreadPool, giới hạn concurrency, tối ưu database query, quản lý memory và luôn có monitoring để tìm bottleneck thực tế.</p>
+</blockquote>
+<hr />
+<h2 id="13-summary">13. Summary<a class="headerlink" href="#13-summary" title="Permanent link">&para;</a></h2>
+<p>Performance trong .NET backend xoay quanh các điểm chính:</p>
+<ul>
+<li>ThreadPool và async/await giúp scale tốt với I/O-bound workload.</li>
+<li>Không block async bằng <code>.Result</code> hoặc <code>.Wait()</code>.</li>
+<li><code>Task.WhenAll</code> cần đi kèm concurrency control khi xử lý số lượng lớn.</li>
+<li>Memory leak thường xảy ra vì object còn reference, không phải vì GC không hoạt động.</li>
+<li>GC cần được quan sát, đặc biệt Gen 2, LOH và allocation trong hot path.</li>
+<li>EF Core cần pagination, projection, <code>AsNoTracking()</code> và tránh N+1.</li>
+<li><code>HttpClient</code> nên được quản lý bằng <code>IHttpClientFactory</code>.</li>
+<li>Performance phải được đo bằng metric, trace và log trước khi tối ưu.</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        
+<div class="custom-footer">
+  <div class="footer-left">
+    Made with love ❤️ <span style="font-weight: bold;">P&T</span>
+  </div>
+  <div class="footer-right">
+    <a href="https://github.com/your-org" target="_blank"> <span class="twemoji">🐙</span> </a>
+    <a href="https://linkedin.com/company/your-org" target="_blank"> <span class="twemoji">💼</span> </a>
+    <a href="https://youtube.com/@your-org" target="_blank"> <span class="twemoji">▶️</span> </a>
+  </div>
+</div>
+
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.footer"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>
