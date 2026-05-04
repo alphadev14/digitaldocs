@@ -23,7 +23,7 @@ The goal is to consolidate experience while sharing insights with other develope
 
 - 🌐 **Docs site:** [P&T Digital Docs](https://alphadev14.github.io/digitaldocs/)
 - 🗂️ **Source code:** [GitHub Repository](https://github.com/alphadev14/digitaldocs)
-- 📄 **Mindmap:** [View my mindmap](docs/roadmap.md)
+- 📄 **Mindmap:** Nội dung đang được cập nhật.
 
 ---
 

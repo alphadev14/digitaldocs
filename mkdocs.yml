@@ -50,7 +50,12 @@ nav:
           - JSONB in PostgreSQL: junior/database/05-jsonb-postgresql.md
           - Query Optimization: junior/database/06-query-optimization.md
           - PostgreSQL Advanced: junior/database/07-postgresql-advanced.md
-      - 🧪  Testing & Deployment: Testing & Deployment/index.md
+      - 🧪  Testing & Deployment:
+          - Unit Test .NET: junior/Testing & Deployment/01-unit-test-dotnet.md
+          - Integration Test: junior/Testing & Deployment/02-integration-test.md
+          - Deploy Backend: junior/Testing & Deployment/03-deploy-backend.md
+          - Deploy Frontend: junior/Testing & Deployment/04-deploy-frontend.md
+          - Connect Cloud Database: junior/Testing & Deployment/05-connect-cloud-db.md
       - 🚀 Project:
           - Todos:
               - Deploy Frontend:
@@ -60,9 +65,10 @@ nav:
               - Deploy Database:
                   - Deploy Databae lên Render: junior/project/todos/07-deploy-db.md
   - Mid-Level:
-      - 🧠 Backend: mid-level/backend/index.md
+      - 🧠 Backend:
+          - Performance In Backend: mid-level/backend/performance-in-backend.md
       - ⚛️ Frontend: mid-level/frontend/index.md
-      - 🗄️ Database: /database/index.md
+      - 🗄️ Database: mid-level/database/index.md
       - 🖥️ System Design:
           - System Design Introduction: mid-level/system-design/01-system-design-introduction.md
           - System Design Life Cycle: mid-level/system-design/02-system-design-life-cycle.md
@@ -72,12 +78,14 @@ nav:
               - Docker Basic: mid-level/devops/docker/01-docker-basic.md
               - Docker Basic 2: mid-level/devops/docker/02-docker-basic-2.md
               - Containers: mid-level/devops/docker/03-containers.md
-              - Volume And Data: mid-level/devops/docker/04-volume-and-data copy.md
+              - Volume And Data: mid-level/devops/docker/04-volume-and-data.md
               - Network: mid-level/devops/docker/05-network.md
           - 🧫 Labs:
               - React + Nginx: mid-level/devops/labs/01-react-nginx-deploy.md
               - NextJS + Nginx: mid-level/devops/labs/02-nextjs-nginx-deploy.md
               - Gitlab CI/CD: mid-level/devops/labs/03-gitlab-ci-cd-setup.md
+          - 🐧 Linux:
+              - Linux Basic: mid-level/devops/linux/01-linux-basic.md
   - Senior: senior/index.md
 
 plugins: []
