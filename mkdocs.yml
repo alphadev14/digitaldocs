@@ -96,10 +96,6 @@ nav:
           - Structural Patterns: mid-level/design-pattern/03-structural-patterns.md
           - Behavioral Patterns: mid-level/design-pattern/04-behavioral-patterns.md
           - Patterns in .NET: mid-level/design-pattern/05-patterns-in-dotnet.md
-      - 🖥️ System Design:
-          - System Design Introduction: mid-level/system-design/01-system-design-introduction.md
-          - System Design Life Cycle: mid-level/system-design/02-system-design-life-cycle.md
-          - Component of System Design: mid-level/system-design/03-component-of-system-design.md
       - 🌐 DevOps:
           - Overview: mid-level/devops/index.md
           - CI/CD Pipeline: mid-level/devops/01-ci-cd-pipeline.md
@@ -119,6 +115,22 @@ nav:
               - Gitlab CI/CD: mid-level/devops/labs/03-gitlab-ci-cd-setup.md
           - 🐧 Linux:
               - Linux Basic: mid-level/devops/linux/01-linux-basic.md
+      - 🖥️ System Design:
+          - System Design Introduction: mid-level/system-design/01-system-design-introduction.md
+          - System Design Life Cycle: mid-level/system-design/02-system-design-life-cycle.md
+          - Component of System Design: mid-level/system-design/03-component-of-system-design.md
+
+      - Design Pattern:
+          - Overview: mid-level/design-pattern/01-design-pattern-overview.md
+          - Creational:
+              - Singleton Pattern: mid-level/design-pattern/01-singleton-pattern.md
+              - Factory Pattern: mid-level/design-pattern/02-factory-pattern.md
+              - Builder Pattern: mid-level/design-pattern/03-builder-pattern.md
+          - Structural:
+              - Adapter Pattern: mid-level/design-pattern/02-adapter-pattern.md
+          - Behavioral:
+              - Observer Pattern: mid-level/design-pattern/03-observer-pattern.md
+
   - Senior: senior/index.md
 
 plugins: []
