@@ -209,7 +209,19 @@
          <lastmod>2026-05-09</lastmod>
     </url>
     <url>
-         <loc>https://alphadev14.github.io/digitaldocs/mid-level/design-pattern/01-design-pattern-introduction/</loc>
+         <loc>https://alphadev14.github.io/digitaldocs/mid-level/design-pattern/01-design-pattern-overview/</loc>
+         <lastmod>2026-05-09</lastmod>
+    </url>
+    <url>
+         <loc>https://alphadev14.github.io/digitaldocs/mid-level/design-pattern/02-singleton-pattern/</loc>
+         <lastmod>2026-05-09</lastmod>
+    </url>
+    <url>
+         <loc>https://alphadev14.github.io/digitaldocs/mid-level/design-pattern/03-builder-pattern/</loc>
+         <lastmod>2026-05-09</lastmod>
+    </url>
+    <url>
+         <loc>https://alphadev14.github.io/digitaldocs/mid-level/design-pattern/04-factory-pattern/</loc>
          <lastmod>2026-05-09</lastmod>
     </url>
     <url>
