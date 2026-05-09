@@ -123,13 +123,13 @@ nav:
       - Design Pattern:
           - Overview: mid-level/design-pattern/01-design-pattern-overview.md
           - Creational:
-              - Singleton Pattern: mid-level/design-pattern/01-singleton-pattern.md
-              - Factory Pattern: mid-level/design-pattern/02-factory-pattern.md
-              - Builder Pattern: mid-level/design-pattern/03-builder-pattern.md
+              - Singleton Pattern: mid-level/design-pattern/02-singleton-pattern.md
+              - Factory Pattern: mid-level/design-pattern/03-factory-pattern.md
+              - Builder Pattern: mid-level/design-pattern/04-builder-pattern.md
           - Structural:
-              - Adapter Pattern: mid-level/design-pattern/02-adapter-pattern.md
+              - Adapter Pattern: mid-level/design-pattern/05-adapter-pattern.md
           - Behavioral:
-              - Observer Pattern: mid-level/design-pattern/03-observer-pattern.md
+              - Observer Pattern: mid-level/design-pattern/06-observer-pattern.md
 
   - Senior: senior/index.md
 
