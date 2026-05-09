@@ -89,13 +89,7 @@ nav:
           - Transactions & Concurrency: mid-level/database/03-transactions-and-concurrency.md
           - Migrations & Versioning: mid-level/database/04-migrations-and-versioning.md
           - Database Performance: mid-level/database/05-database-performance.md
-      - 🧩 Design Pattern:
-          - Overview: mid-level/design-pattern/index.md
-          - SOLID & Clean Code: mid-level/design-pattern/01-solid-and-clean-code.md
-          - Creational Patterns: mid-level/design-pattern/02-creational-patterns.md
-          - Structural Patterns: mid-level/design-pattern/03-structural-patterns.md
-          - Behavioral Patterns: mid-level/design-pattern/04-behavioral-patterns.md
-          - Patterns in .NET: mid-level/design-pattern/05-patterns-in-dotnet.md
+
       - 🌐 DevOps:
           - Overview: mid-level/devops/index.md
           - CI/CD Pipeline: mid-level/devops/01-ci-cd-pipeline.md
