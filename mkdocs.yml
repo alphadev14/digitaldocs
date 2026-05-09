@@ -66,14 +66,47 @@ nav:
                   - Deploy Databae lên Render: junior/project/todos/07-deploy-db.md
   - Mid-Level:
       - 🧠 Backend:
+          - Overview: mid-level/backend/index.md
+          - API Architecture: mid-level/backend/01-api-architecture.md
+          - EF Core Query Optimization: mid-level/backend/02-ef-core-query-optimization.md
+          - Caching Strategy: mid-level/backend/03-caching-strategy.md
+          - Background Jobs & Queues: mid-level/backend/04-background-jobs-and-queues.md
+          - Resilience & Observability: mid-level/backend/05-resilience-and-observability.md
+          - Security & Authorization: mid-level/backend/06-security-and-authorization.md
+          - Backend Testing Strategy: mid-level/backend/07-backend-testing-strategy.md
           - Performance In Backend: mid-level/backend/performance-in-backend.md
-      - ⚛️ Frontend: mid-level/frontend/index.md
-      - 🗄️ Database: mid-level/database/index.md
+      - ⚛️ Frontend:
+          - Overview: mid-level/frontend/index.md
+          - Component Architecture: mid-level/frontend/01-component-architecture.md
+          - State Management: mid-level/frontend/02-state-management.md
+          - Data Fetching & Cache: mid-level/frontend/03-data-fetching-and-cache.md
+          - Frontend Performance: mid-level/frontend/04-frontend-performance.md
+          - Testing & Quality: mid-level/frontend/05-testing-and-quality.md
+      - 🗄️ Database:
+          - Overview: mid-level/database/index.md
+          - Schema Design: mid-level/database/01-schema-design.md
+          - Indexing & Query Plan: mid-level/database/02-indexing-and-query-plan.md
+          - Transactions & Concurrency: mid-level/database/03-transactions-and-concurrency.md
+          - Migrations & Versioning: mid-level/database/04-migrations-and-versioning.md
+          - Database Performance: mid-level/database/05-database-performance.md
+      - 🧩 Design Pattern:
+          - Overview: mid-level/design-pattern/index.md
+          - SOLID & Clean Code: mid-level/design-pattern/01-solid-and-clean-code.md
+          - Creational Patterns: mid-level/design-pattern/02-creational-patterns.md
+          - Structural Patterns: mid-level/design-pattern/03-structural-patterns.md
+          - Behavioral Patterns: mid-level/design-pattern/04-behavioral-patterns.md
+          - Patterns in .NET: mid-level/design-pattern/05-patterns-in-dotnet.md
       - 🖥️ System Design:
           - System Design Introduction: mid-level/system-design/01-system-design-introduction.md
           - System Design Life Cycle: mid-level/system-design/02-system-design-life-cycle.md
           - Component of System Design: mid-level/system-design/03-component-of-system-design.md
       - 🌐 DevOps:
+          - Overview: mid-level/devops/index.md
+          - CI/CD Pipeline: mid-level/devops/01-ci-cd-pipeline.md
+          - Docker Compose & Environment: mid-level/devops/02-docker-compose-and-environment.md
+          - Nginx Reverse Proxy: mid-level/devops/03-nginx-reverse-proxy.md
+          - Observability & Logging: mid-level/devops/04-observability-and-logging.md
+          - Deployment Strategy: mid-level/devops/05-deployment-strategy.md
           - 🐋 Docker:
               - Docker Basic: mid-level/devops/docker/01-docker-basic.md
               - Docker Basic 2: mid-level/devops/docker/02-docker-basic-2.md
