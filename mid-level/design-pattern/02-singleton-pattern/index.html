@@ -79,6 +79,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#singleton-pattern" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -3292,6 +3297,26 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Singleton Pattern
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
         
@@ -3309,6 +3334,201 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-singleton-pattern-la-gi" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Singleton Pattern là gì?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-singleton-giai-quyet-van-e-gi" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Singleton giải quyết vấn đề gì?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-ac-iem-chinh" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Đặc điểm chính
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-vi-du-singleton-co-ban-trong-c" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Ví dụ Singleton cơ bản trong C
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-lazy-singleton" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Lazy Singleton
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-singleton-trong-aspnet-core" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Singleton trong ASP.NET Core
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-khi-nao-nen-dung-singleton" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Khi nào nên dùng Singleton?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-khi-nao-khong-nen-dung-singleton" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. Khi nào không nên dùng Singleton?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-singleton-va-thread-safety" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. Singleton và Thread Safety
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-singleton-khac-gi-static-class" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10. Singleton khác gì Static Class?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-uu-iem" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11. Ưu điểm
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12-nhuoc-iem" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        12. Nhược điểm
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#13-luu-y-khi-su-dung" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13. Lưu ý khi sử dụng
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#14-vi-du-thuc-te-logger-on-gian" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        14. Ví dụ thực tế: Logger đơn giản
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#15-vi-du-sai-thuong-gap" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        15. Ví dụ sai thường gặp
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#16-tom-tat" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        16. Tóm tắt
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -3604,6 +3824,192 @@
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-singleton-pattern-la-gi" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Singleton Pattern là gì?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-singleton-giai-quyet-van-e-gi" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Singleton giải quyết vấn đề gì?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-ac-iem-chinh" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Đặc điểm chính
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-vi-du-singleton-co-ban-trong-c" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Ví dụ Singleton cơ bản trong C
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-lazy-singleton" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Lazy Singleton
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-singleton-trong-aspnet-core" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Singleton trong ASP.NET Core
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-khi-nao-nen-dung-singleton" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Khi nào nên dùng Singleton?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-khi-nao-khong-nen-dung-singleton" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. Khi nào không nên dùng Singleton?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-singleton-va-thread-safety" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. Singleton và Thread Safety
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-singleton-khac-gi-static-class" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10. Singleton khác gì Static Class?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-uu-iem" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11. Ưu điểm
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12-nhuoc-iem" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        12. Nhược điểm
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#13-luu-y-khi-su-dung" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13. Lưu ý khi sử dụng
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#14-vi-du-thuc-te-logger-on-gian" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        14. Ví dụ thực tế: Logger đơn giản
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#15-vi-du-sai-thuong-gap" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        15. Ví dụ sai thường gặp
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#16-tom-tat" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        16. Tóm tắt
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -3620,9 +4026,498 @@
 
 
 
-  <h1>Singleton Pattern</h1>
+<h1 id="singleton-pattern">Singleton Pattern<a class="headerlink" href="#singleton-pattern" title="Permanent link">&para;</a></h1>
+<h2 id="1-singleton-pattern-la-gi">1. Singleton Pattern là gì?<a class="headerlink" href="#1-singleton-pattern-la-gi" title="Permanent link">&para;</a></h2>
+<p>Singleton Pattern là một Creational Design Pattern dùng để đảm bảo một class chỉ có duy nhất một instance trong toàn bộ ứng dụng, đồng thời cung cấp một điểm truy cập chung để lấy instance đó.</p>
+<p>Nói đơn giản:</p>
+<div class="highlight"><pre><span></span><code>Một class -&gt; chỉ tạo một object duy nhất -&gt; dùng lại ở nhiều nơi
+</code></pre></div>
+<p>Ví dụ thực tế:</p>
+<ul>
+<li>App configuration</li>
+<li>Logger</li>
+<li>Cache dùng chung</li>
+<li>Service quản lý kết nối tới tài nguyên dùng chung</li>
+<li>Object chứa trạng thái toàn cục có kiểm soát</li>
+</ul>
+<hr />
+<h2 id="2-singleton-giai-quyet-van-e-gi">2. Singleton giải quyết vấn đề gì?<a class="headerlink" href="#2-singleton-giai-quyet-van-e-gi" title="Permanent link">&para;</a></h2>
+<p>Trong ứng dụng, có một số object không nên được tạo đi tạo lại nhiều lần vì:</p>
+<ul>
+<li>Tốn tài nguyên</li>
+<li>Dễ làm sai lệch trạng thái</li>
+<li>Cần một nơi quản lý tập trung</li>
+<li>Cần chia sẻ cùng một cấu hình hoặc dữ liệu giữa nhiều module</li>
+</ul>
+<p>Ví dụ:</p>
+<p>Nếu mỗi service tự tạo một <code>AppSettings</code> riêng, khi cấu hình thay đổi hoặc dữ liệu không đồng bộ, hệ thống có thể chạy không nhất quán.</p>
+<p>Singleton giúp gom object đó về một instance dùng chung:</p>
+<div class="highlight"><pre><span></span><code>Controller A ----\
+Service B --------&gt; Singleton Instance
+Worker C --------/
+</code></pre></div>
+<hr />
+<h2 id="3-ac-iem-chinh">3. Đặc điểm chính<a class="headerlink" href="#3-ac-iem-chinh" title="Permanent link">&para;</a></h2>
+<p>Một Singleton thường có các đặc điểm:</p>
+<ul>
+<li>Constructor là <code>private</code> để bên ngoài không tự <code>new</code> được.</li>
+<li>Có một biến static giữ instance duy nhất.</li>
+<li>Có một property hoặc method static để truy cập instance.</li>
+<li>Instance thường được tạo một lần rồi dùng lại.</li>
+</ul>
+<hr />
+<h2 id="4-vi-du-singleton-co-ban-trong-c">4. Ví dụ Singleton cơ bản trong C<a class="headerlink" href="#4-vi-du-singleton-co-ban-trong-c" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><span class="k">public</span><span class="w"> </span><span class="k">sealed</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">AppConfig</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">private</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="k">readonly</span><span class="w"> </span><span class="n">AppConfig</span><span class="w"> </span><span class="n">_instance</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">AppConfig</span><span class="p">();</span>
 
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="n">AppConfig</span><span class="w"> </span><span class="n">Instance</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">_instance</span><span class="p">;</span>
 
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">ApplicationName</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">get</span><span class="p">;</span><span class="w"> </span><span class="k">private</span><span class="w"> </span><span class="k">set</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+
+<span class="w">    </span><span class="k">private</span><span class="w"> </span><span class="nf">AppConfig</span><span class="p">()</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">ApplicationName</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Digital Docs&quot;</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Cách sử dụng:</p>
+<div class="highlight"><pre><span></span><code><span class="kt">var</span><span class="w"> </span><span class="n">appName</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">AppConfig</span><span class="p">.</span><span class="n">Instance</span><span class="p">.</span><span class="n">ApplicationName</span><span class="p">;</span>
+
+<span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">appName</span><span class="p">);</span>
+</code></pre></div>
+<p>Giải thích:</p>
+<ul>
+<li><code>private AppConfig()</code> ngăn code bên ngoài tạo object bằng <code>new AppConfig()</code>.</li>
+<li><code>_instance</code> là object duy nhất của class.</li>
+<li><code>Instance</code> là điểm truy cập chung.</li>
+<li><code>sealed</code> ngăn class bị kế thừa, tránh phá vỡ ý nghĩa Singleton.</li>
+</ul>
+<hr />
+<h2 id="5-lazy-singleton">5. Lazy Singleton<a class="headerlink" href="#5-lazy-singleton" title="Permanent link">&para;</a></h2>
+<p>Lazy Singleton chỉ tạo instance khi lần đầu tiên được sử dụng.</p>
+<div class="highlight"><pre><span></span><code><span class="k">public</span><span class="w"> </span><span class="k">sealed</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">DatabaseConnectionManager</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">private</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="k">readonly</span><span class="w"> </span><span class="n">Lazy</span><span class="o">&lt;</span><span class="n">DatabaseConnectionManager</span><span class="o">&gt;</span><span class="w"> </span><span class="n">_instance</span><span class="w"> </span><span class="o">=</span>
+<span class="w">        </span><span class="k">new</span><span class="w"> </span><span class="n">Lazy</span><span class="o">&lt;</span><span class="n">DatabaseConnectionManager</span><span class="o">&gt;</span><span class="p">(()</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">DatabaseConnectionManager</span><span class="p">());</span>
+
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="n">DatabaseConnectionManager</span><span class="w"> </span><span class="n">Instance</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">_instance</span><span class="p">.</span><span class="n">Value</span><span class="p">;</span>
+
+<span class="w">    </span><span class="k">private</span><span class="w"> </span><span class="nf">DatabaseConnectionManager</span><span class="p">()</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">Connect</span><span class="p">()</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">&quot;Connected to database&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Cách dùng:</p>
+<div class="highlight"><pre><span></span><code><span class="n">DatabaseConnectionManager</span><span class="p">.</span><span class="n">Instance</span><span class="p">.</span><span class="n">Connect</span><span class="p">();</span>
+</code></pre></div>
+<p>Ưu điểm:</p>
+<ul>
+<li>Chỉ khởi tạo khi thật sự cần.</li>
+<li><code>Lazy&lt;T&gt;</code> trong .NET mặc định hỗ trợ thread-safe.</li>
+<li>Phù hợp với object tạo tốn tài nguyên.</li>
+</ul>
+<hr />
+<h2 id="6-singleton-trong-aspnet-core">6. Singleton trong ASP.NET Core<a class="headerlink" href="#6-singleton-trong-aspnet-core" title="Permanent link">&para;</a></h2>
+<p>Trong ASP.NET Core, mình thường không tự viết Singleton thủ công. Thay vào đó, dùng Dependency Injection container.</p>
+<p>Ví dụ đăng ký service dạng Singleton:</p>
+<div class="highlight"><pre><span></span><code><span class="n">builder</span><span class="p">.</span><span class="n">Services</span><span class="p">.</span><span class="n">AddSingleton</span><span class="o">&lt;</span><span class="n">ICacheService</span><span class="p">,</span><span class="w"> </span><span class="n">MemoryCacheService</span><span class="o">&gt;</span><span class="p">();</span>
+</code></pre></div>
+<p>Service:</p>
+<div class="highlight"><pre><span></span><code><span class="k">public</span><span class="w"> </span><span class="k">interface</span><span class="w"> </span><span class="n">ICacheService</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kt">string?</span><span class="w"> </span><span class="n">Get</span><span class="p">(</span><span class="kt">string</span><span class="w"> </span><span class="n">key</span><span class="p">);</span>
+<span class="w">    </span><span class="k">void</span><span class="w"> </span><span class="nf">Set</span><span class="p">(</span><span class="kt">string</span><span class="w"> </span><span class="n">key</span><span class="p">,</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="k">value</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">MemoryCacheService</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">ICacheService</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">private</span><span class="w"> </span><span class="k">readonly</span><span class="w"> </span><span class="n">Dictionary</span><span class="o">&lt;</span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="kt">string</span><span class="o">&gt;</span><span class="w"> </span><span class="n">_cache</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="p">();</span>
+
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="kt">string?</span><span class="w"> </span><span class="n">Get</span><span class="p">(</span><span class="kt">string</span><span class="w"> </span><span class="n">key</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">_cache</span><span class="p">.</span><span class="n">TryGetValue</span><span class="p">(</span><span class="n">key</span><span class="p">,</span><span class="w"> </span><span class="k">out</span><span class="w"> </span><span class="kt">var</span><span class="w"> </span><span class="k">value</span><span class="p">)</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="k">value</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="k">null</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">Set</span><span class="p">(</span><span class="kt">string</span><span class="w"> </span><span class="n">key</span><span class="p">,</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="k">value</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">_cache</span><span class="p">[</span><span class="n">key</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">value</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Khi dùng <code>AddSingleton</code>, ASP.NET Core sẽ:</p>
+<ul>
+<li>Tạo một instance duy nhất của <code>MemoryCacheService</code>.</li>
+<li>Dùng lại instance đó ở mọi nơi cần <code>ICacheService</code>.</li>
+<li>Quản lý vòng đời object thay mình.</li>
+</ul>
+<p>Ví dụ inject vào service khác:</p>
+<div class="highlight"><pre><span></span><code><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">ProductService</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">private</span><span class="w"> </span><span class="k">readonly</span><span class="w"> </span><span class="n">ICacheService</span><span class="w"> </span><span class="n">_cacheService</span><span class="p">;</span>
+
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="nf">ProductService</span><span class="p">(</span><span class="n">ICacheService</span><span class="w"> </span><span class="n">cacheService</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">_cacheService</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">cacheService</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Trong thực tế với .NET, đây là cách nên ưu tiên hơn Singleton tự viết.</p>
+<hr />
+<h2 id="7-khi-nao-nen-dung-singleton">7. Khi nào nên dùng Singleton?<a class="headerlink" href="#7-khi-nao-nen-dung-singleton" title="Permanent link">&para;</a></h2>
+<p>Nên dùng Singleton khi object:</p>
+<ul>
+<li>Thật sự chỉ cần một instance trong toàn bộ app.</li>
+<li>Không chứa state thay đổi theo từng user/request.</li>
+<li>Tạo object tốn tài nguyên và có thể tái sử dụng.</li>
+<li>Đóng vai trò quản lý tài nguyên dùng chung.</li>
+<li>Cần được chia sẻ nhất quán giữa nhiều module.</li>
+</ul>
+<p>Ví dụ phù hợp:</p>
+<table>
+<thead>
+<tr>
+<th>Trường hợp</th>
+<th>Có nên dùng Singleton?</th>
+<th>Ghi chú</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Logger</td>
+<td>Có</td>
+<td>Thường dùng chung toàn app</td>
+</tr>
+<tr>
+<td>App settings</td>
+<td>Có</td>
+<td>Nên dùng <code>IOptions&lt;T&gt;</code> trong ASP.NET Core</td>
+</tr>
+<tr>
+<td>Memory cache</td>
+<td>Có</td>
+<td>Cần chú ý thread-safe</td>
+</tr>
+<tr>
+<td>Database connection object trực tiếp</td>
+<td>Thường không</td>
+<td>Nên dùng connection pool hoặc DbContext theo scope</td>
+</tr>
+<tr>
+<td>Service chứa thông tin user hiện tại</td>
+<td>Không</td>
+<td>Mỗi request/user khác nhau</td>
+</tr>
+<tr>
+<td>Repository dùng EF DbContext</td>
+<td>Không</td>
+<td>DbContext thường là scoped</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="8-khi-nao-khong-nen-dung-singleton">8. Khi nào không nên dùng Singleton?<a class="headerlink" href="#8-khi-nao-khong-nen-dung-singleton" title="Permanent link">&para;</a></h2>
+<p>Không nên dùng Singleton chỉ vì muốn "gọi cho tiện".</p>
+<p>Tránh dùng Singleton khi:</p>
+<ul>
+<li>Object chứa dữ liệu thay đổi theo request.</li>
+<li>Object phụ thuộc vào user hiện tại.</li>
+<li>Object cần test dễ bằng mock.</li>
+<li>Object giữ mutable state phức tạp.</li>
+<li>Object cần được tạo/hủy theo vòng đời cụ thể.</li>
+<li>Bạn chỉ muốn tránh truyền dependency qua constructor.</li>
+</ul>
+<p>Ví dụ không nên:</p>
+<div class="highlight"><pre><span></span><code><span class="k">public</span><span class="w"> </span><span class="k">sealed</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">CurrentUser</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="n">CurrentUser</span><span class="w"> </span><span class="n">Instance</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">get</span><span class="p">;</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">CurrentUser</span><span class="p">();</span>
+
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">UserId</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">get</span><span class="p">;</span><span class="w"> </span><span class="k">set</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+
+<span class="w">    </span><span class="k">private</span><span class="w"> </span><span class="nf">CurrentUser</span><span class="p">()</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Vấn đề:</p>
+<ul>
+<li>User A có thể ghi đè dữ liệu của User B.</li>
+<li>Không an toàn trong môi trường nhiều request.</li>
+<li>Rất dễ phát sinh bug khó tìm.</li>
+</ul>
+<hr />
+<h2 id="9-singleton-va-thread-safety">9. Singleton và Thread Safety<a class="headerlink" href="#9-singleton-va-thread-safety" title="Permanent link">&para;</a></h2>
+<p>Trong app nhiều thread, Singleton cần được tạo và sử dụng cẩn thận.</p>
+<p>Sơ đồ dưới đây mô tả luồng thường gặp của cách tạo Singleton an toàn bằng cơ chế kiểm tra hai lần và lock:</p>
+<p align="center">
+  <img src="../../../assets/singleton-double-check-locking.svg" alt="Luồng double-check locking khi tạo Singleton" width="700">
+</p>
+
+<p>Ý nghĩa của sơ đồ:</p>
+<ul>
+<li>Caller gọi <code>getInstance()</code> hoặc truy cập <code>Instance</code>.</li>
+<li>Hệ thống kiểm tra lần 1: nếu <code>_instance</code> đã có rồi thì trả về ngay, không cần lock.</li>
+<li>Nếu <code>_instance == null</code>, thread đi vào vùng <code>lock</code>.</li>
+<li>Bên trong <code>lock</code>, hệ thống kiểm tra lần 2 để chắc chắn chưa có thread khác tạo instance trong lúc thread hiện tại đang chờ lock.</li>
+<li>Nếu vẫn <code>null</code>, instance mới được tạo.</li>
+<li>Sau khi tạo xong, lock được release và caller nhận instance.</li>
+<li>Những lần gọi sau sẽ đi theo nhánh "Không" ở lần kiểm tra đầu tiên và trả về instance cũ rất nhanh.</li>
+</ul>
+<p>Điểm quan trọng là lần kiểm tra thứ hai không bị thừa. Nó giúp tránh tình huống nhiều thread cùng vượt qua lần kiểm tra đầu tiên khi <code>_instance</code> đang là <code>null</code>, rồi lần lượt vào lock và tạo nhiều instance khác nhau.</p>
+<p>Ví dụ có vấn đề:</p>
+<div class="highlight"><pre><span></span><code><span class="k">public</span><span class="w"> </span><span class="k">sealed</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">BadSingleton</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">private</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="n">BadSingleton</span><span class="o">?</span><span class="w"> </span><span class="n">_instance</span><span class="p">;</span>
+
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="n">BadSingleton</span><span class="w"> </span><span class="n">Instance</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">get</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">_instance</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="k">null</span><span class="p">)</span>
+<span class="w">            </span><span class="p">{</span>
+<span class="w">                </span><span class="n">_instance</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">BadSingleton</span><span class="p">();</span>
+<span class="w">            </span><span class="p">}</span>
+
+<span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="n">_instance</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="k">private</span><span class="w"> </span><span class="nf">BadSingleton</span><span class="p">()</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Vấn đề:</p>
+<ul>
+<li>Nếu nhiều thread cùng gọi <code>Instance</code> lần đầu, có thể tạo nhiều object.</li>
+<li>Không an toàn trong môi trường web/app concurrent.</li>
+</ul>
+<p>Cách tốt hơn:</p>
+<div class="highlight"><pre><span></span><code><span class="k">public</span><span class="w"> </span><span class="k">sealed</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">DoubleCheckSingleton</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">private</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="k">readonly</span><span class="w"> </span><span class="kt">object</span><span class="w"> </span><span class="n">_lock</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="p">();</span>
+<span class="w">    </span><span class="k">private</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="n">DoubleCheckSingleton</span><span class="o">?</span><span class="w"> </span><span class="n">_instance</span><span class="p">;</span>
+
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="n">DoubleCheckSingleton</span><span class="w"> </span><span class="n">Instance</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">get</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">_instance</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="k">null</span><span class="p">)</span>
+<span class="w">            </span><span class="p">{</span>
+<span class="w">                </span><span class="k">lock</span><span class="w"> </span><span class="p">(</span><span class="n">_lock</span><span class="p">)</span>
+<span class="w">                </span><span class="p">{</span>
+<span class="w">                    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">_instance</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="k">null</span><span class="p">)</span>
+<span class="w">                    </span><span class="p">{</span>
+<span class="w">                        </span><span class="n">_instance</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">DoubleCheckSingleton</span><span class="p">();</span>
+<span class="w">                    </span><span class="p">}</span>
+<span class="w">                </span><span class="p">}</span>
+<span class="w">            </span><span class="p">}</span>
+
+<span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="n">_instance</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="k">private</span><span class="w"> </span><span class="nf">DoubleCheckSingleton</span><span class="p">()</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Tuy nhiên trong C# hiện đại, mình thường không cần tự viết đầy đủ như trên. Dùng <code>Lazy&lt;T&gt;</code> sẽ gọn và ít lỗi hơn:</p>
+<div class="highlight"><pre><span></span><code><span class="k">public</span><span class="w"> </span><span class="k">sealed</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">GoodSingleton</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">private</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="k">readonly</span><span class="w"> </span><span class="n">Lazy</span><span class="o">&lt;</span><span class="n">GoodSingleton</span><span class="o">&gt;</span><span class="w"> </span><span class="n">_instance</span><span class="w"> </span><span class="o">=</span>
+<span class="w">        </span><span class="k">new</span><span class="w"> </span><span class="n">Lazy</span><span class="o">&lt;</span><span class="n">GoodSingleton</span><span class="o">&gt;</span><span class="p">(()</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">GoodSingleton</span><span class="p">());</span>
+
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="n">GoodSingleton</span><span class="w"> </span><span class="n">Instance</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">_instance</span><span class="p">.</span><span class="n">Value</span><span class="p">;</span>
+
+<span class="w">    </span><span class="k">private</span><span class="w"> </span><span class="nf">GoodSingleton</span><span class="p">()</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<hr />
+<h2 id="10-singleton-khac-gi-static-class">10. Singleton khác gì Static Class?<a class="headerlink" href="#10-singleton-khac-gi-static-class" title="Permanent link">&para;</a></h2>
+<p>Singleton và static class đều có thể được truy cập toàn cục, nhưng không giống nhau.</p>
+<table>
+<thead>
+<tr>
+<th>Tiêu chí</th>
+<th>Singleton</th>
+<th>Static Class</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Có instance</td>
+<td>Có</td>
+<td>Không</td>
+</tr>
+<tr>
+<td>Implement interface</td>
+<td>Có thể</td>
+<td>Không</td>
+</tr>
+<tr>
+<td>Inject qua DI</td>
+<td>Có thể</td>
+<td>Không trực tiếp</td>
+</tr>
+<tr>
+<td>Mock khi test</td>
+<td>Dễ hơn nếu dùng interface/DI</td>
+<td>Khó hơn</td>
+</tr>
+<tr>
+<td>Có state</td>
+<td>Có thể có</td>
+<td>Có thể có nhưng nên hạn chế</td>
+</tr>
+<tr>
+<td>Kế thừa</td>
+<td>Không nên, thường dùng <code>sealed</code></td>
+<td>Không</td>
+</tr>
+</tbody>
+</table>
+<p>Nên dùng static class cho helper thuần không có state:</p>
+<div class="highlight"><pre><span></span><code><span class="k">public</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">StringHelper</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="nf">IsEmpty</span><span class="p">(</span><span class="kt">string?</span><span class="w"> </span><span class="k">value</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="kt">string</span><span class="p">.</span><span class="n">IsNullOrWhiteSpace</span><span class="p">(</span><span class="k">value</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Nên dùng Singleton/DI Singleton cho service có hành vi, có dependency hoặc cần mock khi test.</p>
+<hr />
+<h2 id="11-uu-iem">11. Ưu điểm<a class="headerlink" href="#11-uu-iem" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Đảm bảo chỉ có một instance.</li>
+<li>Tiết kiệm tài nguyên với object nặng.</li>
+<li>Có điểm truy cập thống nhất.</li>
+<li>Phù hợp với service dùng chung toàn ứng dụng.</li>
+<li>Khi dùng qua DI, dễ quản lý vòng đời hơn.</li>
+</ul>
+<hr />
+<h2 id="12-nhuoc-iem">12. Nhược điểm<a class="headerlink" href="#12-nhuoc-iem" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Dễ bị lạm dụng thành global state.</li>
+<li>Có thể làm code khó test nếu gọi trực tiếp <code>Singleton.Instance</code>.</li>
+<li>Có thể gây bug trong môi trường nhiều thread nếu không thread-safe.</li>
+<li>Làm dependency bị ẩn, khó nhìn ra class đang phụ thuộc vào gì.</li>
+<li>Nếu chứa mutable state, dễ gây lỗi khó debug.</li>
+</ul>
+<hr />
+<h2 id="13-luu-y-khi-su-dung">13. Lưu ý khi sử dụng<a class="headerlink" href="#13-luu-y-khi-su-dung" title="Permanent link">&para;</a></h2>
+<p>Checklist trước khi dùng Singleton:</p>
+<div class="highlight"><pre><span></span><code>1. Object này có thật sự chỉ cần một instance không?
+2. Object này có chứa dữ liệu theo user/request không?
+3. Object này có cần thread-safe không?
+4. Object này có dễ test không?
+5. Có thể dùng Dependency Injection thay vì Singleton thủ công không?
+6. State bên trong object có bị thay đổi bởi nhiều nơi không?
+</code></pre></div>
+<p>Một số nguyên tắc thực tế:</p>
+<ul>
+<li>Trong ASP.NET Core, ưu tiên <code>AddSingleton</code> thay vì tự viết <code>Instance</code>.</li>
+<li>Không inject service <code>Scoped</code> vào service <code>Singleton</code>.</li>
+<li>Không lưu thông tin user hiện tại trong Singleton.</li>
+<li>Nếu Singleton có collection dùng chung, cần dùng collection thread-safe hoặc lock hợp lý.</li>
+<li>Không dùng Singleton để che giấu dependency.</li>
+<li>Không biến Singleton thành nơi chứa mọi thứ.</li>
+</ul>
+<hr />
+<h2 id="14-vi-du-thuc-te-logger-on-gian">14. Ví dụ thực tế: Logger đơn giản<a class="headerlink" href="#14-vi-du-thuc-te-logger-on-gian" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><span class="k">public</span><span class="w"> </span><span class="k">interface</span><span class="w"> </span><span class="n">IAppLogger</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">void</span><span class="w"> </span><span class="nf">Info</span><span class="p">(</span><span class="kt">string</span><span class="w"> </span><span class="n">message</span><span class="p">);</span>
+<span class="w">    </span><span class="k">void</span><span class="w"> </span><span class="nf">Error</span><span class="p">(</span><span class="kt">string</span><span class="w"> </span><span class="n">message</span><span class="p">,</span><span class="w"> </span><span class="n">Exception</span><span class="w"> </span><span class="n">exception</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">ConsoleAppLogger</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">IAppLogger</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">Info</span><span class="p">(</span><span class="kt">string</span><span class="w"> </span><span class="n">message</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">$&quot;[INFO] {message}&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">Error</span><span class="p">(</span><span class="kt">string</span><span class="w"> </span><span class="n">message</span><span class="p">,</span><span class="w"> </span><span class="n">Exception</span><span class="w"> </span><span class="n">exception</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">$&quot;[ERROR] {message}&quot;</span><span class="p">);</span>
+<span class="w">        </span><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">exception</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Đăng ký DI:</p>
+<div class="highlight"><pre><span></span><code><span class="n">builder</span><span class="p">.</span><span class="n">Services</span><span class="p">.</span><span class="n">AddSingleton</span><span class="o">&lt;</span><span class="n">IAppLogger</span><span class="p">,</span><span class="w"> </span><span class="n">ConsoleAppLogger</span><span class="o">&gt;</span><span class="p">();</span>
+</code></pre></div>
+<p>Sử dụng:</p>
+<div class="highlight"><pre><span></span><code><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">OrderService</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">private</span><span class="w"> </span><span class="k">readonly</span><span class="w"> </span><span class="n">IAppLogger</span><span class="w"> </span><span class="n">_logger</span><span class="p">;</span>
+
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="nf">OrderService</span><span class="p">(</span><span class="n">IAppLogger</span><span class="w"> </span><span class="n">logger</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">_logger</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">logger</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">CreateOrder</span><span class="p">()</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">_logger</span><span class="p">.</span><span class="n">Info</span><span class="p">(</span><span class="s">&quot;Creating order&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Điểm hay:</p>
+<ul>
+<li><code>OrderService</code> không biết logger được tạo như thế nào.</li>
+<li>Có thể thay <code>ConsoleAppLogger</code> bằng <code>FileLogger</code>.</li>
+<li>Dễ mock <code>IAppLogger</code> khi unit test.</li>
+<li>Vẫn đảm bảo logger chỉ có một instance nếu đăng ký <code>AddSingleton</code>.</li>
+</ul>
+<hr />
+<h2 id="15-vi-du-sai-thuong-gap">15. Ví dụ sai thường gặp<a class="headerlink" href="#15-vi-du-sai-thuong-gap" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><span class="k">public</span><span class="w"> </span><span class="k">sealed</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">ServiceLocator</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="n">ServiceLocator</span><span class="w"> </span><span class="n">Instance</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">get</span><span class="p">;</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ServiceLocator</span><span class="p">();</span>
+
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">EmailService</span><span class="w"> </span><span class="n">EmailService</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">get</span><span class="p">;</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">EmailService</span><span class="p">();</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">OrderService</span><span class="w"> </span><span class="n">OrderService</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">get</span><span class="p">;</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">OrderService</span><span class="p">();</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">PaymentService</span><span class="w"> </span><span class="n">PaymentService</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">get</span><span class="p">;</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">PaymentService</span><span class="p">();</span>
+
+<span class="w">    </span><span class="k">private</span><span class="w"> </span><span class="nf">ServiceLocator</span><span class="p">()</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Vấn đề:</p>
+<ul>
+<li>Class này ôm quá nhiều trách nhiệm.</li>
+<li>Dependency bị ẩn.</li>
+<li>Khó test.</li>
+<li>Khó thay implementation.</li>
+<li>Dễ biến thành "global container" tự chế.</li>
+</ul>
+<p>Cách tốt hơn là dùng DI container của framework.</p>
+<hr />
+<h2 id="16-tom-tat">16. Tóm tắt<a class="headerlink" href="#16-tom-tat" title="Permanent link">&para;</a></h2>
+<p>Singleton Pattern dùng để đảm bảo một class chỉ có một instance duy nhất trong toàn bộ ứng dụng.</p>
+<p>Nên nhớ:</p>
+<ul>
+<li>Singleton phù hợp với object dùng chung và không phụ thuộc request/user.</li>
+<li>Trong .NET, ưu tiên dùng Dependency Injection với <code>AddSingleton</code>.</li>
+<li>Cẩn thận với thread safety và mutable state.</li>
+<li>Không dùng Singleton chỉ để gọi code cho tiện.</li>
+<li>Nếu lạm dụng, Singleton có thể làm code khó test và khó bảo trì.</li>
+</ul>
+<p>Một câu dễ nhớ:</p>
+<div class="highlight"><pre><span></span><code>Singleton tốt khi cần một instance dùng chung thật sự.
+Singleton xấu khi nó trở thành biến global trá hình.
+</code></pre></div>
 
 
 
