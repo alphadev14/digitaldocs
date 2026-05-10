@@ -114,7 +114,7 @@ nav:
           - System Design Life Cycle: mid-level/system-design/02-system-design-life-cycle.md
           - Component of System Design: mid-level/system-design/03-component-of-system-design.md
 
-      - Design Pattern:
+      - ⭐ Design Pattern:
           - Overview: mid-level/design-pattern/01-design-pattern-overview.md
           - Creational:
               - Singleton Pattern: mid-level/design-pattern/02-singleton-pattern.md
