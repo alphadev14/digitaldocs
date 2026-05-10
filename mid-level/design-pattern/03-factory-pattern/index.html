@@ -1,0 +1,4947 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://alphadev14.github.io/digitaldocs/mid-level/design-pattern/03-factory-pattern/">
+      
+      
+        <link rel="prev" href="../02-singleton-pattern/">
+      
+      
+        <link rel="next" href="../../../senior/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../assets/logo.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Factory Pattern - P&T | Digital Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../extra.css">
+    
+      <link rel="stylesheet" href="../../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="deep-purple" data-md-color-accent="lime">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#factory-pattern" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="P&amp;T | Digital Docs" class="md-header__button md-logo" aria-label="P&T | Digital Docs" data-md-component="logo">
+      
+  <img src="../../../assets/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            P&T | Digital Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Factory Pattern
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="deep-purple" data-md-color-accent="lime"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="pink"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="P&amp;T | Digital Docs" class="md-nav__button md-logo" aria-label="P&T | Digital Docs" data-md-component="logo">
+      
+  <img src="../../../assets/logo.png" alt="logo">
+
+    </a>
+    P&T | Digital Docs
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Junior
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Junior
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🧠 Backend
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    🧠 Backend
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../junior/backend/01-aspnet-core-webapi/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ASP.NET Core WebAPI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../junior/backend/02-middleware-dependency-injection/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Middleware & Dependency Injection
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../junior/backend/03-entity-framework-core/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Entity Framework Core
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../junior/backend/04-linq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    LINQ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../junior/backend/05-authentication-jwt/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Authentication (JWT)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../junior/backend/06-clean-architecture-solid/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Clean Architecture & SOLID
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../junior/backend/07-async-await/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Async / Await
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../junior/backend/08-async-await-2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Async / Await 2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ⚛️ Frontend
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    ⚛️ Frontend
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../junior/frontend/01-react-basic/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    React Basic
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../junior/frontend/02-react-hooks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    React Hooks
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../junior/frontend/03-context-api/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Context API
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../junior/frontend/04-state-management/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    State Management
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../junior/frontend/05-react-router/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    React Router
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../junior/frontend/06-performance-optimization/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Performance Optimization
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🗄️ Database (PostgreSQL)
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    🗄️ Database (PostgreSQL)
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../junior/database/01-postgresql-basic/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PostgreSQL Basic
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../junior/database/02-transactions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Transactions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../junior/database/03-isolation-levels/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Isolation Levels
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../junior/database/04-index-partitioning/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Index & Partitioning
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../junior/database/05-jsonb-postgresql/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    JSONB in PostgreSQL
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../junior/database/06-query-optimization/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Query Optimization
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../junior/database/07-postgresql-advanced/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PostgreSQL Advanced
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_4" id="__nav_2_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🧪  Testing & Deployment
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    🧪  Testing & Deployment
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../junior/Testing%20%26%20Deployment/01-unit-test-dotnet/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Unit Test .NET
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../junior/Testing%20%26%20Deployment/02-integration-test/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Integration Test
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../junior/Testing%20%26%20Deployment/03-deploy-backend/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Deploy Backend
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../junior/Testing%20%26%20Deployment/04-deploy-frontend/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Deploy Frontend
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../junior/Testing%20%26%20Deployment/05-connect-cloud-db/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Connect Cloud Database
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_5" id="__nav_2_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🚀 Project
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    🚀 Project
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_5_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_5_1" id="__nav_2_5_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Todos
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_5_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_5_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Todos
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_5_1_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_5_1_1" id="__nav_2_5_1_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Deploy Frontend
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_2_5_1_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_5_1_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Deploy Frontend
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../junior/project/todos/05-deploy-fe/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Deploy FE lên Vercel
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_5_1_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_5_1_2" id="__nav_2_5_1_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Deploy Backend
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_2_5_1_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_5_1_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Deploy Backend
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../junior/project/todos/06-deploy-be/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Deploy BE lên Render
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_5_1_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_5_1_3" id="__nav_2_5_1_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Deploy Database
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_2_5_1_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_5_1_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Deploy Database
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../junior/project/todos/07-deploy-db/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Deploy Databae lên Render
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Mid-Level
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Mid-Level
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🧠 Backend
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    🧠 Backend
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../backend/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../backend/01-api-architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API Architecture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../backend/02-ef-core-query-optimization/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    EF Core Query Optimization
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../backend/03-caching-strategy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Caching Strategy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../backend/04-background-jobs-and-queues/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Background Jobs & Queues
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../backend/05-resilience-and-observability/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Resilience & Observability
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../backend/06-security-and-authorization/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Security & Authorization
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../backend/07-backend-testing-strategy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Backend Testing Strategy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../backend/performance-in-backend/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Performance In Backend
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ⚛️ Frontend
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    ⚛️ Frontend
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../frontend/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../frontend/01-component-architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Component Architecture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../frontend/02-state-management/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    State Management
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../frontend/03-data-fetching-and-cache/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data Fetching & Cache
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../frontend/04-frontend-performance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Frontend Performance
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../frontend/05-testing-and-quality/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Testing & Quality
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🗄️ Database
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    🗄️ Database
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../database/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../database/01-schema-design/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Schema Design
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../database/02-indexing-and-query-plan/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Indexing & Query Plan
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../database/03-transactions-and-concurrency/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Transactions & Concurrency
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../database/04-migrations-and-versioning/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Migrations & Versioning
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../database/05-database-performance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Database Performance
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_4" id="__nav_3_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🌐 DevOps
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    🌐 DevOps
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../devops/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../devops/01-ci-cd-pipeline/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CI/CD Pipeline
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../devops/02-docker-compose-and-environment/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Docker Compose & Environment
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../devops/03-nginx-reverse-proxy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Nginx Reverse Proxy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../devops/04-observability-and-logging/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Observability & Logging
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../devops/05-deployment-strategy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Deployment Strategy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_4_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_4_7" id="__nav_3_4_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🐋 Docker
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_4_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_4_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    🐋 Docker
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../devops/docker/01-docker-basic/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Docker Basic
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../devops/docker/02-docker-basic-2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Docker Basic 2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../devops/docker/03-containers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Containers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../devops/docker/04-volume-and-data/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Volume And Data
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../devops/docker/05-network/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Network
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_4_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_4_8" id="__nav_3_4_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🧫 Labs
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_4_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_4_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    🧫 Labs
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../devops/labs/01-react-nginx-deploy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    React + Nginx
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../devops/labs/02-nextjs-nginx-deploy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    NextJS + Nginx
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../devops/labs/03-gitlab-ci-cd-setup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Gitlab CI/CD
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_4_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_4_9" id="__nav_3_4_9_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🐧 Linux
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_4_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_4_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    🐧 Linux
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../devops/linux/01-linux-basic/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Linux Basic
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_5" id="__nav_3_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🖥️ System Design
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    🖥️ System Design
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../system-design/01-system-design-introduction/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    System Design Introduction
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../system-design/02-system-design-life-cycle/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    System Design Life Cycle
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../system-design/03-component-of-system-design/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Component of System Design
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_6" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3_6" id="__nav_3_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ⭐ Design Pattern
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_6_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    ⭐ Design Pattern
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01-design-pattern-overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_6_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3_6_2" id="__nav_3_6_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Creational
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_6_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3_6_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Creational
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02-singleton-pattern/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Singleton Pattern
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Factory Pattern
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Factory Pattern
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-factory-pattern-la-gi" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Factory Pattern là gì?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-factory-giai-quyet-van-e-gi" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Factory giải quyết vấn đề gì?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-ac-iem-chinh" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Đặc điểm chính
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-vi-du-factory-co-ban-trong-c" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Ví dụ Factory cơ bản trong C
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-luong-hoat-ong-cua-factory" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Luồng hoạt động của Factory
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-factory-trong-aspnet-core" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Factory trong ASP.NET Core
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-khi-nao-nen-dung-factory" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Khi nào nên dùng Factory?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-khi-nao-khong-nen-dung-factory" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. Khi nào không nên dùng Factory?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-cac-bien-the-pho-bien" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. Các biến thể phổ biến
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#91-simple-factory" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.1 Simple Factory
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#92-factory-method" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.2 Factory Method
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#93-abstract-factory" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.3 Abstract Factory
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-factory-khac-gi-builder-va-abstract-factory" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10. Factory khác gì Builder và Abstract Factory?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-uu-iem" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11. Ưu điểm
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12-nhuoc-iem" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        12. Nhược điểm
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#13-luu-y-khi-su-dung" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13. Lưu ý khi sử dụng
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#14-vi-du-thuc-te-notification-sender" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        14. Ví dụ thực tế: Notification Sender
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#15-vi-du-sai-thuong-gap" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        15. Ví dụ sai thường gặp
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#16-tom-tat" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        16. Tóm tắt
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04-builder-pattern.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Builder Pattern
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_6_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_6_3" id="__nav_3_6_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Structural
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_6_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_6_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Structural
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05-adapter-pattern.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Adapter Pattern
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_6_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_6_4" id="__nav_3_6_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Behavioral
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_6_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_6_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Behavioral
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../06-observer-pattern.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Observer Pattern
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../senior/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Senior
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-factory-pattern-la-gi" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Factory Pattern là gì?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-factory-giai-quyet-van-e-gi" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Factory giải quyết vấn đề gì?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-ac-iem-chinh" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Đặc điểm chính
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-vi-du-factory-co-ban-trong-c" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Ví dụ Factory cơ bản trong C
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-luong-hoat-ong-cua-factory" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Luồng hoạt động của Factory
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-factory-trong-aspnet-core" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Factory trong ASP.NET Core
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-khi-nao-nen-dung-factory" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Khi nào nên dùng Factory?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-khi-nao-khong-nen-dung-factory" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. Khi nào không nên dùng Factory?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-cac-bien-the-pho-bien" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. Các biến thể phổ biến
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#91-simple-factory" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.1 Simple Factory
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#92-factory-method" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.2 Factory Method
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#93-abstract-factory" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.3 Abstract Factory
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-factory-khac-gi-builder-va-abstract-factory" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10. Factory khác gì Builder và Abstract Factory?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-uu-iem" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11. Ưu điểm
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12-nhuoc-iem" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        12. Nhược điểm
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#13-luu-y-khi-su-dung" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13. Lưu ý khi sử dụng
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#14-vi-du-thuc-te-notification-sender" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        14. Ví dụ thực tế: Notification Sender
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#15-vi-du-sai-thuong-gap" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        15. Ví dụ sai thường gặp
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#16-tom-tat" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        16. Tóm tắt
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="factory-pattern">Factory Pattern<a class="headerlink" href="#factory-pattern" title="Permanent link">&para;</a></h1>
+<h2 id="1-factory-pattern-la-gi">1. Factory Pattern là gì?<a class="headerlink" href="#1-factory-pattern-la-gi" title="Permanent link">&para;</a></h2>
+<p>Factory Pattern là một Creational Design Pattern dùng để tách logic khởi tạo object ra khỏi nơi sử dụng object đó.</p>
+<p>Thay vì caller tự <code>new</code> class cụ thể, caller sẽ gọi một factory để nhận về object phù hợp.</p>
+<p>Nói đơn giản:</p>
+<div class="highlight"><pre><span></span><code>Caller cần object -&gt; Factory quyết định tạo object nào -&gt; Caller nhận object để dùng
+</code></pre></div>
+<p>Ví dụ thực tế:</p>
+<ul>
+<li>Tạo payment service theo phương thức thanh toán: momo, vnpay, credit card.</li>
+<li>Tạo notification sender theo kênh gửi: email, SMS, Telegram.</li>
+<li>Tạo export service theo định dạng file: PDF, Excel, CSV.</li>
+<li>Tạo parser theo loại dữ liệu đầu vào: JSON, XML, CSV.</li>
+<li>Tạo discount strategy theo loại khách hàng hoặc chương trình khuyến mãi.</li>
+</ul>
+<hr />
+<h2 id="2-factory-giai-quyet-van-e-gi">2. Factory giải quyết vấn đề gì?<a class="headerlink" href="#2-factory-giai-quyet-van-e-gi" title="Permanent link">&para;</a></h2>
+<p>Trong ứng dụng, việc tạo object thường không chỉ đơn giản là <code>new</code>.</p>
+<p>Đôi khi mình phải:</p>
+<ul>
+<li>Chọn class cụ thể dựa trên input.</li>
+<li>Truyền dependency vào object.</li>
+<li>Validate loại object cần tạo.</li>
+<li>Ẩn chi tiết khởi tạo khỏi caller.</li>
+<li>Tránh lặp lại nhiều đoạn <code>if else</code> hoặc <code>switch</code>.</li>
+</ul>
+<p>Ví dụ chưa dùng Factory:</p>
+<div class="highlight"><pre><span></span><code><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">PaymentService</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">Pay</span><span class="p">(</span><span class="kt">string</span><span class="w"> </span><span class="n">paymentMethod</span><span class="p">,</span><span class="w"> </span><span class="kt">decimal</span><span class="w"> </span><span class="n">amount</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">paymentMethod</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s">&quot;momo&quot;</span><span class="p">)</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="kt">var</span><span class="w"> </span><span class="n">payment</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">MomoPayment</span><span class="p">();</span>
+<span class="w">            </span><span class="n">payment</span><span class="p">.</span><span class="n">Pay</span><span class="p">(</span><span class="n">amount</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">        </span><span class="k">else</span><span class="w"> </span><span class="nf">if</span><span class="w"> </span><span class="p">(</span><span class="n">paymentMethod</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s">&quot;vnpay&quot;</span><span class="p">)</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="kt">var</span><span class="w"> </span><span class="n">payment</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">VnPayPayment</span><span class="p">();</span>
+<span class="w">            </span><span class="n">payment</span><span class="p">.</span><span class="n">Pay</span><span class="p">(</span><span class="n">amount</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">        </span><span class="k">else</span><span class="w"> </span><span class="nf">if</span><span class="w"> </span><span class="p">(</span><span class="n">paymentMethod</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s">&quot;credit-card&quot;</span><span class="p">)</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="kt">var</span><span class="w"> </span><span class="n">payment</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">CreditCardPayment</span><span class="p">();</span>
+<span class="w">            </span><span class="n">payment</span><span class="p">.</span><span class="n">Pay</span><span class="p">(</span><span class="n">amount</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Vấn đề:</p>
+<ul>
+<li><code>PaymentService</code> vừa xử lý nghiệp vụ, vừa biết cách tạo từng loại payment.</li>
+<li>Khi thêm payment mới, phải sửa trực tiếp <code>PaymentService</code>.</li>
+<li>Logic tạo object có thể bị lặp lại ở nhiều nơi.</li>
+<li>Code dễ phình to khi số loại object tăng lên.</li>
+</ul>
+<p>Factory giúp gom phần tạo object vào một nơi riêng:</p>
+<div class="highlight"><pre><span></span><code>PaymentService -&gt; PaymentFactory -&gt; IPayment implementation
+</code></pre></div>
+<hr />
+<h2 id="3-ac-iem-chinh">3. Đặc điểm chính<a class="headerlink" href="#3-ac-iem-chinh" title="Permanent link">&para;</a></h2>
+<p>Một Factory thường có các đặc điểm:</p>
+<ul>
+<li>Che giấu logic tạo object khỏi caller.</li>
+<li>Trả về abstraction như interface hoặc abstract class.</li>
+<li>Chọn implementation cụ thể dựa trên input hoặc cấu hình.</li>
+<li>Giúp caller phụ thuộc vào abstraction thay vì class cụ thể.</li>
+<li>Dễ mở rộng hơn khi cần thêm loại object mới.</li>
+</ul>
+<hr />
+<h2 id="4-vi-du-factory-co-ban-trong-c">4. Ví dụ Factory cơ bản trong C<a class="headerlink" href="#4-vi-du-factory-co-ban-trong-c" title="Permanent link">&para;</a></h2>
+<p>Đầu tiên, tạo interface chung:</p>
+<div class="highlight"><pre><span></span><code><span class="k">public</span><span class="w"> </span><span class="k">interface</span><span class="w"> </span><span class="n">IPaymentProcessor</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">void</span><span class="w"> </span><span class="nf">Pay</span><span class="p">(</span><span class="kt">decimal</span><span class="w"> </span><span class="n">amount</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Các implementation cụ thể:</p>
+<div class="highlight"><pre><span></span><code><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">MomoPaymentProcessor</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">IPaymentProcessor</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">Pay</span><span class="p">(</span><span class="kt">decimal</span><span class="w"> </span><span class="n">amount</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">$&quot;Paid {amount} using Momo&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+
+<span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">VnPayPaymentProcessor</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">IPaymentProcessor</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">Pay</span><span class="p">(</span><span class="kt">decimal</span><span class="w"> </span><span class="n">amount</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">$&quot;Paid {amount} using VNPAY&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+
+<span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">CreditCardPaymentProcessor</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">IPaymentProcessor</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">Pay</span><span class="p">(</span><span class="kt">decimal</span><span class="w"> </span><span class="n">amount</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">$&quot;Paid {amount} using Credit Card&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Tạo Factory:</p>
+<div class="highlight"><pre><span></span><code><span class="k">public</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">PaymentProcessorFactory</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="n">IPaymentProcessor</span><span class="w"> </span><span class="nf">Create</span><span class="p">(</span><span class="kt">string</span><span class="w"> </span><span class="n">paymentMethod</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">paymentMethod</span><span class="w"> </span><span class="k">switch</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="s">&quot;momo&quot;</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">MomoPaymentProcessor</span><span class="p">(),</span>
+<span class="w">            </span><span class="s">&quot;vnpay&quot;</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">VnPayPaymentProcessor</span><span class="p">(),</span>
+<span class="w">            </span><span class="s">&quot;credit-card&quot;</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">CreditCardPaymentProcessor</span><span class="p">(),</span>
+<span class="w">            </span><span class="n">_</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="k">throw</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">NotSupportedException</span><span class="p">(</span><span class="s">$&quot;Payment method &#39;{paymentMethod}&#39; is not supported&quot;</span><span class="p">)</span>
+<span class="w">        </span><span class="p">};</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Cách sử dụng:</p>
+<div class="highlight"><pre><span></span><code><span class="kt">var</span><span class="w"> </span><span class="n">paymentProcessor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">PaymentProcessorFactory</span><span class="p">.</span><span class="n">Create</span><span class="p">(</span><span class="s">&quot;momo&quot;</span><span class="p">);</span>
+
+<span class="n">paymentProcessor</span><span class="p">.</span><span class="n">Pay</span><span class="p">(</span><span class="mi">100</span><span class="n">_000</span><span class="p">);</span>
+</code></pre></div>
+<p>Giải thích:</p>
+<ul>
+<li><code>IPaymentProcessor</code> là abstraction mà caller sử dụng.</li>
+<li><code>MomoPaymentProcessor</code>, <code>VnPayPaymentProcessor</code>, <code>CreditCardPaymentProcessor</code> là các object cụ thể.</li>
+<li><code>PaymentProcessorFactory</code> chịu trách nhiệm chọn object cần tạo.</li>
+<li>Caller không cần biết class cụ thể được khởi tạo như thế nào.</li>
+</ul>
+<hr />
+<h2 id="5-luong-hoat-ong-cua-factory">5. Luồng hoạt động của Factory<a class="headerlink" href="#5-luong-hoat-ong-cua-factory" title="Permanent link">&para;</a></h2>
+<p>Luồng cơ bản:</p>
+<div class="highlight"><pre><span></span><code>Caller
+  |
+  | gọi Create(type)
+  v
+Factory
+  |
+  | kiểm tra type / input / config
+  v
+Concrete Object
+  |
+  | trả về dưới dạng interface
+  v
+Caller dùng object
+</code></pre></div>
+<p>Ví dụ với payment:</p>
+<div class="highlight"><pre><span></span><code>OrderService gọi Create(&quot;momo&quot;)
+        |
+        v
+PaymentProcessorFactory
+        |
+        v
+new MomoPaymentProcessor()
+        |
+        v
+trả về IPaymentProcessor
+</code></pre></div>
+<p>Điểm quan trọng:</p>
+<ul>
+<li>Caller chỉ biết mình cần <code>IPaymentProcessor</code>.</li>
+<li>Factory biết class cụ thể nào cần được tạo.</li>
+<li>Logic lựa chọn nằm tập trung ở factory.</li>
+</ul>
+<hr />
+<h2 id="6-factory-trong-aspnet-core">6. Factory trong ASP.NET Core<a class="headerlink" href="#6-factory-trong-aspnet-core" title="Permanent link">&para;</a></h2>
+<p>Trong ASP.NET Core, mình thường kết hợp Factory với Dependency Injection để tránh tự <code>new</code> object có dependency phức tạp.</p>
+<p>Ví dụ các payment processor có thể được đăng ký vào DI:</p>
+<div class="highlight"><pre><span></span><code><span class="n">builder</span><span class="p">.</span><span class="n">Services</span><span class="p">.</span><span class="n">AddScoped</span><span class="o">&lt;</span><span class="n">MomoPaymentProcessor</span><span class="o">&gt;</span><span class="p">();</span>
+<span class="n">builder</span><span class="p">.</span><span class="n">Services</span><span class="p">.</span><span class="n">AddScoped</span><span class="o">&lt;</span><span class="n">VnPayPaymentProcessor</span><span class="o">&gt;</span><span class="p">();</span>
+<span class="n">builder</span><span class="p">.</span><span class="n">Services</span><span class="p">.</span><span class="n">AddScoped</span><span class="o">&lt;</span><span class="n">CreditCardPaymentProcessor</span><span class="o">&gt;</span><span class="p">();</span>
+<span class="n">builder</span><span class="p">.</span><span class="n">Services</span><span class="p">.</span><span class="n">AddScoped</span><span class="o">&lt;</span><span class="n">IPaymentProcessorFactory</span><span class="p">,</span><span class="w"> </span><span class="n">PaymentProcessorFactory</span><span class="o">&gt;</span><span class="p">();</span>
+</code></pre></div>
+<p>Factory interface:</p>
+<div class="highlight"><pre><span></span><code><span class="k">public</span><span class="w"> </span><span class="k">interface</span><span class="w"> </span><span class="n">IPaymentProcessorFactory</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">IPaymentProcessor</span><span class="w"> </span><span class="nf">Create</span><span class="p">(</span><span class="kt">string</span><span class="w"> </span><span class="n">paymentMethod</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Factory implementation:</p>
+<div class="highlight"><pre><span></span><code><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">PaymentProcessorFactory</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">IPaymentProcessorFactory</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">private</span><span class="w"> </span><span class="k">readonly</span><span class="w"> </span><span class="n">IServiceProvider</span><span class="w"> </span><span class="n">_serviceProvider</span><span class="p">;</span>
+
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="nf">PaymentProcessorFactory</span><span class="p">(</span><span class="n">IServiceProvider</span><span class="w"> </span><span class="n">serviceProvider</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">_serviceProvider</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">serviceProvider</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">IPaymentProcessor</span><span class="w"> </span><span class="nf">Create</span><span class="p">(</span><span class="kt">string</span><span class="w"> </span><span class="n">paymentMethod</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">paymentMethod</span><span class="w"> </span><span class="k">switch</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="s">&quot;momo&quot;</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">_serviceProvider</span><span class="p">.</span><span class="n">GetRequiredService</span><span class="o">&lt;</span><span class="n">MomoPaymentProcessor</span><span class="o">&gt;</span><span class="p">(),</span>
+<span class="w">            </span><span class="s">&quot;vnpay&quot;</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">_serviceProvider</span><span class="p">.</span><span class="n">GetRequiredService</span><span class="o">&lt;</span><span class="n">VnPayPaymentProcessor</span><span class="o">&gt;</span><span class="p">(),</span>
+<span class="w">            </span><span class="s">&quot;credit-card&quot;</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">_serviceProvider</span><span class="p">.</span><span class="n">GetRequiredService</span><span class="o">&lt;</span><span class="n">CreditCardPaymentProcessor</span><span class="o">&gt;</span><span class="p">(),</span>
+<span class="w">            </span><span class="n">_</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="k">throw</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">NotSupportedException</span><span class="p">(</span><span class="s">$&quot;Payment method &#39;{paymentMethod}&#39; is not supported&quot;</span><span class="p">)</span>
+<span class="w">        </span><span class="p">};</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Sử dụng trong service:</p>
+<div class="highlight"><pre><span></span><code><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">OrderService</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">private</span><span class="w"> </span><span class="k">readonly</span><span class="w"> </span><span class="n">IPaymentProcessorFactory</span><span class="w"> </span><span class="n">_paymentProcessorFactory</span><span class="p">;</span>
+
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="nf">OrderService</span><span class="p">(</span><span class="n">IPaymentProcessorFactory</span><span class="w"> </span><span class="n">paymentProcessorFactory</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">_paymentProcessorFactory</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">paymentProcessorFactory</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">Checkout</span><span class="p">(</span><span class="kt">string</span><span class="w"> </span><span class="n">paymentMethod</span><span class="p">,</span><span class="w"> </span><span class="kt">decimal</span><span class="w"> </span><span class="n">amount</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="kt">var</span><span class="w"> </span><span class="n">paymentProcessor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">_paymentProcessorFactory</span><span class="p">.</span><span class="n">Create</span><span class="p">(</span><span class="n">paymentMethod</span><span class="p">);</span>
+
+<span class="w">        </span><span class="n">paymentProcessor</span><span class="p">.</span><span class="n">Pay</span><span class="p">(</span><span class="n">amount</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Điểm hay:</p>
+<ul>
+<li><code>OrderService</code> không cần biết class payment cụ thể.</li>
+<li>Các payment processor vẫn được DI quản lý dependency.</li>
+<li>Logic chọn payment processor nằm trong factory.</li>
+<li>Khi thêm payment mới, mình sửa factory và đăng ký thêm service.</li>
+</ul>
+<p>Lưu ý:</p>
+<p><code>IServiceProvider</code> không nên bị dùng tràn lan như Service Locator. Trong trường hợp Factory, dùng có kiểm soát để tạo object theo runtime input là chấp nhận được.</p>
+<hr />
+<h2 id="7-khi-nao-nen-dung-factory">7. Khi nào nên dùng Factory?<a class="headerlink" href="#7-khi-nao-nen-dung-factory" title="Permanent link">&para;</a></h2>
+<p>Nên dùng Factory khi:</p>
+<ul>
+<li>Caller cần object nhưng không nên biết class cụ thể.</li>
+<li>Việc tạo object phụ thuộc vào input, config hoặc runtime condition.</li>
+<li>Có nhiều implementation cùng chung một interface.</li>
+<li>Logic khởi tạo object bị lặp lại ở nhiều nơi.</li>
+<li>Constructor của object phức tạp hoặc cần dependency.</li>
+<li>Muốn giảm <code>if else</code> / <code>switch</code> trong service chính.</li>
+</ul>
+<p>Ví dụ phù hợp:</p>
+<table>
+<thead>
+<tr>
+<th>Trường hợp</th>
+<th>Có nên dùng Factory?</th>
+<th>Ghi chú</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Chọn payment processor theo method</td>
+<td>Có</td>
+<td>Rất phù hợp</td>
+</tr>
+<tr>
+<td>Chọn notification sender theo channel</td>
+<td>Có</td>
+<td>Email/SMS/Telegram</td>
+</tr>
+<tr>
+<td>Chọn file exporter theo format</td>
+<td>Có</td>
+<td>PDF/Excel/CSV</td>
+</tr>
+<tr>
+<td>Tạo object đơn giản chỉ có <code>new User()</code></td>
+<td>Không cần</td>
+<td>Dùng trực tiếp đơn giản hơn</td>
+</tr>
+<tr>
+<td>Object có nhiều field optional</td>
+<td>Có thể không</td>
+<td>Builder thường hợp hơn</td>
+</tr>
+<tr>
+<td>Tạo service theo lifetime trong ASP.NET Core</td>
+<td>Thường dùng DI</td>
+<td>Không cần tự viết factory nếu DI đủ</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="8-khi-nao-khong-nen-dung-factory">8. Khi nào không nên dùng Factory?<a class="headerlink" href="#8-khi-nao-khong-nen-dung-factory" title="Permanent link">&para;</a></h2>
+<p>Không nên dùng Factory khi:</p>
+<ul>
+<li>Object rất đơn giản và không có logic chọn loại.</li>
+<li>Chỉ có một implementation duy nhất và chưa có nhu cầu mở rộng.</li>
+<li>Factory chỉ bọc lại <code>new</code> nhưng không đem lại giá trị gì.</li>
+<li>Dùng Factory làm code khó đọc hơn.</li>
+<li>Dùng Factory để che giấu dependency thay vì inject rõ ràng.</li>
+<li>Factory trở thành nơi chứa quá nhiều logic nghiệp vụ.</li>
+</ul>
+<p>Ví dụ không nên:</p>
+<div class="highlight"><pre><span></span><code><span class="k">public</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">UserFactory</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="n">User</span><span class="w"> </span><span class="nf">Create</span><span class="p">(</span><span class="kt">string</span><span class="w"> </span><span class="n">name</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="nf">User</span><span class="p">(</span><span class="n">name</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Nếu <code>User</code> chỉ đơn giản như vậy, viết trực tiếp sẽ rõ hơn:</p>
+<div class="highlight"><pre><span></span><code><span class="kt">var</span><span class="w"> </span><span class="n">user</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">User</span><span class="p">(</span><span class="n">name</span><span class="p">);</span>
+</code></pre></div>
+<p>Factory nên được dùng khi việc tạo object có quyết định, quy tắc hoặc độ phức tạp thật sự.</p>
+<hr />
+<h2 id="9-cac-bien-the-pho-bien">9. Các biến thể phổ biến<a class="headerlink" href="#9-cac-bien-the-pho-bien" title="Permanent link">&para;</a></h2>
+<p>Sơ đồ dưới đây tóm tắt nhanh ba biến thể hay gặp khi nói về Factory:</p>
+<p align="center">
+  <img src="../../../assets/factory-pattern-variants.svg" alt="Các biến thể phổ biến của Factory Pattern" width="700">
+</p>
+
+<p>Ý nghĩa của sơ đồ:</p>
+<ul>
+<li><code>Simple Factory</code>: một class dùng <code>switch</code> hoặc <code>if</code> để chọn object cần tạo. Dễ hiểu, nhanh làm, nhưng khi thêm loại mới thường phải sửa factory cũ.</li>
+<li><code>Factory Method</code>: class cha định nghĩa phương thức tạo object, class con override để quyết định object cụ thể. Cách này mở rộng tốt hơn vì thêm class mới thay vì sửa nhiều code cũ.</li>
+<li><code>Abstract Factory</code>: tạo cả một nhóm object liên quan với nhau. Phù hợp khi cần đảm bảo các object được tạo ra cùng một family, ví dụ bộ UI light/dark hoặc nhóm payment gateway liên quan.</li>
+</ul>
+<p>Nói ngắn gọn:</p>
+<div class="highlight"><pre><span></span><code>Simple Factory: một factory chọn nhiều loại object.
+Factory Method: subclass quyết định tạo object nào.
+Abstract Factory: một factory tạo cả họ object liên quan.
+</code></pre></div>
+<h2 id="91-simple-factory">9.1 Simple Factory<a class="headerlink" href="#91-simple-factory" title="Permanent link">&para;</a></h2>
+<p>Simple Factory là dạng đơn giản nhất: một class hoặc method chịu trách nhiệm chọn và tạo object dựa trên input.</p>
+<p>Theo sơ đồ, <code>PaymentFactory</code> nhận loại payment như <code>vnpay</code>, <code>momo</code>, <code>zalopay</code>, sau đó dùng <code>switch</code> hoặc <code>if</code> để trả về object tương ứng.</p>
+<p>Interface chung:</p>
+<div class="highlight"><pre><span></span><code><span class="k">public</span><span class="w"> </span><span class="k">interface</span><span class="w"> </span><span class="n">IPaymentProcessor</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">void</span><span class="w"> </span><span class="nf">Pay</span><span class="p">(</span><span class="kt">decimal</span><span class="w"> </span><span class="n">amount</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Các payment processor cụ thể:</p>
+<div class="highlight"><pre><span></span><code><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">VNPayProcessor</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">IPaymentProcessor</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">Pay</span><span class="p">(</span><span class="kt">decimal</span><span class="w"> </span><span class="n">amount</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">$&quot;Paid {amount} using VNPay&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+
+<span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">MoMoProcessor</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">IPaymentProcessor</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">Pay</span><span class="p">(</span><span class="kt">decimal</span><span class="w"> </span><span class="n">amount</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">$&quot;Paid {amount} using MoMo&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+
+<span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">ZaloPayProcessor</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">IPaymentProcessor</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">Pay</span><span class="p">(</span><span class="kt">decimal</span><span class="w"> </span><span class="n">amount</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">$&quot;Paid {amount} using ZaloPay&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Simple Factory:</p>
+<div class="highlight"><pre><span></span><code><span class="k">public</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">PaymentFactory</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="n">IPaymentProcessor</span><span class="w"> </span><span class="nf">Create</span><span class="p">(</span><span class="kt">string</span><span class="w"> </span><span class="n">paymentType</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">paymentType</span><span class="w"> </span><span class="k">switch</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="s">&quot;vnpay&quot;</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">VNPayProcessor</span><span class="p">(),</span>
+<span class="w">            </span><span class="s">&quot;momo&quot;</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">MoMoProcessor</span><span class="p">(),</span>
+<span class="w">            </span><span class="s">&quot;zalopay&quot;</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ZaloPayProcessor</span><span class="p">(),</span>
+<span class="w">            </span><span class="n">_</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="k">throw</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">NotSupportedException</span><span class="p">(</span><span class="s">$&quot;Payment type &#39;{paymentType}&#39; is not supported&quot;</span><span class="p">)</span>
+<span class="w">        </span><span class="p">};</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Cách dùng:</p>
+<div class="highlight"><pre><span></span><code><span class="kt">var</span><span class="w"> </span><span class="n">payment</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">PaymentFactory</span><span class="p">.</span><span class="n">Create</span><span class="p">(</span><span class="s">&quot;momo&quot;</span><span class="p">);</span>
+
+<span class="n">payment</span><span class="p">.</span><span class="n">Pay</span><span class="p">(</span><span class="mi">100</span><span class="n">_000</span><span class="p">);</span>
+</code></pre></div>
+<p>Đặc điểm:</p>
+<ul>
+<li>Dễ hiểu, nhanh làm.</li>
+<li>Phù hợp khi số loại object ít.</li>
+<li>Khi thêm payment mới, thường phải sửa <code>PaymentFactory</code>.</li>
+<li>Có thể vi phạm Open/Closed Principle nếu factory thay đổi liên tục.</li>
+</ul>
+<hr />
+<h2 id="92-factory-method">9.2 Factory Method<a class="headerlink" href="#92-factory-method" title="Permanent link">&para;</a></h2>
+<p>Factory Method là pattern chính thức trong nhóm GoF. Nó cho phép class cha hoặc interface định nghĩa method tạo object, còn class con quyết định object cụ thể sẽ được tạo.</p>
+<p>Theo sơ đồ, <code>IPaymentCreator</code> định nghĩa method tạo payment processor. <code>VNPayCreator</code> và <code>MoMoCreator</code> sẽ override hoặc implement method đó để tạo object riêng.</p>
+<p>Product interface:</p>
+<div class="highlight"><pre><span></span><code><span class="k">public</span><span class="w"> </span><span class="k">interface</span><span class="w"> </span><span class="n">IPaymentProcessor</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">void</span><span class="w"> </span><span class="nf">Pay</span><span class="p">(</span><span class="kt">decimal</span><span class="w"> </span><span class="n">amount</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Concrete products:</p>
+<div class="highlight"><pre><span></span><code><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">VNPayProcessor</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">IPaymentProcessor</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">Pay</span><span class="p">(</span><span class="kt">decimal</span><span class="w"> </span><span class="n">amount</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">$&quot;Paid {amount} using VNPay&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+
+<span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">MoMoProcessor</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">IPaymentProcessor</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">Pay</span><span class="p">(</span><span class="kt">decimal</span><span class="w"> </span><span class="n">amount</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">$&quot;Paid {amount} using MoMo&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Creator:</p>
+<div class="highlight"><pre><span></span><code><span class="k">public</span><span class="w"> </span><span class="k">interface</span><span class="w"> </span><span class="n">IPaymentCreator</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">IPaymentProcessor</span><span class="w"> </span><span class="nf">CreatePaymentProcessor</span><span class="p">();</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Concrete creators:</p>
+<div class="highlight"><pre><span></span><code><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">VNPayCreator</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">IPaymentCreator</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">IPaymentProcessor</span><span class="w"> </span><span class="nf">CreatePaymentProcessor</span><span class="p">()</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="nf">VNPayProcessor</span><span class="p">();</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+
+<span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">MoMoCreator</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">IPaymentCreator</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">IPaymentProcessor</span><span class="w"> </span><span class="nf">CreatePaymentProcessor</span><span class="p">()</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="nf">MoMoProcessor</span><span class="p">();</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Cách dùng:</p>
+<div class="highlight"><pre><span></span><code><span class="n">IPaymentCreator</span><span class="w"> </span><span class="n">creator</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">VNPayCreator</span><span class="p">();</span>
+
+<span class="kt">var</span><span class="w"> </span><span class="n">paymentProcessor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">creator</span><span class="p">.</span><span class="n">CreatePaymentProcessor</span><span class="p">();</span>
+
+<span class="n">paymentProcessor</span><span class="p">.</span><span class="n">Pay</span><span class="p">(</span><span class="mi">250</span><span class="n">_000</span><span class="p">);</span>
+</code></pre></div>
+<p>Giải thích:</p>
+<ul>
+<li><code>IPaymentCreator</code> định nghĩa factory method để tạo payment processor.</li>
+<li><code>CreatePaymentProcessor()</code> là factory method.</li>
+<li><code>VNPayCreator</code> quyết định tạo <code>VNPayProcessor</code>.</li>
+<li><code>MoMoCreator</code> quyết định tạo <code>MoMoProcessor</code>.</li>
+<li>Khi thêm payment mới, có thể thêm creator mới thay vì sửa creator cũ.</li>
+</ul>
+<p>Điểm khác với Simple Factory:</p>
+<div class="highlight"><pre><span></span><code>Simple Factory: một class có switch/if để chọn loại.
+Factory Method: mỗi subclass tự quyết định object mà nó tạo.
+</code></pre></div>
+<hr />
+<h2 id="93-abstract-factory">9.3 Abstract Factory<a class="headerlink" href="#93-abstract-factory" title="Permanent link">&para;</a></h2>
+<p>Abstract Factory dùng để tạo cả một họ object liên quan với nhau, không chỉ một object đơn lẻ.</p>
+<p>Theo sơ đồ, <code>IPaymentFactory</code> không chỉ tạo payment processor, mà có thể tạo nhiều object cùng thuộc một payment provider, ví dụ:</p>
+<ul>
+<li>Processor để thanh toán.</li>
+<li>Refund service để hoàn tiền.</li>
+<li>Transaction verifier để kiểm tra giao dịch.</li>
+</ul>
+<p>Các product interfaces:</p>
+<div class="highlight"><pre><span></span><code><span class="k">public</span><span class="w"> </span><span class="k">interface</span><span class="w"> </span><span class="n">IPaymentProcessor</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">void</span><span class="w"> </span><span class="nf">Pay</span><span class="p">(</span><span class="kt">decimal</span><span class="w"> </span><span class="n">amount</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="k">public</span><span class="w"> </span><span class="k">interface</span><span class="w"> </span><span class="n">IRefundProcessor</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">void</span><span class="w"> </span><span class="nf">Refund</span><span class="p">(</span><span class="kt">string</span><span class="w"> </span><span class="n">transactionId</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>VNPay product family:</p>
+<div class="highlight"><pre><span></span><code><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">VNPayProcessor</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">IPaymentProcessor</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">Pay</span><span class="p">(</span><span class="kt">decimal</span><span class="w"> </span><span class="n">amount</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">$&quot;Paid {amount} using VNPay&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+
+<span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">VNPayRefundProcessor</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">IRefundProcessor</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">Refund</span><span class="p">(</span><span class="kt">string</span><span class="w"> </span><span class="n">transactionId</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">$&quot;Refund VNPay transaction {transactionId}&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>MoMo product family:</p>
+<div class="highlight"><pre><span></span><code><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">MoMoProcessor</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">IPaymentProcessor</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">Pay</span><span class="p">(</span><span class="kt">decimal</span><span class="w"> </span><span class="n">amount</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">$&quot;Paid {amount} using MoMo&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+
+<span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">MoMoRefundProcessor</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">IRefundProcessor</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">Refund</span><span class="p">(</span><span class="kt">string</span><span class="w"> </span><span class="n">transactionId</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">$&quot;Refund MoMo transaction {transactionId}&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Abstract factory interface:</p>
+<div class="highlight"><pre><span></span><code><span class="k">public</span><span class="w"> </span><span class="k">interface</span><span class="w"> </span><span class="n">IPaymentFactory</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">IPaymentProcessor</span><span class="w"> </span><span class="nf">CreatePaymentProcessor</span><span class="p">();</span>
+<span class="w">    </span><span class="n">IRefundProcessor</span><span class="w"> </span><span class="nf">CreateRefundProcessor</span><span class="p">();</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Concrete factories:</p>
+<div class="highlight"><pre><span></span><code><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">VNPayFactory</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">IPaymentFactory</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">IPaymentProcessor</span><span class="w"> </span><span class="nf">CreatePaymentProcessor</span><span class="p">()</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="nf">VNPayProcessor</span><span class="p">();</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">IRefundProcessor</span><span class="w"> </span><span class="nf">CreateRefundProcessor</span><span class="p">()</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="nf">VNPayRefundProcessor</span><span class="p">();</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+
+<span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">MoMoFactory</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">IPaymentFactory</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">IPaymentProcessor</span><span class="w"> </span><span class="nf">CreatePaymentProcessor</span><span class="p">()</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="nf">MoMoProcessor</span><span class="p">();</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">IRefundProcessor</span><span class="w"> </span><span class="nf">CreateRefundProcessor</span><span class="p">()</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="nf">MoMoRefundProcessor</span><span class="p">();</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Cách dùng:</p>
+<div class="highlight"><pre><span></span><code><span class="n">IPaymentFactory</span><span class="w"> </span><span class="n">factory</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">VNPayFactory</span><span class="p">();</span>
+
+<span class="kt">var</span><span class="w"> </span><span class="n">paymentProcessor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">factory</span><span class="p">.</span><span class="n">CreatePaymentProcessor</span><span class="p">();</span>
+<span class="kt">var</span><span class="w"> </span><span class="n">refundProcessor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">factory</span><span class="p">.</span><span class="n">CreateRefundProcessor</span><span class="p">();</span>
+
+<span class="n">paymentProcessor</span><span class="p">.</span><span class="n">Pay</span><span class="p">(</span><span class="mi">300</span><span class="n">_000</span><span class="p">);</span>
+<span class="n">refundProcessor</span><span class="p">.</span><span class="n">Refund</span><span class="p">(</span><span class="s">&quot;TXN-001&quot;</span><span class="p">);</span>
+</code></pre></div>
+<p>Giải thích:</p>
+<ul>
+<li><code>IPaymentFactory</code> tạo một nhóm object liên quan.</li>
+<li><code>VNPayFactory</code> tạo các object thuộc họ VNPay.</li>
+<li><code>MoMoFactory</code> tạo các object thuộc họ MoMo.</li>
+<li>Caller không trộn nhầm <code>VNPayProcessor</code> với <code>MoMoRefundProcessor</code>.</li>
+</ul>
+<p>Điểm khác với Factory Method:</p>
+<div class="highlight"><pre><span></span><code>Factory Method: mỗi creator thường tạo một loại object chính.
+Abstract Factory: mỗi factory tạo cả một bộ object liên quan.
+</code></pre></div>
+<hr />
+<h2 id="10-factory-khac-gi-builder-va-abstract-factory">10. Factory khác gì Builder và Abstract Factory?<a class="headerlink" href="#10-factory-khac-gi-builder-va-abstract-factory" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Tiêu chí</th>
+<th>Factory</th>
+<th>Builder</th>
+<th>Abstract Factory</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Mục đích chính</td>
+<td>Chọn và tạo object phù hợp</td>
+<td>Tạo object phức tạp từng bước</td>
+<td>Tạo một họ object liên quan</td>
+</tr>
+<tr>
+<td>Khi dùng</td>
+<td>Có nhiều implementation cùng interface</td>
+<td>Object có nhiều field hoặc cấu hình</td>
+<td>Cần tạo nhiều object cùng một style/family</td>
+</tr>
+<tr>
+<td>Caller quan tâm gì?</td>
+<td>Cần loại object nào</td>
+<td>Cần object được cấu hình ra sao</td>
+<td>Cần bộ object nào</td>
+</tr>
+<tr>
+<td>Ví dụ</td>
+<td>PaymentFactory</td>
+<td>EmailMessageBuilder</td>
+<td>UIComponentFactory</td>
+</tr>
+<tr>
+<td>Dấu hiệu nhận biết</td>
+<td><code>Create(type)</code></td>
+<td><code>WithX().WithY().Build()</code></td>
+<td><code>CreateButton()</code>, <code>CreateTextbox()</code></td>
+</tr>
+</tbody>
+</table>
+<p>Ví dụ dễ nhớ:</p>
+<div class="highlight"><pre><span></span><code>Factory: Tôi cần payment theo loại &quot;momo&quot;.
+Builder: Tôi cần tạo email với subject, body, cc, attachments.
+Abstract Factory: Tôi cần tạo cả bộ UI cho theme Light hoặc Dark.
+</code></pre></div>
+<hr />
+<h2 id="11-uu-iem">11. Ưu điểm<a class="headerlink" href="#11-uu-iem" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Tách logic tạo object khỏi logic nghiệp vụ.</li>
+<li>Giúp caller phụ thuộc vào abstraction.</li>
+<li>Giảm code <code>new</code> rải rác ở nhiều nơi.</li>
+<li>Dễ thay đổi implementation cụ thể.</li>
+<li>Dễ gom validation khi tạo object.</li>
+<li>Dễ kết hợp với Dependency Injection.</li>
+</ul>
+<hr />
+<h2 id="12-nhuoc-iem">12. Nhược điểm<a class="headerlink" href="#12-nhuoc-iem" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Có thể làm code phức tạp hơn nếu object quá đơn giản.</li>
+<li>Thêm class/method mới vào codebase.</li>
+<li>Nếu dùng <code>switch</code> lớn, factory vẫn phải sửa khi thêm loại mới.</li>
+<li>Nếu factory chứa nhiều logic nghiệp vụ, nó dễ trở thành class quá tải.</li>
+<li>Nếu lạm dụng <code>IServiceProvider</code>, code có thể giống Service Locator.</li>
+</ul>
+<hr />
+<h2 id="13-luu-y-khi-su-dung">13. Lưu ý khi sử dụng<a class="headerlink" href="#13-luu-y-khi-su-dung" title="Permanent link">&para;</a></h2>
+<p>Checklist trước khi dùng Factory:</p>
+<div class="highlight"><pre><span></span><code>1. Có nhiều implementation cùng chung interface không?
+2. Việc tạo object có phụ thuộc input/config/runtime không?
+3. Logic tạo object có đang bị lặp lại nhiều nơi không?
+4. Caller có cần bị tách khỏi class cụ thể không?
+5. Factory có đang chứa business logic quá nhiều không?
+6. Có thể dùng DI trực tiếp thay vì tự viết Factory không?
+</code></pre></div>
+<p>Một số nguyên tắc thực tế:</p>
+<ul>
+<li>Factory nên tập trung vào việc tạo object, không nên xử lý nghiệp vụ chính.</li>
+<li>Nên trả về interface hoặc abstract class.</li>
+<li>Nên validate input và throw exception rõ ràng khi type không hỗ trợ.</li>
+<li>Nếu object có dependency, ưu tiên kết hợp Factory với DI.</li>
+<li>Không dùng Factory chỉ để bọc một dòng <code>new</code> đơn giản.</li>
+<li>Không để Factory biến thành Service Locator tổng hợp mọi service trong hệ thống.</li>
+</ul>
+<hr />
+<h2 id="14-vi-du-thuc-te-notification-sender">14. Ví dụ thực tế: Notification Sender<a class="headerlink" href="#14-vi-du-thuc-te-notification-sender" title="Permanent link">&para;</a></h2>
+<p>Giả sử hệ thống cần gửi thông báo qua nhiều kênh.</p>
+<p>Interface:</p>
+<div class="highlight"><pre><span></span><code><span class="k">public</span><span class="w"> </span><span class="k">interface</span><span class="w"> </span><span class="n">INotificationSender</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">Task</span><span class="w"> </span><span class="nf">SendAsync</span><span class="p">(</span><span class="kt">string</span><span class="w"> </span><span class="n">receiver</span><span class="p">,</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">message</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Implementations:</p>
+<div class="highlight"><pre><span></span><code><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">EmailNotificationSender</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">INotificationSender</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">Task</span><span class="w"> </span><span class="nf">SendAsync</span><span class="p">(</span><span class="kt">string</span><span class="w"> </span><span class="n">receiver</span><span class="p">,</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">message</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">$&quot;Send email to {receiver}: {message}&quot;</span><span class="p">);</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">Task</span><span class="p">.</span><span class="n">CompletedTask</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+
+<span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">SmsNotificationSender</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">INotificationSender</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">Task</span><span class="w"> </span><span class="nf">SendAsync</span><span class="p">(</span><span class="kt">string</span><span class="w"> </span><span class="n">receiver</span><span class="p">,</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">message</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">$&quot;Send SMS to {receiver}: {message}&quot;</span><span class="p">);</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">Task</span><span class="p">.</span><span class="n">CompletedTask</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+
+<span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">TelegramNotificationSender</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">INotificationSender</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">Task</span><span class="w"> </span><span class="nf">SendAsync</span><span class="p">(</span><span class="kt">string</span><span class="w"> </span><span class="n">receiver</span><span class="p">,</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">message</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">$&quot;Send Telegram message to {receiver}: {message}&quot;</span><span class="p">);</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">Task</span><span class="p">.</span><span class="n">CompletedTask</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Factory:</p>
+<div class="highlight"><pre><span></span><code><span class="k">public</span><span class="w"> </span><span class="k">interface</span><span class="w"> </span><span class="n">INotificationSenderFactory</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">INotificationSender</span><span class="w"> </span><span class="nf">Create</span><span class="p">(</span><span class="kt">string</span><span class="w"> </span><span class="n">channel</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">NotificationSenderFactory</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">INotificationSenderFactory</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">private</span><span class="w"> </span><span class="k">readonly</span><span class="w"> </span><span class="n">IServiceProvider</span><span class="w"> </span><span class="n">_serviceProvider</span><span class="p">;</span>
+
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="nf">NotificationSenderFactory</span><span class="p">(</span><span class="n">IServiceProvider</span><span class="w"> </span><span class="n">serviceProvider</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">_serviceProvider</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">serviceProvider</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">INotificationSender</span><span class="w"> </span><span class="nf">Create</span><span class="p">(</span><span class="kt">string</span><span class="w"> </span><span class="n">channel</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">channel</span><span class="w"> </span><span class="k">switch</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="s">&quot;email&quot;</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">_serviceProvider</span><span class="p">.</span><span class="n">GetRequiredService</span><span class="o">&lt;</span><span class="n">EmailNotificationSender</span><span class="o">&gt;</span><span class="p">(),</span>
+<span class="w">            </span><span class="s">&quot;sms&quot;</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">_serviceProvider</span><span class="p">.</span><span class="n">GetRequiredService</span><span class="o">&lt;</span><span class="n">SmsNotificationSender</span><span class="o">&gt;</span><span class="p">(),</span>
+<span class="w">            </span><span class="s">&quot;telegram&quot;</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">_serviceProvider</span><span class="p">.</span><span class="n">GetRequiredService</span><span class="o">&lt;</span><span class="n">TelegramNotificationSender</span><span class="o">&gt;</span><span class="p">(),</span>
+<span class="w">            </span><span class="n">_</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="k">throw</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">NotSupportedException</span><span class="p">(</span><span class="s">$&quot;Notification channel &#39;{channel}&#39; is not supported&quot;</span><span class="p">)</span>
+<span class="w">        </span><span class="p">};</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Đăng ký DI:</p>
+<div class="highlight"><pre><span></span><code><span class="n">builder</span><span class="p">.</span><span class="n">Services</span><span class="p">.</span><span class="n">AddScoped</span><span class="o">&lt;</span><span class="n">EmailNotificationSender</span><span class="o">&gt;</span><span class="p">();</span>
+<span class="n">builder</span><span class="p">.</span><span class="n">Services</span><span class="p">.</span><span class="n">AddScoped</span><span class="o">&lt;</span><span class="n">SmsNotificationSender</span><span class="o">&gt;</span><span class="p">();</span>
+<span class="n">builder</span><span class="p">.</span><span class="n">Services</span><span class="p">.</span><span class="n">AddScoped</span><span class="o">&lt;</span><span class="n">TelegramNotificationSender</span><span class="o">&gt;</span><span class="p">();</span>
+<span class="n">builder</span><span class="p">.</span><span class="n">Services</span><span class="p">.</span><span class="n">AddScoped</span><span class="o">&lt;</span><span class="n">INotificationSenderFactory</span><span class="p">,</span><span class="w"> </span><span class="n">NotificationSenderFactory</span><span class="o">&gt;</span><span class="p">();</span>
+</code></pre></div>
+<p>Sử dụng:</p>
+<div class="highlight"><pre><span></span><code><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">NotificationService</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">private</span><span class="w"> </span><span class="k">readonly</span><span class="w"> </span><span class="n">INotificationSenderFactory</span><span class="w"> </span><span class="n">_senderFactory</span><span class="p">;</span>
+
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="nf">NotificationService</span><span class="p">(</span><span class="n">INotificationSenderFactory</span><span class="w"> </span><span class="n">senderFactory</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">_senderFactory</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">senderFactory</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">async</span><span class="w"> </span><span class="n">Task</span><span class="w"> </span><span class="nf">SendAsync</span><span class="p">(</span><span class="kt">string</span><span class="w"> </span><span class="n">channel</span><span class="p">,</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">receiver</span><span class="p">,</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">message</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="kt">var</span><span class="w"> </span><span class="n">sender</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">_senderFactory</span><span class="p">.</span><span class="n">Create</span><span class="p">(</span><span class="n">channel</span><span class="p">);</span>
+
+<span class="w">        </span><span class="k">await</span><span class="w"> </span><span class="n">sender</span><span class="p">.</span><span class="n">SendAsync</span><span class="p">(</span><span class="n">receiver</span><span class="p">,</span><span class="w"> </span><span class="n">message</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Điểm hay:</p>
+<ul>
+<li><code>NotificationService</code> không cần biết gửi email, SMS hay Telegram được tạo thế nào.</li>
+<li>Thêm kênh mới không làm thay đổi flow chính của <code>NotificationService</code>.</li>
+<li>Các sender vẫn có thể inject dependency riêng như <code>HttpClient</code>, config hoặc logger.</li>
+</ul>
+<hr />
+<h2 id="15-vi-du-sai-thuong-gap">15. Ví dụ sai thường gặp<a class="headerlink" href="#15-vi-du-sai-thuong-gap" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">ApplicationFactory</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">OrderService</span><span class="w"> </span><span class="nf">CreateOrderService</span><span class="p">()</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="nf">OrderService</span><span class="p">(</span>
+<span class="w">            </span><span class="k">new</span><span class="w"> </span><span class="nf">OrderRepository</span><span class="p">(),</span>
+<span class="w">            </span><span class="k">new</span><span class="w"> </span><span class="nf">PaymentService</span><span class="p">(),</span>
+<span class="w">            </span><span class="k">new</span><span class="w"> </span><span class="nf">EmailService</span><span class="p">()</span>
+<span class="w">        </span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">ProductService</span><span class="w"> </span><span class="nf">CreateProductService</span><span class="p">()</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="nf">ProductService</span><span class="p">(</span>
+<span class="w">            </span><span class="k">new</span><span class="w"> </span><span class="nf">ProductRepository</span><span class="p">(),</span>
+<span class="w">            </span><span class="k">new</span><span class="w"> </span><span class="nf">CacheService</span><span class="p">()</span>
+<span class="w">        </span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">UserService</span><span class="w"> </span><span class="nf">CreateUserService</span><span class="p">()</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="nf">UserService</span><span class="p">(</span>
+<span class="w">            </span><span class="k">new</span><span class="w"> </span><span class="nf">UserRepository</span><span class="p">(),</span>
+<span class="w">            </span><span class="k">new</span><span class="w"> </span><span class="nf">EmailService</span><span class="p">()</span>
+<span class="w">        </span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Vấn đề:</p>
+<ul>
+<li>Factory đang tự tạo gần như toàn bộ dependency của app.</li>
+<li>Khó kiểm soát lifetime của object.</li>
+<li>Khó test và khó thay implementation.</li>
+<li>Dễ thay thế sai vai trò của DI container.</li>
+<li>Khi hệ thống lớn lên, class này sẽ phình rất nhanh.</li>
+</ul>
+<p>Cách tốt hơn:</p>
+<ul>
+<li>Dùng DI container để quản lý dependency.</li>
+<li>Chỉ tạo factory cho các object cần chọn implementation theo runtime input.</li>
+<li>Không gom toàn bộ service creation vào một factory tổng.</li>
+</ul>
+<hr />
+<h2 id="16-tom-tat">16. Tóm tắt<a class="headerlink" href="#16-tom-tat" title="Permanent link">&para;</a></h2>
+<p>Factory Pattern dùng để tách logic tạo object ra khỏi nơi sử dụng object.</p>
+<p>Nên nhớ:</p>
+<ul>
+<li>Factory phù hợp khi có nhiều implementation cùng một abstraction.</li>
+<li>Factory giúp gom logic chọn object vào một nơi.</li>
+<li>Trong ASP.NET Core, nên kết hợp Factory với Dependency Injection.</li>
+<li>Không dùng Factory chỉ để bọc một dòng <code>new</code> đơn giản.</li>
+<li>Factory không nên chứa business logic chính.</li>
+</ul>
+<p>Một câu dễ nhớ:</p>
+<div class="highlight"><pre><span></span><code>Factory tốt khi caller cần object nhưng không nên biết object cụ thể được tạo thế nào.
+Factory xấu khi nó chỉ làm code dài hơn mà không che giấu được logic khởi tạo có ý nghĩa.
+</code></pre></div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        
+<div class="custom-footer">
+  <div class="footer-left">
+    Made with love ❤️ <span style="font-weight: bold;">P&T</span>
+  </div>
+  <div class="footer-right">
+    <a href="https://github.com/your-org" target="_blank"> <span class="twemoji">🐙</span> </a>
+    <a href="https://linkedin.com/company/your-org" target="_blank"> <span class="twemoji">💼</span> </a>
+    <a href="https://youtube.com/@your-org" target="_blank"> <span class="twemoji">▶️</span> </a>
+  </div>
+</div>
+
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.footer"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

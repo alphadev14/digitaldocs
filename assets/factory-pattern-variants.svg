@@ -1,0 +1,85 @@
+<svg width="843" height="469" viewBox="0 0 843 469" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="843" height="469" fill="#1f1f1d"/>
+  <defs>
+    <marker id="arrow-green" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#0b7f68"/>
+    </marker>
+    <marker id="arrow-purple" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#5a50c8"/>
+    </marker>
+    <marker id="arrow-orange" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#b34a22"/>
+    </marker>
+  </defs>
+
+  <rect x="23" y="28" width="219" height="68" rx="9" fill="#0b5b4a" stroke="#16b894"/>
+  <text x="132" y="61" text-anchor="middle" fill="#b8e5dc" font-family="Arial, sans-serif" font-size="18" font-weight="700">Simple Factory</text>
+  <text x="132" y="83" text-anchor="middle" fill="#62d4bd" font-family="Arial, sans-serif" font-size="15" font-weight="700">1 class tạo nhiều loại</text>
+
+  <rect x="292" y="28" width="219" height="68" rx="9" fill="#44398e" stroke="#8d82ff"/>
+  <text x="401" y="61" text-anchor="middle" fill="#d6d0ff" font-family="Arial, sans-serif" font-size="18" font-weight="700">Factory Method</text>
+  <text x="401" y="83" text-anchor="middle" fill="#bcb5ff" font-family="Arial, sans-serif" font-size="15" font-weight="700">Subclass quyết định tạo gì</text>
+
+  <rect x="554" y="28" width="226" height="68" rx="9" fill="#80301a" stroke="#d06a45"/>
+  <text x="667" y="61" text-anchor="middle" fill="#ffd0bd" font-family="Arial, sans-serif" font-size="18" font-weight="700">Abstract Factory</text>
+  <text x="667" y="83" text-anchor="middle" fill="#ffb299" font-family="Arial, sans-serif" font-size="15" font-weight="700">Tạo cả nhóm liên quan</text>
+
+  <line x1="132" y1="96" x2="132" y2="149" stroke="#0b7f68" marker-end="url(#arrow-green)"/>
+  <line x1="401" y1="96" x2="401" y2="149" stroke="#5a50c8" marker-end="url(#arrow-purple)"/>
+  <line x1="667" y1="96" x2="667" y2="149" stroke="#b34a22" marker-end="url(#arrow-orange)"/>
+
+  <rect x="59" y="150" width="147" height="44" rx="7" fill="#0b5b4a" stroke="#16b894"/>
+  <text x="132" y="177" text-anchor="middle" fill="#62d4bd" font-family="Arial, sans-serif" font-size="15" font-weight="700">PaymentFactory</text>
+
+  <rect x="304" y="150" width="195" height="44" rx="7" fill="#44398e" stroke="#8d82ff"/>
+  <text x="401" y="177" text-anchor="middle" fill="#bcb5ff" font-family="Arial, sans-serif" font-size="15" font-weight="700">IPaymentCreator</text>
+
+  <rect x="560" y="150" width="214" height="44" rx="7" fill="#80301a" stroke="#d06a45"/>
+  <text x="667" y="177" text-anchor="middle" fill="#ffb299" font-family="Arial, sans-serif" font-size="15" font-weight="700">IPaymentFactory</text>
+
+  <line x1="93" y1="194" x2="60" y2="247" stroke="#0b7f68" marker-end="url(#arrow-green)"/>
+  <line x1="132" y1="194" x2="132" y2="247" stroke="#0b7f68" marker-end="url(#arrow-green)"/>
+  <line x1="181" y1="194" x2="206" y2="247" stroke="#0b7f68" marker-end="url(#arrow-green)"/>
+
+  <line x1="352" y1="194" x2="327" y2="247" stroke="#5a50c8" marker-end="url(#arrow-purple)"/>
+  <line x1="449" y1="194" x2="475" y2="247" stroke="#5a50c8" marker-end="url(#arrow-purple)"/>
+
+  <line x1="609" y1="194" x2="584" y2="247" stroke="#b34a22" marker-end="url(#arrow-orange)"/>
+  <line x1="720" y1="194" x2="744" y2="247" stroke="#b34a22" marker-end="url(#arrow-orange)"/>
+
+  <rect x="10" y="248" width="85" height="38" rx="5" fill="#4a4a46" stroke="#888"/>
+  <text x="52" y="273" text-anchor="middle" fill="#d0d0c8" font-family="Arial, sans-serif" font-size="16" font-weight="700">VNPay</text>
+
+  <rect x="83" y="248" width="84" height="38" rx="5" fill="#4a4a46" stroke="#888"/>
+  <text x="125" y="273" text-anchor="middle" fill="#d0d0c8" font-family="Arial, sans-serif" font-size="16" font-weight="700">MoMo</text>
+
+  <rect x="157" y="248" width="98" height="38" rx="5" fill="#4a4a46" stroke="#888"/>
+  <text x="206" y="273" text-anchor="middle" fill="#d0d0c8" font-family="Arial, sans-serif" font-size="16" font-weight="700">ZaloPay</text>
+
+  <rect x="275" y="248" width="134" height="38" rx="5" fill="#44398e" stroke="#8d82ff"/>
+  <text x="342" y="273" text-anchor="middle" fill="#bcb5ff" font-family="Arial, sans-serif" font-size="16" font-weight="700">VNPayCreator</text>
+
+  <rect x="421" y="248" width="135" height="38" rx="5" fill="#44398e" stroke="#8d82ff"/>
+  <text x="488" y="273" text-anchor="middle" fill="#bcb5ff" font-family="Arial, sans-serif" font-size="16" font-weight="700">MoMoCreator</text>
+
+  <rect x="533" y="248" width="130" height="38" rx="5" fill="#80301a" stroke="#d06a45"/>
+  <text x="598" y="273" text-anchor="middle" fill="#ffb299" font-family="Arial, sans-serif" font-size="16" font-weight="700">VNPayFactory</text>
+
+  <rect x="675" y="248" width="130" height="38" rx="5" fill="#80301a" stroke="#d06a45"/>
+  <text x="740" y="273" text-anchor="middle" fill="#ffb299" font-family="Arial, sans-serif" font-size="16" font-weight="700">MoMoFactory</text>
+
+  <rect x="23" y="345" width="219" height="98" rx="9" fill="#0b5b4a" stroke="#16b894"/>
+  <text x="132" y="379" text-anchor="middle" fill="#62d4bd" font-family="Arial, sans-serif" font-size="16" font-weight="700">switch/if chọn loại</text>
+  <text x="132" y="403" text-anchor="middle" fill="#62d4bd" font-family="Arial, sans-serif" font-size="16" font-weight="700">Dễ hiểu, nhanh làm</text>
+  <text x="132" y="427" text-anchor="middle" fill="#62d4bd" font-family="Arial, sans-serif" font-size="16" font-weight="700">Vi phạm Open/Closed</text>
+
+  <rect x="292" y="345" width="219" height="98" rx="9" fill="#44398e" stroke="#8d82ff"/>
+  <text x="401" y="379" text-anchor="middle" fill="#bcb5ff" font-family="Arial, sans-serif" font-size="16" font-weight="700">Override để tạo object</text>
+  <text x="401" y="403" text-anchor="middle" fill="#bcb5ff" font-family="Arial, sans-serif" font-size="16" font-weight="700">Mở rộng dễ dàng</text>
+  <text x="401" y="427" text-anchor="middle" fill="#bcb5ff" font-family="Arial, sans-serif" font-size="16" font-weight="700">Thêm class, không sửa cũ</text>
+
+  <rect x="554" y="345" width="226" height="98" rx="9" fill="#80301a" stroke="#d06a45"/>
+  <text x="667" y="379" text-anchor="middle" fill="#ffb299" font-family="Arial, sans-serif" font-size="16" font-weight="700">Tạo cả họ object</text>
+  <text x="667" y="403" text-anchor="middle" fill="#ffb299" font-family="Arial, sans-serif" font-size="16" font-weight="700">Đảm bảo tương thích</text>
+  <text x="667" y="427" text-anchor="middle" fill="#ffb299" font-family="Arial, sans-serif" font-size="16" font-weight="700">Phức tạp hơn</text>
+</svg>
