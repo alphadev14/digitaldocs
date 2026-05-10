@@ -248,6 +248,24 @@ Vấn đề:
 
 Trong app nhiều thread, Singleton cần được tạo và sử dụng cẩn thận.
 
+Sơ đồ dưới đây mô tả luồng thường gặp của cách tạo Singleton an toàn bằng cơ chế kiểm tra hai lần và lock:
+
+<p align="center">
+  <img src="../../../assets/singleton-double-check-locking.svg" alt="Luồng double-check locking khi tạo Singleton" width="700">
+</p>
+
+Ý nghĩa của sơ đồ:
+
+- Caller gọi `getInstance()` hoặc truy cập `Instance`.
+- Hệ thống kiểm tra lần 1: nếu `_instance` đã có rồi thì trả về ngay, không cần lock.
+- Nếu `_instance == null`, thread đi vào vùng `lock`.
+- Bên trong `lock`, hệ thống kiểm tra lần 2 để chắc chắn chưa có thread khác tạo instance trong lúc thread hiện tại đang chờ lock.
+- Nếu vẫn `null`, instance mới được tạo.
+- Sau khi tạo xong, lock được release và caller nhận instance.
+- Những lần gọi sau sẽ đi theo nhánh "Không" ở lần kiểm tra đầu tiên và trả về instance cũ rất nhanh.
+
+Điểm quan trọng là lần kiểm tra thứ hai không bị thừa. Nó giúp tránh tình huống nhiều thread cùng vượt qua lần kiểm tra đầu tiên khi `_instance` đang là `null`, rồi lần lượt vào lock và tạo nhiều instance khác nhau.
+
 Ví dụ có vấn đề:
 
 ```csharp
@@ -280,6 +298,39 @@ Vấn đề:
 - Không an toàn trong môi trường web/app concurrent.
 
 Cách tốt hơn:
+
+```csharp
+public sealed class DoubleCheckSingleton
+{
+    private static readonly object _lock = new();
+    private static DoubleCheckSingleton? _instance;
+
+    public static DoubleCheckSingleton Instance
+    {
+        get
+        {
+            if (_instance == null)
+            {
+                lock (_lock)
+                {
+                    if (_instance == null)
+                    {
+                        _instance = new DoubleCheckSingleton();
+                    }
+                }
+            }
+
+            return _instance;
+        }
+    }
+
+    private DoubleCheckSingleton()
+    {
+    }
+}
+```
+
+Tuy nhiên trong C# hiện đại, mình thường không cần tự viết đầy đủ như trên. Dùng `Lazy<T>` sẽ gọn và ít lỗi hơn:
 
 ```csharp
 public sealed class GoodSingleton

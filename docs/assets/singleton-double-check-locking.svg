@@ -1,0 +1,69 @@
+<svg width="1164" height="942" viewBox="0 0 1164 942" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1164" height="942" fill="#1f1f1d"/>
+  <defs>
+    <marker id="arrow-gray" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#666"/>
+    </marker>
+    <marker id="arrow-green" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#0d8f76"/>
+    </marker>
+  </defs>
+
+  <rect x="479" y="82" width="240" height="66" rx="33" fill="#484845" stroke="#999" stroke-width="1"/>
+  <text x="599" y="123" text-anchor="middle" fill="#d8d8d0" font-family="Arial, sans-serif" font-size="22" font-weight="700">Caller gọi getInstance()</text>
+
+  <line x1="599" y1="148" x2="599" y2="207" stroke="#606060" stroke-width="1.4" marker-end="url(#arrow-gray)"/>
+
+  <rect x="404" y="208" width="391" height="85" rx="11" fill="#704000" stroke="#c77d12" stroke-width="1.3"/>
+  <text x="599" y="249" text-anchor="middle" fill="#ffd48b" font-family="Arial, sans-serif" font-size="22" font-weight="700">instance == null?</text>
+  <text x="599" y="279" text-anchor="middle" fill="#ffbd45" font-family="Arial, sans-serif" font-size="18" font-weight="700">Kiểm tra lần 1 (không lock)</text>
+
+  <line x1="599" y1="293" x2="599" y2="351" stroke="#606060" stroke-width="1.4" marker-end="url(#arrow-gray)"/>
+  <text x="618" y="328" fill="#d0cbc0" font-family="Arial, sans-serif" font-size="18" font-weight="700">Có</text>
+
+  <rect x="404" y="352" width="391" height="85" rx="11" fill="#44398e" stroke="#8d82ff" stroke-width="1.3"/>
+  <text x="599" y="393" text-anchor="middle" fill="#d7d0ff" font-family="Arial, sans-serif" font-size="22" font-weight="700">Acquire lock()</text>
+  <text x="599" y="423" text-anchor="middle" fill="#bfb8ff" font-family="Arial, sans-serif" font-size="18" font-weight="700">Chỉ 1 thread vào được</text>
+
+  <line x1="599" y1="437" x2="599" y2="496" stroke="#606060" stroke-width="1.4" marker-end="url(#arrow-gray)"/>
+
+  <rect x="135" y="472" width="222" height="121" rx="12" fill="none" stroke="#3b3b3a" stroke-width="1.5" stroke-dasharray="7 6"/>
+  <text x="246" y="505" text-anchor="middle" fill="#d4d0c8" font-family="Arial, sans-serif" font-size="18" font-weight="700">Dùng Lazy&lt;T&gt;</text>
+  <text x="246" y="532" text-anchor="middle" fill="#d4d0c8" font-family="Arial, sans-serif" font-size="18" font-weight="700">trong C# - .NET</text>
+  <text x="246" y="559" text-anchor="middle" fill="#d4d0c8" font-family="Arial, sans-serif" font-size="18" font-weight="700">tự làm hết</text>
+  <text x="246" y="586" text-anchor="middle" fill="#d4d0c8" font-family="Arial, sans-serif" font-size="18" font-weight="700">các bước này</text>
+  <line x1="357" y1="538" x2="404" y2="538" stroke="#545454" stroke-width="1.4" stroke-dasharray="5 5" marker-end="url(#arrow-gray)"/>
+
+  <rect x="404" y="497" width="391" height="85" rx="11" fill="#704000" stroke="#c77d12" stroke-width="1.3"/>
+  <text x="599" y="538" text-anchor="middle" fill="#ffd48b" font-family="Arial, sans-serif" font-size="22" font-weight="700">instance == null?</text>
+  <text x="599" y="568" text-anchor="middle" fill="#ffbd45" font-family="Arial, sans-serif" font-size="18" font-weight="700">Kiểm tra lần 2 (trong lock)</text>
+
+  <line x1="599" y1="582" x2="599" y2="640" stroke="#606060" stroke-width="1.4" marker-end="url(#arrow-gray)"/>
+  <text x="618" y="617" fill="#d0cbc0" font-family="Arial, sans-serif" font-size="18" font-weight="700">Có</text>
+
+  <rect x="404" y="641" width="391" height="84" rx="11" fill="#80301a" stroke="#d06a45" stroke-width="1.3"/>
+  <text x="599" y="680" text-anchor="middle" fill="#ffd0bd" font-family="Arial, sans-serif" font-size="22" font-weight="700">Tạo instance mới</text>
+  <text x="599" y="710" text-anchor="middle" fill="#ffb299" font-family="Arial, sans-serif" font-size="18" font-weight="700">new DatabaseConnection()</text>
+
+  <line x1="599" y1="725" x2="599" y2="784" stroke="#606060" stroke-width="1.4" marker-end="url(#arrow-gray)"/>
+
+  <rect x="404" y="785" width="391" height="66" rx="11" fill="#44398e" stroke="#8d82ff" stroke-width="1.3"/>
+  <text x="599" y="826" text-anchor="middle" fill="#d7d0ff" font-family="Arial, sans-serif" font-size="22" font-weight="700">Release lock()</text>
+
+  <rect x="480" y="881" width="240" height="54" rx="27" fill="#075e4e" stroke="#21b99e" stroke-width="1.3"/>
+  <text x="600" y="915" text-anchor="middle" fill="#b6e7dc" font-family="Arial, sans-serif" font-size="21" font-weight="700">Caller nhận instance</text>
+
+  <rect x="929" y="208" width="151" height="85" rx="12" fill="#086552" stroke="#27c9aa" stroke-width="1.3"/>
+  <text x="1005" y="249" text-anchor="middle" fill="#b9eadf" font-family="Arial, sans-serif" font-size="22" font-weight="700">Trả về</text>
+  <text x="1005" y="279" text-anchor="middle" fill="#78d4c1" font-family="Arial, sans-serif" font-size="18" font-weight="700">instance cũ</text>
+
+  <line x1="795" y1="250" x2="929" y2="250" stroke="#0d8f76" stroke-width="1.4" marker-end="url(#arrow-green)"/>
+  <text x="831" y="238" fill="#d0cbc0" font-family="Arial, sans-serif" font-size="18" font-weight="700">Không</text>
+
+  <line x1="795" y1="540" x2="885" y2="540" stroke="#0d8f76" stroke-width="1.4" stroke-dasharray="6 6"/>
+  <line x1="885" y1="540" x2="885" y2="250" stroke="#0d8f76" stroke-width="1.4" stroke-dasharray="6 6" marker-end="url(#arrow-green)"/>
+  <text x="828" y="526" fill="#d0cbc0" font-family="Arial, sans-serif" font-size="18" font-weight="700">Không</text>
+
+  <polyline points="795,818 1005,818 1005,293" stroke="#0d8f76" stroke-width="1.4" fill="none" marker-end="url(#arrow-green)"/>
+  <polyline points="1005,293 1005,906 722,906" stroke="#0d5d50" stroke-width="1.2" fill="none" marker-end="url(#arrow-green)"/>
+</svg>
