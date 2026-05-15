@@ -1,0 +1,78 @@
+<svg width="960" height="1050" viewBox="0 0 960 1050" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="960" height="1050" fill="#171717"/>
+  <style>
+    text { font-family: Inter, Arial, sans-serif; fill: #E7E3DA; }
+    .title { font-size: 22px; font-weight: 700; }
+    .body { font-size: 18px; }
+    .muted { fill: #BFB9B0; }
+    .line { stroke: #6A665F; stroke-width: 2; }
+    .dash { stroke: #383532; stroke-width: 2; stroke-dasharray: 6 6; }
+  </style>
+
+  <rect x="26" y="28" width="272" height="96" rx="14" fill="#38358A" stroke="#6C68D8"/>
+  <text x="162" y="68" text-anchor="middle" class="title">Đặt tên rõ ràng</text>
+  <text x="162" y="96" text-anchor="middle" class="body muted">Tên nói lên mục đích</text>
+
+  <rect x="344" y="28" width="272" height="96" rx="14" fill="#0E544D" stroke="#138C7B"/>
+  <text x="480" y="68" text-anchor="middle" class="title">Hàm nhỏ &amp; đơn nhiệm</text>
+  <text x="480" y="96" text-anchor="middle" class="body muted">Một hàm, một việc</text>
+
+  <rect x="662" y="28" width="272" height="96" rx="14" fill="#743117" stroke="#B45E39"/>
+  <text x="798" y="68" text-anchor="middle" class="title">Comment đúng chỗ</text>
+  <text x="798" y="96" text-anchor="middle" class="body muted">Giải thích “tại sao”, không “cái gì”</text>
+
+  <line x1="162" y1="124" x2="162" y2="184" class="line"/>
+  <line x1="480" y1="124" x2="480" y2="184" class="line"/>
+  <line x1="798" y1="124" x2="798" y2="184" class="line"/>
+
+  <rect x="26" y="190" width="272" height="96" rx="14" fill="#143F73" stroke="#2D74C7"/>
+  <text x="162" y="230" text-anchor="middle" class="title">DRY</text>
+  <text x="162" y="258" text-anchor="middle" class="body muted">Không lặp code</text>
+
+  <rect x="344" y="190" width="272" height="96" rx="14" fill="#6A3900" stroke="#A85F00"/>
+  <text x="480" y="230" text-anchor="middle" class="title">KISS &amp; YAGNI</text>
+  <text x="480" y="258" text-anchor="middle" class="body muted">Đơn giản, đừng over-engineer</text>
+
+  <rect x="662" y="190" width="272" height="96" rx="14" fill="#244F0D" stroke="#4D911D"/>
+  <text x="798" y="230" text-anchor="middle" class="title">SOLID principles</text>
+  <text x="798" y="258" text-anchor="middle" class="body muted">Thiết kế bền vững</text>
+
+  <line x1="26" y1="322" x2="934" y2="322" class="dash"/>
+  <text x="480" y="348" text-anchor="middle" class="body muted">Cấu trúc &amp; tổ chức</text>
+
+  <rect x="26" y="366" width="272" height="96" rx="14" fill="#38358A" stroke="#6C68D8"/>
+  <text x="162" y="406" text-anchor="middle" class="title">Cấu trúc rõ ràng</text>
+  <text x="162" y="434" text-anchor="middle" class="body muted">Module, folder có nghĩa</text>
+
+  <rect x="344" y="366" width="272" height="96" rx="14" fill="#0E544D" stroke="#138C7B"/>
+  <text x="480" y="406" text-anchor="middle" class="title">Xử lý lỗi tốt</text>
+  <text x="480" y="434" text-anchor="middle" class="body muted">Exception rõ ràng, không nuốt lỗi</text>
+
+  <rect x="662" y="366" width="272" height="96" rx="14" fill="#743117" stroke="#B45E39"/>
+  <text x="798" y="406" text-anchor="middle" class="title">Viết test đi kèm</text>
+  <text x="798" y="434" text-anchor="middle" class="body muted">Test rõ, nhanh, độc lập</text>
+
+  <line x1="26" y1="496" x2="934" y2="496" class="dash"/>
+  <text x="480" y="522" text-anchor="middle" class="body muted">Thực hành liên tục</text>
+
+  <line x1="480" y1="462" x2="480" y2="536" class="line"/>
+  <rect x="26" y="538" width="908" height="96" rx="14" fill="#143F73" stroke="#2D74C7"/>
+  <text x="480" y="578" text-anchor="middle" class="title">Refactoring liên tục</text>
+  <text x="480" y="606" text-anchor="middle" class="body muted">Cải thiện code mà không thay đổi hành vi — “Boy Scout Rule”</text>
+
+  <line x1="480" y1="634" x2="480" y2="706" class="line"/>
+  <rect x="26" y="708" width="436" height="96" rx="14" fill="#6A3900" stroke="#A85F00"/>
+  <text x="244" y="748" text-anchor="middle" class="title">Code review</text>
+  <text x="244" y="776" text-anchor="middle" class="body muted">Phản hồi mang tính xây dựng</text>
+
+  <rect x="498" y="708" width="436" height="96" rx="14" fill="#244F0D" stroke="#4D911D"/>
+  <text x="716" y="748" text-anchor="middle" class="title">Nhất quán convention</text>
+  <text x="716" y="776" text-anchor="middle" class="body muted">Formatter, linter, style guide</text>
+
+  <line x1="480" y1="804" x2="480" y2="870" class="line"/>
+  <rect x="146" y="880" width="668" height="106" rx="16" fill="#41403D" stroke="#8A857D"/>
+  <text x="480" y="922" text-anchor="middle" class="title">Kết quả đạt được</text>
+  <text x="480" y="952" text-anchor="middle" class="body muted">Dễ đọc · Dễ bảo trì · Dễ mở rộng · Ít bug hơn</text>
+
+  <text x="480" y="1022" text-anchor="middle" class="body muted">Nhấn vào từng ô để tìm hiểu chi tiết</text>
+</svg>
