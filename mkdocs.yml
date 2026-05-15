@@ -115,6 +115,7 @@ nav:
           - Component of System Design: mid-level/system-design/03-component-of-system-design.md
 
       - ⭐ Design Pattern:
+          - Roadmap: mid-level/design-pattern/index.md
           - Overview: mid-level/design-pattern/01-design-pattern-overview.md
           - Creational:
               - Singleton Pattern: mid-level/design-pattern/02-singleton-pattern.md
@@ -124,6 +125,7 @@ nav:
               - Adapter Pattern: mid-level/design-pattern/05-adapter-pattern.md
           - Behavioral:
               - Observer Pattern: mid-level/design-pattern/06-observer-pattern.md
+              - Strategy Pattern: mid-level/design-pattern/07-strategy-pattern.md
 
   - Senior: senior/index.md
 

@@ -12,6 +12,7 @@ Design Pattern không phải là công thức để nhét vào mọi nơi. Nó l
 | [Builder](04-builder-pattern.md) | Tạo object phức tạp theo từng bước | Khi constructor quá dài hoặc nhiều optional field |
 | [Adapter](05-adapter-pattern.md) | Bọc API/thư viện ngoài để khớp interface nội bộ | Khi tích hợp payment, email, storage, API bên thứ ba |
 | [Observer](06-observer-pattern.md) | Một event xảy ra, nhiều handler phản ứng | Khi tạo đơn hàng xong cần gửi email, trừ kho, notify |
+| [Strategy](07-strategy-pattern.md) | Nhiều cách xử lý cho cùng một hành động | Khi có pricing, payment, export hoặc validation thay đổi theo ngữ cảnh |
 
 ## Nguyên tắc áp dụng
 
