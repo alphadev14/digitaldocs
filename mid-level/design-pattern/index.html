@@ -21,7 +21,7 @@
     
     
       
-        <title>Index - P&T | Digital Docs</title>
+        <title>Design Pattern Roadmap - P&T | Digital Docs</title>
       
     
     
@@ -75,6 +75,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#design-pattern-roadmap" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -106,7 +111,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Index
+              Design Pattern Roadmap
             
           </span>
         </div>
@@ -3332,7 +3337,7 @@
   
   
     <li class="md-nav__item">
-      <a href="04-builder-pattern.md" class="md-nav__link">
+      <a href="04-builder-pattern/" class="md-nav__link">
         
   
   
@@ -3415,7 +3420,7 @@
   
   
     <li class="md-nav__item">
-      <a href="05-adapter-pattern.md" class="md-nav__link">
+      <a href="05-adapter-pattern/" class="md-nav__link">
         
   
   
@@ -3498,7 +3503,7 @@
   
   
     <li class="md-nav__item">
-      <a href="06-observer-pattern.md" class="md-nav__link">
+      <a href="06-observer-pattern/" class="md-nav__link">
         
   
   
@@ -3586,6 +3591,49 @@
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#cach-hoc-trong-repo-nay" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cách học trong repo này
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#nguyen-tac-ap-dung" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Nguyên tắc áp dụng
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cau-hoi-truoc-khi-dung-pattern" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Câu hỏi trước khi dùng pattern
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -3602,9 +3650,65 @@
 
 
 
-  <h1>Index</h1>
-
-
+<h1 id="design-pattern-roadmap">Design Pattern Roadmap<a class="headerlink" href="#design-pattern-roadmap" title="Permanent link">&para;</a></h1>
+<p>Design Pattern không phải là công thức để nhét vào mọi nơi. Nó là ngôn ngữ chung để mô tả các cách tổ chức code đã được kiểm chứng khi gặp vấn đề lặp lại trong thiết kế phần mềm.</p>
+<h2 id="cach-hoc-trong-repo-nay">Cách học trong repo này<a class="headerlink" href="#cach-hoc-trong-repo-nay" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Bài</th>
+<th>Trọng tâm</th>
+<th>Khi nào nên đọc</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="01-design-pattern-overview/">Overview</a></td>
+<td>Phân loại pattern và dấu hiệu nhận biết trong code thật</td>
+<td>Đọc đầu tiên</td>
+</tr>
+<tr>
+<td><a href="02-singleton-pattern/">Singleton</a></td>
+<td>Một instance dùng chung, DI lifetime, thread safety</td>
+<td>Khi làm config, cache, logger</td>
+</tr>
+<tr>
+<td><a href="03-factory-pattern/">Factory</a></td>
+<td>Chọn implementation/object theo input hoặc runtime condition</td>
+<td>Khi có nhiều loại payment, sender, exporter</td>
+</tr>
+<tr>
+<td><a href="04-builder-pattern/">Builder</a></td>
+<td>Tạo object phức tạp theo từng bước</td>
+<td>Khi constructor quá dài hoặc nhiều optional field</td>
+</tr>
+<tr>
+<td><a href="05-adapter-pattern/">Adapter</a></td>
+<td>Bọc API/thư viện ngoài để khớp interface nội bộ</td>
+<td>Khi tích hợp payment, email, storage, API bên thứ ba</td>
+</tr>
+<tr>
+<td><a href="06-observer-pattern/">Observer</a></td>
+<td>Một event xảy ra, nhiều handler phản ứng</td>
+<td>Khi tạo đơn hàng xong cần gửi email, trừ kho, notify</td>
+</tr>
+</tbody>
+</table>
+<h2 id="nguyen-tac-ap-dung">Nguyên tắc áp dụng<a class="headerlink" href="#nguyen-tac-ap-dung" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Bắt đầu từ mùi code: <code>if/else</code> lặp lại, constructor dài, phụ thuộc framework bị rò vào domain, side effect dính chặt vào use case.</li>
+<li>Chọn pattern nhỏ nhất đủ giải quyết vấn đề.</li>
+<li>Ưu tiên code dễ đọc và dễ test hơn việc “đúng sách”.</li>
+<li>Trong ASP.NET Core, luôn cân nhắc Dependency Injection, service lifetime và testability.</li>
+</ul>
+<h2 id="cau-hoi-truoc-khi-dung-pattern">Câu hỏi trước khi dùng pattern<a class="headerlink" href="#cau-hoi-truoc-khi-dung-pattern" title="Permanent link">&para;</a></h2>
+<ol>
+<li>Pattern này có làm code dễ hiểu hơn không?</li>
+<li>Có giảm coupling hoặc duplication thật không?</li>
+<li>Có làm test dễ hơn không?</li>
+<li>Có đang tạo thêm class chỉ vì muốn code trông “xịn” hơn không?</li>
+<li>Nếu thêm yêu cầu mới, pattern này giúp mở rộng hay làm phức tạp thêm?</li>
+</ol>
 
 
 

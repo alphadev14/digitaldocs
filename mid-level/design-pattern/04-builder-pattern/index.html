@@ -8,9 +8,13 @@
       
       
       
-        <link rel="canonical" href="https://alphadev14.github.io/digitaldocs/mid-level/design-pattern/04-factory-pattern/">
+        <link rel="canonical" href="https://alphadev14.github.io/digitaldocs/mid-level/design-pattern/04-builder-pattern/">
       
       
+        <link rel="prev" href="../03-factory-pattern/">
+      
+      
+        <link rel="next" href="../05-adapter-pattern/">
       
       
         
@@ -21,7 +25,7 @@
     
     
       
-        <title>04 factory pattern - P&T | Digital Docs</title>
+        <title>Builder Pattern - P&T | Digital Docs</title>
       
     
     
@@ -75,6 +79,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#builder-pattern" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -106,7 +115,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              04 factory pattern
+              Builder Pattern
             
           </span>
         </div>
@@ -1572,18 +1581,20 @@
       
   
   
+    
   
   
+  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
         
           
           <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
@@ -1604,7 +1615,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             
@@ -3151,18 +3162,20 @@
                 
   
   
+    
   
   
+  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_6" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_6" checked>
         
           
           <label class="md-nav__link" for="__nav_3_6" id="__nav_3_6_label" tabindex="0">
@@ -3183,7 +3196,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_6_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_6_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3_6">
             <span class="md-nav__icon md-icon"></span>
             
@@ -3226,18 +3239,20 @@
                 
   
   
+    
   
   
+  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_6_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_6_2" checked>
         
           
           <label class="md-nav__link" for="__nav_3_6_2" id="__nav_3_6_2_label" tabindex="0">
@@ -3258,7 +3273,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_6_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_6_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3_6_2">
             <span class="md-nav__icon md-icon"></span>
             
@@ -3329,10 +3344,37 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../04-builder-pattern.md" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Builder Pattern
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -3348,6 +3390,103 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-builder-pattern-la-gi" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Builder Pattern là gì?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-van-e-builder-giai-quyet" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Vấn đề Builder giải quyết
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-vi-du-builder-trong-c" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Ví dụ Builder trong C
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-khi-nao-nen-dung-builder" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Khi nào nên dùng Builder?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-builder-khac-gi-factory" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Builder khác gì Factory?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-luu-y-khi-dung" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Lưu ý khi dùng
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-tom-tat" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Tóm tắt
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -3415,7 +3554,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../05-adapter-pattern.md" class="md-nav__link">
+      <a href="../05-adapter-pattern/" class="md-nav__link">
         
   
   
@@ -3498,7 +3637,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../06-observer-pattern.md" class="md-nav__link">
+      <a href="../06-observer-pattern/" class="md-nav__link">
         
   
   
@@ -3586,6 +3725,93 @@
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-builder-pattern-la-gi" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Builder Pattern là gì?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-van-e-builder-giai-quyet" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Vấn đề Builder giải quyết
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-vi-du-builder-trong-c" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Ví dụ Builder trong C
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-khi-nao-nen-dung-builder" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Khi nào nên dùng Builder?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-builder-khac-gi-factory" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Builder khác gì Factory?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-luu-y-khi-dung" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Lưu ý khi dùng
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-tom-tat" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Tóm tắt
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -3602,9 +3828,187 @@
 
 
 
-  <h1>04 factory pattern</h1>
+<h1 id="builder-pattern">Builder Pattern<a class="headerlink" href="#builder-pattern" title="Permanent link">&para;</a></h1>
+<h2 id="1-builder-pattern-la-gi">1. Builder Pattern là gì?<a class="headerlink" href="#1-builder-pattern-la-gi" title="Permanent link">&para;</a></h2>
+<p>Builder Pattern là một Creational Design Pattern dùng để tạo object phức tạp theo từng bước, thay vì nhồi tất cả tham số vào một constructor dài.</p>
+<p>Nói đơn giản:</p>
+<div class="highlight"><pre><span></span><code>Object nhiều cấu hình -&gt; builder gom từng bước -&gt; trả về object hoàn chỉnh, dễ đọc
+</code></pre></div>
+<p>Builder hữu ích khi object có nhiều optional field, nhiều rule validate khi khởi tạo, hoặc cần fluent API để code gọi đọc giống mô tả nghiệp vụ.</p>
+<h2 id="2-van-e-builder-giai-quyet">2. Vấn đề Builder giải quyết<a class="headerlink" href="#2-van-e-builder-giai-quyet" title="Permanent link">&para;</a></h2>
+<p>Không dùng Builder, code khởi tạo object dễ rơi vào tình trạng constructor quá dài:</p>
+<div class="highlight"><pre><span></span><code><span class="kt">var</span><span class="w"> </span><span class="n">request</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ReportRequest</span><span class="p">(</span>
+<span class="w">    </span><span class="s">&quot;sales&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="k">new</span><span class="w"> </span><span class="nf">DateOnly</span><span class="p">(</span><span class="mi">2026</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">),</span>
+<span class="w">    </span><span class="k">new</span><span class="w"> </span><span class="nf">DateOnly</span><span class="p">(</span><span class="mi">2026</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">31</span><span class="p">),</span>
+<span class="w">    </span><span class="k">true</span><span class="p">,</span>
+<span class="w">    </span><span class="k">true</span><span class="p">,</span>
+<span class="w">    </span><span class="s">&quot;pdf&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s">&quot;vi-VN&quot;</span>
+<span class="p">);</span>
+</code></pre></div>
+<p>Vấn đề:</p>
+<ul>
+<li>Người đọc khó nhớ tham số thứ tư, thứ năm có ý nghĩa gì.</li>
+<li>Dễ truyền nhầm thứ tự nếu nhiều tham số cùng kiểu.</li>
+<li>Optional field làm constructor phình to.</li>
+<li>Logic validate object bị rải rác ở caller.</li>
+</ul>
+<p>Builder giúp caller mô tả object theo từng bước rõ nghĩa hơn.</p>
+<h2 id="3-vi-du-builder-trong-c">3. Ví dụ Builder trong C<a class="headerlink" href="#3-vi-du-builder-trong-c" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><span class="k">public</span><span class="w"> </span><span class="k">sealed</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">ReportRequest</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">Department</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">get</span><span class="p">;</span><span class="w"> </span><span class="k">init</span><span class="p">;</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="p">;</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">DateOnly</span><span class="w"> </span><span class="n">FromDate</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">get</span><span class="p">;</span><span class="w"> </span><span class="k">init</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">DateOnly</span><span class="w"> </span><span class="n">ToDate</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">get</span><span class="p">;</span><span class="w"> </span><span class="k">init</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="n">IncludeCharts</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">get</span><span class="p">;</span><span class="w"> </span><span class="k">init</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="n">IncludeSummary</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">get</span><span class="p">;</span><span class="w"> </span><span class="k">init</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">Format</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">get</span><span class="p">;</span><span class="w"> </span><span class="k">init</span><span class="p">;</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;pdf&quot;</span><span class="p">;</span>
+<span class="p">}</span>
 
+<span class="k">public</span><span class="w"> </span><span class="k">sealed</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">ReportRequestBuilder</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">private</span><span class="w"> </span><span class="k">readonly</span><span class="w"> </span><span class="n">ReportRequest</span><span class="w"> </span><span class="n">_request</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="p">();</span>
 
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">ReportRequestBuilder</span><span class="w"> </span><span class="nf">ForDepartment</span><span class="p">(</span><span class="kt">string</span><span class="w"> </span><span class="n">department</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">_request</span><span class="p">.</span><span class="n">Department</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">department</span><span class="p">;</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="k">this</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">ReportRequestBuilder</span><span class="w"> </span><span class="nf">From</span><span class="p">(</span><span class="n">DateOnly</span><span class="w"> </span><span class="n">fromDate</span><span class="p">,</span><span class="w"> </span><span class="n">DateOnly</span><span class="w"> </span><span class="n">toDate</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">toDate</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">fromDate</span><span class="p">)</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="k">throw</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="nf">ArgumentException</span><span class="p">(</span><span class="s">&quot;ToDate must be greater than or equal to FromDate&quot;</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="n">_request</span><span class="p">.</span><span class="n">FromDate</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">fromDate</span><span class="p">;</span>
+<span class="w">        </span><span class="n">_request</span><span class="p">.</span><span class="n">ToDate</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">toDate</span><span class="p">;</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="k">this</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">ReportRequestBuilder</span><span class="w"> </span><span class="nf">WithCharts</span><span class="p">()</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">_request</span><span class="p">.</span><span class="n">IncludeCharts</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">true</span><span class="p">;</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="k">this</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">ReportRequestBuilder</span><span class="w"> </span><span class="nf">WithSummary</span><span class="p">()</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">_request</span><span class="p">.</span><span class="n">IncludeSummary</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">true</span><span class="p">;</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="k">this</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">ReportRequestBuilder</span><span class="w"> </span><span class="nf">AsFormat</span><span class="p">(</span><span class="kt">string</span><span class="w"> </span><span class="n">format</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">_request</span><span class="p">.</span><span class="n">Format</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">format</span><span class="p">;</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="k">this</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">ReportRequest</span><span class="w"> </span><span class="nf">Build</span><span class="p">()</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="kt">string</span><span class="p">.</span><span class="n">IsNullOrWhiteSpace</span><span class="p">(</span><span class="n">_request</span><span class="p">.</span><span class="n">Department</span><span class="p">))</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="k">throw</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="nf">InvalidOperationException</span><span class="p">(</span><span class="s">&quot;Department is required&quot;</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">_request</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Cách dùng:</p>
+<div class="highlight"><pre><span></span><code><span class="kt">var</span><span class="w"> </span><span class="n">request</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ReportRequestBuilder</span><span class="p">()</span>
+<span class="w">    </span><span class="p">.</span><span class="n">ForDepartment</span><span class="p">(</span><span class="s">&quot;Sales&quot;</span><span class="p">)</span>
+<span class="w">    </span><span class="p">.</span><span class="n">From</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">DateOnly</span><span class="p">(</span><span class="mi">2026</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">),</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">DateOnly</span><span class="p">(</span><span class="mi">2026</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">31</span><span class="p">))</span>
+<span class="w">    </span><span class="p">.</span><span class="n">WithCharts</span><span class="p">()</span>
+<span class="w">    </span><span class="p">.</span><span class="n">WithSummary</span><span class="p">()</span>
+<span class="w">    </span><span class="p">.</span><span class="n">AsFormat</span><span class="p">(</span><span class="s">&quot;pdf&quot;</span><span class="p">)</span>
+<span class="w">    </span><span class="p">.</span><span class="n">Build</span><span class="p">();</span>
+</code></pre></div>
+<p>Điểm hay là code gọi thể hiện ý định rõ hơn constructor dài.</p>
+<h2 id="4-khi-nao-nen-dung-builder">4. Khi nào nên dùng Builder?<a class="headerlink" href="#4-khi-nao-nen-dung-builder" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Trường hợp</th>
+<th>Có nên dùng?</th>
+<th>Ghi chú</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Object có nhiều optional field</td>
+<td>Có</td>
+<td>Builder giúp đọc rõ hơn</td>
+</tr>
+<tr>
+<td>Constructor có nhiều tham số cùng kiểu</td>
+<td>Có</td>
+<td>Giảm lỗi truyền nhầm thứ tự</td>
+</tr>
+<tr>
+<td>Object cần validate khi tạo</td>
+<td>Có</td>
+<td>Có thể gom validate vào <code>Build()</code></td>
+</tr>
+<tr>
+<td>Object đơn giản có 2-3 field</td>
+<td>Không cần</td>
+<td>Object initializer đủ rõ</td>
+</tr>
+<tr>
+<td>Entity EF Core thông thường</td>
+<td>Cẩn thận</td>
+<td>EF Core có yêu cầu riêng về constructor/setter</td>
+</tr>
+</tbody>
+</table>
+<h2 id="5-builder-khac-gi-factory">5. Builder khác gì Factory?<a class="headerlink" href="#5-builder-khac-gi-factory" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Tiêu chí</th>
+<th>Builder</th>
+<th>Factory</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Mục tiêu</td>
+<td>Tạo một object phức tạp từng bước</td>
+<td>Chọn object/implementation phù hợp</td>
+</tr>
+<tr>
+<td>Dấu hiệu</td>
+<td>Constructor dài, optional field nhiều</td>
+<td><code>switch</code>/<code>if</code> chọn loại object</td>
+</tr>
+<tr>
+<td>Cách dùng</td>
+<td><code>WithX().WithY().Build()</code></td>
+<td><code>Create(type)</code></td>
+</tr>
+<tr>
+<td>Ví dụ</td>
+<td>Tạo report request, email message</td>
+<td>Chọn payment processor</td>
+</tr>
+</tbody>
+</table>
+<h2 id="6-luu-y-khi-dung">6. Lưu ý khi dùng<a class="headerlink" href="#6-luu-y-khi-dung" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Không dùng Builder chỉ để bọc lại object quá đơn giản.</li>
+<li>Nếu object cần immutable thật sự, cân nhắc builder giữ state riêng rồi tạo object mới ở <code>Build()</code>.</li>
+<li>Không để builder chứa business flow lớn; builder chỉ nên phục vụ khởi tạo object.</li>
+<li>Với ASP.NET Core options, có thể dùng options pattern thay vì tự viết builder.</li>
+</ul>
+<h2 id="7-tom-tat">7. Tóm tắt<a class="headerlink" href="#7-tom-tat" title="Permanent link">&para;</a></h2>
+<p>Builder Pattern phù hợp khi quá trình tạo object có nhiều bước, nhiều field tùy chọn hoặc cần validate rõ ràng.</p>
+<p>Một câu dễ nhớ:</p>
+<div class="highlight"><pre><span></span><code>Builder tốt khi object khó tạo bằng constructor ngắn gọn.
+Builder xấu khi nó chỉ làm một object đơn giản trở nên rườm rà.
+</code></pre></div>
 
 
 

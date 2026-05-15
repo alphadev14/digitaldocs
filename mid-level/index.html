@@ -21,7 +21,7 @@
     
     
       
-        <title>Index - P&T | Digital Docs</title>
+        <title>Mid-Level Roadmap - P&T | Digital Docs</title>
       
     
     
@@ -75,6 +75,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#mid-level-roadmap" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -106,7 +111,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Index
+              Mid-Level Roadmap
             
           </span>
         </div>
@@ -3332,7 +3337,7 @@
   
   
     <li class="md-nav__item">
-      <a href="design-pattern/04-builder-pattern.md" class="md-nav__link">
+      <a href="design-pattern/04-builder-pattern/" class="md-nav__link">
         
   
   
@@ -3415,7 +3420,7 @@
   
   
     <li class="md-nav__item">
-      <a href="design-pattern/05-adapter-pattern.md" class="md-nav__link">
+      <a href="design-pattern/05-adapter-pattern/" class="md-nav__link">
         
   
   
@@ -3498,7 +3503,7 @@
   
   
     <li class="md-nav__item">
-      <a href="design-pattern/06-observer-pattern.md" class="md-nav__link">
+      <a href="design-pattern/06-observer-pattern/" class="md-nav__link">
         
   
   
@@ -3586,6 +3591,49 @@
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#nang-luc-trong-tam" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Năng lực trọng tâm
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cach-hoc-hieu-qua" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cách học hiệu quả
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#checklist-mid-level" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Checklist Mid-Level
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -3602,9 +3650,62 @@
 
 
 
-  <h1>Index</h1>
-
-
+<h1 id="mid-level-roadmap">Mid-Level Roadmap<a class="headerlink" href="#mid-level-roadmap" title="Permanent link">&para;</a></h1>
+<p>Mid-Level là giai đoạn chuyển từ “làm được feature” sang “thiết kế được hệ thống dễ maintain, dễ debug, dễ mở rộng và có thể vận hành trong production”.</p>
+<h2 id="nang-luc-trong-tam">Năng lực trọng tâm<a class="headerlink" href="#nang-luc-trong-tam" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Mảng</th>
+<th>Cần nâng cấp</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Backend</td>
+<td>API contract, versioning, validation, authorization, EF Core optimization, cache, background jobs</td>
+</tr>
+<tr>
+<td>Frontend</td>
+<td>Component architecture, server state, data fetching, performance, accessibility và testing</td>
+</tr>
+<tr>
+<td>Database</td>
+<td>Schema design, indexing, transaction, migration strategy, slow query và capacity planning</td>
+</tr>
+<tr>
+<td>DevOps</td>
+<td>Docker Compose, CI/CD, Nginx, logging, health check, rollback và deployment strategy</td>
+</tr>
+<tr>
+<td>System Design</td>
+<td>Component, data flow, trade-off, reliability, scalability và observability</td>
+</tr>
+<tr>
+<td>Design Pattern</td>
+<td>Nhận diện vấn đề trong code và chọn pattern vừa đủ, không over-engineering</td>
+</tr>
+</tbody>
+</table>
+<h2 id="cach-hoc-hieu-qua">Cách học hiệu quả<a class="headerlink" href="#cach-hoc-hieu-qua" title="Permanent link">&para;</a></h2>
+<ol>
+<li>Học theo vấn đề thực tế, không học theo tên kỹ thuật trước.</li>
+<li>Với mỗi topic, luôn hỏi: “nếu production lỗi thì mình debug bằng gì?”.</li>
+<li>Ưu tiên checklist áp dụng được: naming, error format, pagination, timeout, retry, log, metric.</li>
+<li>Sau mỗi bài, thử áp dụng vào một project nhỏ để thấy trade-off.</li>
+</ol>
+<h2 id="checklist-mid-level">Checklist Mid-Level<a class="headerlink" href="#checklist-mid-level" title="Permanent link">&para;</a></h2>
+<ul>
+<li>API có request/response/error format nhất quán.</li>
+<li>Query list có pagination, filter rõ ràng và tránh load dư dữ liệu.</li>
+<li>Có chiến lược cache, invalidation và TTL.</li>
+<li>External call có timeout, retry có kiểm soát và logging.</li>
+<li>Job chạy nền idempotent, có retry và trạng thái rõ ràng.</li>
+<li>Frontend phân biệt được local state, global state, server state và URL state.</li>
+<li>Database migration có kế hoạch rollback hoặc backward compatibility.</li>
+<li>Pipeline có build, test, deploy và quản lý environment.</li>
+<li>Hệ thống có log, health check và metric tối thiểu.</li>
+</ul>
 
 
 
