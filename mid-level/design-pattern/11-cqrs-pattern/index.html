@@ -8,13 +8,13 @@
       
       
       
-        <link rel="canonical" href="https://alphadev14.github.io/digitaldocs/mid-level/design-pattern/07-strategy-pattern/">
+        <link rel="canonical" href="https://alphadev14.github.io/digitaldocs/mid-level/design-pattern/11-cqrs-pattern/">
       
       
-        <link rel="prev" href="../06-observer-pattern/">
+        <link rel="prev" href="../07-strategy-pattern/">
       
       
-        <link rel="next" href="../11-cqrs-pattern/">
+        <link rel="next" href="../../../senior/">
       
       
         
@@ -25,7 +25,7 @@
     
     
       
-        <title>Strategy Pattern - P&T | Digital Docs</title>
+        <title>CQRS Pattern - P&T | Digital Docs</title>
       
     
     
@@ -80,7 +80,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#strategy-pattern" class="md-skip">
+        <a href="#cqrs-pattern" class="md-skip">
           Skip to content
         </a>
       
@@ -115,7 +115,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Strategy Pattern
+              CQRS Pattern
             
           </span>
         </div>
@@ -3545,20 +3545,18 @@
                 
   
   
-    
   
   
-  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_7_5" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_7_5" >
         
           
           <label class="md-nav__link" for="__nav_3_7_5" id="__nav_3_7_5_label" tabindex="0">
@@ -3579,7 +3577,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_7_5_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_7_5_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3_7_5">
             <span class="md-nav__icon md-icon"></span>
             
@@ -3622,6 +3620,91 @@
                 
   
   
+  
+  
+    <li class="md-nav__item">
+      <a href="../07-strategy-pattern/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Strategy Pattern
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_7_6" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3_7_6" id="__nav_3_7_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Architectural
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_7_6_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3_7_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Architectural
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
     
   
   
@@ -3641,7 +3724,7 @@
   <span class="md-ellipsis">
     
   
-    Strategy Pattern
+    CQRS Pattern
   
 
     
@@ -3659,7 +3742,7 @@
   <span class="md-ellipsis">
     
   
-    Strategy Pattern
+    CQRS Pattern
   
 
     
@@ -3685,10 +3768,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#1-strategy-pattern-la-gi" class="md-nav__link">
+  <a href="#1-cqrs-la-gi" class="md-nav__link">
     <span class="md-ellipsis">
       
-        1. Strategy Pattern là gì?
+        1. CQRS là gì?
       
     </span>
   </a>
@@ -3696,44 +3779,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#2-van-e-strategy-giai-quyet" class="md-nav__link">
+  <a href="#2-cqrs-giai-quyet-van-e-gi" class="md-nav__link">
     <span class="md-ellipsis">
       
-        2. Vấn đề Strategy giải quyết
+        2. CQRS giải quyết vấn đề gì?
       
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#3-cau-truc-co-ban" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        3. Cấu trúc cơ bản
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#4-vi-du-strategy-on-gian-trong-c" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        4. Ví dụ Strategy đơn giản trong C
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="4. Ví dụ Strategy đơn giản trong C">
+    <nav class="md-nav" aria-label="2. CQRS giải quyết vấn đề gì?">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#buoc-1-tao-interface-chung" class="md-nav__link">
+  <a href="#phia-ghi-thuong-can" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Bước 1: Tạo interface chung
+        Phía ghi thường cần
       
     </span>
   </a>
@@ -3741,32 +3802,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#buoc-2-tao-tung-strategy-rieng" class="md-nav__link">
+  <a href="#phia-oc-thuong-can" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Bước 2: Tạo từng strategy riêng
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#buoc-3-service-su-dung-strategy" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Bước 3: Service sử dụng strategy
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#buoc-4-chon-strategy-khi-su-dung" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Bước 4: Chọn strategy khi sử dụng
+        Phía đọc thường cần
       
     </span>
   </a>
@@ -3779,10 +3818,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#5-ket-hop-factory-voi-strategy" class="md-nav__link">
+  <a href="#3-cau-truc-tong-quat-cua-cqrs" class="md-nav__link">
     <span class="md-ellipsis">
       
-        5. Kết hợp Factory với Strategy
+        3. Cấu trúc tổng quát của CQRS
       
     </span>
   </a>
@@ -3790,10 +3829,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#6-strategy-voi-dependency-injection-trong-aspnet-core" class="md-nav__link">
+  <a href="#4-command-va-query-khac-nhau-nhu-the-nao" class="md-nav__link">
     <span class="md-ellipsis">
       
-        6. Strategy với Dependency Injection trong ASP.NET Core
+        4. Command và Query khác nhau như thế nào?
       
     </span>
   </a>
@@ -3801,10 +3840,160 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#7-khi-nao-nen-dung-strategy" class="md-nav__link">
+  <a href="#5-vi-du-on-gian-trong-c" class="md-nav__link">
     <span class="md-ellipsis">
       
-        7. Khi nào nên dùng Strategy?
+        5. Ví dụ đơn giản trong C
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Ví dụ đơn giản trong C">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#buoc-1-tao-command-va-query" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bước 1: Tạo Command và Query
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#buoc-2-tao-response-model-cho-phia-oc" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bước 2: Tạo response model cho phía đọc
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#buoc-3-command-handler" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bước 3: Command Handler
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#buoc-4-query-handler" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bước 4: Query Handler
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-luong-cqrs-trong-nghiep-vu-at-hang" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Luồng CQRS trong nghiệp vụ đặt hàng
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. Luồng CQRS trong nghiệp vụ đặt hàng">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#phia-command" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phía command
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phia-query" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phía query
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-cac-muc-o-ap-dung-cqrs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Các mức độ áp dụng CQRS
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7. Các mức độ áp dụng CQRS">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#muc-1-tach-handler-dung-chung-database" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mức 1: Tách handler, dùng chung database
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#muc-2-tach-read-model-trong-cung-database" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mức 2: Tách read model trong cùng database
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#muc-3-tach-read-database-rieng" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mức 3: Tách read database riêng
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-cqrs-trong-aspnet-core" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. CQRS trong ASP.NET Core
       
     </span>
   </a>
@@ -3812,10 +4001,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#8-strategy-khac-gi-factory" class="md-nav__link">
+  <a href="#9-cqrs-khac-gi-crud-truyen-thong" class="md-nav__link">
     <span class="md-ellipsis">
       
-        8. Strategy khác gì Factory?
+        9. CQRS khác gì CRUD truyền thống?
       
     </span>
   </a>
@@ -3823,10 +4012,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#9-vi-du-thuc-te-hay-gap" class="md-nav__link">
+  <a href="#10-cqrs-khac-gi-event-sourcing" class="md-nav__link">
     <span class="md-ellipsis">
       
-        9. Ví dụ thực tế hay gặp
+        10. CQRS khác gì Event Sourcing?
       
     </span>
   </a>
@@ -3834,10 +4023,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#10-luu-y-khi-dung" class="md-nav__link">
+  <a href="#11-cqrs-khac-gi-voi-phan-tach-bll-dao" class="md-nav__link">
     <span class="md-ellipsis">
       
-        10. Lưu ý khi dùng
+        11. CQRS khác gì với phân tách BLL / DAO?
       
     </span>
   </a>
@@ -3845,10 +4034,115 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#11-tom-tat" class="md-nav__link">
+  <a href="#12-khi-nao-nen-dung-cqrs" class="md-nav__link">
     <span class="md-ellipsis">
       
-        11. Tóm tắt
+        12. Khi nào nên dùng CQRS?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#13-khi-nao-khong-nen-dung-cqrs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13. Khi nào không nên dùng CQRS?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#14-uu-iem" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        14. Ưu điểm
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#15-nhuoc-iem" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        15. Nhược điểm
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#16-luu-y-khi-dung" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        16. Lưu ý khi dùng
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#17-vi-du-sai-thuong-gap" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        17. Ví dụ sai thường gặp
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="17. Ví dụ sai thường gặp">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sai-1-tach-file-nhung-khong-tach-trach-nhiem-that" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sai 1: Tách file nhưng không tách trách nhiệm thật
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sai-2-dung-hai-database-ngay-tu-au-du-chua-can" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sai 2: Dùng hai database ngay từ đầu dù chưa cần
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sai-3-hieu-cqrs-la-bat-buoc-phai-i-cung-event-sourcing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sai 3: Hiểu CQRS là bắt buộc phải đi cùng Event Sourcing
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#18-tom-tat" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        18. Tóm tắt
       
     </span>
   </a>
@@ -3859,89 +4153,6 @@
   
 </nav>
       
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    
-    
-    
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_7_6" >
-        
-          
-          <label class="md-nav__link" for="__nav_3_7_6" id="__nav_3_7_6_label" tabindex="0">
-            
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Architectural
-  
-
-    
-  </span>
-  
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_7_6_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_3_7_6">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Architectural
-  
-
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../11-cqrs-pattern/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    CQRS Pattern
-  
-
-    
-  </span>
-  
-  
-
-      </a>
     </li>
   
 
@@ -4024,10 +4235,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#1-strategy-pattern-la-gi" class="md-nav__link">
+  <a href="#1-cqrs-la-gi" class="md-nav__link">
     <span class="md-ellipsis">
       
-        1. Strategy Pattern là gì?
+        1. CQRS là gì?
       
     </span>
   </a>
@@ -4035,44 +4246,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#2-van-e-strategy-giai-quyet" class="md-nav__link">
+  <a href="#2-cqrs-giai-quyet-van-e-gi" class="md-nav__link">
     <span class="md-ellipsis">
       
-        2. Vấn đề Strategy giải quyết
+        2. CQRS giải quyết vấn đề gì?
       
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#3-cau-truc-co-ban" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        3. Cấu trúc cơ bản
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#4-vi-du-strategy-on-gian-trong-c" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        4. Ví dụ Strategy đơn giản trong C
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="4. Ví dụ Strategy đơn giản trong C">
+    <nav class="md-nav" aria-label="2. CQRS giải quyết vấn đề gì?">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#buoc-1-tao-interface-chung" class="md-nav__link">
+  <a href="#phia-ghi-thuong-can" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Bước 1: Tạo interface chung
+        Phía ghi thường cần
       
     </span>
   </a>
@@ -4080,32 +4269,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#buoc-2-tao-tung-strategy-rieng" class="md-nav__link">
+  <a href="#phia-oc-thuong-can" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Bước 2: Tạo từng strategy riêng
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#buoc-3-service-su-dung-strategy" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Bước 3: Service sử dụng strategy
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#buoc-4-chon-strategy-khi-su-dung" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Bước 4: Chọn strategy khi sử dụng
+        Phía đọc thường cần
       
     </span>
   </a>
@@ -4118,10 +4285,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#5-ket-hop-factory-voi-strategy" class="md-nav__link">
+  <a href="#3-cau-truc-tong-quat-cua-cqrs" class="md-nav__link">
     <span class="md-ellipsis">
       
-        5. Kết hợp Factory với Strategy
+        3. Cấu trúc tổng quát của CQRS
       
     </span>
   </a>
@@ -4129,10 +4296,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#6-strategy-voi-dependency-injection-trong-aspnet-core" class="md-nav__link">
+  <a href="#4-command-va-query-khac-nhau-nhu-the-nao" class="md-nav__link">
     <span class="md-ellipsis">
       
-        6. Strategy với Dependency Injection trong ASP.NET Core
+        4. Command và Query khác nhau như thế nào?
       
     </span>
   </a>
@@ -4140,10 +4307,160 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#7-khi-nao-nen-dung-strategy" class="md-nav__link">
+  <a href="#5-vi-du-on-gian-trong-c" class="md-nav__link">
     <span class="md-ellipsis">
       
-        7. Khi nào nên dùng Strategy?
+        5. Ví dụ đơn giản trong C
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Ví dụ đơn giản trong C">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#buoc-1-tao-command-va-query" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bước 1: Tạo Command và Query
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#buoc-2-tao-response-model-cho-phia-oc" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bước 2: Tạo response model cho phía đọc
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#buoc-3-command-handler" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bước 3: Command Handler
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#buoc-4-query-handler" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bước 4: Query Handler
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-luong-cqrs-trong-nghiep-vu-at-hang" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Luồng CQRS trong nghiệp vụ đặt hàng
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. Luồng CQRS trong nghiệp vụ đặt hàng">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#phia-command" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phía command
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phia-query" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phía query
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-cac-muc-o-ap-dung-cqrs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Các mức độ áp dụng CQRS
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7. Các mức độ áp dụng CQRS">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#muc-1-tach-handler-dung-chung-database" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mức 1: Tách handler, dùng chung database
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#muc-2-tach-read-model-trong-cung-database" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mức 2: Tách read model trong cùng database
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#muc-3-tach-read-database-rieng" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mức 3: Tách read database riêng
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-cqrs-trong-aspnet-core" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. CQRS trong ASP.NET Core
       
     </span>
   </a>
@@ -4151,10 +4468,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#8-strategy-khac-gi-factory" class="md-nav__link">
+  <a href="#9-cqrs-khac-gi-crud-truyen-thong" class="md-nav__link">
     <span class="md-ellipsis">
       
-        8. Strategy khác gì Factory?
+        9. CQRS khác gì CRUD truyền thống?
       
     </span>
   </a>
@@ -4162,10 +4479,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#9-vi-du-thuc-te-hay-gap" class="md-nav__link">
+  <a href="#10-cqrs-khac-gi-event-sourcing" class="md-nav__link">
     <span class="md-ellipsis">
       
-        9. Ví dụ thực tế hay gặp
+        10. CQRS khác gì Event Sourcing?
       
     </span>
   </a>
@@ -4173,10 +4490,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#10-luu-y-khi-dung" class="md-nav__link">
+  <a href="#11-cqrs-khac-gi-voi-phan-tach-bll-dao" class="md-nav__link">
     <span class="md-ellipsis">
       
-        10. Lưu ý khi dùng
+        11. CQRS khác gì với phân tách BLL / DAO?
       
     </span>
   </a>
@@ -4184,10 +4501,115 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#11-tom-tat" class="md-nav__link">
+  <a href="#12-khi-nao-nen-dung-cqrs" class="md-nav__link">
     <span class="md-ellipsis">
       
-        11. Tóm tắt
+        12. Khi nào nên dùng CQRS?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#13-khi-nao-khong-nen-dung-cqrs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13. Khi nào không nên dùng CQRS?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#14-uu-iem" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        14. Ưu điểm
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#15-nhuoc-iem" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        15. Nhược điểm
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#16-luu-y-khi-dung" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        16. Lưu ý khi dùng
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#17-vi-du-sai-thuong-gap" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        17. Ví dụ sai thường gặp
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="17. Ví dụ sai thường gặp">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sai-1-tach-file-nhung-khong-tach-trach-nhiem-that" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sai 1: Tách file nhưng không tách trách nhiệm thật
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sai-2-dung-hai-database-ngay-tu-au-du-chua-can" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sai 2: Dùng hai database ngay từ đầu dù chưa cần
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sai-3-hieu-cqrs-la-bat-buoc-phai-i-cung-event-sourcing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sai 3: Hiểu CQRS là bắt buộc phải đi cùng Event Sourcing
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#18-tom-tat" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        18. Tóm tắt
       
     </span>
   </a>
@@ -4211,58 +4633,71 @@
 
 
 
-<h1 id="strategy-pattern">Strategy Pattern<a class="headerlink" href="#strategy-pattern" title="Permanent link">&para;</a></h1>
-<h2 id="1-strategy-pattern-la-gi">1. Strategy Pattern là gì?<a class="headerlink" href="#1-strategy-pattern-la-gi" title="Permanent link">&para;</a></h2>
-<p>Strategy Pattern là một <strong>Behavioral Design Pattern</strong> dùng để tách nhiều cách xử lý khác nhau của cùng một hành động thành các class riêng, sau đó chọn strategy phù hợp khi chạy chương trình.</p>
+<h1 id="cqrs-pattern">CQRS Pattern<a class="headerlink" href="#cqrs-pattern" title="Permanent link">&para;</a></h1>
+<h2 id="1-cqrs-la-gi">1. CQRS là gì?<a class="headerlink" href="#1-cqrs-la-gi" title="Permanent link">&para;</a></h2>
+<p>CQRS là viết tắt của <strong>Command Query Responsibility Segregation</strong>.</p>
+<p>Đây là một <strong>Architectural Pattern</strong> dùng để tách riêng:</p>
+<ul>
+<li><strong>Command</strong>: các thao tác làm thay đổi trạng thái hệ thống.</li>
+<li><strong>Query</strong>: các thao tác chỉ đọc dữ liệu, không làm thay đổi trạng thái.</li>
+</ul>
 <p>Nói đơn giản:</p>
-<div class="highlight"><pre><span></span><code>Cùng một mục tiêu -&gt; có nhiều cách xử lý khác nhau -&gt; mỗi cách là một strategy riêng
+<div class="highlight"><pre><span></span><code>Ghi dữ liệu đi một đường.
+Đọc dữ liệu đi một đường khác.
 </code></pre></div>
-<p>Pattern này thường giúp:</p>
+<p>Ví dụ:</p>
 <ul>
-<li>Giảm <code>if/else</code> hoặc <code>switch/case</code> dài.</li>
-<li>Dễ mở rộng thêm cách xử lý mới mà ít sửa code cũ.</li>
-<li>Tách từng thuật toán thành class nhỏ, dễ test.</li>
-<li>Cho phép thay đổi hành vi theo runtime condition.</li>
+<li><code>CreateOrderCommand</code>: tạo đơn hàng mới.</li>
+<li><code>CancelOrderCommand</code>: hủy đơn hàng.</li>
+<li><code>GetOrderDetailQuery</code>: lấy chi tiết đơn hàng.</li>
+<li><code>GetOrderListQuery</code>: lấy danh sách đơn hàng.</li>
 </ul>
-<h2 id="2-van-e-strategy-giai-quyet">2. Vấn đề Strategy giải quyết<a class="headerlink" href="#2-van-e-strategy-giai-quyet" title="Permanent link">&para;</a></h2>
-<p>Giả sử hệ thống có nhiều kiểu giảm giá:</p>
-<ul>
-<li>Giảm cố định.</li>
-<li>Giảm theo phần trăm.</li>
-<li>Flash sale.</li>
-<li>Thành viên VIP.</li>
-</ul>
-<p>Nếu dồn hết logic vào một hàm:</p>
-<div class="highlight"><pre><span></span><code><span class="k">public</span><span class="w"> </span><span class="kt">decimal</span><span class="w"> </span><span class="nf">GetPrice</span><span class="p">(</span><span class="kt">decimal</span><span class="w"> </span><span class="n">price</span><span class="p">,</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">discountType</span><span class="p">)</span>
+<p>CQRS không nhất thiết có nghĩa là phải dùng hai database khác nhau. Ở mức đơn giản, nó chỉ cần là <strong>tách model và flow xử lý read/write</strong> để mỗi bên được tối ưu đúng mục tiêu của mình.</p>
+<hr />
+<h2 id="2-cqrs-giai-quyet-van-e-gi">2. CQRS giải quyết vấn đề gì?<a class="headerlink" href="#2-cqrs-giai-quyet-van-e-gi" title="Permanent link">&para;</a></h2>
+<p>Trong các ứng dụng nhỏ, một service hoặc repository chung cho cả đọc và ghi thường vẫn đủ tốt:</p>
+<div class="highlight"><pre><span></span><code><span class="k">public</span><span class="w"> </span><span class="k">sealed</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">OrderService</span>
 <span class="p">{</span>
-<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">discountType</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s">&quot;FIXED&quot;</span><span class="p">)</span>
-<span class="w">    </span><span class="p">{</span>
-<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">price</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">50</span><span class="n">_000</span><span class="p">;</span>
-<span class="w">    </span><span class="p">}</span>
-
-<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">discountType</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s">&quot;PERCENT&quot;</span><span class="p">)</span>
-<span class="w">    </span><span class="p">{</span>
-<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">price</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">0.9m</span><span class="p">;</span>
-<span class="w">    </span><span class="p">}</span>
-
-<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">discountType</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s">&quot;VIP&quot;</span><span class="p">)</span>
-<span class="w">    </span><span class="p">{</span>
-<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">price</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">0.85m</span><span class="p">;</span>
-<span class="w">    </span><span class="p">}</span>
-
-<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">price</span><span class="p">;</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">Task</span><span class="o">&lt;</span><span class="n">Order</span><span class="o">&gt;</span><span class="w"> </span><span class="n">GetByIdAsync</span><span class="p">(</span><span class="n">Guid</span><span class="w"> </span><span class="n">id</span><span class="p">);</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">Task</span><span class="o">&lt;</span><span class="n">IReadOnlyList</span><span class="o">&lt;</span><span class="n">Order</span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">GetListAsync</span><span class="p">();</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">Task</span><span class="w"> </span><span class="nf">CreateAsync</span><span class="p">(</span><span class="n">CreateOrderRequest</span><span class="w"> </span><span class="n">request</span><span class="p">);</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">Task</span><span class="w"> </span><span class="nf">CancelAsync</span><span class="p">(</span><span class="n">Guid</span><span class="w"> </span><span class="n">id</span><span class="p">);</span>
 <span class="p">}</span>
 </code></pre></div>
-<p>Ban đầu code vẫn chạy được. Nhưng khi số loại giảm giá tăng lên, method này sẽ:</p>
+<p>Nhưng khi hệ thống lớn dần, nhu cầu của hai phía bắt đầu khác nhau:</p>
+<h3 id="phia-ghi-thuong-can">Phía ghi thường cần<a class="headerlink" href="#phia-ghi-thuong-can" title="Permanent link">&para;</a></h3>
 <ul>
-<li>Dài và khó đọc.</li>
-<li>Khó test từng rule riêng.</li>
-<li>Dễ vi phạm Open/Closed Principle vì thêm rule mới thường phải sửa method cũ.</li>
-<li>Dễ kéo business rule của nhiều loại promotion dính chặt vào cùng một class.</li>
+<li>Validate business rule.</li>
+<li>Kiểm tra trạng thái hiện tại.</li>
+<li>Ghi transaction an toàn.</li>
+<li>Phát domain event.</li>
+<li>Bảo toàn tính nhất quán.</li>
 </ul>
-<p>Strategy Pattern giúp tách từng rule ra khỏi nhau.</p>
-<h2 id="3-cau-truc-co-ban">3. Cấu trúc cơ bản<a class="headerlink" href="#3-cau-truc-co-ban" title="Permanent link">&para;</a></h2>
-<p>Một implementation Strategy thường có ba phần:</p>
+<h3 id="phia-oc-thuong-can">Phía đọc thường cần<a class="headerlink" href="#phia-oc-thuong-can" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Trả dữ liệu nhanh.</li>
+<li>Join nhiều bảng để tạo view phù hợp màn hình.</li>
+<li>Pagination, filter, sort linh hoạt.</li>
+<li>Có thể dùng DTO phẳng, cache hoặc read model riêng.</li>
+</ul>
+<p>Nếu ép cả hai dùng chung một model, code dễ gặp các vấn đề:</p>
+<ul>
+<li>Entity phục vụ write nhưng bị kéo sang làm response model cho read.</li>
+<li>Query đọc bị buộc đi qua quá nhiều rule không cần thiết.</li>
+<li>Write model phức tạp dần vì phải phục vụ cả nhu cầu hiển thị.</li>
+<li>Tối ưu hiệu năng cho read và đảm bảo invariant cho write kéo nhau theo hai hướng khác nhau.</li>
+</ul>
+<p>CQRS tách hai mối quan tâm đó ra:</p>
+<div class="highlight"><pre><span></span><code>Command side -&gt; tập trung vào thay đổi trạng thái đúng đắn
+Query side   -&gt; tập trung vào trả dữ liệu phù hợp và nhanh
+</code></pre></div>
+<hr />
+<h2 id="3-cau-truc-tong-quat-cua-cqrs">3. Cấu trúc tổng quát của CQRS<a class="headerlink" href="#3-cau-truc-tong-quat-cua-cqrs" title="Permanent link">&para;</a></h2>
+<p align="center">
+  <img src="../../../assets/cqrs_architecture_overview.svg" alt="Tổng quan kiến trúc CQRS với command side và query side" width="760">
+</p>
+
+<p>Một mô hình CQRS thường có các phần sau:</p>
 <table>
 <thead>
 <tr>
@@ -4272,173 +4707,391 @@
 </thead>
 <tbody>
 <tr>
-<td>Strategy interface</td>
-<td>Định nghĩa hành vi chung</td>
+<td>Command</td>
+<td>Diễn tả một ý định làm thay đổi hệ thống</td>
 </tr>
 <tr>
-<td>Concrete strategies</td>
-<td>Các cách xử lý cụ thể</td>
+<td>Command Handler</td>
+<td>Xử lý command, gọi domain logic, ghi vào write DB</td>
 </tr>
 <tr>
-<td>Context/service</td>
-<td>Nhận strategy và sử dụng nó</td>
+<td>Write DB</td>
+<td>Nơi lưu dữ liệu chuẩn để đảm bảo tính nhất quán</td>
+</tr>
+<tr>
+<td>Domain Event</td>
+<td>Sự kiện phát sinh sau khi state thay đổi</td>
+</tr>
+<tr>
+<td>Event Bus / Projector</td>
+<td>Đẩy thay đổi sang read side</td>
+</tr>
+<tr>
+<td>Projection / Read Model</td>
+<td>Dữ liệu đã được tổ chức lại để phục vụ truy vấn</td>
+</tr>
+<tr>
+<td>Query Handler</td>
+<td>Đọc dữ liệu từ read model và trả về response</td>
+</tr>
+<tr>
+<td>Read DB</td>
+<td>Nơi tối ưu cho truy vấn</td>
 </tr>
 </tbody>
 </table>
-<p>Trong ví dụ giảm giá:</p>
-<div class="highlight"><pre><span></span><code>IDiscountStrategy
-  -&gt; FixedDiscountStrategy
-  -&gt; PercentDiscountStrategy
-  -&gt; VipDiscountStrategy
-
-PriceService
-  -&gt; dùng IDiscountStrategy
-</code></pre></div>
-<h2 id="4-vi-du-strategy-on-gian-trong-c">4. Ví dụ Strategy đơn giản trong C<a class="headerlink" href="#4-vi-du-strategy-on-gian-trong-c" title="Permanent link">&para;</a></h2>
-<h3 id="buoc-1-tao-interface-chung">Bước 1: Tạo interface chung<a class="headerlink" href="#buoc-1-tao-interface-chung" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><span class="k">public</span><span class="w"> </span><span class="k">interface</span><span class="w"> </span><span class="n">IDiscountStrategy</span>
-<span class="p">{</span>
-<span class="w">    </span><span class="kt">decimal</span><span class="w"> </span><span class="nf">Calculate</span><span class="p">(</span><span class="kt">decimal</span><span class="w"> </span><span class="n">price</span><span class="p">);</span>
-<span class="p">}</span>
-</code></pre></div>
-<h3 id="buoc-2-tao-tung-strategy-rieng">Bước 2: Tạo từng strategy riêng<a class="headerlink" href="#buoc-2-tao-tung-strategy-rieng" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><span class="k">public</span><span class="w"> </span><span class="k">sealed</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">FixedDiscountStrategy</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">IDiscountStrategy</span>
-<span class="p">{</span>
-<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="kt">decimal</span><span class="w"> </span><span class="nf">Calculate</span><span class="p">(</span><span class="kt">decimal</span><span class="w"> </span><span class="n">price</span><span class="p">)</span>
-<span class="w">    </span><span class="p">{</span>
-<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">price</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">50</span><span class="n">_000</span><span class="p">;</span>
-<span class="w">    </span><span class="p">}</span>
-<span class="p">}</span>
-</code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="k">public</span><span class="w"> </span><span class="k">sealed</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">PercentDiscountStrategy</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">IDiscountStrategy</span>
-<span class="p">{</span>
-<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="kt">decimal</span><span class="w"> </span><span class="nf">Calculate</span><span class="p">(</span><span class="kt">decimal</span><span class="w"> </span><span class="n">price</span><span class="p">)</span>
-<span class="w">    </span><span class="p">{</span>
-<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">price</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">0.9m</span><span class="p">;</span>
-<span class="w">    </span><span class="p">}</span>
-<span class="p">}</span>
-</code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="k">public</span><span class="w"> </span><span class="k">sealed</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">VipDiscountStrategy</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">IDiscountStrategy</span>
-<span class="p">{</span>
-<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="kt">decimal</span><span class="w"> </span><span class="nf">Calculate</span><span class="p">(</span><span class="kt">decimal</span><span class="w"> </span><span class="n">price</span><span class="p">)</span>
-<span class="w">    </span><span class="p">{</span>
-<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">price</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">0.85m</span><span class="p">;</span>
-<span class="w">    </span><span class="p">}</span>
-<span class="p">}</span>
-</code></pre></div>
-<h3 id="buoc-3-service-su-dung-strategy">Bước 3: Service sử dụng strategy<a class="headerlink" href="#buoc-3-service-su-dung-strategy" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><span class="k">public</span><span class="w"> </span><span class="k">sealed</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">PriceService</span>
-<span class="p">{</span>
-<span class="w">    </span><span class="k">private</span><span class="w"> </span><span class="k">readonly</span><span class="w"> </span><span class="n">IDiscountStrategy</span><span class="w"> </span><span class="n">_discountStrategy</span><span class="p">;</span>
-
-<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="nf">PriceService</span><span class="p">(</span><span class="n">IDiscountStrategy</span><span class="w"> </span><span class="n">discountStrategy</span><span class="p">)</span>
-<span class="w">    </span><span class="p">{</span>
-<span class="w">        </span><span class="n">_discountStrategy</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">discountStrategy</span><span class="p">;</span>
-<span class="w">    </span><span class="p">}</span>
-
-<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="kt">decimal</span><span class="w"> </span><span class="nf">GetFinalPrice</span><span class="p">(</span><span class="kt">decimal</span><span class="w"> </span><span class="n">price</span><span class="p">)</span>
-<span class="w">    </span><span class="p">{</span>
-<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">_discountStrategy</span><span class="p">.</span><span class="n">Calculate</span><span class="p">(</span><span class="n">price</span><span class="p">);</span>
-<span class="w">    </span><span class="p">}</span>
-<span class="p">}</span>
-</code></pre></div>
-<h3 id="buoc-4-chon-strategy-khi-su-dung">Bước 4: Chọn strategy khi sử dụng<a class="headerlink" href="#buoc-4-chon-strategy-khi-su-dung" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><span class="n">IDiscountStrategy</span><span class="w"> </span><span class="n">strategy</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">FixedDiscountStrategy</span><span class="p">();</span>
-
-<span class="kt">var</span><span class="w"> </span><span class="n">service</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">PriceService</span><span class="p">(</span><span class="n">strategy</span><span class="p">);</span>
-
-<span class="kt">var</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">service</span><span class="p">.</span><span class="n">GetFinalPrice</span><span class="p">(</span><span class="mi">500</span><span class="n">_000</span><span class="p">);</span>
-
-<span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">result</span><span class="p">);</span>
-</code></pre></div>
-<p>Kết quả:</p>
-<div class="highlight"><pre><span></span><code>450000
-</code></pre></div>
-<p>Nếu muốn đổi hành vi:</p>
-<div class="highlight"><pre><span></span><code><span class="n">IDiscountStrategy</span><span class="w"> </span><span class="n">strategy</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">PercentDiscountStrategy</span><span class="p">();</span>
-
-<span class="kt">var</span><span class="w"> </span><span class="n">service</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">PriceService</span><span class="p">(</span><span class="n">strategy</span><span class="p">);</span>
-
-<span class="kt">var</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">service</span><span class="p">.</span><span class="n">GetFinalPrice</span><span class="p">(</span><span class="mi">500</span><span class="n">_000</span><span class="p">);</span>
-</code></pre></div>
-<p><code>PriceService</code> không cần biết chi tiết logic giảm giá nào đang chạy. Nó chỉ làm việc với abstraction <code>IDiscountStrategy</code>.</p>
-<h2 id="5-ket-hop-factory-voi-strategy">5. Kết hợp Factory với Strategy<a class="headerlink" href="#5-ket-hop-factory-voi-strategy" title="Permanent link">&para;</a></h2>
-<p>Trong app thực tế, strategy thường không được khởi tạo thủ công từng nơi. Một factory có thể chịu trách nhiệm chọn implementation phù hợp theo input.</p>
-<div class="highlight"><pre><span></span><code><span class="k">public</span><span class="w"> </span><span class="k">enum</span><span class="w"> </span><span class="n">DiscountType</span>
-<span class="p">{</span>
-<span class="w">    </span><span class="n">Fixed</span><span class="p">,</span>
-<span class="w">    </span><span class="n">Percent</span><span class="p">,</span>
-<span class="w">    </span><span class="n">Vip</span>
-<span class="p">}</span>
-
-<span class="k">public</span><span class="w"> </span><span class="k">sealed</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">DiscountStrategyFactory</span>
-<span class="p">{</span>
-<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">IDiscountStrategy</span><span class="w"> </span><span class="nf">Create</span><span class="p">(</span><span class="n">DiscountType</span><span class="w"> </span><span class="n">type</span><span class="p">)</span>
-<span class="w">    </span><span class="p">{</span>
-<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">type</span><span class="w"> </span><span class="k">switch</span>
-<span class="w">        </span><span class="p">{</span>
-<span class="w">            </span><span class="n">DiscountType</span><span class="p">.</span><span class="n">Fixed</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">FixedDiscountStrategy</span><span class="p">(),</span>
-<span class="w">            </span><span class="n">DiscountType</span><span class="p">.</span><span class="n">Percent</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">PercentDiscountStrategy</span><span class="p">(),</span>
-<span class="w">            </span><span class="n">DiscountType</span><span class="p">.</span><span class="n">Vip</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">VipDiscountStrategy</span><span class="p">(),</span>
-<span class="w">            </span><span class="n">_</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="k">throw</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ArgumentOutOfRangeException</span><span class="p">(</span><span class="k">nameof</span><span class="p">(</span><span class="n">type</span><span class="p">),</span><span class="w"> </span><span class="n">type</span><span class="p">,</span><span class="w"> </span><span class="k">null</span><span class="p">)</span>
-<span class="w">        </span><span class="p">};</span>
-<span class="w">    </span><span class="p">}</span>
-<span class="p">}</span>
-</code></pre></div>
-<p>Sử dụng:</p>
-<div class="highlight"><pre><span></span><code><span class="kt">var</span><span class="w"> </span><span class="n">factory</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">DiscountStrategyFactory</span><span class="p">();</span>
-
-<span class="kt">var</span><span class="w"> </span><span class="n">strategy</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">factory</span><span class="p">.</span><span class="n">Create</span><span class="p">(</span><span class="n">DiscountType</span><span class="p">.</span><span class="n">Fixed</span><span class="p">);</span>
-
-<span class="kt">var</span><span class="w"> </span><span class="n">service</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">PriceService</span><span class="p">(</span><span class="n">strategy</span><span class="p">);</span>
-
-<span class="kt">var</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">service</span><span class="p">.</span><span class="n">GetFinalPrice</span><span class="p">(</span><span class="mi">500</span><span class="n">_000</span><span class="p">);</span>
-</code></pre></div>
-<p>Khi số strategy tăng lên, cách này giúp gom logic lựa chọn vào một chỗ thay vì để <code>if/else</code> rải rác khắp codebase.</p>
-<h2 id="6-strategy-voi-dependency-injection-trong-aspnet-core">6. Strategy với Dependency Injection trong ASP.NET Core<a class="headerlink" href="#6-strategy-voi-dependency-injection-trong-aspnet-core" title="Permanent link">&para;</a></h2>
-<p>Trong .NET production, strategy thường được đăng ký qua DI để:</p>
+<p>Điểm quan trọng:</p>
 <ul>
-<li>Quản lý dependency rõ ràng.</li>
-<li>Dễ mock khi test.</li>
-<li>Không cần <code>new</code> thủ công ở nhiều nơi.</li>
+<li><strong>Command không nên trả về một graph dữ liệu phức tạp để hiển thị.</strong></li>
+<li><strong>Query không được làm thay đổi state.</strong></li>
+<li>Read model có thể khác hẳn write model nếu nhu cầu đọc khác nhu cầu ghi.</li>
 </ul>
-<p>Ví dụ đăng ký nhiều strategy:</p>
-<div class="highlight"><pre><span></span><code><span class="n">builder</span><span class="p">.</span><span class="n">Services</span><span class="p">.</span><span class="n">AddScoped</span><span class="o">&lt;</span><span class="n">FixedDiscountStrategy</span><span class="o">&gt;</span><span class="p">();</span>
-<span class="n">builder</span><span class="p">.</span><span class="n">Services</span><span class="p">.</span><span class="n">AddScoped</span><span class="o">&lt;</span><span class="n">PercentDiscountStrategy</span><span class="o">&gt;</span><span class="p">();</span>
-<span class="n">builder</span><span class="p">.</span><span class="n">Services</span><span class="p">.</span><span class="n">AddScoped</span><span class="o">&lt;</span><span class="n">VipDiscountStrategy</span><span class="o">&gt;</span><span class="p">();</span>
-<span class="n">builder</span><span class="p">.</span><span class="n">Services</span><span class="p">.</span><span class="n">AddScoped</span><span class="o">&lt;</span><span class="n">DiscountStrategyResolver</span><span class="o">&gt;</span><span class="p">();</span>
+<hr />
+<h2 id="4-command-va-query-khac-nhau-nhu-the-nao">4. Command và Query khác nhau như thế nào?<a class="headerlink" href="#4-command-va-query-khac-nhau-nhu-the-nao" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Tiêu chí</th>
+<th>Command</th>
+<th>Query</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Mục tiêu</td>
+<td>Thay đổi trạng thái hệ thống</td>
+<td>Lấy dữ liệu</td>
+</tr>
+<tr>
+<td>Có side effect không?</td>
+<td>Có</td>
+<td>Không nên có</td>
+</tr>
+<tr>
+<td>Ví dụ</td>
+<td>Tạo đơn, thanh toán, hủy vé</td>
+<td>Lấy chi tiết đơn, danh sách đơn</td>
+</tr>
+<tr>
+<td>Kết quả thường trả về</td>
+<td>Id, status, result ngắn gọn</td>
+<td>DTO phục vụ hiển thị</td>
+</tr>
+<tr>
+<td>Tối ưu cho</td>
+<td>Correctness, invariant, transaction</td>
+<td>Read performance, shape dữ liệu</td>
+</tr>
+</tbody>
+</table>
+<p>Một cách nhớ nhanh:</p>
+<div class="highlight"><pre><span></span><code>Command hỏi: &quot;Hệ thống cần thay đổi gì?&quot;
+Query hỏi:   &quot;Màn hình cần đọc dữ liệu gì?&quot;
 </code></pre></div>
-<p>Resolver:</p>
-<div class="highlight"><pre><span></span><code><span class="k">public</span><span class="w"> </span><span class="k">sealed</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">DiscountStrategyResolver</span>
-<span class="p">{</span>
-<span class="w">    </span><span class="k">private</span><span class="w"> </span><span class="k">readonly</span><span class="w"> </span><span class="n">FixedDiscountStrategy</span><span class="w"> </span><span class="n">_fixedDiscountStrategy</span><span class="p">;</span>
-<span class="w">    </span><span class="k">private</span><span class="w"> </span><span class="k">readonly</span><span class="w"> </span><span class="n">PercentDiscountStrategy</span><span class="w"> </span><span class="n">_percentDiscountStrategy</span><span class="p">;</span>
-<span class="w">    </span><span class="k">private</span><span class="w"> </span><span class="k">readonly</span><span class="w"> </span><span class="n">VipDiscountStrategy</span><span class="w"> </span><span class="n">_vipDiscountStrategy</span><span class="p">;</span>
+<hr />
+<h2 id="5-vi-du-on-gian-trong-c">5. Ví dụ đơn giản trong C<a class="headerlink" href="#5-vi-du-on-gian-trong-c" title="Permanent link">&para;</a></h2>
+<h3 id="buoc-1-tao-command-va-query">Bước 1: Tạo Command và Query<a class="headerlink" href="#buoc-1-tao-command-va-query" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="k">public</span><span class="w"> </span><span class="k">sealed</span><span class="w"> </span><span class="k">record</span><span class="w"> </span><span class="nf">CreateOrderCommand</span><span class="p">(</span>
+<span class="w">    </span><span class="n">Guid</span><span class="w"> </span><span class="n">CustomerId</span><span class="p">,</span>
+<span class="w">    </span><span class="n">IReadOnlyCollection</span><span class="o">&lt;</span><span class="n">CreateOrderItemRequest</span><span class="o">&gt;</span><span class="w"> </span><span class="n">Items</span><span class="p">);</span>
 
-<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="nf">DiscountStrategyResolver</span><span class="p">(</span>
-<span class="w">        </span><span class="n">FixedDiscountStrategy</span><span class="w"> </span><span class="n">fixedDiscountStrategy</span><span class="p">,</span>
-<span class="w">        </span><span class="n">PercentDiscountStrategy</span><span class="w"> </span><span class="n">percentDiscountStrategy</span><span class="p">,</span>
-<span class="w">        </span><span class="n">VipDiscountStrategy</span><span class="w"> </span><span class="n">vipDiscountStrategy</span><span class="p">)</span>
+<span class="k">public</span><span class="w"> </span><span class="k">sealed</span><span class="w"> </span><span class="k">record</span><span class="w"> </span><span class="nf">GetOrderDetailQuery</span><span class="p">(</span><span class="n">Guid</span><span class="w"> </span><span class="n">OrderId</span><span class="p">);</span>
+</code></pre></div>
+<h3 id="buoc-2-tao-response-model-cho-phia-oc">Bước 2: Tạo response model cho phía đọc<a class="headerlink" href="#buoc-2-tao-response-model-cho-phia-oc" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="k">public</span><span class="w"> </span><span class="k">sealed</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">OrderDetailDto</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">Guid</span><span class="w"> </span><span class="n">Id</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">get</span><span class="p">;</span><span class="w"> </span><span class="k">init</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">Code</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">get</span><span class="p">;</span><span class="w"> </span><span class="k">init</span><span class="p">;</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">default</span><span class="o">!</span><span class="p">;</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">CustomerName</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">get</span><span class="p">;</span><span class="w"> </span><span class="k">init</span><span class="p">;</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">default</span><span class="o">!</span><span class="p">;</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="kt">decimal</span><span class="w"> </span><span class="n">TotalAmount</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">get</span><span class="p">;</span><span class="w"> </span><span class="k">init</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">Status</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">get</span><span class="p">;</span><span class="w"> </span><span class="k">init</span><span class="p">;</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">default</span><span class="o">!</span><span class="p">;</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">DateTime</span><span class="w"> </span><span class="n">CreatedAt</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">get</span><span class="p">;</span><span class="w"> </span><span class="k">init</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="buoc-3-command-handler">Bước 3: Command Handler<a class="headerlink" href="#buoc-3-command-handler" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="k">public</span><span class="w"> </span><span class="k">sealed</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">CreateOrderCommandHandler</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">private</span><span class="w"> </span><span class="k">readonly</span><span class="w"> </span><span class="n">IOrderRepository</span><span class="w"> </span><span class="n">_orderRepository</span><span class="p">;</span>
+<span class="w">    </span><span class="k">private</span><span class="w"> </span><span class="k">readonly</span><span class="w"> </span><span class="n">IUnitOfWork</span><span class="w"> </span><span class="n">_unitOfWork</span><span class="p">;</span>
+<span class="w">    </span><span class="k">private</span><span class="w"> </span><span class="k">readonly</span><span class="w"> </span><span class="n">IDomainEventPublisher</span><span class="w"> </span><span class="n">_eventPublisher</span><span class="p">;</span>
+
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="nf">CreateOrderCommandHandler</span><span class="p">(</span>
+<span class="w">        </span><span class="n">IOrderRepository</span><span class="w"> </span><span class="n">orderRepository</span><span class="p">,</span>
+<span class="w">        </span><span class="n">IUnitOfWork</span><span class="w"> </span><span class="n">unitOfWork</span><span class="p">,</span>
+<span class="w">        </span><span class="n">IDomainEventPublisher</span><span class="w"> </span><span class="n">eventPublisher</span><span class="p">)</span>
 <span class="w">    </span><span class="p">{</span>
-<span class="w">        </span><span class="n">_fixedDiscountStrategy</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">fixedDiscountStrategy</span><span class="p">;</span>
-<span class="w">        </span><span class="n">_percentDiscountStrategy</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">percentDiscountStrategy</span><span class="p">;</span>
-<span class="w">        </span><span class="n">_vipDiscountStrategy</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">vipDiscountStrategy</span><span class="p">;</span>
+<span class="w">        </span><span class="n">_orderRepository</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">orderRepository</span><span class="p">;</span>
+<span class="w">        </span><span class="n">_unitOfWork</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">unitOfWork</span><span class="p">;</span>
+<span class="w">        </span><span class="n">_eventPublisher</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">eventPublisher</span><span class="p">;</span>
 <span class="w">    </span><span class="p">}</span>
 
-<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">IDiscountStrategy</span><span class="w"> </span><span class="nf">Resolve</span><span class="p">(</span><span class="n">DiscountType</span><span class="w"> </span><span class="n">type</span><span class="p">)</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">async</span><span class="w"> </span><span class="n">Task</span><span class="o">&lt;</span><span class="n">Guid</span><span class="o">&gt;</span><span class="w"> </span><span class="n">HandleAsync</span><span class="p">(</span><span class="n">CreateOrderCommand</span><span class="w"> </span><span class="n">command</span><span class="p">)</span>
 <span class="w">    </span><span class="p">{</span>
-<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">type</span><span class="w"> </span><span class="k">switch</span>
-<span class="w">        </span><span class="p">{</span>
-<span class="w">            </span><span class="n">DiscountType</span><span class="p">.</span><span class="n">Fixed</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">_fixedDiscountStrategy</span><span class="p">,</span>
-<span class="w">            </span><span class="n">DiscountType</span><span class="p">.</span><span class="n">Percent</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">_percentDiscountStrategy</span><span class="p">,</span>
-<span class="w">            </span><span class="n">DiscountType</span><span class="p">.</span><span class="n">Vip</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">_vipDiscountStrategy</span><span class="p">,</span>
-<span class="w">            </span><span class="n">_</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="k">throw</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ArgumentOutOfRangeException</span><span class="p">(</span><span class="k">nameof</span><span class="p">(</span><span class="n">type</span><span class="p">),</span><span class="w"> </span><span class="n">type</span><span class="p">,</span><span class="w"> </span><span class="k">null</span><span class="p">)</span>
-<span class="w">        </span><span class="p">};</span>
+<span class="w">        </span><span class="kt">var</span><span class="w"> </span><span class="n">order</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Order</span><span class="p">.</span><span class="n">Create</span><span class="p">(</span><span class="n">command</span><span class="p">.</span><span class="n">CustomerId</span><span class="p">,</span><span class="w"> </span><span class="n">command</span><span class="p">.</span><span class="n">Items</span><span class="p">);</span>
+
+<span class="w">        </span><span class="k">await</span><span class="w"> </span><span class="n">_orderRepository</span><span class="p">.</span><span class="n">AddAsync</span><span class="p">(</span><span class="n">order</span><span class="p">);</span>
+<span class="w">        </span><span class="k">await</span><span class="w"> </span><span class="n">_unitOfWork</span><span class="p">.</span><span class="n">SaveChangesAsync</span><span class="p">();</span>
+
+<span class="w">        </span><span class="k">await</span><span class="w"> </span><span class="n">_eventPublisher</span><span class="p">.</span><span class="n">PublishAsync</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">OrderCreatedEvent</span><span class="p">(</span><span class="n">order</span><span class="p">.</span><span class="n">Id</span><span class="p">));</span>
+
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">order</span><span class="p">.</span><span class="n">Id</span><span class="p">;</span>
 <span class="w">    </span><span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div>
-<p>Khi mỗi strategy cần thêm dependency riêng như repository, config hay external service, DI sẽ giúp constructor của từng strategy vẫn rõ ràng và testable.</p>
-<h2 id="7-khi-nao-nen-dung-strategy">7. Khi nào nên dùng Strategy?<a class="headerlink" href="#7-khi-nao-nen-dung-strategy" title="Permanent link">&para;</a></h2>
+<h3 id="buoc-4-query-handler">Bước 4: Query Handler<a class="headerlink" href="#buoc-4-query-handler" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="k">public</span><span class="w"> </span><span class="k">sealed</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">GetOrderDetailQueryHandler</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">private</span><span class="w"> </span><span class="k">readonly</span><span class="w"> </span><span class="n">OrdersReadDbContext</span><span class="w"> </span><span class="n">_dbContext</span><span class="p">;</span>
+
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="nf">GetOrderDetailQueryHandler</span><span class="p">(</span><span class="n">OrdersReadDbContext</span><span class="w"> </span><span class="n">dbContext</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">_dbContext</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">dbContext</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">Task</span><span class="o">&lt;</span><span class="n">OrderDetailDto</span><span class="o">?&gt;</span><span class="w"> </span><span class="n">HandleAsync</span><span class="p">(</span><span class="n">GetOrderDetailQuery</span><span class="w"> </span><span class="n">query</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">_dbContext</span><span class="p">.</span><span class="n">OrderDetails</span>
+<span class="w">            </span><span class="p">.</span><span class="n">Where</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">x</span><span class="p">.</span><span class="n">Id</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">query</span><span class="p">.</span><span class="n">OrderId</span><span class="p">)</span>
+<span class="w">            </span><span class="p">.</span><span class="n">Select</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">OrderDetailDto</span>
+<span class="w">            </span><span class="p">{</span>
+<span class="w">                </span><span class="n">Id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">x</span><span class="p">.</span><span class="n">Id</span><span class="p">,</span>
+<span class="w">                </span><span class="n">Code</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">x</span><span class="p">.</span><span class="n">Code</span><span class="p">,</span>
+<span class="w">                </span><span class="n">CustomerName</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">x</span><span class="p">.</span><span class="n">CustomerName</span><span class="p">,</span>
+<span class="w">                </span><span class="n">TotalAmount</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">x</span><span class="p">.</span><span class="n">TotalAmount</span><span class="p">,</span>
+<span class="w">                </span><span class="n">Status</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">x</span><span class="p">.</span><span class="n">Status</span><span class="p">,</span>
+<span class="w">                </span><span class="n">CreatedAt</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">x</span><span class="p">.</span><span class="n">CreatedAt</span>
+<span class="w">            </span><span class="p">})</span>
+<span class="w">            </span><span class="p">.</span><span class="n">SingleOrDefaultAsync</span><span class="p">();</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Ở ví dụ này:</p>
+<ul>
+<li><code>CreateOrderCommandHandler</code> quan tâm đến business rule và ghi dữ liệu đúng.</li>
+<li><code>GetOrderDetailQueryHandler</code> quan tâm đến shape trả về phù hợp cho màn hình.</li>
+<li>Hai bên có thể cùng dùng một database hoặc dùng read/write database tách riêng tùy độ phức tạp hệ thống.</li>
+</ul>
+<hr />
+<h2 id="6-luong-cqrs-trong-nghiep-vu-at-hang">6. Luồng CQRS trong nghiệp vụ đặt hàng<a class="headerlink" href="#6-luong-cqrs-trong-nghiep-vu-at-hang" title="Permanent link">&para;</a></h2>
+<p align="center">
+  <img src="../../../assets/cqrs_command_vs_query_sequence.svg" alt="Luồng command và query trong nghiệp vụ đặt hàng theo CQRS" width="760">
+</p>
+
+<p>Trong ví dụ đặt hàng:</p>
+<h3 id="phia-command">Phía command<a class="headerlink" href="#phia-command" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Client gửi <code>PlaceOrderCommand</code>.</li>
+<li><code>CommandHandler</code> validate business rule.</li>
+<li>Ghi order vào write DB.</li>
+<li>Phát <code>OrderPlaced</code> domain event.</li>
+</ol>
+<h3 id="phia-query">Phía query<a class="headerlink" href="#phia-query" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Projector lắng nghe <code>OrderPlaced</code>.</li>
+<li>Cập nhật read model dành riêng cho màn hình.</li>
+<li>Client gửi <code>GetOrderDetailQuery</code>.</li>
+<li><code>QueryHandler</code> đọc từ read DB và trả DTO tối ưu cho UI.</li>
+</ol>
+<p>Luồng này cho phép:</p>
+<ul>
+<li>write side giữ rule nghiệp vụ chặt chẽ,</li>
+<li>read side được tối ưu cho tốc độ và format dữ liệu,</li>
+<li>mỗi phía phát triển theo nhu cầu riêng.</li>
+</ul>
+<hr />
+<h2 id="7-cac-muc-o-ap-dung-cqrs">7. Các mức độ áp dụng CQRS<a class="headerlink" href="#7-cac-muc-o-ap-dung-cqrs" title="Permanent link">&para;</a></h2>
+<p>CQRS không phải chỉ có một kiểu “đầy đủ” duy nhất.</p>
+<h3 id="muc-1-tach-handler-dung-chung-database">Mức 1: Tách handler, dùng chung database<a class="headerlink" href="#muc-1-tach-handler-dung-chung-database" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>CommandHandler -&gt; cùng DB
+QueryHandler   -&gt; cùng DB
+</code></pre></div>
+<p>Phù hợp khi:</p>
+<ul>
+<li>muốn code rõ hơn,</li>
+<li>write/read logic đã khác nhau,</li>
+<li>nhưng chưa cần hạ tầng phức tạp.</li>
+</ul>
+<h3 id="muc-2-tach-read-model-trong-cung-database">Mức 2: Tách read model trong cùng database<a class="headerlink" href="#muc-2-tach-read-model-trong-cung-database" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>Write tables
+Read views / projection tables
+</code></pre></div>
+<p>Phù hợp khi:</p>
+<ul>
+<li>màn hình đọc cần join/phẳng hóa dữ liệu riêng,</li>
+<li>nhưng vẫn muốn giữ vận hành đơn giản.</li>
+</ul>
+<h3 id="muc-3-tach-read-database-rieng">Mức 3: Tách read database riêng<a class="headerlink" href="#muc-3-tach-read-database-rieng" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>Write DB -&gt; event -&gt; read DB
+</code></pre></div>
+<p>Phù hợp khi:</p>
+<ul>
+<li>hệ thống đọc nhiều hơn ghi,</li>
+<li>cần scale query riêng,</li>
+<li>hoặc read model rất khác write model.</li>
+</ul>
+<p>Thông thường, nên bắt đầu từ mức đơn giản nhất đủ giải quyết vấn đề.</p>
+<hr />
+<h2 id="8-cqrs-trong-aspnet-core">8. CQRS trong ASP.NET Core<a class="headerlink" href="#8-cqrs-trong-aspnet-core" title="Permanent link">&para;</a></h2>
+<p>Trong ASP.NET Core, CQRS thường đi cùng các khái niệm:</p>
+<ul>
+<li><code>Command</code></li>
+<li><code>Query</code></li>
+<li><code>Handler</code></li>
+<li><code>DTO</code></li>
+<li><code>Domain Event</code></li>
+<li>đôi khi có <code>Mediator</code></li>
+</ul>
+<p>Ví dụ controller:</p>
+<div class="highlight"><pre><span></span><code><span class="na">[ApiController]</span>
+<span class="na">[Route(&quot;api/orders&quot;)]</span>
+<span class="k">public</span><span class="w"> </span><span class="k">sealed</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">OrdersController</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">ControllerBase</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">private</span><span class="w"> </span><span class="k">readonly</span><span class="w"> </span><span class="n">CreateOrderCommandHandler</span><span class="w"> </span><span class="n">_createOrderHandler</span><span class="p">;</span>
+<span class="w">    </span><span class="k">private</span><span class="w"> </span><span class="k">readonly</span><span class="w"> </span><span class="n">GetOrderDetailQueryHandler</span><span class="w"> </span><span class="n">_getOrderDetailHandler</span><span class="p">;</span>
+
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="nf">OrdersController</span><span class="p">(</span>
+<span class="w">        </span><span class="n">CreateOrderCommandHandler</span><span class="w"> </span><span class="n">createOrderHandler</span><span class="p">,</span>
+<span class="w">        </span><span class="n">GetOrderDetailQueryHandler</span><span class="w"> </span><span class="n">getOrderDetailHandler</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">_createOrderHandler</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">createOrderHandler</span><span class="p">;</span>
+<span class="w">        </span><span class="n">_getOrderDetailHandler</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">getOrderDetailHandler</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="na">[HttpPost]</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">async</span><span class="w"> </span><span class="n">Task</span><span class="o">&lt;</span><span class="n">ActionResult</span><span class="o">&lt;</span><span class="n">Guid</span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">Create</span><span class="p">(</span><span class="n">CreateOrderRequest</span><span class="w"> </span><span class="n">request</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="kt">var</span><span class="w"> </span><span class="n">orderId</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="n">_createOrderHandler</span><span class="p">.</span><span class="n">HandleAsync</span><span class="p">(</span>
+<span class="w">            </span><span class="k">new</span><span class="w"> </span><span class="nf">CreateOrderCommand</span><span class="p">(</span><span class="n">request</span><span class="p">.</span><span class="n">CustomerId</span><span class="p">,</span><span class="w"> </span><span class="n">request</span><span class="p">.</span><span class="n">Items</span><span class="p">));</span>
+
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="nf">Ok</span><span class="p">(</span><span class="n">orderId</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="na">[HttpGet(&quot;{id:guid}&quot;)]</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">async</span><span class="w"> </span><span class="n">Task</span><span class="o">&lt;</span><span class="n">ActionResult</span><span class="o">&lt;</span><span class="n">OrderDetailDto</span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">GetById</span><span class="p">(</span><span class="n">Guid</span><span class="w"> </span><span class="n">id</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="kt">var</span><span class="w"> </span><span class="n">order</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="n">_getOrderDetailHandler</span><span class="p">.</span><span class="n">HandleAsync</span><span class="p">(</span>
+<span class="w">            </span><span class="k">new</span><span class="w"> </span><span class="nf">GetOrderDetailQuery</span><span class="p">(</span><span class="n">id</span><span class="p">));</span>
+
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">order</span><span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="k">null</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="n">NotFound</span><span class="p">()</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">Ok</span><span class="p">(</span><span class="n">order</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Nếu dùng MediatR hoặc một mediator abstraction, controller có thể gọn hơn nữa:</p>
+<div class="highlight"><pre><span></span><code><span class="kt">var</span><span class="w"> </span><span class="n">orderId</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="n">_mediator</span><span class="p">.</span><span class="n">Send</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">CreateOrderCommand</span><span class="p">(...));</span>
+<span class="kt">var</span><span class="w"> </span><span class="n">order</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="n">_mediator</span><span class="p">.</span><span class="n">Send</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">GetOrderDetailQuery</span><span class="p">(</span><span class="n">id</span><span class="p">));</span>
+</code></pre></div>
+<p>Lưu ý: <strong>Mediator không phải là CQRS</strong>. Mediator chỉ là một cách dispatch command/query đến handler. CQRS là quyết định tách read và write.</p>
+<hr />
+<h2 id="9-cqrs-khac-gi-crud-truyen-thong">9. CQRS khác gì CRUD truyền thống?<a class="headerlink" href="#9-cqrs-khac-gi-crud-truyen-thong" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Tiêu chí</th>
+<th>CRUD truyền thống</th>
+<th>CQRS</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Model</td>
+<td>Thường dùng chung cho đọc và ghi</td>
+<td>Có thể tách read model và write model</td>
+</tr>
+<tr>
+<td>Service</td>
+<td>Một service xử lý cả read/write</td>
+<td>Tách command handler và query handler</td>
+</tr>
+<tr>
+<td>Phù hợp với</td>
+<td>Hệ thống đơn giản, logic ít khác biệt</td>
+<td>Hệ thống có read/write khác nhau rõ rệt</td>
+</tr>
+<tr>
+<td>Độ phức tạp</td>
+<td>Thấp</td>
+<td>Cao hơn</td>
+</tr>
+<tr>
+<td>Tối ưu</td>
+<td>Dễ bắt đầu</td>
+<td>Dễ tối ưu từng phía về sau</td>
+</tr>
+</tbody>
+</table>
+<p>CRUD không hề “sai”. Với nhiều hệ thống, CRUD là lựa chọn tốt hơn CQRS vì đơn giản, ít ceremony và dễ vận hành hơn.</p>
+<hr />
+<h2 id="10-cqrs-khac-gi-event-sourcing">10. CQRS khác gì Event Sourcing?<a class="headerlink" href="#10-cqrs-khac-gi-event-sourcing" title="Permanent link">&para;</a></h2>
+<p>Hai khái niệm này hay đi cùng nhau nhưng không phải một.</p>
+<table>
+<thead>
+<tr>
+<th>Tiêu chí</th>
+<th>CQRS</th>
+<th>Event Sourcing</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Trọng tâm</td>
+<td>Tách read và write</td>
+<td>Lưu state dưới dạng chuỗi event</td>
+</tr>
+<tr>
+<td>Có cần event không?</td>
+<td>Không bắt buộc</td>
+<td>Có</td>
+</tr>
+<tr>
+<td>Có cần read model riêng không?</td>
+<td>Không bắt buộc nhưng thường hữu ích</td>
+<td>Thường cần để query hiệu quả</td>
+</tr>
+<tr>
+<td>Có thể dùng độc lập không?</td>
+<td>Có</td>
+<td>Có</td>
+</tr>
+</tbody>
+</table>
+<p>Bạn có thể:</p>
+<ul>
+<li>dùng CQRS mà không dùng Event Sourcing,</li>
+<li>dùng Event Sourcing kết hợp CQRS,</li>
+<li>hoặc không dùng cả hai.</li>
+</ul>
+<hr />
+<h2 id="11-cqrs-khac-gi-voi-phan-tach-bll-dao">11. CQRS khác gì với phân tách BLL / DAO?<a class="headerlink" href="#11-cqrs-khac-gi-voi-phan-tach-bll-dao" title="Permanent link">&para;</a></h2>
+<p>Nếu bạn quen kiến trúc:</p>
+<div class="highlight"><pre><span></span><code>Controller -&gt; BLL -&gt; DAO
+</code></pre></div>
+<p>thì CQRS không chỉ là việc đã có BLL rồi gọi nhiều DAO khác nhau.</p>
+<p>Điểm khác nằm ở chỗ:</p>
+<ul>
+<li>BLL/Service Layer nói về <strong>phân lớp trách nhiệm</strong>.</li>
+<li>CQRS nói về <strong>tách riêng luồng đọc và luồng ghi</strong>.</li>
+</ul>
+<p>Ví dụ:</p>
+<div class="highlight"><pre><span></span><code>OrderService
+  -&gt; CreateOrderAsync()
+  -&gt; GetOrderDetailAsync()
+</code></pre></div>
+<p>vẫn là service layer bình thường.</p>
+<p>Khi chuyển sang CQRS:</p>
+<div class="highlight"><pre><span></span><code>CreateOrderCommandHandler
+GetOrderDetailQueryHandler
+</code></pre></div>
+<p>thì:</p>
+<ul>
+<li>phía command có thể dùng domain model, transaction, rule nghiệp vụ,</li>
+<li>phía query có thể trả DTO phẳng, join tối ưu, thậm chí dùng read DB riêng.</li>
+</ul>
+<p>Nói ngắn:</p>
+<div class="highlight"><pre><span></span><code>Service Layer là cách chia tầng.
+CQRS là cách tách trách nhiệm đọc và ghi trong tầng đó.
+</code></pre></div>
+<hr />
+<h2 id="12-khi-nao-nen-dung-cqrs">12. Khi nào nên dùng CQRS?<a class="headerlink" href="#12-khi-nao-nen-dung-cqrs" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
 <tr>
@@ -4449,96 +5102,112 @@ PriceService
 </thead>
 <tbody>
 <tr>
-<td>Có nhiều cách xử lý cho cùng một hành động</td>
+<td>Read và write có nhu cầu khác nhau rõ rệt</td>
 <td>Có</td>
-<td>Tính giá, tính phí ship, payment, export</td>
+<td>Ví dụ dashboard đọc phức tạp, write có rule nghiệp vụ chặt</td>
 </tr>
 <tr>
-<td>Logic <code>if/else</code> thay đổi theo loại nghiệp vụ</td>
+<td>Query cần tối ưu khác hẳn entity write model</td>
 <td>Có</td>
-<td>Mỗi nhánh có thể trở thành một strategy</td>
+<td>Read DTO, denormalized view, projection</td>
 </tr>
 <tr>
-<td>Cần thay đổi thuật toán lúc runtime</td>
+<td>Hệ thống đọc nhiều hơn ghi và cần scale riêng</td>
 <td>Có</td>
-<td>Chọn theo loại khách hàng, khu vực, cấu hình</td>
+<td>Có thể cân nhắc read DB riêng</td>
 </tr>
 <tr>
-<td>Mỗi rule cần test độc lập</td>
+<td>Nghiệp vụ có domain event và nhiều projection</td>
 <td>Có</td>
-<td>Strategy nhỏ giúp test tập trung</td>
+<td>CQRS thường phát huy tốt</td>
 </tr>
 <tr>
-<td>Chỉ có 2 nhánh rất đơn giản và ít thay đổi</td>
+<td>App CRUD đơn giản</td>
+<td>Thường chưa cần</td>
+<td>Dễ over-engineering</td>
+</tr>
+<tr>
+<td>Team chưa cần tối ưu riêng read/write</td>
 <td>Chưa cần</td>
-<td><code>if/else</code> có thể dễ đọc hơn</td>
-</tr>
-<tr>
-<td>Logic chỉ khác nhau ở vài hằng số</td>
-<td>Cân nhắc</td>
-<td>Có thể dùng config trước khi tạo thêm class</td>
+<td>Giữ kiến trúc đơn giản trước</td>
 </tr>
 </tbody>
 </table>
-<h2 id="8-strategy-khac-gi-factory">8. Strategy khác gì Factory?<a class="headerlink" href="#8-strategy-khac-gi-factory" title="Permanent link">&para;</a></h2>
-<table>
-<thead>
-<tr>
-<th>Tiêu chí</th>
-<th>Strategy</th>
-<th>Factory</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Mục tiêu chính</td>
-<td>Thay đổi cách xử lý</td>
-<td>Tạo object phù hợp</td>
-</tr>
-<tr>
-<td>Câu hỏi nó trả lời</td>
-<td>"Xử lý như thế nào?"</td>
-<td>"Tạo object nào?"</td>
-</tr>
-<tr>
-<td>Ví dụ</td>
-<td>Cách tính giảm giá</td>
-<td>Chọn loại strategy cần tạo</td>
-</tr>
-<tr>
-<td>Có thể kết hợp không?</td>
-<td>Có</td>
-<td>Factory thường chọn strategy</td>
-</tr>
-</tbody>
-</table>
-<p>Một cách nhớ nhanh:</p>
-<div class="highlight"><pre><span></span><code>Factory chọn object.
-Strategy chọn hành vi.
+<hr />
+<h2 id="13-khi-nao-khong-nen-dung-cqrs">13. Khi nào không nên dùng CQRS?<a class="headerlink" href="#13-khi-nao-khong-nen-dung-cqrs" title="Permanent link">&para;</a></h2>
+<p>Không nên dùng CQRS chỉ vì:</p>
+<ul>
+<li>muốn code trông “enterprise” hơn,</li>
+<li>thấy dự án khác dùng nên làm theo,</li>
+<li>app hiện tại chỉ là CRUD cơ bản,</li>
+<li>team chưa có nhu cầu thực sự phải tách read/write.</li>
+</ul>
+<p>Nếu:</p>
+<ul>
+<li>cùng một entity vừa đọc vừa ghi rất đơn giản,</li>
+<li>query không có gì đặc biệt,</li>
+<li>không có lý do hiệu năng hoặc mô hình hóa rõ ràng,</li>
+</ul>
+<p>thì CQRS thường chỉ làm tăng số lượng class mà chưa đem lại nhiều giá trị.</p>
+<hr />
+<h2 id="14-uu-iem">14. Ưu điểm<a class="headerlink" href="#14-uu-iem" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Tách rõ read concern và write concern.</li>
+<li>Read model có thể tối ưu đúng theo nhu cầu màn hình.</li>
+<li>Write side giữ domain model sạch hơn, tập trung vào business rule.</li>
+<li>Dễ mở rộng khi query và command ngày càng khác nhau.</li>
+<li>Có thể scale phía đọc và ghi độc lập nếu cần.</li>
+<li>Phù hợp với hệ thống có domain event, projection, async processing.</li>
+</ul>
+<hr />
+<h2 id="15-nhuoc-iem">15. Nhược điểm<a class="headerlink" href="#15-nhuoc-iem" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Tăng số lượng class và khái niệm phải quản lý.</li>
+<li>Debug luồng end-to-end phức tạp hơn.</li>
+<li>Nếu dùng read model riêng, có thể xuất hiện <strong>eventual consistency</strong>.</li>
+<li>Đồng bộ projection, retry, idempotency cần được thiết kế cẩn thận.</li>
+<li>Không phù hợp với mọi hệ thống; dùng sớm quá dễ thành over-engineering.</li>
+</ul>
+<hr />
+<h2 id="16-luu-y-khi-dung">16. Lưu ý khi dùng<a class="headerlink" href="#16-luu-y-khi-dung" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Bắt đầu đơn giản: tách handler trước, chưa cần tách database ngay.</li>
+<li>Query handler không nên làm thay đổi state.</li>
+<li>Command handler không nên biến thành nơi trả response phức tạp cho UI.</li>
+<li>Nếu dùng read model riêng, phải chấp nhận và giải thích rõ độ trễ đồng bộ dữ liệu.</li>
+<li>Event bus, outbox, projector và retry cần được thiết kế kỹ nếu hệ thống chạy phân tán.</li>
+<li>Đừng dùng CQRS để né việc thiết kế domain model tốt.</li>
+</ul>
+<hr />
+<h2 id="17-vi-du-sai-thuong-gap">17. Ví dụ sai thường gặp<a class="headerlink" href="#17-vi-du-sai-thuong-gap" title="Permanent link">&para;</a></h2>
+<h3 id="sai-1-tach-file-nhung-khong-tach-trach-nhiem-that">Sai 1: Tách file nhưng không tách trách nhiệm thật<a class="headerlink" href="#sai-1-tach-file-nhung-khong-tach-trach-nhiem-that" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>CreateOrderCommandHandler
+GetOrderDetailQueryHandler
 </code></pre></div>
-<h2 id="9-vi-du-thuc-te-hay-gap">9. Ví dụ thực tế hay gặp<a class="headerlink" href="#9-vi-du-thuc-te-hay-gap" title="Permanent link">&para;</a></h2>
-<p>Strategy rất phù hợp cho:</p>
+<p>nhưng cả hai vẫn:</p>
 <ul>
-<li><code>IPricingStrategy</code>: tính giá thường, giá VIP, giá campaign.</li>
-<li><code>IPaymentStrategy</code>: thanh toán tiền mặt, ví điện tử, thẻ.</li>
-<li><code>IExportStrategy</code>: export PDF, Excel, CSV.</li>
-<li><code>INotificationStrategy</code>: gửi email, SMS, push notification.</li>
-<li><code>IShippingFeeStrategy</code>: tính phí theo nội thành, liên tỉnh, express.</li>
-<li><code>IValidationStrategy</code>: validate rule khác nhau theo từng loại đơn hàng.</li>
+<li>dùng cùng một entity cho mọi mục đích,</li>
+<li>query handler nhồi thêm side effect,</li>
+<li>command handler trả về response model khổng lồ cho UI.</li>
 </ul>
-<h2 id="10-luu-y-khi-dung">10. Lưu ý khi dùng<a class="headerlink" href="#10-luu-y-khi-dung" title="Permanent link">&para;</a></h2>
+<p>Khi đó chỉ là đổi tên class, chưa phải CQRS có ý nghĩa.</p>
+<h3 id="sai-2-dung-hai-database-ngay-tu-au-du-chua-can">Sai 2: Dùng hai database ngay từ đầu dù chưa cần<a class="headerlink" href="#sai-2-dung-hai-database-ngay-tu-au-du-chua-can" title="Permanent link">&para;</a></h3>
+<p>Nếu hệ thống còn nhỏ, read/write chưa khác biệt nhiều, thêm:</p>
 <ul>
-<li>Đừng tạo strategy chỉ để thay một giá trị nhỏ nếu config là đủ.</li>
-<li>Tên strategy nên phản ánh rule nghiệp vụ, không chỉ phản ánh kỹ thuật.</li>
-<li>Nếu có quá nhiều strategy gần giống nhau, hãy xem lại abstraction hoặc dữ liệu đầu vào.</li>
-<li>Tránh để context/service biết quá nhiều chi tiết về concrete strategy.</li>
-<li>Nếu chọn strategy bằng string rải rác khắp nơi, nên dùng enum hoặc resolver/factory để gom lại.</li>
+<li>event bus,</li>
+<li>projector,</li>
+<li>read DB riêng,</li>
+<li>đồng bộ bất đồng bộ,</li>
 </ul>
-<h2 id="11-tom-tat">11. Tóm tắt<a class="headerlink" href="#11-tom-tat" title="Permanent link">&para;</a></h2>
-<p>Strategy Pattern phù hợp khi cùng một hành động có nhiều cách xử lý khác nhau và các cách đó có khả năng thay đổi hoặc mở rộng.</p>
+<p>quá sớm sẽ làm chi phí vận hành tăng mạnh.</p>
+<h3 id="sai-3-hieu-cqrs-la-bat-buoc-phai-i-cung-event-sourcing">Sai 3: Hiểu CQRS là bắt buộc phải đi cùng Event Sourcing<a class="headerlink" href="#sai-3-hieu-cqrs-la-bat-buoc-phai-i-cung-event-sourcing" title="Permanent link">&para;</a></h3>
+<p>Không đúng. CQRS có thể tồn tại độc lập hoàn toàn với Event Sourcing.</p>
+<hr />
+<h2 id="18-tom-tat">18. Tóm tắt<a class="headerlink" href="#18-tom-tat" title="Permanent link">&para;</a></h2>
+<p>CQRS phù hợp khi nhu cầu <strong>ghi đúng</strong> và nhu cầu <strong>đọc nhanh / đọc đúng shape</strong> đã khác nhau đủ rõ để không nên ép chúng dùng chung một mô hình nữa.</p>
 <p>Một câu dễ nhớ:</p>
-<div class="highlight"><pre><span></span><code>Strategy tốt khi hành vi thay đổi.
-Strategy thừa khi chỉ có một vài nhánh nhỏ, ổn định và rất dễ đọc.
+<div class="highlight"><pre><span></span><code>CQRS tốt khi read và write có nhu cầu khác nhau thật.
+CQRS thừa khi một mô hình CRUD đơn giản đã giải quyết vấn đề rất tốt.
 </code></pre></div>
 
 
