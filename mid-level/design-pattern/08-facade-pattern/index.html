@@ -8,13 +8,13 @@
       
       
       
-        <link rel="canonical" href="https://alphadev14.github.io/digitaldocs/mid-level/design-pattern/05-adapter-pattern/">
+        <link rel="canonical" href="https://alphadev14.github.io/digitaldocs/mid-level/design-pattern/08-facade-pattern/">
       
       
-        <link rel="prev" href="../04-builder-pattern/">
+        <link rel="prev" href="../05-adapter-pattern/">
       
       
-        <link rel="next" href="../08-facade-pattern/">
+        <link rel="next" href="../06-observer-pattern/">
       
       
         
@@ -25,7 +25,7 @@
     
     
       
-        <title>Adapter Pattern - P&T | Digital Docs</title>
+        <title>Facade Pattern - P&T | Digital Docs</title>
       
     
     
@@ -80,7 +80,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#adapter-pattern" class="md-skip">
+        <a href="#facade-pattern" class="md-skip">
           Skip to content
         </a>
       
@@ -115,7 +115,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Adapter Pattern
+              Facade Pattern
             
           </span>
         </div>
@@ -3483,6 +3483,34 @@
                 
   
   
+  
+  
+    <li class="md-nav__item">
+      <a href="../05-adapter-pattern/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Adapter Pattern
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
     
   
   
@@ -3502,7 +3530,7 @@
   <span class="md-ellipsis">
     
   
-    Adapter Pattern
+    Facade Pattern
   
 
     
@@ -3520,7 +3548,7 @@
   <span class="md-ellipsis">
     
   
-    Adapter Pattern
+    Facade Pattern
   
 
     
@@ -3546,10 +3574,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#1-adapter-pattern-la-gi" class="md-nav__link">
+  <a href="#1-facade-pattern-la-gi" class="md-nav__link">
     <span class="md-ellipsis">
       
-        1. Adapter Pattern là gì?
+        1. Facade Pattern là gì?
       
     </span>
   </a>
@@ -3557,10 +3585,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#2-van-e-adapter-giai-quyet" class="md-nav__link">
+  <a href="#2-facade-giai-quyet-van-e-gi" class="md-nav__link">
     <span class="md-ellipsis">
       
-        2. Vấn đề Adapter giải quyết
+        2. Facade giải quyết vấn đề gì?
       
     </span>
   </a>
@@ -3568,10 +3596,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#3-vi-du-adapter-trong-c" class="md-nav__link">
+  <a href="#3-cau-truc-co-ban-cua-facade" class="md-nav__link">
     <span class="md-ellipsis">
       
-        3. Ví dụ Adapter trong C
+        3. Cấu trúc cơ bản của Facade
       
     </span>
   </a>
@@ -3579,10 +3607,60 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#4-adapter-trong-clean-architecture" class="md-nav__link">
+  <a href="#4-vi-du-facade-trong-c" class="md-nav__link">
     <span class="md-ellipsis">
       
-        4. Adapter trong Clean Architecture
+        4. Ví dụ Facade trong C
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Ví dụ Facade trong C">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#buoc-1-cac-service-con" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bước 1: Các service con
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#buoc-2-facade-ieu-phoi-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bước 2: Facade điều phối flow
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#buoc-3-client-su-dung-facade" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bước 3: Client sử dụng Facade
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-luong-hoat-ong-cua-facade" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Luồng hoạt động của Facade
       
     </span>
   </a>
@@ -3590,10 +3668,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#5-khi-nao-nen-dung-adapter" class="md-nav__link">
+  <a href="#6-facade-trong-aspnet-core-clean-architecture" class="md-nav__link">
     <span class="md-ellipsis">
       
-        5. Khi nào nên dùng Adapter?
+        6. Facade trong ASP.NET Core / Clean Architecture
       
     </span>
   </a>
@@ -3601,10 +3679,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#6-adapter-khac-gi-facade" class="md-nav__link">
+  <a href="#7-khi-nao-nen-dung-facade" class="md-nav__link">
     <span class="md-ellipsis">
       
-        6. Adapter khác gì Facade?
+        7. Khi nào nên dùng Facade?
       
     </span>
   </a>
@@ -3612,10 +3690,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#7-luu-y-khi-dung" class="md-nav__link">
+  <a href="#8-khi-nao-khong-nen-dung-facade" class="md-nav__link">
     <span class="md-ellipsis">
       
-        7. Lưu ý khi dùng
+        8. Khi nào không nên dùng Facade?
       
     </span>
   </a>
@@ -3623,10 +3701,165 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#8-tom-tat" class="md-nav__link">
+  <a href="#9-facade-khac-gi-adapter" class="md-nav__link">
     <span class="md-ellipsis">
       
-        8. Tóm tắt
+        9. Facade khác gì Adapter?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-facade-khac-gi-voi-service-layer-application-service" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10. Facade khác gì với Service Layer / Application Service?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-uu-iem" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11. Ưu điểm
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12-nhuoc-iem" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        12. Nhược điểm
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#13-luu-y-khi-dung" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13. Lưu ý khi dùng
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#14-vi-du-thuc-te-khac" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        14. Ví dụ thực tế khác
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="14. Ví dụ thực tế khác">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#checkoutfacade" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CheckoutFacade
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reportfacade" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ReportFacade
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#userregistrationfacade" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        UserRegistrationFacade
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#15-vi-du-sai-thuong-gap" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        15. Ví dụ sai thường gặp
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="15. Ví dụ sai thường gặp">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sai-1-facade-chi-la-lop-pass-through" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sai 1: Facade chỉ là lớp pass-through
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sai-2-facade-tro-thanh-noi-chua-toan-bo-nghiep-vu" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sai 2: Facade trở thành nơi chứa toàn bộ nghiệp vụ
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sai-3-dung-facade-khi-thuc-chat-can-adapter" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sai 3: Dùng Facade khi thực chất cần Adapter
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#16-tom-tat" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        16. Tóm tắt
       
     </span>
   </a>
@@ -3637,34 +3870,6 @@
   
 </nav>
       
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../08-facade-pattern/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Facade Pattern
-  
-
-    
-  </span>
-  
-  
-
-      </a>
     </li>
   
 
@@ -3858,10 +4063,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#1-adapter-pattern-la-gi" class="md-nav__link">
+  <a href="#1-facade-pattern-la-gi" class="md-nav__link">
     <span class="md-ellipsis">
       
-        1. Adapter Pattern là gì?
+        1. Facade Pattern là gì?
       
     </span>
   </a>
@@ -3869,10 +4074,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#2-van-e-adapter-giai-quyet" class="md-nav__link">
+  <a href="#2-facade-giai-quyet-van-e-gi" class="md-nav__link">
     <span class="md-ellipsis">
       
-        2. Vấn đề Adapter giải quyết
+        2. Facade giải quyết vấn đề gì?
       
     </span>
   </a>
@@ -3880,10 +4085,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#3-vi-du-adapter-trong-c" class="md-nav__link">
+  <a href="#3-cau-truc-co-ban-cua-facade" class="md-nav__link">
     <span class="md-ellipsis">
       
-        3. Ví dụ Adapter trong C
+        3. Cấu trúc cơ bản của Facade
       
     </span>
   </a>
@@ -3891,10 +4096,60 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#4-adapter-trong-clean-architecture" class="md-nav__link">
+  <a href="#4-vi-du-facade-trong-c" class="md-nav__link">
     <span class="md-ellipsis">
       
-        4. Adapter trong Clean Architecture
+        4. Ví dụ Facade trong C
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Ví dụ Facade trong C">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#buoc-1-cac-service-con" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bước 1: Các service con
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#buoc-2-facade-ieu-phoi-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bước 2: Facade điều phối flow
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#buoc-3-client-su-dung-facade" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bước 3: Client sử dụng Facade
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-luong-hoat-ong-cua-facade" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Luồng hoạt động của Facade
       
     </span>
   </a>
@@ -3902,10 +4157,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#5-khi-nao-nen-dung-adapter" class="md-nav__link">
+  <a href="#6-facade-trong-aspnet-core-clean-architecture" class="md-nav__link">
     <span class="md-ellipsis">
       
-        5. Khi nào nên dùng Adapter?
+        6. Facade trong ASP.NET Core / Clean Architecture
       
     </span>
   </a>
@@ -3913,10 +4168,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#6-adapter-khac-gi-facade" class="md-nav__link">
+  <a href="#7-khi-nao-nen-dung-facade" class="md-nav__link">
     <span class="md-ellipsis">
       
-        6. Adapter khác gì Facade?
+        7. Khi nào nên dùng Facade?
       
     </span>
   </a>
@@ -3924,10 +4179,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#7-luu-y-khi-dung" class="md-nav__link">
+  <a href="#8-khi-nao-khong-nen-dung-facade" class="md-nav__link">
     <span class="md-ellipsis">
       
-        7. Lưu ý khi dùng
+        8. Khi nào không nên dùng Facade?
       
     </span>
   </a>
@@ -3935,10 +4190,165 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#8-tom-tat" class="md-nav__link">
+  <a href="#9-facade-khac-gi-adapter" class="md-nav__link">
     <span class="md-ellipsis">
       
-        8. Tóm tắt
+        9. Facade khác gì Adapter?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-facade-khac-gi-voi-service-layer-application-service" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10. Facade khác gì với Service Layer / Application Service?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-uu-iem" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11. Ưu điểm
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12-nhuoc-iem" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        12. Nhược điểm
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#13-luu-y-khi-dung" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13. Lưu ý khi dùng
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#14-vi-du-thuc-te-khac" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        14. Ví dụ thực tế khác
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="14. Ví dụ thực tế khác">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#checkoutfacade" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CheckoutFacade
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reportfacade" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ReportFacade
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#userregistrationfacade" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        UserRegistrationFacade
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#15-vi-du-sai-thuong-gap" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        15. Ví dụ sai thường gặp
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="15. Ví dụ sai thường gặp">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sai-1-facade-chi-la-lop-pass-through" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sai 1: Facade chỉ là lớp pass-through
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sai-2-facade-tro-thanh-noi-chua-toan-bo-nghiep-vu" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sai 2: Facade trở thành nơi chứa toàn bộ nghiệp vụ
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sai-3-dung-facade-khi-thuc-chat-can-adapter" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sai 3: Dùng Facade khi thực chất cần Adapter
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#16-tom-tat" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        16. Tóm tắt
       
     </span>
   </a>
@@ -3962,82 +4372,326 @@
 
 
 
-<h1 id="adapter-pattern">Adapter Pattern<a class="headerlink" href="#adapter-pattern" title="Permanent link">&para;</a></h1>
-<h2 id="1-adapter-pattern-la-gi">1. Adapter Pattern là gì?<a class="headerlink" href="#1-adapter-pattern-la-gi" title="Permanent link">&para;</a></h2>
-<p>Adapter Pattern là một Structural Design Pattern dùng để chuyển interface không tương thích thành interface mà code hiện tại mong muốn.</p>
+<h1 id="facade-pattern">Facade Pattern<a class="headerlink" href="#facade-pattern" title="Permanent link">&para;</a></h1>
+<h2 id="1-facade-pattern-la-gi">1. Facade Pattern là gì?<a class="headerlink" href="#1-facade-pattern-la-gi" title="Permanent link">&para;</a></h2>
+<p>Facade Pattern là một <strong>Structural Design Pattern</strong> dùng để cung cấp một interface đơn giản hơn cho một hệ thống con đang có nhiều thành phần phức tạp bên trong.</p>
+<p>Thay vì để client phải tự gọi từng service nhỏ theo đúng thứ tự, Facade gom các bước đó lại sau một API dễ dùng hơn.</p>
 <p>Nói đơn giản:</p>
-<div class="highlight"><pre><span></span><code>API bên ngoài nói một kiểu -&gt; Adapter dịch lại -&gt; code nội bộ dùng interface quen thuộc
+<div class="highlight"><pre><span></span><code>Nhiều service con phức tạp -&gt; Facade gom lại -&gt; client chỉ gọi một điểm vào đơn giản
 </code></pre></div>
-<p>Pattern này rất hay gặp khi tích hợp payment gateway, email provider, storage service, SMS/Zalo/Telegram hoặc SDK bên thứ ba.</p>
-<h2 id="2-van-e-adapter-giai-quyet">2. Vấn đề Adapter giải quyết<a class="headerlink" href="#2-van-e-adapter-giai-quyet" title="Permanent link">&para;</a></h2>
-<p>Giả sử hệ thống cần gửi thông báo qua nhiều kênh. Code nội bộ muốn dùng interface chung:</p>
-<div class="highlight"><pre><span></span><code><span class="k">public</span><span class="w"> </span><span class="k">interface</span><span class="w"> </span><span class="n">INotificationSender</span>
+<p>Ví dụ thực tế:</p>
+<ul>
+<li>Đặt vé xem phim: kiểm tra suất chiếu, kiểm tra ghế, áp mã giảm giá, thanh toán, tạo vé, gửi email.</li>
+<li>Checkout đơn hàng: kiểm tra giỏ hàng, giữ tồn kho, thanh toán, tạo đơn, gửi thông báo.</li>
+<li>Xuất báo cáo: lấy dữ liệu, lọc, format, render file, upload storage.</li>
+<li>Đăng ký tài khoản: tạo user, tạo profile, gửi email xác thực, ghi audit log.</li>
+</ul>
+<p>Facade không thay thế các service con. Nó chỉ tạo một <strong>lối vào đơn giản hơn</strong> để client sử dụng chúng đúng cách.</p>
+<hr />
+<h2 id="2-facade-giai-quyet-van-e-gi">2. Facade giải quyết vấn đề gì?<a class="headerlink" href="#2-facade-giai-quyet-van-e-gi" title="Permanent link">&para;</a></h2>
+<p>Giả sử màn hình đặt vé xem phim cần thực hiện nhiều bước:</p>
+<ol>
+<li>Kiểm tra suất chiếu còn tồn tại.</li>
+<li>Kiểm tra ghế còn trống.</li>
+<li>Tính giá sau khuyến mãi.</li>
+<li>Thực hiện thanh toán.</li>
+<li>Tạo vé.</li>
+<li>Gửi email xác nhận.</li>
+</ol>
+<p>Nếu controller hoặc client phải tự gọi tất cả service:</p>
+<div class="highlight"><pre><span></span><code><span class="k">public</span><span class="w"> </span><span class="k">sealed</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">BookingController</span>
 <span class="p">{</span>
-<span class="w">    </span><span class="n">Task</span><span class="w"> </span><span class="nf">SendAsync</span><span class="p">(</span><span class="kt">string</span><span class="w"> </span><span class="n">receiver</span><span class="p">,</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">message</span><span class="p">);</span>
+<span class="w">    </span><span class="k">private</span><span class="w"> </span><span class="k">readonly</span><span class="w"> </span><span class="n">SeatService</span><span class="w"> </span><span class="n">_seatService</span><span class="p">;</span>
+<span class="w">    </span><span class="k">private</span><span class="w"> </span><span class="k">readonly</span><span class="w"> </span><span class="n">SeatLockService</span><span class="w"> </span><span class="n">_seatLockService</span><span class="p">;</span>
+<span class="w">    </span><span class="k">private</span><span class="w"> </span><span class="k">readonly</span><span class="w"> </span><span class="n">PricingService</span><span class="w"> </span><span class="n">_pricingService</span><span class="p">;</span>
+<span class="w">    </span><span class="k">private</span><span class="w"> </span><span class="k">readonly</span><span class="w"> </span><span class="n">DiscountService</span><span class="w"> </span><span class="n">_discountService</span><span class="p">;</span>
+<span class="w">    </span><span class="k">private</span><span class="w"> </span><span class="k">readonly</span><span class="w"> </span><span class="n">PaymentService</span><span class="w"> </span><span class="n">_paymentService</span><span class="p">;</span>
+<span class="w">    </span><span class="k">private</span><span class="w"> </span><span class="k">readonly</span><span class="w"> </span><span class="n">TicketPdfService</span><span class="w"> </span><span class="n">_ticketPdfService</span><span class="p">;</span>
+<span class="w">    </span><span class="k">private</span><span class="w"> </span><span class="k">readonly</span><span class="w"> </span><span class="n">EmailService</span><span class="w"> </span><span class="n">_emailService</span><span class="p">;</span>
+
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">async</span><span class="w"> </span><span class="n">Task</span><span class="o">&lt;</span><span class="n">IActionResult</span><span class="o">&gt;</span><span class="w"> </span><span class="n">BookAsync</span><span class="p">(</span><span class="n">BookingRequest</span><span class="w"> </span><span class="n">request</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">await</span><span class="w"> </span><span class="n">_seatService</span><span class="p">.</span><span class="n">EnsureAvailableAsync</span><span class="p">(</span><span class="n">request</span><span class="p">.</span><span class="n">ShowtimeId</span><span class="p">,</span><span class="w"> </span><span class="n">request</span><span class="p">.</span><span class="n">SeatIds</span><span class="p">);</span>
+<span class="w">        </span><span class="k">await</span><span class="w"> </span><span class="n">_seatLockService</span><span class="p">.</span><span class="n">LockAsync</span><span class="p">(</span><span class="n">request</span><span class="p">.</span><span class="n">ShowtimeId</span><span class="p">,</span><span class="w"> </span><span class="n">request</span><span class="p">.</span><span class="n">SeatIds</span><span class="p">);</span>
+
+<span class="w">        </span><span class="kt">var</span><span class="w"> </span><span class="n">basePrice</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="n">_pricingService</span><span class="p">.</span><span class="n">CalculateAsync</span><span class="p">(</span><span class="n">request</span><span class="p">);</span>
+<span class="w">        </span><span class="kt">var</span><span class="w"> </span><span class="n">finalPrice</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="n">_discountService</span><span class="p">.</span><span class="n">ApplyAsync</span><span class="p">(</span><span class="n">basePrice</span><span class="p">,</span><span class="w"> </span><span class="n">request</span><span class="p">.</span><span class="n">CouponCode</span><span class="p">);</span>
+
+<span class="w">        </span><span class="k">await</span><span class="w"> </span><span class="n">_paymentService</span><span class="p">.</span><span class="n">PayAsync</span><span class="p">(</span><span class="n">request</span><span class="p">.</span><span class="n">UserId</span><span class="p">,</span><span class="w"> </span><span class="n">finalPrice</span><span class="p">);</span>
+
+<span class="w">        </span><span class="kt">var</span><span class="w"> </span><span class="n">ticket</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="n">_ticketPdfService</span><span class="p">.</span><span class="n">GenerateAsync</span><span class="p">(</span><span class="n">request</span><span class="p">);</span>
+<span class="w">        </span><span class="k">await</span><span class="w"> </span><span class="n">_emailService</span><span class="p">.</span><span class="n">SendTicketAsync</span><span class="p">(</span><span class="n">request</span><span class="p">.</span><span class="n">Email</span><span class="p">,</span><span class="w"> </span><span class="n">ticket</span><span class="p">);</span>
+
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="nf">Ok</span><span class="p">();</span>
+<span class="w">    </span><span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div>
-<p>Nhưng SDK bên ngoài lại có API khác:</p>
-<div class="highlight"><pre><span></span><code><span class="k">public</span><span class="w"> </span><span class="k">sealed</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">TelegramClient</span>
+<p>Vấn đề:</p>
+<ul>
+<li>Controller biết quá nhiều chi tiết của hệ thống con.</li>
+<li>Thứ tự xử lý bị lộ ra ngoài nơi đáng lẽ chỉ nên điều phối request.</li>
+<li>Nếu flow đổi, nhiều nơi gọi phải sửa theo.</li>
+<li>Khó tái sử dụng cùng một quy trình ở API, background job hoặc admin tool.</li>
+<li>Test controller trở nên nặng vì phải mock quá nhiều dependency.</li>
+</ul>
+<p>Facade gom luồng đó vào một class có ý nghĩa nghiệp vụ rõ hơn:</p>
+<div class="highlight"><pre><span></span><code>BookingController -&gt; BookingFacade -&gt; các service con
+</code></pre></div>
+<p>Khi đó client chỉ cần biết: “muốn đặt vé thì gọi <code>BookAsync</code>”.</p>
+<p>Nếu bạn quen với mô hình 3 lớp:</p>
+<div class="highlight"><pre><span></span><code>Controller -&gt; BLL / Service Layer -&gt; DAO / Repository
+</code></pre></div>
+<p>thì <code>BookingFacade</code> trong ví dụ này có thể rất giống một class ở <strong>BLL / Service Layer</strong>:</p>
+<ul>
+<li><code>Controller</code> chỉ nhận request và trả response.</li>
+<li><code>BLL</code> điều phối flow nghiệp vụ.</li>
+<li><code>DAO</code> hoặc các service chuyên biệt xử lý phần việc nhỏ hơn như tồn kho, khuyến mãi, thanh toán, gửi email.</li>
+</ul>
+<p>Điểm quan trọng là:</p>
+<div class="highlight"><pre><span></span><code>Service Layer là vị trí của class trong kiến trúc.
+Facade là vai trò mà class đó đang đóng trong thiết kế.
+</code></pre></div>
+<p>Một class ở BLL hoàn toàn có thể đồng thời là Facade nếu nó che nhiều subsystem phía sau một API đơn giản.</p>
+<hr />
+<h2 id="3-cau-truc-co-ban-cua-facade">3. Cấu trúc cơ bản của Facade<a class="headerlink" href="#3-cau-truc-co-ban-cua-facade" title="Permanent link">&para;</a></h2>
+<p>Một implementation Facade thường có ba phần:</p>
+<table>
+<thead>
+<tr>
+<th>Thành phần</th>
+<th>Vai trò</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Client</td>
+<td>Nơi muốn sử dụng một nghiệp vụ ở mức cao</td>
+</tr>
+<tr>
+<td>Facade</td>
+<td>Cung cấp API đơn giản, điều phối các bước cần thiết</td>
+</tr>
+<tr>
+<td>Subsystems</td>
+<td>Các service con thực hiện từng phần việc chuyên biệt</td>
+</tr>
+</tbody>
+</table>
+<p>Trong ví dụ rạp phim:</p>
+<div class="highlight"><pre><span></span><code>Client
+  -&gt; BookingFacade
+      -&gt; SeatService
+      -&gt; SeatLockService
+      -&gt; PricingService
+      -&gt; DiscountService
+      -&gt; PaymentService
+      -&gt; TicketPdfService
+      -&gt; EmailService
+</code></pre></div>
+<p align="center">
+  <img src="../../../assets/cinema_facade_overview.svg" alt="Facade che giấu các service con trong luồng đặt vé xem phim" width="760">
+</p>
+
+<p>Trong sơ đồ trên:</p>
+<ul>
+<li><code>Client</code> chỉ làm việc với <code>BookingFacade</code>.</li>
+<li><code>BookingFacade</code> là điểm vào cấp cao cho use case đặt vé.</li>
+<li>Các service phía sau vẫn tách riêng trách nhiệm, nhưng chi tiết phối hợp được che khỏi client.</li>
+</ul>
+<hr />
+<h2 id="4-vi-du-facade-trong-c">4. Ví dụ Facade trong C<a class="headerlink" href="#4-vi-du-facade-trong-c" title="Permanent link">&para;</a></h2>
+<h3 id="buoc-1-cac-service-con">Bước 1: Các service con<a class="headerlink" href="#buoc-1-cac-service-con" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="k">public</span><span class="w"> </span><span class="k">sealed</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">SeatService</span>
 <span class="p">{</span>
-<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">Task</span><span class="w"> </span><span class="nf">PushMessageAsync</span><span class="p">(</span><span class="kt">long</span><span class="w"> </span><span class="n">chatId</span><span class="p">,</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">text</span><span class="p">)</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">Task</span><span class="w"> </span><span class="nf">EnsureAvailableAsync</span><span class="p">(</span><span class="n">Guid</span><span class="w"> </span><span class="n">showtimeId</span><span class="p">,</span><span class="w"> </span><span class="n">IReadOnlyCollection</span><span class="o">&lt;</span><span class="kt">string</span><span class="o">&gt;</span><span class="w"> </span><span class="n">seatIds</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">Task</span><span class="p">.</span><span class="n">CompletedTask</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+
+<span class="k">public</span><span class="w"> </span><span class="k">sealed</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">SeatLockService</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">Task</span><span class="w"> </span><span class="nf">LockAsync</span><span class="p">(</span><span class="n">Guid</span><span class="w"> </span><span class="n">showtimeId</span><span class="p">,</span><span class="w"> </span><span class="n">IReadOnlyCollection</span><span class="o">&lt;</span><span class="kt">string</span><span class="o">&gt;</span><span class="w"> </span><span class="n">seatIds</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">Task</span><span class="p">.</span><span class="n">CompletedTask</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+
+<span class="k">public</span><span class="w"> </span><span class="k">sealed</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">PricingService</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">Task</span><span class="o">&lt;</span><span class="kt">decimal</span><span class="o">&gt;</span><span class="w"> </span><span class="n">CalculateAsync</span><span class="p">(</span><span class="n">BookingRequest</span><span class="w"> </span><span class="n">request</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">Task</span><span class="p">.</span><span class="n">FromResult</span><span class="p">(</span><span class="mi">240</span><span class="n">_000m</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+
+<span class="k">public</span><span class="w"> </span><span class="k">sealed</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">DiscountService</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">Task</span><span class="o">&lt;</span><span class="kt">decimal</span><span class="o">&gt;</span><span class="w"> </span><span class="n">ApplyAsync</span><span class="p">(</span><span class="kt">decimal</span><span class="w"> </span><span class="n">amount</span><span class="p">,</span><span class="w"> </span><span class="kt">string?</span><span class="w"> </span><span class="n">couponCode</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">Task</span><span class="p">.</span><span class="n">FromResult</span><span class="p">(</span><span class="n">amount</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+
+<span class="k">public</span><span class="w"> </span><span class="k">sealed</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">PaymentService</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">Task</span><span class="w"> </span><span class="nf">PayAsync</span><span class="p">(</span><span class="n">Guid</span><span class="w"> </span><span class="n">userId</span><span class="p">,</span><span class="w"> </span><span class="kt">decimal</span><span class="w"> </span><span class="n">amount</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">Task</span><span class="p">.</span><span class="n">CompletedTask</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+
+<span class="k">public</span><span class="w"> </span><span class="k">sealed</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">TicketPdfService</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">Task</span><span class="o">&lt;</span><span class="kt">byte</span><span class="p">[]</span><span class="o">&gt;</span><span class="w"> </span><span class="n">GenerateAsync</span><span class="p">(</span><span class="n">BookingRequest</span><span class="w"> </span><span class="n">request</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">Task</span><span class="p">.</span><span class="n">FromResult</span><span class="p">(</span><span class="n">Array</span><span class="p">.</span><span class="n">Empty</span><span class="o">&lt;</span><span class="kt">byte</span><span class="o">&gt;</span><span class="p">());</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+
+<span class="k">public</span><span class="w"> </span><span class="k">sealed</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">EmailService</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">Task</span><span class="w"> </span><span class="nf">SendTicketAsync</span><span class="p">(</span><span class="kt">string</span><span class="w"> </span><span class="n">email</span><span class="p">,</span><span class="w"> </span><span class="kt">byte</span><span class="p">[]</span><span class="w"> </span><span class="n">ticketPdf</span><span class="p">)</span>
 <span class="w">    </span><span class="p">{</span>
 <span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">Task</span><span class="p">.</span><span class="n">CompletedTask</span><span class="p">;</span>
 <span class="w">    </span><span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div>
-<p>Nếu service chính gọi trực tiếp <code>TelegramClient</code>, domain/application layer sẽ bị phụ thuộc vào chi tiết của bên thứ ba.</p>
-<h2 id="3-vi-du-adapter-trong-c">3. Ví dụ Adapter trong C<a class="headerlink" href="#3-vi-du-adapter-trong-c" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code><span class="k">public</span><span class="w"> </span><span class="k">sealed</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">TelegramNotificationAdapter</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">INotificationSender</span>
+<h3 id="buoc-2-facade-ieu-phoi-flow">Bước 2: Facade điều phối flow<a class="headerlink" href="#buoc-2-facade-ieu-phoi-flow" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="k">public</span><span class="w"> </span><span class="k">sealed</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">BookingFacade</span>
 <span class="p">{</span>
-<span class="w">    </span><span class="k">private</span><span class="w"> </span><span class="k">readonly</span><span class="w"> </span><span class="n">TelegramClient</span><span class="w"> </span><span class="n">_telegramClient</span><span class="p">;</span>
+<span class="w">    </span><span class="k">private</span><span class="w"> </span><span class="k">readonly</span><span class="w"> </span><span class="n">SeatService</span><span class="w"> </span><span class="n">_seatService</span><span class="p">;</span>
+<span class="w">    </span><span class="k">private</span><span class="w"> </span><span class="k">readonly</span><span class="w"> </span><span class="n">SeatLockService</span><span class="w"> </span><span class="n">_seatLockService</span><span class="p">;</span>
+<span class="w">    </span><span class="k">private</span><span class="w"> </span><span class="k">readonly</span><span class="w"> </span><span class="n">PricingService</span><span class="w"> </span><span class="n">_pricingService</span><span class="p">;</span>
+<span class="w">    </span><span class="k">private</span><span class="w"> </span><span class="k">readonly</span><span class="w"> </span><span class="n">DiscountService</span><span class="w"> </span><span class="n">_discountService</span><span class="p">;</span>
+<span class="w">    </span><span class="k">private</span><span class="w"> </span><span class="k">readonly</span><span class="w"> </span><span class="n">PaymentService</span><span class="w"> </span><span class="n">_paymentService</span><span class="p">;</span>
+<span class="w">    </span><span class="k">private</span><span class="w"> </span><span class="k">readonly</span><span class="w"> </span><span class="n">TicketPdfService</span><span class="w"> </span><span class="n">_ticketPdfService</span><span class="p">;</span>
+<span class="w">    </span><span class="k">private</span><span class="w"> </span><span class="k">readonly</span><span class="w"> </span><span class="n">EmailService</span><span class="w"> </span><span class="n">_emailService</span><span class="p">;</span>
 
-<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="nf">TelegramNotificationAdapter</span><span class="p">(</span><span class="n">TelegramClient</span><span class="w"> </span><span class="n">telegramClient</span><span class="p">)</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="nf">BookingFacade</span><span class="p">(</span>
+<span class="w">        </span><span class="n">SeatService</span><span class="w"> </span><span class="n">seatService</span><span class="p">,</span>
+<span class="w">        </span><span class="n">SeatLockService</span><span class="w"> </span><span class="n">seatLockService</span><span class="p">,</span>
+<span class="w">        </span><span class="n">PricingService</span><span class="w"> </span><span class="n">pricingService</span><span class="p">,</span>
+<span class="w">        </span><span class="n">DiscountService</span><span class="w"> </span><span class="n">discountService</span><span class="p">,</span>
+<span class="w">        </span><span class="n">PaymentService</span><span class="w"> </span><span class="n">paymentService</span><span class="p">,</span>
+<span class="w">        </span><span class="n">TicketPdfService</span><span class="w"> </span><span class="n">ticketPdfService</span><span class="p">,</span>
+<span class="w">        </span><span class="n">EmailService</span><span class="w"> </span><span class="n">emailService</span><span class="p">)</span>
 <span class="w">    </span><span class="p">{</span>
-<span class="w">        </span><span class="n">_telegramClient</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">telegramClient</span><span class="p">;</span>
+<span class="w">        </span><span class="n">_seatService</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">seatService</span><span class="p">;</span>
+<span class="w">        </span><span class="n">_seatLockService</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">seatLockService</span><span class="p">;</span>
+<span class="w">        </span><span class="n">_pricingService</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pricingService</span><span class="p">;</span>
+<span class="w">        </span><span class="n">_discountService</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">discountService</span><span class="p">;</span>
+<span class="w">        </span><span class="n">_paymentService</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">paymentService</span><span class="p">;</span>
+<span class="w">        </span><span class="n">_ticketPdfService</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ticketPdfService</span><span class="p">;</span>
+<span class="w">        </span><span class="n">_emailService</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">emailService</span><span class="p">;</span>
 <span class="w">    </span><span class="p">}</span>
 
-<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">Task</span><span class="w"> </span><span class="nf">SendAsync</span><span class="p">(</span><span class="kt">string</span><span class="w"> </span><span class="n">receiver</span><span class="p">,</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">message</span><span class="p">)</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">async</span><span class="w"> </span><span class="n">Task</span><span class="w"> </span><span class="nf">BookAsync</span><span class="p">(</span><span class="n">BookingRequest</span><span class="w"> </span><span class="n">request</span><span class="p">)</span>
 <span class="w">    </span><span class="p">{</span>
-<span class="w">        </span><span class="kt">var</span><span class="w"> </span><span class="n">chatId</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kt">long</span><span class="p">.</span><span class="n">Parse</span><span class="p">(</span><span class="n">receiver</span><span class="p">);</span>
+<span class="w">        </span><span class="k">await</span><span class="w"> </span><span class="n">_seatService</span><span class="p">.</span><span class="n">EnsureAvailableAsync</span><span class="p">(</span><span class="n">request</span><span class="p">.</span><span class="n">ShowtimeId</span><span class="p">,</span><span class="w"> </span><span class="n">request</span><span class="p">.</span><span class="n">SeatIds</span><span class="p">);</span>
+<span class="w">        </span><span class="k">await</span><span class="w"> </span><span class="n">_seatLockService</span><span class="p">.</span><span class="n">LockAsync</span><span class="p">(</span><span class="n">request</span><span class="p">.</span><span class="n">ShowtimeId</span><span class="p">,</span><span class="w"> </span><span class="n">request</span><span class="p">.</span><span class="n">SeatIds</span><span class="p">);</span>
 
-<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">_telegramClient</span><span class="p">.</span><span class="n">PushMessageAsync</span><span class="p">(</span><span class="n">chatId</span><span class="p">,</span><span class="w"> </span><span class="n">message</span><span class="p">);</span>
+<span class="w">        </span><span class="kt">var</span><span class="w"> </span><span class="n">basePrice</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="n">_pricingService</span><span class="p">.</span><span class="n">CalculateAsync</span><span class="p">(</span><span class="n">request</span><span class="p">);</span>
+<span class="w">        </span><span class="kt">var</span><span class="w"> </span><span class="n">finalPrice</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="n">_discountService</span><span class="p">.</span><span class="n">ApplyAsync</span><span class="p">(</span><span class="n">basePrice</span><span class="p">,</span><span class="w"> </span><span class="n">request</span><span class="p">.</span><span class="n">CouponCode</span><span class="p">);</span>
+
+<span class="w">        </span><span class="k">await</span><span class="w"> </span><span class="n">_paymentService</span><span class="p">.</span><span class="n">PayAsync</span><span class="p">(</span><span class="n">request</span><span class="p">.</span><span class="n">UserId</span><span class="p">,</span><span class="w"> </span><span class="n">finalPrice</span><span class="p">);</span>
+
+<span class="w">        </span><span class="kt">var</span><span class="w"> </span><span class="n">ticketPdf</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="n">_ticketPdfService</span><span class="p">.</span><span class="n">GenerateAsync</span><span class="p">(</span><span class="n">request</span><span class="p">);</span>
+<span class="w">        </span><span class="k">await</span><span class="w"> </span><span class="n">_emailService</span><span class="p">.</span><span class="n">SendTicketAsync</span><span class="p">(</span><span class="n">request</span><span class="p">.</span><span class="n">Email</span><span class="p">,</span><span class="w"> </span><span class="n">ticketPdf</span><span class="p">);</span>
 <span class="w">    </span><span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div>
-<p>Service chính chỉ biết <code>INotificationSender</code>:</p>
-<div class="highlight"><pre><span></span><code><span class="k">public</span><span class="w"> </span><span class="k">sealed</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">NotificationService</span>
+<h3 id="buoc-3-client-su-dung-facade">Bước 3: Client sử dụng Facade<a class="headerlink" href="#buoc-3-client-su-dung-facade" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="k">public</span><span class="w"> </span><span class="k">sealed</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">BookingController</span>
 <span class="p">{</span>
-<span class="w">    </span><span class="k">private</span><span class="w"> </span><span class="k">readonly</span><span class="w"> </span><span class="n">INotificationSender</span><span class="w"> </span><span class="n">_sender</span><span class="p">;</span>
+<span class="w">    </span><span class="k">private</span><span class="w"> </span><span class="k">readonly</span><span class="w"> </span><span class="n">BookingFacade</span><span class="w"> </span><span class="n">_bookingFacade</span><span class="p">;</span>
 
-<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="nf">NotificationService</span><span class="p">(</span><span class="n">INotificationSender</span><span class="w"> </span><span class="n">sender</span><span class="p">)</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="nf">BookingController</span><span class="p">(</span><span class="n">BookingFacade</span><span class="w"> </span><span class="n">bookingFacade</span><span class="p">)</span>
 <span class="w">    </span><span class="p">{</span>
-<span class="w">        </span><span class="n">_sender</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sender</span><span class="p">;</span>
+<span class="w">        </span><span class="n">_bookingFacade</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">bookingFacade</span><span class="p">;</span>
 <span class="w">    </span><span class="p">}</span>
 
-<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">Task</span><span class="w"> </span><span class="nf">NotifyAsync</span><span class="p">(</span><span class="kt">string</span><span class="w"> </span><span class="n">receiver</span><span class="p">,</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">message</span><span class="p">)</span>
+<span class="w">    </span><span class="na">[HttpPost]</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">async</span><span class="w"> </span><span class="n">Task</span><span class="o">&lt;</span><span class="n">IActionResult</span><span class="o">&gt;</span><span class="w"> </span><span class="n">BookAsync</span><span class="p">(</span><span class="n">BookingRequest</span><span class="w"> </span><span class="n">request</span><span class="p">)</span>
 <span class="w">    </span><span class="p">{</span>
-<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">_sender</span><span class="p">.</span><span class="n">SendAsync</span><span class="p">(</span><span class="n">receiver</span><span class="p">,</span><span class="w"> </span><span class="n">message</span><span class="p">);</span>
+<span class="w">        </span><span class="k">await</span><span class="w"> </span><span class="n">_bookingFacade</span><span class="p">.</span><span class="n">BookAsync</span><span class="p">(</span><span class="n">request</span><span class="p">);</span>
+
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="nf">Ok</span><span class="p">();</span>
 <span class="w">    </span><span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div>
-<p>Lợi ích:</p>
+<p>Kết quả:</p>
 <ul>
-<li>Code nghiệp vụ không biết Telegram API gọi method nào.</li>
-<li>Dễ thay Telegram bằng Email, SMS hoặc provider khác.</li>
-<li>Dễ mock <code>INotificationSender</code> khi test.</li>
+<li>Controller ngắn hơn.</li>
+<li>Flow đặt vé nằm ở một nơi dễ đọc.</li>
+<li>Các service con vẫn giữ đúng trách nhiệm riêng.</li>
+<li>Khi quy trình thay đổi, thường chỉ cần sửa Facade thay vì sửa mọi client.</li>
 </ul>
-<h2 id="4-adapter-trong-clean-architecture">4. Adapter trong Clean Architecture<a class="headerlink" href="#4-adapter-trong-clean-architecture" title="Permanent link">&para;</a></h2>
-<p>Trong Clean Architecture, Adapter thường nằm ở Infrastructure layer.</p>
-<div class="highlight"><pre><span></span><code>Application layer -&gt; interface nội bộ -&gt; Infrastructure adapter -&gt; external API/SDK
+<hr />
+<h2 id="5-luong-hoat-ong-cua-facade">5. Luồng hoạt động của Facade<a class="headerlink" href="#5-luong-hoat-ong-cua-facade" title="Permanent link">&para;</a></h2>
+<p align="center">
+  <img src="../../../assets/cinema_booking_steps_flow.svg" alt="Luồng các bước đặt vé được Facade điều phối" width="760">
+</p>
+
+<p>Luồng trên thể hiện một điểm quan trọng: Facade thường phù hợp với các <strong>use case có nhiều bước nối tiếp</strong>.</p>
+<p>Ví dụ trong <code>BookAsync</code>:</p>
+<ol>
+<li>Kiểm tra ghế.</li>
+<li>Giữ ghế.</li>
+<li>Tính giá.</li>
+<li>Áp khuyến mãi.</li>
+<li>Thanh toán.</li>
+<li>Sinh vé.</li>
+<li>Gửi email.</li>
+</ol>
+<p>Client chỉ thấy một hành động cấp cao là “đặt vé”, còn các bước nhỏ được giấu phía sau.</p>
+<hr />
+<h2 id="6-facade-trong-aspnet-core-clean-architecture">6. Facade trong ASP.NET Core / Clean Architecture<a class="headerlink" href="#6-facade-trong-aspnet-core-clean-architecture" title="Permanent link">&para;</a></h2>
+<p>Trong ứng dụng ASP.NET Core, Facade thường xuất hiện dưới dạng một class ở <strong>Application layer</strong> hoặc <strong>Service layer</strong>, nơi mình cần điều phối nhiều thành phần để hoàn thành một use case.</p>
+<p>Nói cách khác, khi code của bạn đã có:</p>
+<div class="highlight"><pre><span></span><code>Controller -&gt; BLL / Application Service -&gt; Repository / DAO / External Service
 </code></pre></div>
+<p>thì nhiều khi <strong>BLL/Application Service chính là nơi đóng vai trò Facade</strong>.</p>
 <p>Ví dụ:</p>
+<div class="highlight"><pre><span></span><code>BookingController
+  -&gt; BookingService / BookingFacade
+      -&gt; SeatService
+      -&gt; PricingService
+      -&gt; PaymentService
+      -&gt; TicketService
+      -&gt; EmailService
+</code></pre></div>
+<p>Nếu <code>BookingService</code> cung cấp một method cấp cao như <code>BookAsync()</code> và che toàn bộ chi tiết điều phối phía sau, thì về mặt kiến trúc nó là <strong>service layer</strong>, còn về mặt pattern nó đang đóng vai trò <strong>Facade</strong>.</p>
+<p>Ví dụ đăng ký DI:</p>
+<div class="highlight"><pre><span></span><code><span class="n">builder</span><span class="p">.</span><span class="n">Services</span><span class="p">.</span><span class="n">AddScoped</span><span class="o">&lt;</span><span class="n">SeatService</span><span class="o">&gt;</span><span class="p">();</span>
+<span class="n">builder</span><span class="p">.</span><span class="n">Services</span><span class="p">.</span><span class="n">AddScoped</span><span class="o">&lt;</span><span class="n">SeatLockService</span><span class="o">&gt;</span><span class="p">();</span>
+<span class="n">builder</span><span class="p">.</span><span class="n">Services</span><span class="p">.</span><span class="n">AddScoped</span><span class="o">&lt;</span><span class="n">PricingService</span><span class="o">&gt;</span><span class="p">();</span>
+<span class="n">builder</span><span class="p">.</span><span class="n">Services</span><span class="p">.</span><span class="n">AddScoped</span><span class="o">&lt;</span><span class="n">DiscountService</span><span class="o">&gt;</span><span class="p">();</span>
+<span class="n">builder</span><span class="p">.</span><span class="n">Services</span><span class="p">.</span><span class="n">AddScoped</span><span class="o">&lt;</span><span class="n">PaymentService</span><span class="o">&gt;</span><span class="p">();</span>
+<span class="n">builder</span><span class="p">.</span><span class="n">Services</span><span class="p">.</span><span class="n">AddScoped</span><span class="o">&lt;</span><span class="n">TicketPdfService</span><span class="o">&gt;</span><span class="p">();</span>
+<span class="n">builder</span><span class="p">.</span><span class="n">Services</span><span class="p">.</span><span class="n">AddScoped</span><span class="o">&lt;</span><span class="n">EmailService</span><span class="o">&gt;</span><span class="p">();</span>
+<span class="n">builder</span><span class="p">.</span><span class="n">Services</span><span class="p">.</span><span class="n">AddScoped</span><span class="o">&lt;</span><span class="n">BookingFacade</span><span class="o">&gt;</span><span class="p">();</span>
+</code></pre></div>
+<p>Một cách nhìn hợp lý:</p>
+<div class="highlight"><pre><span></span><code>Presentation layer
+  -&gt; gọi Facade / Application service
+
+Application layer
+  -&gt; điều phối use case
+
+Domain / Infrastructure services
+  -&gt; xử lý từng phần việc chuyên biệt
+</code></pre></div>
+<p>Facade đặc biệt hữu ích khi:</p>
 <ul>
-<li><code>IPaymentGateway</code> được application layer định nghĩa.</li>
-<li><code>VnPayGatewayAdapter</code> implement interface đó và gọi API VNPAY.</li>
-<li><code>MomoGatewayAdapter</code> implement interface đó và gọi API MoMo.</li>
+<li>Controller đang gọi quá nhiều service.</li>
+<li>Một use case có thứ tự bước cố định.</li>
+<li>Cùng một flow cần dùng lại ở nhiều điểm vào khác nhau.</li>
+<li>Muốn giữ cho presentation layer mỏng và dễ test hơn.</li>
+<li>Muốn BLL là nơi gom quy trình nghiệp vụ thay vì để controller phải hiểu từng subsystem.</li>
 </ul>
-<p>Nhờ vậy use case không phụ thuộc trực tiếp vào SDK hoặc HTTP contract của bên ngoài.</p>
-<h2 id="5-khi-nao-nen-dung-adapter">5. Khi nào nên dùng Adapter?<a class="headerlink" href="#5-khi-nao-nen-dung-adapter" title="Permanent link">&para;</a></h2>
+<hr />
+<h2 id="7-khi-nao-nen-dung-facade">7. Khi nào nên dùng Facade?<a class="headerlink" href="#7-khi-nao-nen-dung-facade" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
 <tr>
@@ -4048,71 +4702,239 @@
 </thead>
 <tbody>
 <tr>
-<td>Tích hợp SDK/API bên thứ ba</td>
+<td>Một nghiệp vụ phải gọi nhiều service con theo thứ tự</td>
 <td>Có</td>
-<td>Che giấu chi tiết bên ngoài</td>
+<td>Checkout, booking, onboarding</td>
 </tr>
 <tr>
-<td>Interface cũ không khớp interface mới</td>
+<td>Muốn cung cấp API đơn giản cho hệ thống con phức tạp</td>
 <td>Có</td>
-<td>Adapter giúp tương thích dần</td>
+<td>Client không cần biết chi tiết bên trong</td>
 </tr>
 <tr>
-<td>Muốn test use case mà không gọi service thật</td>
+<td>Nhiều client đang lặp lại cùng một flow orchestration</td>
 <td>Có</td>
-<td>Mock interface nội bộ</td>
+<td>Gom flow vào một nơi</td>
 </tr>
 <tr>
-<td>API đã khớp hoàn toàn với code mình</td>
-<td>Không cần</td>
-<td>Adapter có thể thừa</td>
+<td>Muốn giảm coupling giữa controller và subsystem</td>
+<td>Có</td>
+<td>Controller chỉ phụ thuộc vào Facade</td>
 </tr>
 <tr>
-<td>Muốn gom nhiều bước nghiệp vụ phức tạp</td>
+<td>Chỉ có một hành động rất nhỏ, gọi một service duy nhất</td>
+<td>Chưa cần</td>
+<td>Facade có thể thừa</td>
+</tr>
+<tr>
+<td>Muốn đổi interface không tương thích của thư viện ngoài</td>
 <td>Không hẳn</td>
-<td>Facade thường hợp hơn</td>
+<td>Trường hợp này thường là Adapter</td>
 </tr>
 </tbody>
 </table>
-<h2 id="6-adapter-khac-gi-facade">6. Adapter khác gì Facade?<a class="headerlink" href="#6-adapter-khac-gi-facade" title="Permanent link">&para;</a></h2>
+<hr />
+<h2 id="8-khi-nao-khong-nen-dung-facade">8. Khi nào không nên dùng Facade?<a class="headerlink" href="#8-khi-nao-khong-nen-dung-facade" title="Permanent link">&para;</a></h2>
+<p>Không nên dùng Facade chỉ vì:</p>
+<ul>
+<li>Muốn có thêm một class “cho đẹp kiến trúc”.</li>
+<li>Mỗi method chỉ gọi đúng một service con rồi pass-through.</li>
+<li>Bản thân flow vẫn còn rất đơn giản.</li>
+<li>Mình đang nhồi toàn bộ business logic vào một class khổng lồ.</li>
+</ul>
+<p>Ví dụ Facade dùng sai:</p>
+<div class="highlight"><pre><span></span><code><span class="k">public</span><span class="w"> </span><span class="k">sealed</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">UserFacade</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">Task</span><span class="o">&lt;</span><span class="n">User</span><span class="o">&gt;</span><span class="w"> </span><span class="n">GetByIdAsync</span><span class="p">(</span><span class="n">Guid</span><span class="w"> </span><span class="n">id</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">_userRepository</span><span class="p">.</span><span class="n">GetByIdAsync</span><span class="p">(</span><span class="n">id</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">Task</span><span class="w"> </span><span class="nf">CreateAsync</span><span class="p">(</span><span class="n">User</span><span class="w"> </span><span class="n">user</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">_userRepository</span><span class="p">.</span><span class="n">CreateAsync</span><span class="p">(</span><span class="n">user</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">Task</span><span class="w"> </span><span class="nf">UpdateAsync</span><span class="p">(</span><span class="n">User</span><span class="w"> </span><span class="n">user</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">_userRepository</span><span class="p">.</span><span class="n">UpdateAsync</span><span class="p">(</span><span class="n">user</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Nếu <code>UserFacade</code> chỉ chuyển lời gọi từ controller sang repository mà không đơn giản hóa điều gì, nó chỉ tạo thêm một lớp trung gian không có giá trị.</p>
+<hr />
+<h2 id="9-facade-khac-gi-adapter">9. Facade khác gì Adapter?<a class="headerlink" href="#9-facade-khac-gi-adapter" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
 <tr>
 <th>Tiêu chí</th>
-<th>Adapter</th>
 <th>Facade</th>
+<th>Adapter</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Mục tiêu</td>
-<td>Chuyển interface không tương thích thành interface mình cần</td>
-<td>Che hệ thống con phức tạp bằng API đơn giản</td>
+<td>Mục tiêu chính</td>
+<td>Đơn giản hóa cách dùng một hệ thống con phức tạp</td>
+<td>Chuyển một interface không tương thích thành interface mong muốn</td>
 </tr>
 <tr>
-<td>Thường dùng khi</td>
-<td>Tích hợp thư viện/API ngoài</td>
-<td>Một flow cần gọi nhiều service con</td>
+<td>Câu hỏi nó trả lời</td>
+<td>“Làm sao gọi hệ thống này dễ hơn?”</td>
+<td>“Làm sao hai interface khác nhau làm việc với nhau?”</td>
+</tr>
+<tr>
+<td>Phạm vi</td>
+<td>Thường bao quanh nhiều class/service</td>
+<td>Thường bao quanh một class/API</td>
 </tr>
 <tr>
 <td>Ví dụ</td>
-<td>Bọc Telegram SDK thành <code>INotificationSender</code></td>
-<td><code>CheckoutFacade</code> gọi cart, payment, shipping, email</td>
+<td><code>BookingFacade</code> gọi pricing, payment, ticket, email</td>
+<td><code>TelegramNotificationAdapter</code> bọc SDK Telegram thành <code>INotificationSender</code></td>
 </tr>
 </tbody>
 </table>
-<h2 id="7-luu-y-khi-dung">7. Lưu ý khi dùng<a class="headerlink" href="#7-luu-y-khi-dung" title="Permanent link">&para;</a></h2>
+<p>Một cách nhớ nhanh:</p>
+<div class="highlight"><pre><span></span><code>Adapter đổi giao diện.
+Facade đơn giản hóa cách sử dụng.
+</code></pre></div>
+<hr />
+<h2 id="10-facade-khac-gi-voi-service-layer-application-service">10. Facade khác gì với Service Layer / Application Service?<a class="headerlink" href="#10-facade-khac-gi-voi-service-layer-application-service" title="Permanent link">&para;</a></h2>
+<p>Trong nhiều codebase .NET, hai khái niệm này rất dễ bị nhìn như một vì chúng thường xuất hiện cùng một chỗ trong code.</p>
+<table>
+<thead>
+<tr>
+<th>Tiêu chí</th>
+<th>Facade</th>
+<th>Service Layer / Application Service</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Bản chất</td>
+<td>Design Pattern</td>
+<td>Architectural Layer / vai trò trong kiến trúc</td>
+</tr>
+<tr>
+<td>Trả lời câu hỏi</td>
+<td>"Làm sao dùng hệ thống con này đơn giản hơn?"</td>
+<td>"Logic nghiệp vụ của ứng dụng nên đặt ở đâu?"</td>
+</tr>
+<tr>
+<td>Trọng tâm</td>
+<td>Che sự phức tạp phía sau một API đơn giản</td>
+<td>Điều phối use case, transaction, rule nghiệp vụ ở tầng ứng dụng</td>
+</tr>
+<tr>
+<td>Ví dụ</td>
+<td><code>PaymentGatewayFacade</code>, <code>ReportingFacade</code></td>
+<td><code>OrderService</code>, <code>BookingService</code>, <code>RegisterUserUseCase</code></td>
+</tr>
+</tbody>
+</table>
+<p>Trong thực tế:</p>
 <ul>
-<li>Adapter nên mỏng, tập trung vào chuyển đổi input/output và gọi API ngoài.</li>
-<li>Không nhồi business logic chính vào Adapter.</li>
-<li>Nên normalize lỗi từ provider ngoài thành exception/result mà application layer hiểu được.</li>
-<li>Với HTTP API, adapter nên có timeout, retry có kiểm soát và logging phù hợp.</li>
+<li>Nếu class chủ yếu <strong>che sự phức tạp của subsystem</strong>, gọi là Facade rất hợp.</li>
+<li>Nếu class là nơi <strong>định nghĩa use case nghiệp vụ chính</strong>, tên <code>ApplicationService</code>, <code>BLL Service</code> hoặc <code>UseCase</code> thường diễn đạt rõ hơn.</li>
+<li>Một class có thể là <strong>cả hai cùng lúc</strong>:</li>
+<li>về kiến trúc: nó thuộc <code>Service Layer</code></li>
+<li>về thiết kế: nó đóng vai trò <code>Facade</code></li>
 </ul>
-<h2 id="8-tom-tat">8. Tóm tắt<a class="headerlink" href="#8-tom-tat" title="Permanent link">&para;</a></h2>
-<p>Adapter Pattern giúp code nội bộ không bị rò rỉ chi tiết của hệ thống bên ngoài.</p>
+<p>Đừng quá bám vào tên. Quan trọng là class có đang thực sự:</p>
+<ul>
+<li>làm API dễ dùng hơn,</li>
+<li>giảm coupling,</li>
+<li>và gom orchestration hợp lý hay không.</li>
+</ul>
+<p>Ví dụ:</p>
+<div class="highlight"><pre><span></span><code><span class="k">public</span><span class="w"> </span><span class="k">sealed</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">BookingService</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">Task</span><span class="w"> </span><span class="nf">BookAsync</span><span class="p">(</span><span class="n">BookingRequest</span><span class="w"> </span><span class="n">request</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="c1">// Điều phối seat, pricing, payment, ticket, email</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Nếu <code>BookingService</code> là nơi xử lý use case đặt vé trong BLL, nó là <strong>service layer</strong>.</p>
+<p>Nếu cùng lúc nó che toàn bộ các bước con phía sau method <code>BookAsync()</code>, nó cũng đang đóng vai trò <strong>Facade</strong>.</p>
+<hr />
+<h2 id="11-uu-iem">11. Ưu điểm<a class="headerlink" href="#11-uu-iem" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Làm API phía client đơn giản hơn.</li>
+<li>Giảm coupling giữa client và các service con.</li>
+<li>Gom flow nhiều bước vào một nơi dễ đọc.</li>
+<li>Dễ tái sử dụng cùng một quy trình ở nhiều entry point.</li>
+<li>Giúp controller mỏng hơn và dễ test hơn.</li>
+<li>Có thể đóng vai trò ranh giới rõ giữa module bên ngoài và subsystem bên trong.</li>
+</ul>
+<hr />
+<h2 id="12-nhuoc-iem">12. Nhược điểm<a class="headerlink" href="#12-nhuoc-iem" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Nếu lạm dụng, dễ tạo “God Facade” biết quá nhiều thứ.</li>
+<li>Có thể che giấu quá mức, khiến client không còn quyền dùng tính năng nâng cao khi thực sự cần.</li>
+<li>Nếu subsystem thay đổi thường xuyên, Facade cũng phải cập nhật theo.</li>
+<li>Dễ bị nhầm với service layer thông thường nếu không có tiêu chí rõ.</li>
+</ul>
+<hr />
+<h2 id="13-luu-y-khi-dung">13. Lưu ý khi dùng<a class="headerlink" href="#13-luu-y-khi-dung" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Facade nên <strong>điều phối</strong>, không nên ôm hết business rule chi tiết.</li>
+<li>Tên method nên thể hiện một hành động cấp cao: <code>CheckoutAsync</code>, <code>BookAsync</code>, <code>RegisterAsync</code>.</li>
+<li>Nếu flow quá lớn, hãy tách bớt thành các collaborator nhỏ thay vì để Facade phình vô hạn.</li>
+<li>Nếu cần transaction, retry, outbox hoặc idempotency, hãy thiết kế rõ ở use case thay vì để flow ngầm mơ hồ.</li>
+<li>Đừng để controller vừa gọi Facade, vừa gọi trực tiếp lại chính các subsystem mà Facade đang che; như vậy ranh giới sẽ bị phá vỡ.</li>
+</ul>
+<hr />
+<h2 id="14-vi-du-thuc-te-khac">14. Ví dụ thực tế khác<a class="headerlink" href="#14-vi-du-thuc-te-khac" title="Permanent link">&para;</a></h2>
+<h3 id="checkoutfacade">CheckoutFacade<a class="headerlink" href="#checkoutfacade" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>CheckoutFacade
+  -&gt; CartService
+  -&gt; InventoryService
+  -&gt; PaymentService
+  -&gt; OrderService
+  -&gt; NotificationService
+</code></pre></div>
+<h3 id="reportfacade">ReportFacade<a class="headerlink" href="#reportfacade" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>ReportFacade
+  -&gt; QueryService
+  -&gt; FilterService
+  -&gt; CsvRenderer
+  -&gt; StorageService
+</code></pre></div>
+<h3 id="userregistrationfacade">UserRegistrationFacade<a class="headerlink" href="#userregistrationfacade" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>UserRegistrationFacade
+  -&gt; UserService
+  -&gt; ProfileService
+  -&gt; EmailVerificationService
+  -&gt; AuditService
+</code></pre></div>
+<p>Các ví dụ này có chung một đặc điểm: client muốn thực hiện <strong>một hành động cấp cao</strong>, còn phía sau cần nhiều bước nhỏ phối hợp.</p>
+<hr />
+<h2 id="15-vi-du-sai-thuong-gap">15. Ví dụ sai thường gặp<a class="headerlink" href="#15-vi-du-sai-thuong-gap" title="Permanent link">&para;</a></h2>
+<h3 id="sai-1-facade-chi-la-lop-pass-through">Sai 1: Facade chỉ là lớp pass-through<a class="headerlink" href="#sai-1-facade-chi-la-lop-pass-through" title="Permanent link">&para;</a></h3>
+<p>Nếu mỗi method chỉ gọi đúng một method khác mà không làm API đơn giản hơn, Facade không mang lại nhiều giá trị.</p>
+<h3 id="sai-2-facade-tro-thanh-noi-chua-toan-bo-nghiep-vu">Sai 2: Facade trở thành nơi chứa toàn bộ nghiệp vụ<a class="headerlink" href="#sai-2-facade-tro-thanh-noi-chua-toan-bo-nghiep-vu" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>BookingFacade
+  -&gt; validate input
+  -&gt; tính giá
+  -&gt; quyết định khuyến mãi
+  -&gt; kiểm tra quyền
+  -&gt; gọi payment
+  -&gt; render pdf
+  -&gt; gửi email
+  -&gt; ghi log
+</code></pre></div>
+<p>Nếu mọi rule chi tiết đều bị nhét vào đây, Facade sẽ biến thành một class khổng lồ khó test và khó thay đổi. Nên để các service chuyên biệt xử lý phần việc của chúng, còn Facade tập trung vào orchestration.</p>
+<h3 id="sai-3-dung-facade-khi-thuc-chat-can-adapter">Sai 3: Dùng Facade khi thực chất cần Adapter<a class="headerlink" href="#sai-3-dung-facade-khi-thuc-chat-can-adapter" title="Permanent link">&para;</a></h3>
+<p>Nếu bài toán là SDK ngoài có API không khớp interface nội bộ, cần nghĩ tới Adapter trước, không phải Facade.</p>
+<hr />
+<h2 id="16-tom-tat">16. Tóm tắt<a class="headerlink" href="#16-tom-tat" title="Permanent link">&para;</a></h2>
+<p>Facade Pattern phù hợp khi một client đang phải hiểu quá nhiều chi tiết để dùng được một hệ thống con phức tạp.</p>
+<p>Nó không xóa đi sự phức tạp bên trong, mà <strong>đặt một cánh cửa dễ dùng hơn ở phía trước</strong>.</p>
 <p>Một câu dễ nhớ:</p>
-<div class="highlight"><pre><span></span><code>Adapter tốt khi hai interface không khớp nhưng vẫn cần làm việc cùng nhau.
-Adapter xấu khi nó trở thành nơi chứa cả nghiệp vụ chính lẫn logic tích hợp.
+<div class="highlight"><pre><span></span><code>Facade tốt khi nó làm cách dùng hệ thống đơn giản hơn.
+Facade xấu khi nó chỉ thêm một lớp trung gian mà không giảm được sự phức tạp nào.
 </code></pre></div>
 
 
