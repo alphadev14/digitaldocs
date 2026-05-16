@@ -124,6 +124,7 @@ nav:
               - Builder Pattern: mid-level/design-pattern/04-builder-pattern.md
           - Structural:
               - Adapter Pattern: mid-level/design-pattern/05-adapter-pattern.md
+              - Facade Pattern: mid-level/design-pattern/08-facade-pattern.md
           - Behavioral:
               - Observer Pattern: mid-level/design-pattern/06-observer-pattern.md
               - Strategy Pattern: mid-level/design-pattern/07-strategy-pattern.md
