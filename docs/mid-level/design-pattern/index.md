@@ -14,6 +14,7 @@ Design Pattern không phải là công thức để nhét vào mọi nơi. Nó l
 | [Observer](06-observer-pattern.md) | Một event xảy ra, nhiều handler phản ứng | Khi tạo đơn hàng xong cần gửi email, trừ kho, notify |
 | [Strategy](07-strategy-pattern.md) | Nhiều cách xử lý cho cùng một hành động | Khi có pricing, payment, export hoặc validation thay đổi theo ngữ cảnh |
 | [Facade](08-facade-pattern.md) | Gom nhiều service con sau một API đơn giản hơn | Khi một use case phải điều phối nhiều bước như booking, checkout, onboarding |
+| [CQRS](11-cqrs-pattern.md) | Tách luồng đọc và ghi để mỗi bên tối ưu theo mục tiêu riêng | Khi read model và write model bắt đầu khác nhau rõ rệt |
 
 ## Nguyên tắc áp dụng
 
