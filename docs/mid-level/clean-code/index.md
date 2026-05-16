@@ -5,7 +5,7 @@ Clean Code là code mà người khác có thể **đọc, hiểu, sửa, test v
 
 ![Tổng quan Clean Code](../../assets/clean-code-overview.svg)
 
-Sơ đồ trên là một cách nhìn rất thực tế về Clean Code:
+Sơ đồ thực tế về Clean Code:
 
 1. Bắt đầu từ những thứ người đọc thấy đầu tiên: **tên rõ ràng, hàm nhỏ, comment đúng chỗ**.
 2. Dùng các nguyên tắc để giữ code gọn và bền: **DRY, KISS, YAGNI, SOLID**.
@@ -19,12 +19,12 @@ Sơ đồ trên là một cách nhìn rất thực tế về Clean Code:
 
 Tên là lớp tài liệu đầu tiên của code. Một tên tốt giúp người đọc hiểu được mục đích mà không phải mở thêm nhiều file để đoán.
 
-| Tên yếu | Tên tốt hơn |
-| --- | --- |
-| `data` | `pendingOrders` |
-| `flag` | `isPaymentConfirmed` |
+| Tên yếu     | Tên tốt hơn               |
+| ----------- | ------------------------- |
+| `data`      | `pendingOrders`           |
+| `flag`      | `isPaymentConfirmed`      |
 | `Process()` | `CalculateInvoiceTotal()` |
-| `list` | `expiredRefreshTokens` |
+| `list`      | `expiredRefreshTokens`    |
 
 Một tên tốt thường trả lời được:
 
@@ -178,13 +178,13 @@ Mình đang giải quyết vấn đề hiện tại, hay đang tưởng tượng
 
 SOLID giúp code không chỉ dễ đọc hôm nay, mà còn dễ thay đổi về sau.
 
-| Nguyên tắc | Ý nghĩa ngắn gọn |
-| --- | --- |
-| SRP | Một class nên có một lý do chính để thay đổi |
-| OCP | Mở rộng hành vi mà ít sửa code cũ |
-| LSP | Class con phải thay thế được class cha mà không phá behavior |
-| ISP | Interface nhỏ, đúng nhu cầu |
-| DIP | Phụ thuộc abstraction thay vì concrete implementation |
+| Nguyên tắc | Ý nghĩa ngắn gọn                                             |
+| ---------- | ------------------------------------------------------------ |
+| SRP        | Một class nên có một lý do chính để thay đổi                 |
+| OCP        | Mở rộng hành vi mà ít sửa code cũ                            |
+| LSP        | Class con phải thay thế được class cha mà không phá behavior |
+| ISP        | Interface nhỏ, đúng nhu cầu                                  |
+| DIP        | Phụ thuộc abstraction thay vì concrete implementation        |
 
 Clean Code và SOLID không tách rời nhau:
 
@@ -386,8 +386,6 @@ Clean Code không phải một kỹ thuật đơn lẻ. Nó là tập hợp củ
 - Cấu trúc có chủ đích.
 - Thói quen cải thiện liên tục.
 - Kỷ luật làm việc chung trong team.
-
-Một câu dễ nhớ:
 
 ```text
 Code tốt không chỉ được máy hiểu.

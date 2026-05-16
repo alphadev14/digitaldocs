@@ -65,6 +65,7 @@ nav:
               - Deploy Database:
                   - Deploy Databae lên Render: junior/project/todos/07-deploy-db.md
   - Mid-Level:
+      - ✅ Clean Code: mid-level/clean-code/index.md
       - 🧠 Backend:
           - Overview: mid-level/backend/index.md
           - API Architecture: mid-level/backend/01-api-architecture.md
